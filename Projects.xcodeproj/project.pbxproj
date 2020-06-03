@@ -78,6 +78,7 @@
 		08C066F620B039C400A8C5F0 /* GooglePlacesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C066F420B039C400A8C5F0 /* GooglePlacesHelper.swift */; };
 		08C066F720B039C400A8C5F0 /* GMSMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C066F520B039C400A8C5F0 /* GMSMapView.swift */; };
 		08DBC87B20B9F70800AE89E6 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DBC87A20B9F70800AE89E6 /* DatePickerDialog.swift */; };
+		7729628F2487B91D00E5BC42 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */; };
 		77308BEE2458848D000D31FA /* EditPatientInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77308BED2458848D000D31FA /* EditPatientInformationTableViewController.swift */; };
 		77308BF224588726000D31FA /* ChartingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77308BF024588726000D31FA /* ChartingTableViewCell.swift */; };
 		77308BF324588726000D31FA /* ChartingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77308BF124588726000D31FA /* ChartingTableViewCell.xib */; };
@@ -108,7 +109,6 @@
 		774B7197247BF95000839F14 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 774B7195247BF95000839F14 /* CalendarTableViewCell.xib */; };
 		7768ECE22459F9300051AB91 /* NotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768ECE12459F9300051AB91 /* NotifyView.swift */; };
 		7768ECE42459F9570051AB91 /* NotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7768ECE32459F9570051AB91 /* NotifyView.xib */; };
-		778AE9F424338E9600A314C7 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AE9F324338E9600A314C7 /* DashBoardViewController.swift */; };
 		778AE9F924338F0000A314C7 /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AE9F624338F0000A314C7 /* HomeHeaderTableViewCell.swift */; };
 		778AE9FA24338F0000A314C7 /* HomeOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AE9F724338F0000A314C7 /* HomeOptionsTableViewCell.swift */; };
 		7791E2F72434CA0900432F1A /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7791E2F62434CA0900432F1A /* SetViewController.swift */; };
@@ -219,6 +219,7 @@
 		08C066F420B039C400A8C5F0 /* GooglePlacesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesHelper.swift; sourceTree = "<group>"; };
 		08C066F520B039C400A8C5F0 /* GMSMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSMapView.swift; sourceTree = "<group>"; };
 		08DBC87A20B9F70800AE89E6 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		77308BED2458848D000D31FA /* EditPatientInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPatientInformationTableViewController.swift; sourceTree = "<group>"; };
 		77308BF024588726000D31FA /* ChartingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartingTableViewCell.swift; sourceTree = "<group>"; };
 		77308BF124588726000D31FA /* ChartingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartingTableViewCell.xib; sourceTree = "<group>"; };
@@ -249,7 +250,6 @@
 		774B7195247BF95000839F14 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		7768ECE12459F9300051AB91 /* NotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyView.swift; sourceTree = "<group>"; };
 		7768ECE32459F9570051AB91 /* NotifyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifyView.xib; sourceTree = "<group>"; };
-		778AE9F324338E9600A314C7 /* DashBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashBoardViewController.swift; path = "../../../../../../../../Desktop/Mi Dokter/Mi Dokter/Viper/View/Controller/Home/DashBoardViewController.swift"; sourceTree = "<group>"; };
 		778AE9F624338F0000A314C7 /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		778AE9F724338F0000A314C7 /* HomeOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		7791E2F62434CA0900432F1A /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				088E4E9D20ECDE6900EEEF22 /* HomeViewController.swift */,
-				778AE9F324338E9600A314C7 /* DashBoardViewController.swift */,
+				7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */,
 				088E4E9B20ECDE5500EEEF22 /* SideBarTableViewController.swift */,
 				7791E2F62434CA0900432F1A /* SetViewController.swift */,
 				7738E2F32435DA7800804159 /* LaunchViewController.swift */,
@@ -1264,6 +1264,7 @@
 				084B346620B02C6A00B79318 /* Colors.swift in Sources */,
 				77BE1C5524784A6B006273EE /* ChangePasswordViewController.swift in Sources */,
 				7738E2FF2435DAAB00804159 /* HealthFeedDetailsViewController.swift in Sources */,
+				7729628F2487B91D00E5BC42 /* DashBoardViewController.swift in Sources */,
 				084B343920B029E900B79318 /* ParallaxHeader.swift in Sources */,
 				7738E2F42435DA7800804159 /* LaunchViewController.swift in Sources */,
 				084B343E20B02A3800B79318 /* Toast.swift in Sources */,
@@ -1345,7 +1346,6 @@
 				7733ED5A2454B73B00C252E1 /* PatientsInformationViewController.swift in Sources */,
 				7738E2F12435BECD00804159 /* HomeOptionCollectionViewCell.swift in Sources */,
 				7738E2F82435DA9100804159 /* SignInEmailViewController.swift in Sources */,
-				778AE9F424338E9600A314C7 /* DashBoardViewController.swift in Sources */,
 				084B345920B02BB900B79318 /* Reachability.swift in Sources */,
 				088E4E9C20ECDE5600EEEF22 /* SideBarTableViewController.swift in Sources */,
 				77BE1C5924784C3F006273EE /* AddAppointmentTableViewController.swift in Sources */,
