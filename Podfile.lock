@@ -1,0 +1,61 @@
+PODS:
+  - Alamofire (4.7.2)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - CLWeeklyCalendarView (0.0.3)
+  - DynamicBlurView (2.0.2)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
+  - IQKeyboardManagerSwift (6.0.4)
+  - KWDrawerController (4.1.6):
+    - KWDrawerController/Core (= 4.1.6)
+  - KWDrawerController/Core (4.1.6)
+  - ObjectMapper (3.4.2)
+  - PopupDialog (0.7.1):
+    - DynamicBlurView (~> 2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
+  - CLWeeklyCalendarView
+  - GoogleMaps
+  - GooglePlaces
+  - IQKeyboardManagerSwift
+  - KWDrawerController (~> 4.1.6)
+  - PopupDialog (~> 0.7)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - DynamicBlurView
+    - GoogleMaps
+    - GooglePlaces
+    - IQKeyboardManagerSwift
+    - KWDrawerController
+    - ObjectMapper
+    - PopupDialog
+  trunk:
+    - CLWeeklyCalendarView
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  CLWeeklyCalendarView: 74d8511e58b40cb9571afc51b90217e32b51f891
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
+  KWDrawerController: bf8fc10ddc596ddbfdabda401357a99dba04a1c8
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
+
+PODFILE CHECKSUM: 01d00640f06288fcac37751174886bdf200c563f
+
+COCOAPODS: 1.8.4

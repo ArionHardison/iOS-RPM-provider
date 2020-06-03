@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NotifyView" customModule="Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2k-RC-QuH">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQI-Xn-4Gb">
+                    <rect key="frame" x="40" y="171.5" width="240" height="225"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify No Show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLy-Fh-O5G">
+                            <rect key="frame" x="12" y="12" width="216" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="FmU-Ty-eOq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify Patients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-pf-9uT">
+                            <rect key="frame" x="12" y="45" width="95" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify Doctors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wse-fZ-0rT">
+                            <rect key="frame" x="12" y="116" width="216" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wwc-VP-hVX">
+                            <rect key="frame" x="12" y="74" width="216" height="30"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d44-Dl-j6K">
+                                    <rect key="frame" x="0.0" y="0.0" width="99" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgq-uH-Pi4">
+                                            <rect key="frame" x="0.0" y="0.0" width="99" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="SMS" image="Rectangle 298">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Lgq-uH-Pi4" firstAttribute="height" secondItem="d44-Dl-j6K" secondAttribute="height" id="43c-C0-NFf"/>
+                                        <constraint firstItem="Lgq-uH-Pi4" firstAttribute="width" secondItem="d44-Dl-j6K" secondAttribute="width" id="4qG-EF-edr"/>
+                                        <constraint firstItem="Lgq-uH-Pi4" firstAttribute="centerX" secondItem="d44-Dl-j6K" secondAttribute="centerX" id="VHI-vL-TGA"/>
+                                        <constraint firstItem="Lgq-uH-Pi4" firstAttribute="centerY" secondItem="d44-Dl-j6K" secondAttribute="centerY" id="leC-g9-Ce4"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-fl-84D">
+                                    <rect key="frame" x="107" y="0.0" width="109" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-sj-iv7">
+                                            <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="Email" image="Rectangle 298">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="O0a-sj-iv7" firstAttribute="centerY" secondItem="RW2-fl-84D" secondAttribute="centerY" id="8yb-kE-RrT"/>
+                                        <constraint firstItem="O0a-sj-iv7" firstAttribute="centerX" secondItem="RW2-fl-84D" secondAttribute="centerX" id="Pnz-rd-cfr"/>
+                                        <constraint firstItem="O0a-sj-iv7" firstAttribute="height" secondItem="RW2-fl-84D" secondAttribute="height" id="cxS-jA-RcB"/>
+                                        <constraint firstItem="O0a-sj-iv7" firstAttribute="width" secondItem="RW2-fl-84D" secondAttribute="width" id="zOJ-8p-3u2"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="d44-Dl-j6K" firstAttribute="height" secondItem="RW2-fl-84D" secondAttribute="height" id="1Wb-Yw-qQ8"/>
+                                <constraint firstAttribute="height" constant="30" id="5IC-tD-X37"/>
+                                <constraint firstItem="d44-Dl-j6K" firstAttribute="width" secondItem="RW2-fl-84D" secondAttribute="width" multiplier="0.908257" id="asH-EL-jmv"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uJj-dR-D49">
+                            <rect key="frame" x="12" y="145" width="216" height="30"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arz-qi-Wwc">
+                                    <rect key="frame" x="0.0" y="0.0" width="99" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFG-ZX-NMN">
+                                            <rect key="frame" x="0.0" y="0.0" width="99" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="SMS" image="Rectangle 298">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="lFG-ZX-NMN" firstAttribute="height" secondItem="arz-qi-Wwc" secondAttribute="height" id="4Q7-mB-IW0"/>
+                                        <constraint firstItem="lFG-ZX-NMN" firstAttribute="width" secondItem="arz-qi-Wwc" secondAttribute="width" id="LGY-hg-fJC"/>
+                                        <constraint firstItem="lFG-ZX-NMN" firstAttribute="centerX" secondItem="arz-qi-Wwc" secondAttribute="centerX" id="TRP-GV-LBK"/>
+                                        <constraint firstItem="lFG-ZX-NMN" firstAttribute="centerY" secondItem="arz-qi-Wwc" secondAttribute="centerY" id="z3q-IG-yli"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZz-6g-EJU">
+                                    <rect key="frame" x="107" y="0.0" width="109" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kv-pH-gqm">
+                                            <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="Email" image="Rectangle 298">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="1kv-pH-gqm" firstAttribute="centerY" secondItem="lZz-6g-EJU" secondAttribute="centerY" id="AHT-Jr-EqE"/>
+                                        <constraint firstItem="1kv-pH-gqm" firstAttribute="width" secondItem="lZz-6g-EJU" secondAttribute="width" id="Gjy-cE-Bx4"/>
+                                        <constraint firstItem="1kv-pH-gqm" firstAttribute="height" secondItem="lZz-6g-EJU" secondAttribute="height" id="XNY-rg-LIr"/>
+                                        <constraint firstItem="1kv-pH-gqm" firstAttribute="centerX" secondItem="lZz-6g-EJU" secondAttribute="centerX" id="jdP-B6-MRQ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="arz-qi-Wwc" firstAttribute="width" secondItem="lZz-6g-EJU" secondAttribute="width" multiplier="0.908257" id="9ry-Ia-1ag"/>
+                                <constraint firstItem="arz-qi-Wwc" firstAttribute="height" secondItem="lZz-6g-EJU" secondAttribute="height" id="EvM-uV-YHK"/>
+                                <constraint firstAttribute="height" constant="30" id="U4l-k7-O9s"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLH-9E-3Wl">
+                            <rect key="frame" x="0.0" y="187" width="240" height="30"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OAJ-3V-ngk">
+                                    <rect key="frame" x="0.0" y="0.5" width="240" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4T-mR-vPX">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Discard">
+                                                <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0r-a8-M2W">
+                                            <rect key="frame" x="120.5" y="0.0" width="119.5" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Notify">
+                                                <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="d0r-a8-M2W" firstAttribute="width" secondItem="X4T-mR-vPX" secondAttribute="width" id="F8Z-Cz-5E6"/>
+                                        <constraint firstAttribute="height" constant="30" id="Zn2-fO-qdT"/>
+                                        <constraint firstItem="d0r-a8-M2W" firstAttribute="height" secondItem="X4T-mR-vPX" secondAttribute="height" id="ijL-Bf-8M4"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="0gn-bb-Rh8"/>
+                                <constraint firstItem="OAJ-3V-ngk" firstAttribute="leading" secondItem="zLH-9E-3Wl" secondAttribute="leading" id="9B1-hM-VqT"/>
+                                <constraint firstAttribute="trailing" secondItem="OAJ-3V-ngk" secondAttribute="trailing" id="b5q-3e-6dh"/>
+                                <constraint firstItem="OAJ-3V-ngk" firstAttribute="top" secondItem="zLH-9E-3Wl" secondAttribute="top" constant="0.5" id="oYm-i1-puR"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zLH-9E-3Wl" secondAttribute="trailing" id="3yL-OM-NG3"/>
+                        <constraint firstItem="wse-fZ-0rT" firstAttribute="top" secondItem="Wwc-VP-hVX" secondAttribute="bottom" constant="12" id="5Sw-PH-tcv"/>
+                        <constraint firstAttribute="trailing" secondItem="uJj-dR-D49" secondAttribute="trailing" constant="12" id="6s5-Ot-yZb"/>
+                        <constraint firstAttribute="trailing" secondItem="Wwc-VP-hVX" secondAttribute="trailing" constant="12" id="7NV-gu-umU"/>
+                        <constraint firstItem="ET7-pf-9uT" firstAttribute="leading" secondItem="fQI-Xn-4Gb" secondAttribute="leading" constant="12" id="BSb-Bw-WzH"/>
+                        <constraint firstItem="GLy-Fh-O5G" firstAttribute="top" secondItem="fQI-Xn-4Gb" secondAttribute="top" constant="12" id="HYg-6w-3VT"/>
+                        <constraint firstItem="ET7-pf-9uT" firstAttribute="top" secondItem="GLy-Fh-O5G" secondAttribute="bottom" constant="12" id="LPs-op-6aT"/>
+                        <constraint firstItem="zLH-9E-3Wl" firstAttribute="top" secondItem="uJj-dR-D49" secondAttribute="bottom" constant="12" id="Pid-qG-hNW"/>
+                        <constraint firstItem="uJj-dR-D49" firstAttribute="top" secondItem="wse-fZ-0rT" secondAttribute="bottom" constant="12" id="QvB-RO-rXb"/>
+                        <constraint firstAttribute="trailing" secondItem="wse-fZ-0rT" secondAttribute="trailing" constant="12" id="W2d-uO-9dQ"/>
+                        <constraint firstItem="GLy-Fh-O5G" firstAttribute="leading" secondItem="fQI-Xn-4Gb" secondAttribute="leading" constant="12" id="XXl-6p-WLB"/>
+                        <constraint firstItem="zLH-9E-3Wl" firstAttribute="leading" secondItem="fQI-Xn-4Gb" secondAttribute="leading" id="aeX-dZ-InJ"/>
+                        <constraint firstItem="wse-fZ-0rT" firstAttribute="leading" secondItem="fQI-Xn-4Gb" secondAttribute="leading" constant="12" id="g8g-Ks-NWx"/>
+                        <constraint firstItem="Wwc-VP-hVX" firstAttribute="top" secondItem="ET7-pf-9uT" secondAttribute="bottom" constant="12" id="mJw-OL-Y6t"/>
+                        <constraint firstAttribute="trailing" secondItem="GLy-Fh-O5G" secondAttribute="trailing" constant="12" id="pP4-O5-IJ9"/>
+                        <constraint firstItem="uJj-dR-D49" firstAttribute="leading" secondItem="fQI-Xn-4Gb" secondAttribute="leading" constant="12" id="pd7-CE-YNz"/>
+                        <constraint firstItem="Wwc-VP-hVX" firstAttribute="leading" secondItem="fQI-Xn-4Gb" secondAttribute="leading" constant="12" id="siB-fg-uyw"/>
+                        <constraint firstAttribute="bottom" secondItem="zLH-9E-3Wl" secondAttribute="bottom" constant="8" id="wiT-5l-ghu"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="a2k-RC-QuH" secondAttribute="bottom" id="0r0-8j-C9O"/>
+                <constraint firstItem="fQI-Xn-4Gb" firstAttribute="width" secondItem="a2k-RC-QuH" secondAttribute="width" multiplier="0.75" id="1gV-wh-H7h"/>
+                <constraint firstItem="a2k-RC-QuH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FmN-fD-2qX"/>
+                <constraint firstItem="fQI-Xn-4Gb" firstAttribute="centerY" secondItem="a2k-RC-QuH" secondAttribute="centerY" id="JDp-C7-GEK"/>
+                <constraint firstItem="fQI-Xn-4Gb" firstAttribute="centerX" secondItem="a2k-RC-QuH" secondAttribute="centerX" id="WO7-9e-1Gx"/>
+                <constraint firstItem="a2k-RC-QuH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZnE-TE-1KD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a2k-RC-QuH" secondAttribute="trailing" id="vCF-L6-6Ec"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="buttonDiscard" destination="X4T-mR-vPX" id="tXO-rT-2Yc"/>
+                <outlet property="buttonDoctorEmail" destination="1kv-pH-gqm" id="Uhd-t6-myh"/>
+                <outlet property="buttonDoctorSMS" destination="lFG-ZX-NMN" id="eFu-PV-KzZ"/>
+                <outlet property="buttonNotify" destination="d0r-a8-M2W" id="eAM-Dv-8sF"/>
+                <outlet property="buttonPatientEmail" destination="O0a-sj-iv7" id="utd-4y-jRh"/>
+                <outlet property="buttonPatientSMS" destination="Lgq-uH-Pi4" id="XGt-58-mt7"/>
+                <outletCollection property="buttons" destination="Lgq-uH-Pi4" collectionClass="NSMutableArray" id="0qb-8k-BpM"/>
+                <outletCollection property="buttons" destination="O0a-sj-iv7" collectionClass="NSMutableArray" id="tcC-0W-o4a"/>
+                <outletCollection property="buttons" destination="lFG-ZX-NMN" collectionClass="NSMutableArray" id="xNP-qW-sgL"/>
+                <outletCollection property="buttons" destination="1kv-pH-gqm" collectionClass="NSMutableArray" id="0ZS-Ai-GhH"/>
+            </connections>
+            <point key="canvasLocation" x="138.75" y="138.38028169014083"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Rectangle 298" width="13" height="13"/>
+    </resources>
+</document>

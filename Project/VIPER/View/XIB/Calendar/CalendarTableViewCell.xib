@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarTableViewCell" rowHeight="80" id="KGk-i7-Jjw" customClass="CalendarTableViewCell" customModule="Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBx-5Y-YZk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:50 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2k6-Co-4TN">
+                                <rect key="frame" x="12" y="26.5" width="62.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-pW-fUD">
+                                <rect key="frame" x="86.5" y="13" width="111.5" height="44.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQG-bq-rxc">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Checkup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVI-9d-1P2">
+                                        <rect key="frame" x="0.0" y="27.5" width="111.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pn7-OQ-aSa">
+                                <rect key="frame" x="287" y="22.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="amH-7T-EDa"/>
+                                    <constraint firstAttribute="height" constant="25" id="bqS-xg-AN4"/>
+                                </constraints>
+                                <state key="normal" image="Options"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nxX-pW-fUD" firstAttribute="centerY" secondItem="2k6-Co-4TN" secondAttribute="centerY" id="37J-Gy-QQI"/>
+                            <constraint firstItem="2k6-Co-4TN" firstAttribute="centerY" secondItem="WBx-5Y-YZk" secondAttribute="centerY" id="Zfm-wh-5tJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Pn7-OQ-aSa" secondAttribute="trailing" constant="8" id="aPP-mY-7kl"/>
+                            <constraint firstItem="nxX-pW-fUD" firstAttribute="leading" secondItem="2k6-Co-4TN" secondAttribute="trailing" constant="12" id="hk8-9b-H7K"/>
+                            <constraint firstItem="2k6-Co-4TN" firstAttribute="leading" secondItem="WBx-5Y-YZk" secondAttribute="leading" constant="12" id="ul4-rC-O3h"/>
+                            <constraint firstItem="Pn7-OQ-aSa" firstAttribute="centerY" secondItem="WBx-5Y-YZk" secondAttribute="centerY" id="xGu-Xo-hFG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="WBx-5Y-YZk" secondAttribute="trailing" id="IDC-9x-cHd"/>
+                    <constraint firstItem="WBx-5Y-YZk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ceA-WG-gWt"/>
+                    <constraint firstAttribute="bottom" secondItem="WBx-5Y-YZk" secondAttribute="bottom" id="d9N-IV-Ure"/>
+                    <constraint firstItem="WBx-5Y-YZk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gpq-dA-nTs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonOptions" destination="Pn7-OQ-aSa" id="tPY-O3-5FX"/>
+                <outlet property="labelName" destination="VQG-bq-rxc" id="GEr-B8-GUt"/>
+                <outlet property="labelTime" destination="2k6-Co-4TN" id="Aiw-nO-pSL"/>
+                <outlet property="labelTreatment" destination="lVI-9d-1P2" id="iD7-9R-WI5"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="150"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Options" width="32" height="32"/>
+    </resources>
+</document>
