@@ -20,9 +20,7 @@ class Webservice {
 extension Webservice : WebServiceProtocol {
     
     func retrieve<T: Mappable>(api: String, params: Parameters?, imageData: [String : Data]?, type: HttpType, modelClass: T.Type, token: Bool, completion: ((CustomError?, Data?) -> ())?) {
-        print("URL-----\(api)")
-        if params != nil{
-            print("Params----\(params!)")
+         if params != nil{
         }
         
         let reach = Reachability.init(hostname: baseUrl)
@@ -47,7 +45,7 @@ extension Webservice : WebServiceProtocol {
       
         if(token) {
             
-            let accessToken = User.main.accessToken ?? ""
+            let accessToken = UserDefaultConfig.Token ?? ""
             headers.updateValue("\(WebConstants.string.bearer) \(accessToken)", forKey: WebConstants.string.Authorization)
         }
         
@@ -60,7 +58,7 @@ extension Webservice : WebServiceProtocol {
             print("**url", url)
             print("**httpMethod", httpMethod!)
             print("**url", params)
-            print("**url", url)
+            print("**token", UserDefaultConfig.Token ?? "")
             
             Alamofire.request(url, method: httpMethod!, parameters: params,encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
                 print("response.result",response.result)

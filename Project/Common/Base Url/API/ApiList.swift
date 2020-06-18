@@ -38,15 +38,17 @@ enum StatusCode : Int {
 enum Base : String{
   
     
-    case signIn = "api/oauth/token"
-    case signUp = "/api/user/signup"
-    case login = "/oauth/token"
-    case logout = "/api/user/logout"
-    case resepwd = "/api/provider/profile/password"
-    case distanceMarix = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="
-    case updateLocation = "api/provider/profile/location"
-    case onlineStatus = "/api/provider/profile/available"
-   
+    case loginWithEmail = "/api/hospital/login"
+    case signUp = "/api/hospital/signUp"
+    case logout = "/api/hospital/logout"
+    case home = "/api/hospital/home"
+    case feedback = "/api/hospital/feedback"
+    case article = "/api/hospital/articles"
+    case addArticle = "/api/hospital/add_article"
+    case profile = "/api/hospital/profile"
+    case changePassword = "/api/hospital/change_password"
+    case updateProfile = "/api/hospital/update_profile"
+    
     init(fromRawValue: String){
         self = Base(rawValue: fromRawValue) ?? .signUp
     }
@@ -57,10 +59,6 @@ enum Base : String{
             return Base.signUp
         }
         
-//        for val in iterateEnum(Base.self) where val.rawValue == key {
-//            return val
-//        }
-        
         if let base = Base(rawValue: key) {
             return base
         }
@@ -68,5 +66,19 @@ enum Base : String{
         return Base.signUp
         
     }
+    
+}
+
+
+struct model {
+    
+    static let type = model()
+    
+    let MobileVerifyModel = "MobileVerifyModel"
+    let DashBoardEntity = "DashBoardEntity"
+    let FeedBackEntity = "FeedBackEntity"
+    let ArticlesEntity = "ArticlesEntity"
+    let CommonModel = "CommonModel"
+    let ProfileEntity = "ProfileEntity"
     
 }

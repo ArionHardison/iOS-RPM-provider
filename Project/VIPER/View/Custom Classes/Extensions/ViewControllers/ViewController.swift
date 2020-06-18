@@ -2,6 +2,13 @@
 import UIKit
 import Foundation
 
+
+public enum storyboardName : String{
+    case main = "Main"
+    case user = "User"
+    
+}
+
 fileprivate var bottomConstraint : NSLayoutConstraint?
 fileprivate var imageCompletion : ((UIImage?)->())?
 fileprivate var constraintValue : CGFloat = 0
@@ -47,6 +54,15 @@ extension UIViewController {
         
     }
     
+    
+    static func getStoryBoard(withName name : storyboardName) -> UIStoryboard{
+        return UIStoryboard.init(name: name.rawValue, bundle: Bundle.main)
+    }
+    
+    static func initVC<T : UIViewController>(storyBoardName name : storyboardName , vc : T.Type , viewConrollerID id : String) -> T{
+        return getStoryBoard(withName: name).instantiateViewController(withIdentifier: id) as! T
+    }
+    
     //MARK:- Push
     
     func push(id : String, animation : Bool, from storyboard : UIStoryboard = Router.main){
@@ -57,11 +73,15 @@ extension UIViewController {
         
     }
     
+    func push<T : UIViewController>(from vc : T ,ToViewContorller contoller : UIViewController ){
+        vc.navigationController?.pushViewController(contoller, animated: true)
+    }
+    
     //MARK:- Push To Right
     
     func pushRight(toViewController viewController : UIViewController){
         
-        self.makePush(transition: kCATransitionFromLeft)
+        self.makePush(transition: CATransitionSubtype.fromLeft.rawValue)
         navigationController?.pushViewController(viewController, animated: false)
         
     }
@@ -70,9 +90,9 @@ extension UIViewController {
         
         let transition = CATransition()
         transition.duration = 0.45
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
-        transition.type = kCATransitionPush
-        transition.subtype = type
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype(rawValue: type)
         //transition.delegate = self
         navigationController?.view.layer.add(transition, forKey: nil)
         //navigationController?.isNavigationBarHidden = false
@@ -81,7 +101,7 @@ extension UIViewController {
     
     func popLeft() {
         
-        self.makePush(transition: kCATransitionFromRight)
+        self.makePush(transition: CATransitionSubtype.fromRight.rawValue)
         navigationController?.popViewController(animated: true)
         
     }
@@ -95,11 +115,11 @@ extension UIViewController {
         
         constraintValue = constraint.constant
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(info:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(info:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(info:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(info:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(info:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(info:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         
     }
@@ -107,7 +127,7 @@ extension UIViewController {
     
     @IBAction private func keyboardWillShow(info : NSNotification){
         
-        guard let keyboard = (info.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+        guard let keyboard = (info.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
             return
         }
         bottomConstraint?.constant = -(keyboard.height)
@@ -157,7 +177,7 @@ extension UIViewController {
     
     //MARK:- Show Image Picker
     
-    private func chooseImage(with source : UIImagePickerControllerSourceType){
+    private func chooseImage(with source : UIImagePickerController.SourceType){
         
         if UIImagePickerController.isSourceTypeAvailable(source) {
             
@@ -227,14 +247,16 @@ extension UIViewController {
 
 extension UIViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true) {
-            if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            if let image = info[.originalImage] as? UIImage {
                 imageCompletion?(image)
             }
         }
     }
+    
+    
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

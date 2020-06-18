@@ -75,7 +75,7 @@ internal func createActivityIndicator(_ uiView : UIView)->UIView{
     let actInd: UIActivityIndicatorView = UIActivityIndicatorView()
     actInd.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
     actInd.clipsToBounds = true
-    actInd.activityIndicatorViewStyle = .whiteLarge
+    actInd.style = .whiteLarge
     
     actInd.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
     loadingView.addSubview(actInd)
@@ -103,13 +103,12 @@ internal func storeInUserDefaults(){
 // Retrieve from UserDefaults
 internal func retrieveUserData()->Bool{
 
-    if let data = UserDefaults.standard.object(forKey: Keys.list.userData) as? Data, let userData = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {
-        
-        User.main = userData
+    if UserDefaultConfig.Token.isEmpty{
+        return false
+    }else{
         
         return true
     }
-    
     return false
     
 }
@@ -166,8 +165,12 @@ internal func forceLogout(with message : String? = nil) {
     
     clearUserDefaults()
     UIApplication.shared.windows.last?.rootViewController?.popOrDismiss(animation: true)
-    UIApplication.shared.windows.first?.rootViewController = Router.main.instantiateViewController(withIdentifier: Storyboard.Ids.DrawerController)
+    UIApplication.shared.windows.first?.rootViewController = Router.createModule()
     UIApplication.shared.windows.first?.makeKeyAndVisible()
+    
+    UserDefaultConfig.Token = ""
+    UserDefaultConfig.UserName = ""
+    UserDefaultConfig.UserID = ""
     
     if message != nil {
         UIApplication.shared.windows.last?.rootViewController?.view.makeToast(message, duration: 2, position: .center, title: nil, image: nil, style: ToastStyle(), completion: nil)

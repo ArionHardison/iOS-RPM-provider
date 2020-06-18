@@ -10,49 +10,6 @@ import Foundation
 import UIKit
 import KWDrawerController
 
-//
-//
-//let mainPresenter : PresenterInputProtocol & InterectorToPresenterProtocol = Presenter()
-//let mainInteractor : PresenterToInterectorProtocol & WebServiceToInteractor = Interactor()
-//let mainRouter : PresenterToRouterProtocol = Router()
-//let mainWebservice : WebServiceProtocol = Webservice()
-//
-//var presenterObject :PresenterInputProtocol?
-//
-//
-//class Router:  PresenterToRouterProtocol {
-//    
-//    static let main = UIStoryboard(name: "Main", bundle: Bundle.main)
-//    // static let user = UIStoryboard(name: "User", bundle: Bundle.main)
-//    
-//    
-//    
-//    let mainPresenter : PresenterInputProtocol & InterectorToPresenterProtocol = Presenter()
-//    let mainInteractor : PresenterToInterectorProtocol & WebServiceToInteractor = Interactor()
-//    let mainRouter : PresenterToRouterProtocol = Router()
-//    let mainWebservice : WebServiceProtocol = Webservice()
-//    
-//    static func createModule() -> UIViewController {
-//        let view = main.instantiateViewController(withIdentifier: Storyboard.Ids.HomeViewController) as? UIViewController
-//        view?.presenter = mainPresenter
-//        mainPresenter.view = view
-//        mainPresenter.interactor = mainInteractor
-//        mainPresenter.router = mainRouter
-//        mainInteractor.presenter = mainPresenter
-//        mainInteractor.webService = mainWebservice
-//        mainWebservice.interactor = mainInteractor
-//        presenterObject = view?.presenter
-//        
-//        
-//        
-//        return retrieveUserData() ? main.instantiateViewController(withIdentifier:  Storyboard.Ids.DrawerController) : main.instantiateViewController(withIdentifier: Storyboard.Ids.DrawerController)
-//    }
-//    
-//    
-//}
-//
-
-
 let mainPresenter : PresenterInputProtocol & InterectorToPresenterProtocol = Presenter()
 let mainInteractor : PresenterToInterectorProtocol & WebServiceToInteractor = Interactor()
 let mainRouter : PresenterToRouterProtocol = Router()
@@ -63,9 +20,6 @@ var presenterObject :PresenterInputProtocol?
 class Router: PresenterToRouterProtocol{
     
     static let main = UIStoryboard(name: "Main", bundle: Bundle.main)
-    static let user = UIStoryboard(name: "User", bundle: Bundle.main)
-    static let offerride = UIStoryboard(name: "OfferRide", bundle: Bundle.main)
-    static let findride = UIStoryboard(name: "FindRide", bundle: Bundle.main)
     
     static func createModule() -> UIViewController {
         
@@ -78,9 +32,8 @@ class Router: PresenterToRouterProtocol{
         mainInteractor.webService = mainWebservice
         mainWebservice.interactor = mainInteractor
         presenterObject = view?.presenter
-        if retrieveUserData() {
-            
-            let navigationController = UINavigationController(rootViewController: user.instantiateViewController(withIdentifier: Storyboard.Ids.LaunchViewController))
+        if retrieveUserData(){
+            let navigationController = UINavigationController(rootViewController: main.instantiateViewController(withIdentifier: Storyboard.Ids.DashBoardViewController))
             navigationController.isNavigationBarHidden = true
             return navigationController
         }else{
@@ -89,7 +42,5 @@ class Router: PresenterToRouterProtocol{
             navigationController.isNavigationBarHidden = true
             return navigationController
         }
-      
     }
-    
 }

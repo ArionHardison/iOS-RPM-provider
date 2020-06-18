@@ -20,13 +20,13 @@ enum Transition {
         switch self {
             
         case .top :
-            return kCATransitionFromBottom
+            return CATransitionSubtype.fromBottom.rawValue
         case .bottom :
-            return kCATransitionFromTop
+            return CATransitionSubtype.fromTop.rawValue
         case .right :
-            return kCATransitionFromLeft
+            return CATransitionSubtype.fromLeft.rawValue
         case .left :
-            return kCATransitionFromRight
+            return CATransitionSubtype.fromRight.rawValue
             
         }
         
@@ -70,14 +70,14 @@ extension UIView {
     func showAnimateView(_ view: UIView, isShow: Bool, direction: Direction, duration : Float = 0.8 ) {
             if isShow {
                 view.isHidden = false
-                self.bringSubview(toFront: view)
+                self.bringSubviewToFront(view)
                 print(direction.type)
                 pushTransition(CFTimeInterval(duration), view: view, withDirection: direction.type)
                 
                 
             }
             else {
-                self.sendSubview(toBack: view)
+                self.sendSubviewToBack(view)
                 view.isHidden = true
                 pushTransition(CFTimeInterval(duration), view: view, withDirection: direction.type)
             }
@@ -88,35 +88,35 @@ extension UIView {
         
         func pushTransition(_ duration: CFTimeInterval, view: UIView, withDirection direction: Int) {
             let animation = CATransition()
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            animation.type = kCATransitionPush
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            animation.type = CATransitionType.push
             
             if direction == 1 {
-                animation.subtype = kCATransitionFromRight
+                animation.subtype = CATransitionSubtype.fromRight
             }
             else if direction == 2 {
-                animation.subtype = kCATransitionFromLeft
+                animation.subtype = CATransitionSubtype.fromLeft
             }
             else if direction == 3 {
-                animation.subtype = kCATransitionFromTop
+                animation.subtype = CATransitionSubtype.fromTop
             }
             else {
-                animation.subtype = kCATransitionFromBottom
+                animation.subtype = CATransitionSubtype.fromBottom
             }
             
             animation.duration = duration
-            view.layer.add(animation, forKey: kCATransitionMoveIn)
+            view.layer.add(animation, forKey: CATransitionType.moveIn.rawValue)
             
         }
         func show(with transition : Transition, duration : CFTimeInterval = 0.5, completion : (()->())?){
             
             
             let animation = CATransition()
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            animation.type = kCATransitionPush
-            animation.subtype = transition.type
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            animation.type = CATransitionType.push
+            animation.subtype = CATransitionSubtype(rawValue: transition.type)
             animation.duration = duration
-            self.layer.add(animation, forKey: kCATransitionPush)
+            self.layer.add(animation, forKey: CATransitionType.push.rawValue)
             DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                 completion?()
             }
@@ -370,7 +370,7 @@ extension UIView {
   
     
     
-    func addBlurview(with style : UIBlurEffectStyle = .dark, on completion : @escaping (()->Void)) {
+    func addBlurview(with style : UIBlurEffect.Style = .dark, on completion : @escaping (()->Void)) {
         
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -382,7 +382,7 @@ extension UIView {
         
         let transition = CATransition()
         transition.duration = 1
-        transition.type = kCATransitionFade
+        transition.type = CATransitionType.fade
         //transition.subtype = kCATransitionFade
         blurEffectView.layer.add(transition, forKey: kCATransition)
         blurEffectViewGlobal = blurEffectView
@@ -395,7 +395,7 @@ extension UIView {
         
         let transition = CATransition()
         transition.duration = 0.3
-        transition.type = kCATransitionFade
+        transition.type = CATransitionType.fade
         blurEffectViewGlobal?.layer.add(transition, forKey: kCATransition)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
             blurEffectViewGlobal?.removeFromSuperview()
@@ -408,6 +408,7 @@ extension UIView {
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.bounds.width/2
+        
         
     }
     

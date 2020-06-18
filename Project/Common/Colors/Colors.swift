@@ -43,19 +43,27 @@ enum Color : Int {
 
 extension UIColor {
     
+    static var appColor : UIColor{
+        return UIColor(named: "AppColor") ?? UIColor.primary
+    }
+    
+    static var AppBlueColor : UIColor{
+        return UIColor(named: "AppBlueColor") ?? UIColor.blue
+    }
+    
+    static var LightGreen : UIColor{
+        return UIColor(named: "LightGreen") ?? UIColor.clear
+    }
+    
+    
     // Primary Color
     static var primary : UIColor {
-        
-        
-        return #colorLiteral(red: 0.1004632786, green: 0.1795110404, blue: 0.357195586, alpha: 1)
-            //UIColor(red: 149/255, green: 116/255, blue: 205/255, alpha: 1)
+        return UIColor(named: "AppColor") ?? UIColor.primary
     }
     
     // Secondary Color
     static var secondary : UIColor {
-        return #colorLiteral(red: 0.1561256051, green: 0.5701457858, blue: 0.9827292562, alpha: 1)
-            
-            //UIColor(red: 238/255, green: 98/255, blue: 145/255, alpha: 1)
+        return UIColor(named: "AppBlueColor") ?? UIColor.blue
     }
     
     // Secondary Color

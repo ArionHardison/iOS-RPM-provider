@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class HealthFeedViewController: UIViewController {
 
     @IBOutlet weak var tableViewHealthFeed: UITableView!
-    
+     var article : [Article] =  [Article]()
     override func viewDidLoad() {
         super.viewDidLoad()
         initialLoads()
@@ -19,6 +20,7 @@ class HealthFeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        self.getArticleDetail()
     }
 
 
@@ -70,21 +72,55 @@ extension HealthFeedViewController : UITableViewDelegate, UITableViewDataSource 
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.article.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HealthFeedTableViewCell") as! HealthFeedTableViewCell
         cell.selectionStyle = .none
-        
+        self.setupData(cell: cell, data: self.article[indexPath.row] ?? Article())
         return cell
+    }
+    
+    func setupData(cell : HealthFeedTableViewCell , data : Article){
+        cell.articleImage.setURLImage(data.cover_photo ?? "")
+        cell.articleTitle.text = data.name ?? ""
+        cell.articleContent.text = data.description
+        cell.articledate.text = dateConvertor(data.created_at ?? "", _input: .date_time, _output: .DM)
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        self.push(id: Storyboard.Ids.HealthFeedDetailsViewController, animation: true)
+        let vc = HealthFeedDetailsViewController.initVC(storyBoardName: .main, vc: HealthFeedDetailsViewController.self, viewConrollerID: Storyboard.Ids.HealthFeedDetailsViewController)
+        vc.article =  self.article[indexPath.row] ?? Article()
+        self.push(from: self, ToViewContorller: vc)
     }
     
+    
+}
+
+//Api calls
+extension HealthFeedViewController : PresenterOutputProtocol{
+    func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        switch String(describing: modelClass) {
+            case model.type.ArticlesEntity:
+                guard let data = dataDict as? ArticlesEntity else { return }
+                self.article = data.article ?? [Article]()
+                self.tableViewHealthFeed.reloadData()
+                break
+            
+            default: break
+            
+        }
+    }
+    
+    func showError(error: CustomError) {
+        
+    }
+    
+    func getArticleDetail(){
+        let url = "\(Base.article.rawValue)"
+        self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: ArticlesEntity.self, token: true)
+    }
     
 }

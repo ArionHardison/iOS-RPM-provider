@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class CreateHealthFeedViewController: UIViewController {
     @IBOutlet weak var labelAddArticleString: UILabel!
@@ -17,6 +18,8 @@ class CreateHealthFeedViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var buttonPublish: UIButton!
     @IBOutlet weak var buttonAddImage: UIButton!
+    
+    var isImageAdded : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +40,77 @@ extension CreateHealthFeedViewController {
         self.navigationItem.title = Constants.string.healthFeed.localize()
 
         self.buttonAddImage.addTarget(self, action: #selector(chooseCoverPhoto), for: .touchUpInside)
+        self.setupAction()
+    }
+    
+    func setupAction(){
+        self.buttonPublish.addTap {
+            if self.validation(){
+                var article = ArticleReq()
+                article.name = self.textFieldTitle.getText
+                article.description = self.descriptionTextView.text
+                self.addArticleDetail(data: article)
+            }
+        }
     }
     
     @objc func chooseCoverPhoto(){
         self.showImage { (image) in
             if image != nil {
+                self.isImageAdded = true
                 self.coverImage.image = image
             }
         }
 
     }
+    
+    func validation() -> Bool{
+        if !isImageAdded{
+            showToast(msg: "Add Image for your Article")
+            return false
+        }else if self.textFieldTitle.getText.isEmpty{
+            
+            showToast(msg: "Enter your Article Title")
+            return false
+        }else if self.descriptionTextView.text.isEmpty{
+            showToast(msg: "Please Describe about your Article")
+            return false
+        }else{
+            return true
+        }
+    }
+}
+
+
+//Api calls
+extension CreateHealthFeedViewController : PresenterOutputProtocol{
+    func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        switch String(describing: modelClass) {
+            case model.type.CommonModel:
+                guard let data = dataDict as? CommonModel else { return }
+                showToast(msg: data.message ?? "")
+                self.popOrDismiss(animation: true)
+                break
+            
+            default: break
+            
+        }
+    }
+    
+    func showError(error: CustomError) {
+        
+    }
+    
+    func addArticleDetail(data : ArticleReq){
+        let url = "\(Base.addArticle.rawValue)"
+       
+        var uploadimgeData:Data = Data()
+        
+        if  let dataImg = self.coverImage.image?.jpegData(compressionQuality: 0.5) {
+            uploadimgeData = dataImg
+        }
+        
+        self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .POST, imgData: ["coverImage":uploadimgeData], imgName: "coverImage", modelClass: CommonModel.self, token: true)
+    }
+    
 }

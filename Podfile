@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Project' do
+target 'MiDokter Pro' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
@@ -13,4 +13,7 @@ target 'Project' do
     pod 'KWDrawerController', '~> 4.1.6'
     pod 'AlamofireObjectMapper'
     pod 'CLWeeklyCalendarView'
+    pod 'lottie-ios'
+    pod 'PINRemoteImage'
+
 end

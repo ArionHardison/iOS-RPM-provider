@@ -48,6 +48,17 @@ struct Constants {
     
     let chat = "Chat"
     let editProfile = "Edit Profile"
+    
+    let booked = "Booked"
+    let cancelled = "Cancelled"
+    let newPatient = "New Patients"
+    let repeatPatient = "Repeat Patients"
+    let appointment = "Appointment"
+    let revenu = "Revenue"
+    let showDate = "Showing date"
+    let change = "Change"
+    let paiddata = "Paid"
+    let pending = "Pending"
 
 }
 

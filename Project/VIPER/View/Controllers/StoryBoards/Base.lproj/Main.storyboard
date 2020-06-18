@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QaU-iy-v7H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QaU-iy-v7H">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,7 +38,7 @@
         <!--Side Bar Table View Controller-->
         <scene sceneID="78y-2x-VDw">
             <objects>
-                <tableViewController storyboardIdentifier="SideBarTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="Vyu-pP-qOr" customClass="SideBarTableViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SideBarTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="Vyu-pP-qOr" customClass="SideBarTableViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="wXT-an-MQt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +146,7 @@
         <!--Home View Controller-->
         <scene sceneID="weM-jv-Vtf">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="BfI-AU-mDM" customClass="HomeViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BfI-AU-mDM" customClass="HomeViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OJv-8q-0EJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,7 +188,7 @@
         <!--Launch View Controller-->
         <scene sceneID="llp-CX-ysV">
             <objects>
-                <viewController storyboardIdentifier="LaunchViewController" id="gDr-Ti-5Pd" customClass="LaunchViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchViewController" id="gDr-Ti-5Pd" customClass="LaunchViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F19-UY-vab">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,7 +268,7 @@
         <!--Sign In Mobile View Controller-->
         <scene sceneID="WOf-7V-c82">
             <objects>
-                <viewController storyboardIdentifier="SignInMobileViewController" id="SlG-FB-aFe" customClass="SignInMobileViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInMobileViewController" id="SlG-FB-aFe" customClass="SignInMobileViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iy9-V0-x7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +285,7 @@
                                         <color key="textColor" red="0.26534164510000002" green="0.26534164510000002" blue="0.26534164510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+91" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnP-bq-aTB" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+91" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnP-bq-aTB" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                         <rect key="frame" x="30" y="255.5" width="50" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="JpK-xH-P2Y"/>
@@ -301,7 +302,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duV-2F-qyx" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duV-2F-qyx" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                         <rect key="frame" x="90" y="255.5" width="200" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -399,7 +400,7 @@
         <!--Sign In Email View Controller-->
         <scene sceneID="Hd9-f6-xOX">
             <objects>
-                <viewController storyboardIdentifier="SignInEmailViewController" id="thX-Zm-Nf9" customClass="SignInEmailViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInEmailViewController" id="thX-Zm-Nf9" customClass="SignInEmailViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qgz-zu-FFp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -450,7 +451,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sHz-LX-zN3">
                                         <rect key="frame" x="32" y="232" width="256" height="102"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eth-om-Taf" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eth-om-Taf" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="256" height="43.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -466,7 +467,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2g-1r-5wt" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2g-1r-5wt" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="58.5" width="256" height="43.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -521,6 +522,8 @@
                     </view>
                     <connections>
                         <outlet property="buttonUsingMobile" destination="QBl-wl-ogD" id="qea-DA-CE3"/>
+                        <outlet property="emailTxt" destination="eth-om-Taf" id="V9u-or-4nT"/>
+                        <outlet property="passwordTxt" destination="F2g-1r-5wt" id="LG7-XS-Jzx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgB-Hh-j8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -530,7 +533,7 @@
         <!--Dash Board View Controller-->
         <scene sceneID="Ric-ay-MP7">
             <objects>
-                <viewController storyboardIdentifier="DashBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cTe-wk-cq2" customClass="DashBoardViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cTe-wk-cq2" customClass="DashBoardViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l5R-FI-6Sx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -552,8 +555,8 @@
                                                     <constraint firstAttribute="height" constant="40" id="PYM-bl-QON"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Raven" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pp-vc-WGS">
-                                                <rect key="frame" x="70" y="21.5" width="240" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pp-vc-WGS">
+                                                <rect key="frame" x="70" y="36" width="240" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -821,42 +824,39 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcm-Sm-YPM">
-                                                        <rect key="frame" x="172" y="34.5" width="100" height="28"/>
-                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="0mq-GV-Mic"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <state key="normal" title="Pending : 12.0">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-hl-26O">
-                                                        <rect key="frame" x="92" y="34.5" width="70" height="28"/>
-                                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="70" id="1vg-dm-3QR"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <state key="normal" title="Paid : 12.0">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LBl-YN-Cpr">
+                                                        <rect key="frame" x="80" y="34.5" width="203" height="28"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-hl-26O">
+                                                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="28"/>
+                                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <state key="normal" title="Paid : 12.0">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcm-Sm-YPM">
+                                                                <rect key="frame" x="106.5" y="0.0" width="96.5" height="28"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <state key="normal" title="Pending : 12.0">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="YyY-hl-26O" firstAttribute="leading" secondItem="BRp-Ee-vhr" secondAttribute="leading" id="0KF-ap-sBb"/>
+                                                    <constraint firstItem="LBl-YN-Cpr" firstAttribute="top" secondItem="BRp-Ee-vhr" secondAttribute="bottom" constant="10" id="3qO-Lm-3aw"/>
                                                     <constraint firstItem="BRp-Ee-vhr" firstAttribute="top" secondItem="ts3-6A-Npo" secondAttribute="top" id="45K-f3-z6q"/>
-                                                    <constraint firstItem="YyY-hl-26O" firstAttribute="top" secondItem="BRp-Ee-vhr" secondAttribute="bottom" constant="10" id="7mt-Pc-GWc"/>
-                                                    <constraint firstItem="zcm-Sm-YPM" firstAttribute="leading" secondItem="YyY-hl-26O" secondAttribute="trailing" constant="10" id="BGG-ur-7eX"/>
-                                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="zcm-Sm-YPM" secondAttribute="trailing" constant="40" id="CGs-XZ-Ph7"/>
                                                     <constraint firstItem="ts3-6A-Npo" firstAttribute="centerY" secondItem="6jq-oH-HRw" secondAttribute="centerY" id="J6W-Cu-C5d"/>
                                                     <constraint firstAttribute="trailing" secondItem="BRp-Ee-vhr" secondAttribute="trailing" constant="10" id="VAx-ue-g2c"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LBl-YN-Cpr" secondAttribute="trailing" constant="5" id="cZk-v9-QM3"/>
                                                     <constraint firstItem="BRp-Ee-vhr" firstAttribute="leading" secondItem="ts3-6A-Npo" secondAttribute="trailing" constant="17" id="duV-ml-zkZ"/>
                                                     <constraint firstAttribute="height" constant="70" id="gd0-gz-AuY"/>
                                                     <constraint firstItem="ts3-6A-Npo" firstAttribute="leading" secondItem="6jq-oH-HRw" secondAttribute="leading" constant="8" id="h6v-5a-yKW"/>
-                                                    <constraint firstItem="zcm-Sm-YPM" firstAttribute="centerY" secondItem="YyY-hl-26O" secondAttribute="centerY" id="vDl-Ds-4Wg"/>
+                                                    <constraint firstItem="LBl-YN-Cpr" firstAttribute="leading" secondItem="ts3-6A-Npo" secondAttribute="trailing" constant="5" id="qqo-Yg-AaT"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XU-gw-Kiz">
@@ -1086,8 +1086,27 @@
                         <viewLayoutGuide key="safeArea" id="dzu-Pm-uz8"/>
                     </view>
                     <connections>
+                        <outlet property="appointmentCountLbl" destination="5lO-Tf-F8j" id="QCj-l7-gpA"/>
+                        <outlet property="appointmentDateLbl" destination="kbE-sQ-9hb" id="WVk-1n-8Un"/>
+                        <outlet property="appointmentDateTitleLbl" destination="vyN-5Z-6eU" id="Gak-oH-y3d"/>
+                        <outlet property="bookedLbl" destination="s5V-xE-VH3" id="8fz-de-s08"/>
+                        <outlet property="bookedTitleLbl" destination="BZP-20-H67" id="JrE-gb-ALg"/>
                         <outlet property="buttonProfile" destination="3Sa-8U-eGt" id="gTk-CQ-ekS"/>
+                        <outlet property="cancelledLbl" destination="hSb-uU-x1V" id="QiL-Bg-Vp8"/>
+                        <outlet property="cancelledTitleLbl" destination="Wwz-PI-2Uf" id="NGa-b3-2Vf"/>
                         <outlet property="categoriesCollection" destination="oMw-DS-vcr" id="cCc-1b-Qoo"/>
+                        <outlet property="chageDateBtn" destination="2XU-gw-Kiz" id="mca-6m-Dl0"/>
+                        <outlet property="newPatientLbl" destination="BuY-jG-8eW" id="VrC-FA-6yt"/>
+                        <outlet property="newPatientTitleLbl" destination="uHf-56-05B" id="lWv-x8-d95"/>
+                        <outlet property="paidBtn" destination="YyY-hl-26O" id="b5l-6p-bf7"/>
+                        <outlet property="pendingBtn" destination="zcm-Sm-YPM" id="3vV-uP-5tB"/>
+                        <outlet property="repeatLbl" destination="cLn-2j-s16" id="fWv-HG-8OT"/>
+                        <outlet property="repeatTitleLbl" destination="zhT-7l-Dnf" id="F1n-UY-mjN"/>
+                        <outlet property="revenueLbl" destination="BRp-Ee-vhr" id="32b-EF-XEk"/>
+                        <outlet property="showDateLbl" destination="Mex-V6-Jsh" id="uEW-jp-vYm"/>
+                        <outlet property="showDateTitleLbl" destination="Ung-XP-yF8" id="adh-1B-WX4"/>
+                        <outlet property="userImg" destination="qwZ-b5-4VP" id="kN7-Gc-VtE"/>
+                        <outlet property="userNameLbl" destination="8pp-vc-WGS" id="Bcf-k6-rFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvL-aH-qJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1097,7 +1116,7 @@
         <!--Health Feed View Controller-->
         <scene sceneID="LJq-Yt-wZb">
             <objects>
-                <viewController storyboardIdentifier="HealthFeedViewController" id="8Id-FQ-hWc" customClass="HealthFeedViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HealthFeedViewController" id="8Id-FQ-hWc" customClass="HealthFeedViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ni-Lp-25Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1149,7 +1168,7 @@
         <!--Feed Back View Controller-->
         <scene sceneID="rnT-1r-ge4">
             <objects>
-                <viewController storyboardIdentifier="FeedBackViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e77-cX-vfu" customClass="FeedBackViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedBackViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e77-cX-vfu" customClass="FeedBackViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ZS-Ix-jYj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1166,7 +1185,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tYI-4j-lRO">
                                                         <rect key="frame" x="4" y="4" width="98.5" height="64"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsI-mq-ary">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsI-mq-ary">
                                                                 <rect key="frame" x="0.0" y="0.0" width="98.5" height="32"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" red="0.34330508110000002" green="0.60212343930000001" blue="0.95690304039999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1218,7 +1237,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qmr-2w-pnl">
                                                         <rect key="frame" x="4" y="4" width="98" height="64"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4p-W4-3xu">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4p-W4-3xu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="98" height="32"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" red="0.3920834064" green="0.65347528460000004" blue="0.32541143890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1271,7 +1290,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pfq-QK-bRH">
                                                         <rect key="frame" x="4" y="4" width="98.5" height="64"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-Um-H6P">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-Um-H6P">
                                                                 <rect key="frame" x="0.0" y="0.0" width="98.5" height="32"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" red="0.92493546010000005" green="0.35773298139999998" blue="0.33328789469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1365,7 +1384,7 @@
         <!--Patients View Controller-->
         <scene sceneID="t9d-LB-SYI">
             <objects>
-                <viewController storyboardIdentifier="PatientsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="goc-ea-bBI" customClass="PatientsViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PatientsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="goc-ea-bBI" customClass="PatientsViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWy-XZ-MUI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1399,7 +1418,7 @@
         <!--Chat View Controller-->
         <scene sceneID="75n-K1-xkM">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Brc-kX-lMW" customClass="ChatViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Brc-kX-lMW" customClass="ChatViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vAX-rH-D0H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1433,7 +1452,7 @@
         <!--Patients Information View Controller-->
         <scene sceneID="num-wN-9Y5">
             <objects>
-                <viewController storyboardIdentifier="PatientsInformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Rr-Nu-W9V" customClass="PatientsInformationViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PatientsInformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Rr-Nu-W9V" customClass="PatientsInformationViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lmf-1X-mU6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1668,7 +1687,7 @@
         <!--Block Calendar View Controller-->
         <scene sceneID="19G-iH-E7s">
             <objects>
-                <viewController storyboardIdentifier="BlockCalendarViewController" id="j2I-n1-UUM" customClass="BlockCalendarViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlockCalendarViewController" id="j2I-n1-UUM" customClass="BlockCalendarViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Obw-wL-DKO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1884,7 +1903,7 @@
         <!--Add Appointment Table View Controller-->
         <scene sceneID="rWm-0C-p6L">
             <objects>
-                <tableViewController storyboardIdentifier="AddAppointmentTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CJb-gc-d7a" customClass="AddAppointmentTableViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddAppointmentTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CJb-gc-d7a" customClass="AddAppointmentTableViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="heg-rM-fK1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1902,7 +1921,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvD-9K-p6b">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-xD-u9G" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-xD-u9G" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="z9l-lU-NSB"/>
@@ -1951,7 +1970,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMb-Lm-8E7">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GCq-VY-Zgd" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GCq-VY-Zgd" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="ZFv-P0-qsM"/>
@@ -2000,7 +2019,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-du-a0h">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Pj-dh-r4A" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Pj-dh-r4A" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="Sn5-qb-ldy"/>
@@ -2049,7 +2068,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxV-79-Z6E">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWA-wx-BvH" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWA-wx-BvH" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="wTc-FO-DlE"/>
@@ -2098,7 +2117,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRc-Fm-VsE">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sex" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IwJ-zN-wBx" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sex" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IwJ-zN-wBx" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="F54-zs-84O"/>
@@ -2147,7 +2166,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Etg-zR-0zf">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-B1-xRz" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-B1-xRz" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="94l-qT-zpy"/>
@@ -2295,7 +2314,7 @@
         <!--Edit Appointment Table View Controller-->
         <scene sceneID="aNy-34-8VH">
             <objects>
-                <tableViewController storyboardIdentifier="EditAppointmentTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zwf-8P-OMd" customClass="EditAppointmentTableViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EditAppointmentTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zwf-8P-OMd" customClass="EditAppointmentTableViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BZR-s4-4Nb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2661,7 +2680,7 @@
         <!--Edit Patient Information Table View Controller-->
         <scene sceneID="n1g-EL-o0W">
             <objects>
-                <tableViewController storyboardIdentifier="EditPatientInformationTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DEW-xR-MJU" customClass="EditPatientInformationTableViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EditPatientInformationTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DEW-xR-MJU" customClass="EditPatientInformationTableViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VUN-BH-Sff">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2707,7 +2726,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yg2-Ot-Ucb" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yg2-Ot-Ucb" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="88" y="10" width="220" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="H8r-g3-jYz"/>
@@ -2758,7 +2777,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXm-Z2-X6F">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient ID (Auto Generated)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D76-og-Ahh" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient ID (Auto Generated)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D76-og-Ahh" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="204-qq-XJI"/>
@@ -2807,7 +2826,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyL-zH-jE0">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primary Mobile" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XjS-uc-O7I" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primary Mobile" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XjS-uc-O7I" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="u7B-zG-cuj"/>
@@ -2856,7 +2875,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-Oi-VpI">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Secondary Mobile" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qU4-Nh-8cm" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Secondary Mobile" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qU4-Nh-8cm" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="CKL-Lz-WFu"/>
@@ -2905,7 +2924,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGS-Rb-xw9">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vqA-c2-d7E" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vqA-c2-d7E" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="tdW-yE-QXa"/>
@@ -2954,7 +2973,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01x-hH-avf">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sex" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vwy-o5-ACw" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sex" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vwy-o5-ACw" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="VXb-29-ua5"/>
@@ -3003,7 +3022,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLW-E6-lPH">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birth Day" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11r-2M-qJC" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birth Day" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11r-2M-qJC" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="g3f-Ok-SgH"/>
@@ -3052,7 +3071,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9Q-fe-hiW">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Blood Group" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zf-cr-aFr" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Blood Group" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zf-cr-aFr" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="Waz-05-xIr"/>
@@ -3137,7 +3156,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFG-an-M3t">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ShI-RC-dR6" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ShI-RC-dR6" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="3hb-Sm-Nnu"/>
@@ -3186,7 +3205,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hjo-Th-n1e">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Locality" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QU-g8-TuM" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Locality" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QU-g8-TuM" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="UQQ-rQ-IMt"/>
@@ -3235,7 +3254,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnO-Es-H3D">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yy-uw-C4i" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yy-uw-C4i" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="Fmz-9W-erG"/>
@@ -3284,7 +3303,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi0-Lm-bZT">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pincode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eaq-Im-5Y7" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pincode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eaq-Im-5Y7" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="e3N-Y0-cEg"/>
@@ -3333,7 +3352,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L88-ev-fUQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3gL-aS-CsX" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3gL-aS-CsX" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="292" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="F5J-nk-vJa"/>
@@ -3423,7 +3442,7 @@
         <!--Appointment Details View Controller-->
         <scene sceneID="k1D-zz-y61">
             <objects>
-                <viewController storyboardIdentifier="AppointmentDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c5k-Qi-d1V" customClass="AppointmentDetailsViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppointmentDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c5k-Qi-d1V" customClass="AppointmentDetailsViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p3Y-dF-c1x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3749,7 +3768,7 @@
         <!--Create Health Feed View Controller-->
         <scene sceneID="LzW-iJ-dVh">
             <objects>
-                <viewController storyboardIdentifier="CreateHealthFeedViewController" id="gNE-Zp-0dc" customClass="CreateHealthFeedViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateHealthFeedViewController" id="gNE-Zp-0dc" customClass="CreateHealthFeedViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fcV-UB-dmP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3763,7 +3782,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nf4-Jb-eFN" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nf4-Jb-eFN" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                         <rect key="frame" x="10" y="38.5" width="290" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="XuL-BH-WpU"/>
@@ -3899,7 +3918,7 @@
         <!--Health Feed Details View Controller-->
         <scene sceneID="PCE-OC-7p9">
             <objects>
-                <viewController storyboardIdentifier="HealthFeedDetailsViewController" id="4sN-uu-3wO" customClass="HealthFeedDetailsViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HealthFeedDetailsViewController" id="4sN-uu-3wO" customClass="HealthFeedDetailsViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fOq-bM-aWn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3930,28 +3949,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="soe-Ta-wQd">
-                                        <rect key="frame" x="10" y="192" width="300" height="366"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Stay HealthyStay HealthyStay HealthyStay HealthyStay HealthyStay HealthyStay HealthyStay HealthyStay HealthyStay Healthy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNE-sp-8c0">
+                                        <rect key="frame" x="10" y="194" width="300" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="soe-Ta-wQd" firstAttribute="top" secondItem="YB9-pE-Puz" secondAttribute="bottom" constant="8" id="8id-lm-bfr"/>
                                     <constraint firstItem="qMf-jX-9C4" firstAttribute="top" secondItem="wcS-ga-5gA" secondAttribute="top" constant="10" id="8kg-0w-XGV"/>
                                     <constraint firstItem="YB9-pE-Puz" firstAttribute="leading" secondItem="oA7-5B-TgJ" secondAttribute="leading" id="AGM-dT-HzW"/>
-                                    <constraint firstItem="soe-Ta-wQd" firstAttribute="leading" secondItem="YB9-pE-Puz" secondAttribute="leading" id="GWB-EE-BDV"/>
                                     <constraint firstItem="qMf-jX-9C4" firstAttribute="leading" secondItem="wcS-ga-5gA" secondAttribute="leading" constant="10" id="HBZ-mC-ZTi"/>
-                                    <constraint firstAttribute="bottom" secondItem="soe-Ta-wQd" secondAttribute="bottom" constant="10" id="JiV-64-2e7"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dNE-sp-8c0" secondAttribute="bottom" constant="10" id="Kag-13-slT"/>
+                                    <constraint firstItem="dNE-sp-8c0" firstAttribute="leading" secondItem="wcS-ga-5gA" secondAttribute="leading" constant="10" id="Kd0-zm-VwD"/>
                                     <constraint firstItem="YB9-pE-Puz" firstAttribute="top" secondItem="oA7-5B-TgJ" secondAttribute="bottom" constant="8" id="OoN-cB-Dkn"/>
                                     <constraint firstItem="oA7-5B-TgJ" firstAttribute="leading" secondItem="qMf-jX-9C4" secondAttribute="leading" id="Tx8-tk-Tim"/>
                                     <constraint firstAttribute="trailing" secondItem="qMf-jX-9C4" secondAttribute="trailing" constant="10" id="cfu-1k-6yq"/>
                                     <constraint firstItem="oA7-5B-TgJ" firstAttribute="top" secondItem="qMf-jX-9C4" secondAttribute="bottom" constant="8" id="ddJ-yF-spt"/>
-                                    <constraint firstAttribute="trailing" secondItem="soe-Ta-wQd" secondAttribute="trailing" constant="10" id="o5w-Kn-PZ8"/>
+                                    <constraint firstAttribute="trailing" secondItem="dNE-sp-8c0" secondAttribute="trailing" constant="10" id="hFi-59-h2g"/>
+                                    <constraint firstItem="dNE-sp-8c0" firstAttribute="top" secondItem="YB9-pE-Puz" secondAttribute="bottom" constant="10" id="iMN-WZ-z9h"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -3964,15 +3981,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DmZ-8p-cGd"/>
                     </view>
+                    <connections>
+                        <outlet property="articleContent" destination="dNE-sp-8c0" id="15w-xE-5eb"/>
+                        <outlet property="articleImage" destination="qMf-jX-9C4" id="tdw-E5-Fpy"/>
+                        <outlet property="articleTitle" destination="YB9-pE-Puz" id="mgZ-Gg-g9m"/>
+                        <outlet property="articledate" destination="oA7-5B-TgJ" id="ety-lu-BR1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1R-Hf-bbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4538" y="1392"/>
+            <point key="canvasLocation" x="4537.5" y="1391.1971830985915"/>
         </scene>
         <!--Profie View Controller-->
         <scene sceneID="qGT-D3-nuS">
             <objects>
-                <viewController storyboardIdentifier="ProfieViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rOG-iu-Djp" customClass="ProfieViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfieViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rOG-iu-Djp" customClass="ProfieViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6TD-0z-Hdy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4065,7 +4088,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClinicTableCell" rowHeight="80" id="Zqn-GE-JCb" customClass="ClinicTableCell" customModule="Project" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClinicTableCell" rowHeight="80" id="Zqn-GE-JCb" customClass="ClinicTableCell" customModule="MiDokter_Pro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="252" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zqn-GE-JCb" id="izU-xf-g6T">
@@ -4113,13 +4136,26 @@
                                     <outlet property="delegate" destination="rOG-iu-Djp" id="Kbg-pK-EbS"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooT-al-FVH">
+                                <rect key="frame" x="20" y="508" width="280" height="40"/>
+                                <color key="backgroundColor" name="AppBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LV9-Nw-RVE"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ayU-9t-64Q" firstAttribute="top" secondItem="WGO-8k-JgX" secondAttribute="top" id="2c0-7z-o9R"/>
+                            <constraint firstItem="WGO-8k-JgX" firstAttribute="trailing" secondItem="ooT-al-FVH" secondAttribute="trailing" constant="20" id="6Dg-Hd-dPb"/>
                             <constraint firstItem="WGO-8k-JgX" firstAttribute="bottom" secondItem="ayU-9t-64Q" secondAttribute="bottom" id="gr1-5J-ePO"/>
                             <constraint firstItem="WGO-8k-JgX" firstAttribute="trailing" secondItem="ayU-9t-64Q" secondAttribute="trailing" id="gtg-Dk-eGM"/>
                             <constraint firstItem="ayU-9t-64Q" firstAttribute="leading" secondItem="WGO-8k-JgX" secondAttribute="leading" id="mAf-uQ-BJm"/>
+                            <constraint firstItem="ooT-al-FVH" firstAttribute="leading" secondItem="WGO-8k-JgX" secondAttribute="leading" constant="20" id="ntb-ry-wne"/>
+                            <constraint firstItem="WGO-8k-JgX" firstAttribute="bottom" secondItem="ooT-al-FVH" secondAttribute="bottom" constant="20" id="w2w-hG-6bj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WGO-8k-JgX"/>
                     </view>
@@ -4129,6 +4165,7 @@
                         <outlet property="labelExperience" destination="LaD-40-KqE" id="3CT-1h-Otl"/>
                         <outlet property="labelName" destination="Unk-rr-s49" id="QaL-19-coj"/>
                         <outlet property="labelQualification" destination="R1b-vf-rBs" id="6un-DS-F1t"/>
+                        <outlet property="logoutBtn" destination="ooT-al-FVH" id="9ql-Dd-XOA"/>
                         <outlet property="profileImage" destination="N0f-UO-tua" id="Ld9-qb-VBW"/>
                     </connections>
                 </viewController>
@@ -4139,7 +4176,7 @@
         <!--Edit Profile Table View Controller-->
         <scene sceneID="SS1-b3-hJy">
             <objects>
-                <tableViewController storyboardIdentifier="EditProfileTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="92o-ux-dpX" customClass="EditProfileTableViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EditProfileTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="92o-ux-dpX" customClass="EditProfileTableViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zTq-uy-Qn9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4182,10 +4219,19 @@
                                                                         <constraint firstAttribute="height" constant="100" id="8JW-DB-4TX"/>
                                                                     </constraints>
                                                                 </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey7-Dy-dnZ">
+                                                                    <rect key="frame" x="110" y="-50" width="100" height="100"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="GFD-8B-PW4"/>
+                                                                        <constraint firstAttribute="height" constant="100" id="SLR-xl-HSD"/>
+                                                                    </constraints>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="rVS-x4-f1r" firstAttribute="centerX" secondItem="9dx-3c-Q6U" secondAttribute="centerX" id="NtO-YQ-nU0"/>
+                                                                <constraint firstItem="ey7-Dy-dnZ" firstAttribute="centerX" secondItem="9dx-3c-Q6U" secondAttribute="centerX" id="V35-Ju-kF1"/>
+                                                                <constraint firstItem="ey7-Dy-dnZ" firstAttribute="top" secondItem="9dx-3c-Q6U" secondAttribute="top" constant="-50" id="XBC-Lh-BzO"/>
                                                                 <constraint firstItem="rVS-x4-f1r" firstAttribute="top" secondItem="9dx-3c-Q6U" secondAttribute="top" constant="-50" id="ydC-lD-NKi"/>
                                                             </constraints>
                                                         </view>
@@ -4224,7 +4270,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="h6b-kZ-6ab">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4tB-sY-ndX" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4tB-sY-ndX" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="136" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="Eel-qT-0Xh"/>
@@ -4246,7 +4292,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </textField>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Uh-Hy-Dit" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Uh-Hy-Dit" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                                     <rect key="frame" x="152" y="0.0" width="136" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="aMp-xr-q16"/>
@@ -4304,7 +4350,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YWV-th-zR0">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Specialization" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-E5-AgA" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Specialization" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-E5-AgA" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="5Ob-Rv-LwI"/>
@@ -4361,7 +4407,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-CZ-f1Y">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gli-jy-TjI" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gli-jy-TjI" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="fdX-MD-f1C"/>
@@ -4418,7 +4464,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fu0-e9-2aF">
                                                             <rect key="frame" x="16" y="10" width="288" height="60"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c30-mH-v4i" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c30-mH-v4i" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="6Fe-4R-vXS"/>
@@ -4520,6 +4566,14 @@
                     <size key="freeformSize" width="320" height="700"/>
                     <connections>
                         <outlet property="buttonChangePassword" destination="Dwo-gD-kPc" id="yru-sZ-Dnq"/>
+                        <outlet property="buttonSave" destination="j2L-NN-sPl" id="3kI-jK-uBW"/>
+                        <outlet property="editProfileImgBtn" destination="ey7-Dy-dnZ" id="0kw-he-jQa"/>
+                        <outlet property="labelEmail" destination="c30-mH-v4i" id="ddJ-ov-X0G"/>
+                        <outlet property="labelFirstName" destination="4tB-sY-ndX" id="FxJ-uV-z3X"/>
+                        <outlet property="labelLastName" destination="8Uh-Hy-Dit" id="e5k-h8-3XP"/>
+                        <outlet property="labelMobileNum" destination="gli-jy-TjI" id="a6h-T4-CwM"/>
+                        <outlet property="labelQualification" destination="kTa-E5-AgA" id="mAE-bR-y06"/>
+                        <outlet property="profileImage" destination="rVS-x4-f1r" id="JZN-pn-GJ7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgB-Lf-OCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4529,7 +4583,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="n9g-Ra-n28">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hp4-Mr-tRX" customClass="ChangePasswordViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hp4-Mr-tRX" customClass="ChangePasswordViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uov-Bc-Mrv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4565,7 +4619,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SlL-3z-0D1">
                                         <rect key="frame" x="16" y="16" width="288" height="196"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-ZW-nNt" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-ZW-nNt" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="y3q-QI-d0z"/>
@@ -4587,7 +4641,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-LU-CN4" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-LU-CN4" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="68" width="288" height="60"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -4606,7 +4660,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-0b-9T6" customClass="HoshiTextField" customModule="Project" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-0b-9T6" customClass="HoshiTextField" customModule="MiDokter_Pro" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="136" width="288" height="60"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -4668,6 +4722,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k9e-AX-wcc"/>
                     </view>
+                    <connections>
+                        <outlet property="changepassBtn" destination="3L8-G2-YSS" id="cEf-Ae-V3N"/>
+                        <outlet property="confirPassTxt" destination="YO4-0b-9T6" id="Y4q-9L-bTA"/>
+                        <outlet property="newPassTxt" destination="E2S-LU-CN4" id="0mm-nF-qD3"/>
+                        <outlet property="oldPassTxt" destination="1oE-ZW-nNt" id="6jQ-Mz-0sb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCY-Yf-QP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4676,7 +4736,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="bPw-XN-im9">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CFQ-q1-xwj" customClass="CalendarViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CFQ-q1-xwj" customClass="CalendarViewController" customModule="MiDokter_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q7z-rJ-GSo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4835,5 +4895,8 @@
         <image name="Taking-Care-of-Health- article" width="355" height="156"/>
         <image name="menu_icon" width="64" height="50"/>
         <image name="userPlaceholder" width="128" height="128"/>
+        <namedColor name="AppBlueColor">
+            <color red="0.29019607843137257" green="0.5607843137254902" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -149,7 +149,7 @@ extension SideBarTableViewController {
         let alert = UIAlertController(title: nil, message: Constants.string.areYouSureWantToLogout.localize(), preferredStyle: .actionSheet)
         let logoutAction = UIAlertAction(title: Constants.string.logout.localize(), style: .destructive) { (_) in
             self.loader.isHidden = false
-            self.presenter?.HITAPI(api: Base.login.rawValue, params: nil, methodType: .POST, modelClass: LoginModel.self, token: false)
+            self.presenter?.HITAPI(api: Base.logout.rawValue, params: nil, methodType: .POST, modelClass: LoginModel.self, token: false)
         }
         
         let cancelAction = UIAlertAction(title: Constants.string.Cancel.localize(), style: .cancel, handler: nil)

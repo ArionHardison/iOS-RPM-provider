@@ -69,13 +69,7 @@
         
         func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
             print("Called")
-            if String(describing: modelClass) == model.type.Json4Swift_Base {
-                self.loader.isHidden = true
-                self.userDataResponse = dataDict as? Json4Swift_Base
-                print("*********Token", self.userDataResponse?.success?.text)
-                print(self.userDataResponse as Any)
-                
-            }
+           
         }
         
         func showError(error: CustomError) {
@@ -84,13 +78,6 @@
         
     }
 
-    
-    struct model {
-        
-        static let type = model()
-        
-        let RegisterModel = "RegisterModel"
-        let LoginModel = "LoginModel"
-        let Json4Swift_Base = "Json4Swift_Base"
-        
-    }
+  
+
+

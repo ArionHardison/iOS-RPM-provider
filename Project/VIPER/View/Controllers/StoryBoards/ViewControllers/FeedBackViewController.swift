@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class FeedBackViewController: UIViewController {
 
@@ -14,16 +15,19 @@ class FeedBackViewController: UIViewController {
     @IBOutlet weak var labelExperienceCount: UILabel!
     @IBOutlet weak var labelPositiveCount: UILabel!
     @IBOutlet weak var labelNegativeCount: UILabel!
+    
+    var feedbackList : FeedBackEntity = FeedBackEntity()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         initialLoads()
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        self.getFeedBackDetail()
     }
 
 
@@ -52,14 +56,76 @@ extension FeedBackViewController {
 
 extension FeedBackViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        Log.i("Feedbackount====>\(self.feedbackList.feedback?.count ?? 0)")
+        return self.feedbackList.feedback?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedBackTableViewCell") as! FeedBackTableViewCell
-        cell.selectionStyle = .none
-        cell.labelName.text = "Ram"
-        cell.labelVisitedFor.text = "Visited for Viral Fever"
-        cell.labelComments.text = "Very Patient and impressed with his care, Listen to patient intently and in detail."
+        self.setupCellData(cell: cell, data: self.feedbackList.feedback?[indexPath.row] ?? Feedback())
         return cell
     }
+    
+    func setupCellData(cell : FeedBackTableViewCell , data : Feedback){
+        cell.labelName.text = "\(data.patient?.first_name ?? "") \(data.patient?.last_name ?? "")"
+        self.setLbl(label: cell.labelVisitedFor, visited: "Visited for ", visitedFor: "\(data.visited_for ?? "")") 
+        cell.labelComments.text = data.comments ?? ""
+        cell.labelTime.text = dateConvertor(data.created_at ?? "", _input: .date_time, _output: .MDY)
+        if (data.experiences ?? "") == "LIKE"{
+            cell.satusImage.setImage("Like", .yes, .green)
+        }else{
+            cell.satusImage.setImage("dislike", .yes, .red)
+        }
+    }
+    
+    
+    func setLbl(label : UILabel , visited : String , visitedFor : String){
+        let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.darkGray]
+        
+        let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.black]
+        
+        let attributedString1 = NSMutableAttributedString(string: "\(visited)", attributes:attrs1)
+        
+        let attributedString2 = NSMutableAttributedString(string:"\(visitedFor)", attributes:attrs2)
+        
+        attributedString1.append(attributedString2)
+        label.attributedText = attributedString1
+    }
+}
+
+
+//Api calls
+extension FeedBackViewController : PresenterOutputProtocol{
+    func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        switch String(describing: modelClass) {
+            case model.type.FeedBackEntity:
+                guard let data = dataDict as? FeedBackEntity else { return }
+                
+                self.populateData(data: data)
+                break
+            
+            default: break
+            
+        }
+    }
+    
+    func showError(error: CustomError) {
+        
+    }
+    
+    func getFeedBackDetail(){
+        let url = "\(Base.feedback.rawValue)"
+        self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: FeedBackEntity.self, token: true)
+    }
+    
+    
+    func populateData(data : FeedBackEntity){
+        self.labelExperienceCount.text = data.experiences_count?.description ?? "0"
+        self.labelNegativeCount.text = data.negative_count?.description ?? "0"
+        self.labelPositiveCount.text = data.positive_count?.description ?? "0"
+        self.feedbackList = data
+        self.feebacksList.reloadData()
+    }
+    
+    
+    
 }

@@ -16,7 +16,23 @@ PODS:
   - KWDrawerController (4.1.6):
     - KWDrawerController/Core (= 4.1.6)
   - KWDrawerController/Core (4.1.6)
+  - lottie-ios (3.1.8)
   - ObjectMapper (3.4.2)
+  - PINCache (3.0.1-beta.8):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.8)
+    - PINCache/Core (= 3.0.1-beta.8)
+  - PINCache/Arc-exception-safe (3.0.1-beta.8):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.8):
+    - PINOperation (~> 1.1.1)
+  - PINOperation (1.1.2)
+  - PINRemoteImage (3.0.0):
+    - PINRemoteImage/PINCache (= 3.0.0)
+  - PINRemoteImage/Core (3.0.0):
+    - PINOperation
+  - PINRemoteImage/PINCache (3.0.0):
+    - PINCache (= 3.0.1-beta.8)
+    - PINRemoteImage/Core
   - PopupDialog (0.7.1):
     - DynamicBlurView (~> 2.0)
 
@@ -28,6 +44,8 @@ DEPENDENCIES:
   - GooglePlaces
   - IQKeyboardManagerSwift
   - KWDrawerController (~> 4.1.6)
+  - lottie-ios
+  - PINRemoteImage
   - PopupDialog (~> 0.7)
 
 SPEC REPOS:
@@ -43,6 +61,10 @@ SPEC REPOS:
     - PopupDialog
   trunk:
     - CLWeeklyCalendarView
+    - lottie-ios
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -53,9 +75,13 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   KWDrawerController: bf8fc10ddc596ddbfdabda401357a99dba04a1c8
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  PINCache: 534fd41d358d828dfdf227a0d327f3673a65e20b
+  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
+  PINRemoteImage: e2b89e19fb6e77ffc099f9d9f3b3fe1745e3f9f9
   PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
 
-PODFILE CHECKSUM: 01d00640f06288fcac37751174886bdf200c563f
+PODFILE CHECKSUM: d8893586d95ad0a0dc98d0804d1dfeab4054f21d
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
