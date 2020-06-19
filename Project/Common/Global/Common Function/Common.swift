@@ -314,7 +314,9 @@ enum DateTimeFormate : String{
     case MY = "MM/YYYY"
     case R_hour = "HH:mm"
     case N_hour = "hh:mm a"
+    case date_time_Z = "yyyy-MM-dd HH:mm:ss z"
     case date_time = "yyyy-MM-dd HH:mm:ss"
+    case edmy = "EEE dd MMM YYYY"
     case DM = "dd MMM"
     case MDY = "MMM dd, yyyy"
 }

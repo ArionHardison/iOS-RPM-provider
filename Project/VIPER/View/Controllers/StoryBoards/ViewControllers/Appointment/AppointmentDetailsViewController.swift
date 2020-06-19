@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class AppointmentDetailsViewController: UIViewController {
 
@@ -25,15 +26,41 @@ class AppointmentDetailsViewController: UIViewController {
     @IBOutlet weak var recentListTableHeight: NSLayoutConstraint!
     
     var notifyView : NotifyView!
+    var appoinment : All_appointments = All_appointments()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         initialLoads()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        self.populateData()
+        self.setupAction()
+    }
+    
+    func populateData(){
+        if let appoinment : All_appointments = self.appoinment{
+            
+            if let data : Patient = appoinment.patient{
+                
+            self.patientImage.makeRoundedCorner()
+            self.patientImage.setURLImage(data.profile?.profile_pic ?? "")
+            self.labelPatientName.text = "\(data.first_name ?? "") \(data.last_name ?? "")"
+            self.labelPatientID.text = "\(data.id ?? 0)"
+            self.labelPatientDetails.text = "\(data.profile?.age ?? "" ) years, \(data.profile?.gender ?? "")"
+            }
+            
+            self.labelDoctorName.text = "\(profile.doctor?.first_name ?? "") \(profile.doctor?.last_name ?? "")"
+            self.labelAppointmentDetails.text = dateConvertor(appoinment.scheduled_at ?? "", _input: .date_time, _output: .DMY_Time)
+            
+        }
+    }
+    
+    func setupAction(){
+        self.buttonCancelAppointment.addTap {
+            self.cancelAppointmentDetail(id: self.appoinment.id?.description ?? "0")
+        }
     }
 }
 extension AppointmentDetailsViewController {
@@ -48,6 +75,8 @@ extension AppointmentDetailsViewController {
         self.buttonMark.addTarget(self, action: #selector(MarkAction(sender:)), for: .touchUpInside)
         self.recentListTableHeight.constant = 30 + (10 * 60)
         
+        
+        
     }
     func registerCell(){
         self.recentListTable.tableFooterView = UIView()
@@ -58,8 +87,10 @@ extension AppointmentDetailsViewController {
     }
     
     @IBAction func editAction() {
-        
-        self.push(id: Storyboard.Ids.EditAppointmentTableViewController, animation: true)
+        let vc = EditAppointmentTableViewController.initVC(storyBoardName: .main, vc: EditAppointmentTableViewController.self, viewConrollerID: Storyboard.Ids.EditAppointmentTableViewController)
+        vc.appoinment = self.appoinment
+        self.push(from: self, ToViewContorller: vc)
+//        self.push(id: Storyboard.Ids.EditAppointmentTableViewController, animation: true)
     }
     
     @IBAction func MarkAction(sender:UIButton){
@@ -92,7 +123,7 @@ extension AppointmentDetailsViewController {
 
 extension AppointmentDetailsViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = self.recentListTable.dequeueReusableCell(withIdentifier: "RecentHistoryTableViewCell", for: indexPath) as! RecentHistoryTableViewCell
@@ -117,4 +148,33 @@ extension AppointmentDetailsViewController : UITableViewDelegate,UITableViewData
         return 30
     }
 
+}
+
+//Api calls
+extension AppointmentDetailsViewController : PresenterOutputProtocol{
+    func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        switch String(describing: modelClass) {
+            
+            case model.type.CommonModel:
+                guard let data = dataDict as? CommonModel else { return }
+                showToast(msg: data.message ?? "")
+                self.popOrDismiss(animation: true)
+                print("Datatata",data)
+                break
+            
+            default: break
+            
+        }
+    }
+    
+    func showError(error: CustomError) {
+        
+    }
+  
+    
+    func cancelAppointmentDetail(id : String){
+        
+        let url = "\(Base.cancelAppoinemnt.rawValue)"
+        self.presenter?.HITAPI(api: url, params: ["id": id], methodType: .POST, modelClass: CommonModel.self, token: true)
+    }
 }

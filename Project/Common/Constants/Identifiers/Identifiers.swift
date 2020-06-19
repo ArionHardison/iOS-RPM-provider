@@ -35,6 +35,7 @@ struct Storyboard {
     let EditAppointmentTableViewController = "EditAppointmentTableViewController"
     let AddAppointmentTableViewController = "AddAppointmentTableViewController"
     let BlockCalendarViewController = "BlockCalendarViewController"
+    let AlertVC = "AlertVC"
 }
 
 

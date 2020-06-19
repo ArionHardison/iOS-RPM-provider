@@ -61,7 +61,7 @@ extension Webservice : WebServiceProtocol {
             print("**token", UserDefaultConfig.Token ?? "")
             
             Alamofire.request(url, method: httpMethod!, parameters: params,encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
-                print("response.result",response.result)
+                print("response.result",response    )
                 switch response.result {
                 case .failure:
                     print("ERROR---\(response.error?.localizedDescription ?? "API ERROR")")

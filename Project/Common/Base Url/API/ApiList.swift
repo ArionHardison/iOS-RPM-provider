@@ -48,6 +48,12 @@ enum Base : String{
     case profile = "/api/hospital/profile"
     case changePassword = "/api/hospital/change_password"
     case updateProfile = "/api/hospital/update_profile"
+    case appoinemnt = "/api/hospital/calender"
+    case addAppoinemnt = "/api/hospital/add_appointment"
+    case cancelAppoinemnt = "/api/hospital/cancel_appointment"
+    case blockCalender = "/api/hospital/block_calender"
+    case editAppointment = "/api/hospital/edit_appointment"
+    case patient = "/api/hospital/patient"
     
     init(fromRawValue: String){
         self = Base(rawValue: fromRawValue) ?? .signUp
@@ -80,5 +86,10 @@ struct model {
     let ArticlesEntity = "ArticlesEntity"
     let CommonModel = "CommonModel"
     let ProfileEntity = "ProfileEntity"
+    let AppointmentModel = "AppointmentModel"
+    let PatientModel = "PatientModel"
     
 }
+
+
+
