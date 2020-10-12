@@ -48,7 +48,6 @@
             login.device_token = deviceTokenString
             self.loader.isHidden = false
             
-            
             self.presenter?.HITAPI(api: "api/v1/create", params: ["name":"test","salary":"123","age":"23"], methodType: .POST, modelClass: Json4Swift_Base.self, token: false)
             
         }

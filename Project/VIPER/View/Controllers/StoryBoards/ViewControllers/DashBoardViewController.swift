@@ -40,6 +40,7 @@ class DashBoardViewController: UIViewController {
     let titles = ["Reach","Calender","Patients","Feedback","Chat","Health Feed"]
     
     
+    var timerGetRequest: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +55,23 @@ class DashBoardViewController: UIViewController {
         self.getDashboardDetail(fromdate: date, todate: date)
         showDateLbl.text = "\(dateConvertor(Date().description, _input: .date_time, _output: .DM)) - \(dateConvertor(Date().description, _input: .date_time, _output: .DM))"
         self.profileApi()
+         timerGetRequest = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.checkChatRequest), userInfo: nil, repeats: true)
+         NotificationCenter.default.addObserver(self, selector: #selector(self.inValidateTimer(_:)), name: NSNotification.Name(rawValue: "InValidateTimer"), object: nil)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        //  self.navigationController?.isNavigationBarHidden = false
+        timerGetRequest?.invalidate()
+        timerGetRequest = nil
+    }
+    @objc func inValidateTimer(_ notification: NSNotification) {
+        timerGetRequest?.invalidate()
+        timerGetRequest = nil
+    }
+    
+    @objc private func checkChatRequest(){
+        self.getChatRequest()
+    }
     
 
 }
@@ -175,15 +191,27 @@ extension DashBoardViewController : PresenterOutputProtocol{
         switch String(describing: modelClass) {
             case model.type.DashBoardEntity:
                 guard let data = dataDict as? DashBoardEntity else { return }
+                
                 self.populateData(data: data)
                 break
             case model.type.ProfileEntity:
                 guard let data = dataDict as? ProfileEntity else { return }
                 profile = data
+                UserDefaultConfig.UserID = (data.doctor?.id ?? 0).description
                 self.userNameLbl.text = "\(data.doctor?.first_name ?? "") \(data.doctor?.last_name ?? "")"
                 self.userImg.setURLImage("\(data.doctor?.doctor_profile?.profile_pic ?? "")")
               
                 break
+            case model.type.ChatRequest :
+                
+                guard let data = dataDict as? ChatRequest else { return }
+                guard let request = data.request as? Request else { return }
+                let incomingVC = IncomingRequestController.initVC(storyBoardName: .main, vc: IncomingRequestController.self, viewConrollerID: "IncomingRequestController")
+                incomingVC.modalPresentationStyle = .overCurrentContext
+                incomingVC.delegate = self
+                incomingVC.requestData = data
+                present(incomingVC, animated: true, completion: nil)
+            break
             default: break
             
         }
@@ -198,12 +226,30 @@ extension DashBoardViewController : PresenterOutputProtocol{
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: DashBoardEntity.self, token: true)
     }
     
+    func getChatRequest(){
+        self.presenter?.HITAPI(api: Base.chatIncoming.rawValue, params: nil, methodType: .GET, modelClass: ChatRequest.self, token: true)
+    }
+    
     func profileApi(){
         let url = "\(Base.profile.rawValue)"
-        
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: ProfileEntity.self, token: true)
     }
     
 }
 
+extension DashBoardViewController : IncomingRequestDelegate{
+    func acceptButtonAction(_ sender: UIButton) {
+        self.push(id: Storyboard.Ids.ChatViewController, animation: true)
+    }
+    
+    func rejectButtonAction(_ sender: UIButton) {
+        
+    }
+    
+    func finishButtonAction() {
+        
+    }
+    
+    
+}
 

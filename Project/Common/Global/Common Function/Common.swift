@@ -261,11 +261,11 @@ public func withRenderingMode(originalImage: UIImage, imgView: UIImageView, imgT
 }
 
 
-func showToast(msg : String ) {
+func showToast(msg : String , bgcolor : UIColor = UIColor.gray) {
     let window = UIApplication.shared.keyWindow!
     let toastLabel = PaddingLabel()
     
-    toastLabel.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
+    toastLabel.backgroundColor = bgcolor.withAlphaComponent(0.9)
     toastLabel.textColor = UIColor.white
     toastLabel.translatesAutoresizingMaskIntoConstraints = false
     toastLabel.textAlignment = .center;

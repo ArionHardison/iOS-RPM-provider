@@ -28,6 +28,7 @@ struct Storyboard {
     let FeedBackViewController = "FeedBackViewController"
     let PatientsViewController = "PatientsViewController"
     let ChatViewController = "ChatViewController"
+    let ChatMessageViewController = "ChatMessageViewController"
     let CalendarViewController = "CalendarViewController"
     let PatientsInformationViewController = "PatientsInformationViewController"
     let EditPatientInformationTableViewController = "EditPatientInformationTableViewController"
@@ -47,6 +48,8 @@ struct XIB {
     
     let CalendarTableViewCell = "CalendarTableViewCell"
     let NotifyView = "NotifyView"
+    let ChatRightCell = "ChatRightCell"
+    let ChatLeftCell = "ChatLeftCell"
 }
 
 

@@ -15,5 +15,7 @@ target 'MiDokter Pro' do
     pod 'CLWeeklyCalendarView'
     pod 'lottie-ios'
     pod 'PINRemoteImage'
+    pod 'PubNub', '~> 4'
+     pod 'SwiftyJSON'
 
 end

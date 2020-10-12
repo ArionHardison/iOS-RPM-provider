@@ -82,6 +82,14 @@
 		1008958F249CC21F0053AA02 /* DatePickerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1008958D249CC21F0053AA02 /* DatePickerAlert.swift */; };
 		10089590249CC21F0053AA02 /* DatePickerAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1008958E249CC21F0053AA02 /* DatePickerAlert.xib */; };
 		10089594249CEC8A0053AA02 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10089593249CEC8A0053AA02 /* PatientModel.swift */; };
+		10529FD0251DE72100262EF4 /* ChatHistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10529FCF251DE72100262EF4 /* ChatHistoryEntity.swift */; };
+		10529FD7251DFBD100262EF4 /* ChatRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10529FD4251DFBD000262EF4 /* ChatRightCell.xib */; };
+		10529FD8251DFBD100262EF4 /* ChatRightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10529FD5251DFBD000262EF4 /* ChatRightCell.swift */; };
+		10529FD9251DFBD100262EF4 /* ChatLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10529FD6251DFBD000262EF4 /* ChatLeftCell.xib */; };
+		10529FE7251E00AB00262EF4 /* ChatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10529FE4251E00AA00262EF4 /* ChatEntity.swift */; };
+		10529FE8251E00AB00262EF4 /* ChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10529FE5251E00AA00262EF4 /* ChatResponse.swift */; };
+		10529FE9251E00AB00262EF4 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10529FE6251E00AA00262EF4 /* ChatManager.swift */; };
+		10529FED251E097200262EF4 /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10529FEC251E097200262EF4 /* ChatMessageViewController.swift */; };
 		105344E0249B5DA800650C43 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105344DF249B5DA800650C43 /* LoginEntity.swift */; };
 		105344E9249B60E000650C43 /* UXTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105344E2249B60DF00650C43 /* UXTableView.swift */; };
 		105344EA249B60E000650C43 /* UXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105344E3249B60DF00650C43 /* UXString.swift */; };
@@ -99,6 +107,10 @@
 		105344FF249B94A400650C43 /* CommonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105344FE249B94A400650C43 /* CommonEntity.swift */; };
 		108185EE249BBD1D000DC688 /* ProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108185ED249BBD1D000DC688 /* ProfileEntity.swift */; };
 		10EFEC56249C96AD00F1C580 /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EFEC55249C96AD00F1C580 /* AppointmentModel.swift */; };
+		10FAC048251CCE5C00DE6EA9 /* IncomingRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FAC047251CCE5B00DE6EA9 /* IncomingRequestController.swift */; };
+		10FAC04B251CCE9E00DE6EA9 /* Progressview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FAC04A251CCE9E00DE6EA9 /* Progressview.swift */; };
+		10FAC04D251CD01D00DE6EA9 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FAC04C251CD01D00DE6EA9 /* AudioManager.swift */; };
+		10FAC04F251CD02A00DE6EA9 /* DriverrequestTone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10FAC04E251CD02A00DE6EA9 /* DriverrequestTone.wav */; };
 		7729628F2487B91D00E5BC42 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */; };
 		77308BEE2458848D000D31FA /* EditPatientInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77308BED2458848D000D31FA /* EditPatientInformationTableViewController.swift */; };
 		77308BF224588726000D31FA /* ChartingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77308BF024588726000D31FA /* ChartingTableViewCell.swift */; };
@@ -244,6 +256,14 @@
 		1008958D249CC21F0053AA02 /* DatePickerAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerAlert.swift; sourceTree = "<group>"; };
 		1008958E249CC21F0053AA02 /* DatePickerAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerAlert.xib; sourceTree = "<group>"; };
 		10089593249CEC8A0053AA02 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
+		10529FCF251DE72100262EF4 /* ChatHistoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryEntity.swift; sourceTree = "<group>"; };
+		10529FD4251DFBD000262EF4 /* ChatRightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatRightCell.xib; sourceTree = "<group>"; };
+		10529FD5251DFBD000262EF4 /* ChatRightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRightCell.swift; sourceTree = "<group>"; };
+		10529FD6251DFBD000262EF4 /* ChatLeftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatLeftCell.xib; sourceTree = "<group>"; };
+		10529FE4251E00AA00262EF4 /* ChatEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatEntity.swift; sourceTree = "<group>"; };
+		10529FE5251E00AA00262EF4 /* ChatResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatResponse.swift; sourceTree = "<group>"; };
+		10529FE6251E00AA00262EF4 /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		10529FEC251E097200262EF4 /* ChatMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
 		105344DF249B5DA800650C43 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		105344E2249B60DF00650C43 /* UXTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UXTableView.swift; sourceTree = "<group>"; };
 		105344E3249B60DF00650C43 /* UXString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UXString.swift; sourceTree = "<group>"; };
@@ -261,6 +281,10 @@
 		105344FE249B94A400650C43 /* CommonEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEntity.swift; sourceTree = "<group>"; };
 		108185ED249BBD1D000DC688 /* ProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEntity.swift; sourceTree = "<group>"; };
 		10EFEC55249C96AD00F1C580 /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
+		10FAC047251CCE5B00DE6EA9 /* IncomingRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingRequestController.swift; sourceTree = "<group>"; };
+		10FAC04A251CCE9E00DE6EA9 /* Progressview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressview.swift; sourceTree = "<group>"; };
+		10FAC04C251CD01D00DE6EA9 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		10FAC04E251CD02A00DE6EA9 /* DriverrequestTone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DriverrequestTone.wav; sourceTree = "<group>"; };
 		16A7B4E6929B4A6FE0B760F1 /* Pods-MiDokter Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiDokter Pro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiDokter Pro/Pods-MiDokter Pro.debug.xcconfig"; sourceTree = "<group>"; };
 		5AFAC7B4BF9CE2D27DADAEAF /* Pods-MiDokter Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiDokter Pro.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiDokter Pro/Pods-MiDokter Pro.release.xcconfig"; sourceTree = "<group>"; };
 		7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +361,7 @@
 		08487FA620B5E94100D4DEE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				10FAC047251CCE5B00DE6EA9 /* IncomingRequestController.swift */,
 				088E4E9D20ECDE6900EEEF22 /* HomeViewController.swift */,
 				7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */,
 				088E4E9B20ECDE5500EEEF22 /* SideBarTableViewController.swift */,
@@ -356,6 +381,7 @@
 				773F9636247961980077A149 /* Appointment */,
 				77BE1C5A247852F4006273EE /* BlockCalendarViewController.swift */,
 				774B7192247BF18000839F14 /* CalendarViewController.swift */,
+				10529FEC251E097200262EF4 /* ChatMessageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -385,6 +411,7 @@
 		084B30DA20B01DAA00B79318 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				10529FE3251E009E00262EF4 /* PubNubManager */,
 				10089587249CC1F20053AA02 /* AlertViewa */,
 				08C0660520B0386F00A8C5F0 /* Readme.md */,
 				084B347C20B02E0D00B79318 /* VIPER */,
@@ -733,6 +760,7 @@
 				105344FE249B94A400650C43 /* CommonEntity.swift */,
 				108185ED249BBD1D000DC688 /* ProfileEntity.swift */,
 				10089593249CEC8A0053AA02 /* PatientModel.swift */,
+				10529FCF251DE72100262EF4 /* ChatHistoryEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -767,6 +795,7 @@
 		084B348F20B02EE400B79318 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				10529FD3251DFBC600262EF4 /* ChatCells */,
 				774B7198247C0E0200839F14 /* Calendar */,
 				7768ECE02459F90D0051AB91 /* NofiyNoShow */,
 				77308BF42458A475000D31FA /* RecentHistory */,
@@ -802,6 +831,7 @@
 		084B349220B02F5000B79318 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				10FAC049251CCE9600DE6EA9 /* Progressview */,
 				084B34B820B030D400B79318 /* IBDesignables */,
 				084B349320B02F5E00B79318 /* Extensions */,
 			);
@@ -1032,6 +1062,26 @@
 			path = "xibs+classes";
 			sourceTree = "<group>";
 		};
+		10529FD3251DFBC600262EF4 /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				10529FD6251DFBD000262EF4 /* ChatLeftCell.xib */,
+				10529FD5251DFBD000262EF4 /* ChatRightCell.swift */,
+				10529FD4251DFBD000262EF4 /* ChatRightCell.xib */,
+			);
+			path = ChatCells;
+			sourceTree = "<group>";
+		};
+		10529FE3251E009E00262EF4 /* PubNubManager */ = {
+			isa = PBXGroup;
+			children = (
+				10529FE6251E00AA00262EF4 /* ChatManager.swift */,
+				10529FE4251E00AA00262EF4 /* ChatEntity.swift */,
+				10529FE5251E00AA00262EF4 /* ChatResponse.swift */,
+			);
+			path = PubNubManager;
+			sourceTree = "<group>";
+		};
 		105344E1249B60CF00650C43 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -1069,6 +1119,16 @@
 				10EFEC55249C96AD00F1C580 /* AppointmentModel.swift */,
 			);
 			path = AppointmentEntity;
+			sourceTree = "<group>";
+		};
+		10FAC049251CCE9600DE6EA9 /* Progressview */ = {
+			isa = PBXGroup;
+			children = (
+				10FAC04C251CD01D00DE6EA9 /* AudioManager.swift */,
+				10FAC04A251CCE9E00DE6EA9 /* Progressview.swift */,
+				10FAC04E251CD02A00DE6EA9 /* DriverrequestTone.wav */,
+			);
+			path = Progressview;
 			sourceTree = "<group>";
 		};
 		77308BEF24588713000D31FA /* Charting */ = {
@@ -1284,12 +1344,15 @@
 				7733ED4F2454914800C252E1 /* PatientTableViewCell.xib in Resources */,
 				7738E3032435DAFB00804159 /* HealthFeedTableViewCell.xib in Resources */,
 				084B30E620B01DAC00B79318 /* Assets.xcassets in Resources */,
+				10529FD7251DFBD100262EF4 /* ChatRightCell.xib in Resources */,
 				7733ED582454A99D00C252E1 /* ChatListTableViewCell.xib in Resources */,
 				77308BF324588726000D31FA /* ChartingTableViewCell.xib in Resources */,
+				10FAC04F251CD02A00DE6EA9 /* DriverrequestTone.wav in Resources */,
 				08C066F220B039A900A8C5F0 /* countryCodes.json in Resources */,
 				774B7197247BF95000839F14 /* CalendarTableViewCell.xib in Resources */,
 				08C066F320B039A900A8C5F0 /* CountryPicker.bundle in Resources */,
 				105344F6249B66AD00650C43 /* Color.xcassets in Resources */,
+				10529FD9251DFBD100262EF4 /* ChatLeftCell.xib in Resources */,
 				088E4EA120ECE75B00EEEF22 /* LaunchScreen.storyboard in Resources */,
 				10089590249CC21F0053AA02 /* DatePickerAlert.xib in Resources */,
 				084B30E120B01DAA00B79318 /* Main.storyboard in Resources */,
@@ -1422,11 +1485,13 @@
 				084B346C20B02C9100B79318 /* ErrorMessages.swift in Sources */,
 				084B343B20B029E900B79318 /* UIAplication+RLT.swift in Sources */,
 				084B34CE20B0422000B79318 /* ErrorLog.swift in Sources */,
+				10529FE8251E00AB00262EF4 /* ChatResponse.swift in Sources */,
 				084B347820B02DD800B79318 /* Common.swift in Sources */,
 				084B34D020B0424E00B79318 /* Country.swift in Sources */,
 				105344EE249B60E000650C43 /* UXImage.swift in Sources */,
 				084B34A520B0302100B79318 /* ViewController.swift in Sources */,
 				7738E2FE2435DAAB00804159 /* HealthFeedViewController.swift in Sources */,
+				10FAC04D251CD01D00DE6EA9 /* AudioManager.swift in Sources */,
 				1008958A249CC2040053AA02 /* AlertVC.swift in Sources */,
 				084B346020B02C2B00B79318 /* WebConstants.swift in Sources */,
 				10EFEC56249C96AD00F1C580 /* AppointmentModel.swift in Sources */,
@@ -1440,6 +1505,7 @@
 				773F9638247961FC0077A149 /* EditAppointmentTableViewController.swift in Sources */,
 				105344EF249B60E000650C43 /* UXLabel.swift in Sources */,
 				084B34BB20B030F100B79318 /* Label.swift in Sources */,
+				10529FD0251DE72100262EF4 /* ChatHistoryEntity.swift in Sources */,
 				77DF285824520DA300CE5F22 /* FeedBackViewController.swift in Sources */,
 				084B347F20B02E5D00B79318 /* WebService.swift in Sources */,
 				084B349F20B02FD500B79318 /* String.swift in Sources */,
@@ -1465,12 +1531,17 @@
 				105344EC249B60E000650C43 /* UXViewController.swift in Sources */,
 				084B34C120B0311A00B79318 /* View.swift in Sources */,
 				084B34C820B0318700B79318 /* TextFieldEffects.swift in Sources */,
+				10529FD8251DFBD100262EF4 /* ChatRightCell.swift in Sources */,
+				10FAC04B251CCE9E00DE6EA9 /* Progressview.swift in Sources */,
 				084B345320B02B7200B79318 /* ApiList.swift in Sources */,
+				10FAC048251CCE5C00DE6EA9 /* IncomingRequestController.swift in Sources */,
 				084B34B120B0308F00B79318 /* Application.swift in Sources */,
 				084B342320B028BC00B79318 /* Protocol.swift in Sources */,
+				10529FED251E097200262EF4 /* ChatMessageViewController.swift in Sources */,
 				7738E2FA2435DA9F00804159 /* ProfieViewController.swift in Sources */,
 				084B345020B02B5B00B79318 /* MakeJson.swift in Sources */,
 				7733ED572454A99D00C252E1 /* ChatListTableViewCell.swift in Sources */,
+				10529FE7251E00AB00262EF4 /* ChatEntity.swift in Sources */,
 				7733ED4E2454914800C252E1 /* PatientTableViewCell.swift in Sources */,
 				084B344720B02AA300B79318 /* Formatter.swift in Sources */,
 				778AE9FA24338F0000A314C7 /* HomeOptionsTableViewCell.swift in Sources */,
@@ -1488,6 +1559,7 @@
 				084B343820B029E900B79318 /* UIScrollView+ParallaxHeader.swift in Sources */,
 				77308BEE2458848D000D31FA /* EditPatientInformationTableViewController.swift in Sources */,
 				105344FB249B7BFB00650C43 /* FeedBackEntity.swift in Sources */,
+				10529FE9251E00AB00262EF4 /* ChatManager.swift in Sources */,
 				7768ECE22459F9300051AB91 /* NotifyView.swift in Sources */,
 				084B348520B02E9400B79318 /* User.swift in Sources */,
 			);
