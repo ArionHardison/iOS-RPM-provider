@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         appearence()
         setGoogleMapKey()
+        IQkeyboardmanager.shared.enabl
         setLocalization(language: Language.english)
         let navigationController = Router.createModule()
         window?.rootViewController = navigationController

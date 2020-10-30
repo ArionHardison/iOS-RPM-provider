@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "084B30D720B01DAA00B79318"
-               BuildableName = "MiDokter Pro.app"
+               BuildableName = "TeleHelath Provider.app"
                BlueprintName = "MiDokter Pro"
                ReferencedContainer = "container:MiDokter Pro.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "084B30D720B01DAA00B79318"
-            BuildableName = "MiDokter Pro.app"
+            BuildableName = "TeleHelath Provider.app"
             BlueprintName = "MiDokter Pro"
             ReferencedContainer = "container:MiDokter Pro.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "084B30D720B01DAA00B79318"
-            BuildableName = "MiDokter Pro.app"
+            BuildableName = "TeleHelath Provider.app"
             BlueprintName = "MiDokter Pro"
             ReferencedContainer = "container:MiDokter Pro.xcodeproj">
          </BuildableReference>

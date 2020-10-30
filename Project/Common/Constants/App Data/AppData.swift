@@ -8,15 +8,15 @@
 
 import UIKit
 
-let AppName = "DentoDora"
+let AppName = "TeleHealth Doctor"
 var deviceTokenString = Constants.string.noDevice
 var deviceId = Constants.string.noDevice
 var deviceType : DeviceType = .ios
 let googleMapKey = "AIzaSyAlpDGEYqZS44sI_ffynh5sjm5JsNPPFLg"
-let appSecretKey = "0aCTqaqhhTBFS8SiLEN0TlEdrSZSrGlpcJTnY3SO"
+let appSecretKey = "FUKbf4dklbxmZJ+09YPAtfKFh341TNP8HGUU8PFl"
 let appClientId = 2
 let defaultMapLocation = LocationCoordinate(latitude: 13.009245, longitude: 80.212929)
-let baseUrl = "http://67.205.186.53/" //"http://blabla.deliveryventure.com/"
-let imageURL = "http://67.205.186.53/storage/"
+let baseUrl = "http://telehealthmanager.net/" //"http://blabla.deliveryventure.com/"
+let imageURL = "http://telehealthmanager.net/storage/"
 let curreny = " $ "
 var profile : ProfileEntity = ProfileEntity()
