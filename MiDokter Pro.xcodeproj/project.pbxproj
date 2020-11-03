@@ -152,6 +152,8 @@
 		77DF285524520B9700CE5F22 /* FeedBackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF285324520B9700CE5F22 /* FeedBackTableViewCell.swift */; };
 		77DF285624520B9700CE5F22 /* FeedBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DF285424520B9700CE5F22 /* FeedBackTableViewCell.xib */; };
 		77DF285824520DA300CE5F22 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF285724520DA300CE5F22 /* FeedBackViewController.swift */; };
+		85C76854254DA10A002827B9 /* PickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C76853254DA10A002827B9 /* PickerManager.swift */; };
+		85C76856254DAFFE002827B9 /* CreateAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C76855254DAFFE002827B9 /* CreateAppointmentViewController.swift */; };
 		BC95F75527FC286A2AACD712 /* Pods_MiDokter_Pro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B172AE906F03C876319FD98B /* Pods_MiDokter_Pro.framework */; };
 /* End PBXBuildFile section */
 
@@ -329,6 +331,8 @@
 		77DF285424520B9700CE5F22 /* FeedBackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBackTableViewCell.xib; sourceTree = "<group>"; };
 		77DF285724520DA300CE5F22 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		79004400D2E7DDC3FEEA1E58 /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
+		85C76853254DA10A002827B9 /* PickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerManager.swift; sourceTree = "<group>"; };
+		85C76855254DAFFE002827B9 /* CreateAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentViewController.swift; sourceTree = "<group>"; };
 		B172AE906F03C876319FD98B /* Pods_MiDokter_Pro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiDokter_Pro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -382,6 +386,7 @@
 				77BE1C5A247852F4006273EE /* BlockCalendarViewController.swift */,
 				774B7192247BF18000839F14 /* CalendarViewController.swift */,
 				10529FEC251E097200262EF4 /* ChatMessageViewController.swift */,
+				85C76855254DAFFE002827B9 /* CreateAppointmentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 		084B342420B028E800B79318 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				85C76853254DA10A002827B9 /* PickerManager.swift */,
 				105344F2249B66A300650C43 /* Colors */,
 				105344E1249B60CF00650C43 /* Extension */,
 				08C066F920B03A6900A8C5F0 /* Circular Transition */,
@@ -1458,6 +1464,7 @@
 				08DBC87B20B9F70800AE89E6 /* DatePickerDialog.swift in Sources */,
 				1008958F249CC21F0053AA02 /* DatePickerAlert.swift in Sources */,
 				084B344A20B02AD900B79318 /* AVPlayerHelper.swift in Sources */,
+				85C76856254DAFFE002827B9 /* CreateAppointmentViewController.swift in Sources */,
 				084B343720B029E900B79318 /* UIView+Blur.swift in Sources */,
 				084B347520B02DA400B79318 /* ShimmerButton.swift in Sources */,
 				084B348220B02E7300B79318 /* Router.swift in Sources */,
@@ -1562,6 +1569,7 @@
 				10529FE9251E00AB00262EF4 /* ChatManager.swift in Sources */,
 				7768ECE22459F9300051AB91 /* NotifyView.swift in Sources */,
 				084B348520B02E9400B79318 /* User.swift in Sources */,
+				85C76854254DA10A002827B9 /* PickerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1728,9 +1736,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1738,7 +1747,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeleHealthDoctor.app;
 				PRODUCT_NAME = "TeleHelath Provider";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1748,9 +1757,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1758,7 +1768,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeleHealthDoctor.app;
 				PRODUCT_NAME = "TeleHelath Provider";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -13,10 +13,10 @@ class PatientsViewController: UIViewController {
 
     
     @IBOutlet weak var patientsTable: UITableView!
-    
-    
-    var todayPatients : [TodayPatients] = [TodayPatients]()
-    
+    var selectedDate : String = ""
+    var isFromCalendar : Bool = false
+    var todayPatients : [AllPatients] = [AllPatients]()
+    var index : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,6 +62,18 @@ extension PatientsViewController {
 
         alert.addAction(UIAlertAction(title: "Add Appointment", style: .default, handler: { (_) in
             print("User click Edit button")
+            if self.isFromCalendar{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.CreateAppointmentViewController) as! CreateAppointmentViewController
+            vc.patientDetails = self.todayPatients[sender.tag]
+            vc.selectedDate = self.selectedDate
+            self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                let view = DateTimePickerAlert.getView
+                view.alertdelegate = self
+                self.index = sender.tag
+                AlertBuilder().addView(fromVC: self , view).show()
+            }
+            
         }))
 
         alert.addAction(UIAlertAction(title: "Add File", style: .default, handler: { (_) in
@@ -97,7 +109,7 @@ extension PatientsViewController : UITableViewDelegate,UITableViewDataSource {
         return tableCell
     }
     
-    func populateData(cell : PatientTableViewCell, data : TodayPatients){
+    func populateData(cell : PatientTableViewCell, data : AllPatients){
         cell.labelName.text = "\(data.first_name ?? "") \(data.last_name ?? "")"
         cell.labelPatientDetails.text = "\(data.profile?.age ?? "") years , \(data.profile?.gender ?? "")"
         cell.labelPatientID.text = "\(data.id ?? 0)"
@@ -106,9 +118,17 @@ extension PatientsViewController : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PatientsInformationViewController.initVC(storyBoardName: .main, vc: PatientsInformationViewController.self, viewConrollerID: Storyboard.Ids.PatientsInformationViewController)
-        vc.Patients = self.todayPatients[indexPath.row]
-        self.push(from: self, ToViewContorller: vc)
+        if isFromCalendar {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.CreateAppointmentViewController) as! CreateAppointmentViewController
+        vc.patientDetails = self.todayPatients[indexPath.row]
+        vc.selectedDate = self.selectedDate
+        self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let view = DateTimePickerAlert.getView
+            view.alertdelegate = self
+            self.index = indexPath.row
+            AlertBuilder().addView(fromVC: self , view).show()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -123,7 +143,7 @@ extension PatientsViewController : PresenterOutputProtocol{
         switch String(describing: modelClass) {
             case model.type.PatientModel:
                 guard let data = dataDict as? PatientModel else { return }
-                self.todayPatients = data.todayPatients ?? [TodayPatients]()
+                self.todayPatients = data.allPatients ?? [AllPatients]()
                 self.patientsTable.reloadData()
                 break
             
@@ -153,4 +173,31 @@ extension PatientsViewController : PresenterOutputProtocol{
         let url = "\(Base.patient.rawValue)/\(id)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .DELETE, modelClass: CommonModel.self, token: true)
     }
+}
+
+extension PatientsViewController  : AlertDelegate{
+    func selectedDate(selectionType: String, date: String, alertVC: UIViewController) {
+  
+    }
+    
+    func selectedDateTime(selectionType: DateselectionOption,date : Date, datestr: String, time: String, alertVC: UIViewController) {
+       let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.CreateAppointmentViewController) as! CreateAppointmentViewController
+            vc.patientDetails = self.todayPatients[self.index]
+            let dateAsString =  datestr
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm a"
+            let date = dateFormatter.date(from: dateAsString)
+
+            dateFormatter.dateFormat = "HH:mm:ss"
+            let date24 = dateFormatter.string(from: date ?? Date())
+            
+            vc.selectedDate = datestr + " " + date24
+            self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func selectedTime(time: String, alertVC: UIViewController) {
+        
+    }
+    
+    
 }

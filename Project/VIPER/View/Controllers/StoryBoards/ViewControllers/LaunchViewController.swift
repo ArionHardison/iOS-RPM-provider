@@ -35,10 +35,10 @@ extension LaunchViewController {
     
     @objc func onTapLogin(){
         
-        self.push(id: Storyboard.Ids.SignInMobileViewController, animation: true)
+        self.push(id: Storyboard.Ids.SignInEmailViewController, animation: true)
     }
     @objc func onTapRegistration(){
-        self.push(id: Storyboard.Ids.SignInMobileViewController, animation: true)
+        self.push(id: Storyboard.Ids.SignInEmailViewController, animation: true)
 
     }
 }

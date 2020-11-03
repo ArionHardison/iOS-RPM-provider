@@ -165,7 +165,10 @@ extension DashBoardViewController : UICollectionViewDelegate , UICollectionViewD
         }
         
         if indexPath.item == 2 {
-            self.push(id: Storyboard.Ids.PatientsViewController, animation: true)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.PatientsViewController) as! PatientsViewController
+            vc.isFromCalendar = false
+            self.navigationController?.pushViewController(vc, animated: true)
+           
         }
         
         if indexPath.item == 4 {

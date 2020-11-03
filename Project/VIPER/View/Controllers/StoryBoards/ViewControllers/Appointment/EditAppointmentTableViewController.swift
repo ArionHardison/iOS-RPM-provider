@@ -127,7 +127,7 @@ extension EditAppointmentTableViewController : PresenterOutputProtocol{
         switch String(describing: modelClass) {
             case model.type.AppointmentModel:
                 guard let data = dataDict as? AppointmentModel else { return }
-                if data.status ?? false{
+                if data.all_appointments?.count ?? 0 > 0 {
                     self.popOrDismiss(animation: true)
                 }
                 break

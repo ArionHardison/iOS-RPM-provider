@@ -5,7 +5,7 @@ target 'MiDokter Pro' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-    pod 'Alamofire'
+    pod 'Alamofire','4.8.2'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
     pod 'IQKeyboardManagerSwift'
@@ -16,6 +16,8 @@ target 'MiDokter Pro' do
     pod 'lottie-ios'
     pod 'PINRemoteImage'
     pod 'PubNub', '~> 4'
-     pod 'SwiftyJSON'
+    pod 'SwiftyJSON'
+    pod 'TwilioVoice', '~> 5.5.0'            #//, '~> 2.0.0'
+    pod 'TwilioVideo', '~> 2.10'
 
 end

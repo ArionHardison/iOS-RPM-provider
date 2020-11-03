@@ -23,22 +23,22 @@ struct PatientModelReq : Codable {
 
 struct PatientModel : Mappable {
     var status : Bool?
-    var allPatients : [String]?
+    var allPatients : [AllPatients]?
     var todayPatients : [TodayPatients]?
-    var recentPatients : [String]?
-    
+    var recentPatients : [RecentPatients]?
+
     init?(map: Map) {
-        
+
     }
-    
+
     mutating func mapping(map: Map) {
-        
+
         status <- map["status"]
         allPatients <- map["allPatients"]
         todayPatients <- map["todayPatients"]
         recentPatients <- map["recentPatients"]
     }
-    
+
 }
 
 
@@ -102,4 +102,133 @@ struct TodayPatients : Mappable {
         appointments <- map["appointments"]
     }
     
+}
+
+
+struct AllPatients : Mappable {
+    var id : Int?
+    var first_name : String?
+    var last_name : String?
+    var phone : String?
+    var secondary_mobile : String?
+    var other_id : String?
+    var payment_mode : String?
+    var device_token : String?
+    var device_id : String?
+    var device_type : String?
+    var login_by : String?
+    var social_unique_id : String?
+    var wallet_balance : Int?
+    var rating : String?
+    var email : String?
+    var otp : Int?
+    var regn_id : String?
+    var email_verified : Int?
+    var email_token : String?
+    var email_verified_at : String?
+    var created_at : String?
+    var updated_at : String?
+    var deleted_at : String?
+    var profile : Profile?
+    var appointments : [Appoinments]?
+    
+    init() { }
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        first_name <- map["first_name"]
+        last_name <- map["last_name"]
+        phone <- map["phone"]
+        secondary_mobile <- map["secondary_mobile"]
+        other_id <- map["other_id"]
+        payment_mode <- map["payment_mode"]
+        device_token <- map["device_token"]
+        device_id <- map["device_id"]
+        device_type <- map["device_type"]
+        login_by <- map["login_by"]
+        social_unique_id <- map["social_unique_id"]
+        wallet_balance <- map["wallet_balance"]
+        rating <- map["rating"]
+        email <- map["email"]
+        otp <- map["otp"]
+        regn_id <- map["regn_id"]
+        email_verified <- map["email_verified"]
+        email_token <- map["email_token"]
+        email_verified_at <- map["email_verified_at"]
+        created_at <- map["created_at"]
+        updated_at <- map["updated_at"]
+        deleted_at <- map["deleted_at"]
+        profile <- map["profile"]
+        appointments <- map["appointments"]
+    }
+
+}
+
+
+
+struct RecentPatients : Mappable {
+    var id : Int?
+    var first_name : String?
+    var last_name : String?
+    var phone : String?
+    var secondary_mobile : String?
+    var other_id : String?
+    var payment_mode : String?
+    var device_token : String?
+    var device_id : String?
+    var device_type : String?
+    var login_by : String?
+    var social_unique_id : String?
+    var wallet_balance : Int?
+    var rating : String?
+    var email : String?
+    var otp : Int?
+    var regn_id : String?
+    var email_verified : Int?
+    var email_token : String?
+    var email_verified_at : String?
+    var created_at : String?
+    var updated_at : String?
+    var deleted_at : String?
+    var profile : Profile?
+    var appointments : [Appointments]?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        first_name <- map["first_name"]
+        last_name <- map["last_name"]
+        phone <- map["phone"]
+        secondary_mobile <- map["secondary_mobile"]
+        other_id <- map["other_id"]
+        payment_mode <- map["payment_mode"]
+        device_token <- map["device_token"]
+        device_id <- map["device_id"]
+        device_type <- map["device_type"]
+        login_by <- map["login_by"]
+        social_unique_id <- map["social_unique_id"]
+        wallet_balance <- map["wallet_balance"]
+        rating <- map["rating"]
+        email <- map["email"]
+        otp <- map["otp"]
+        regn_id <- map["regn_id"]
+        email_verified <- map["email_verified"]
+        email_token <- map["email_token"]
+        email_verified_at <- map["email_verified_at"]
+        created_at <- map["created_at"]
+        updated_at <- map["updated_at"]
+        deleted_at <- map["deleted_at"]
+        profile <- map["profile"]
+        appointments <- map["appointments"]
+    }
+
 }

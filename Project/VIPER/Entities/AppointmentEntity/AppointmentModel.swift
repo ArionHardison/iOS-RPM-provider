@@ -43,7 +43,7 @@ struct BlockReq : Codable{
 }
 
 struct AppointmentModel: Mappable {
-    var status : Bool?
+    var status : String?
     var all_appointments : [All_appointments]?
     var recentPatients : [String]?
     var doctor : Doctor?
@@ -398,4 +398,58 @@ struct All_appointments : Mappable {
         service <- map["service"]
     }
     
+}
+
+
+
+struct CreateAppointment : Mappable {
+    var success : String?
+    var appointment : Appointment?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        success <- map["success"]
+        appointment <- map["appointment"]
+    }
+
+}
+
+struct Appointment : Mappable {
+    var doctor_id : String?
+    var patient_id : Int?
+    var service_id : String?
+    var scheduled_at : String?
+    var scheduled_end : String?
+    var consult_time : String?
+    var description : String?
+    var status : String?
+    var appointment_type : String?
+    var updated_at : String?
+    var created_at : String?
+    var id : Int?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        doctor_id <- map["doctor_id"]
+        patient_id <- map["patient_id"]
+        service_id <- map["service_id"]
+        scheduled_at <- map["scheduled_at"]
+        scheduled_end <- map["scheduled_end"]
+        consult_time <- map["consult_time"]
+        description <- map["description"]
+        status <- map["status"]
+        appointment_type <- map["appointment_type"]
+        updated_at <- map["updated_at"]
+        created_at <- map["created_at"]
+        id <- map["id"]
+    }
+
 }

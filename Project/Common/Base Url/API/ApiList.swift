@@ -95,6 +95,7 @@ struct model {
     let ChatRequest = "ChatRequest"
     let ChatAcceptRejectEntity = "ChatAcceptRejectEntity"
     let ChatHistoryEntity = "ChatHistoryEntity"
+    let CreateAppointment = "CreateAppointment"
 }
 
 

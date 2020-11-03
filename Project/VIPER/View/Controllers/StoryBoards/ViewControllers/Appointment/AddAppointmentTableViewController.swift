@@ -21,7 +21,10 @@ class AddAppointmentTableViewController: UITableViewController {
     @IBOutlet weak var addPatientBtn : UIButton!
     @IBOutlet weak var schudleTxt : HoshiTextField!
     @IBOutlet weak var schuldeDate : UIButton!
-
+    @IBOutlet weak var selectPatientTextField: HoshiTextField!
+    @IBOutlet weak var orLabel: UILabel!
+    
+    var selectedDate : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         intialLoads()
@@ -54,6 +57,7 @@ class AddAppointmentTableViewController: UITableViewController {
                 appoinment.gender = self.sexTxt.getText
                 appoinment.age = self.ageTxt.getText
                 self.addAppoinemnt(data: appoinment)
+               
             }
         }
         
@@ -99,6 +103,8 @@ class AddAppointmentTableViewController: UITableViewController {
         Common.setFont(to: self.sexTxt)
         Common.setFont(to: self.ageTxt)
         Common.setFont(to: self.commentTxt)
+        self.orLabel.text = "OR"
+        self.schudleTxt.text = self.selectedDate
     }
     
 
@@ -109,9 +115,10 @@ extension AddAppointmentTableViewController {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: Constants.string.Cancel.localize(), style: .done, target: self, action: #selector(self.backButtonClick))
         self.navigationItem.title = Constants.string.addAppointment.localize()
-        
+        self.selectPatientTextField.delegate = self
         self.setupFont()
         self.setupAction()
+        
 
     }
 }
@@ -122,7 +129,7 @@ extension AddAppointmentTableViewController : PresenterOutputProtocol{
         switch String(describing: modelClass) {
             case model.type.AppointmentModel:
                 guard let data = dataDict as? AppointmentModel else { return }
-                if data.status ?? false{
+                if data.all_appointments?.count ?? 0 > 0 {
                     self.popOrDismiss(animation: true)
                 }
                 break
@@ -156,5 +163,20 @@ extension AddAppointmentTableViewController : AlertDelegate{
         
     }
     
+    
+}
+
+
+extension AddAppointmentTableViewController : UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == selectPatientTextField{
+            let vc = self.storyboard?.instantiateViewController(identifier: Storyboard.Ids.PatientsViewController) as! PatientsViewController
+            vc.selectedDate = self.selectedDate
+            vc.isFromCalendar = true
+            self.navigationController?.pushViewController(vc, animated: true)
+            return false
+        }
+        return true
+    }
     
 }

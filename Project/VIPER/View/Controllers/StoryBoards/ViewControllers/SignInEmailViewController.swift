@@ -72,6 +72,9 @@ extension SignInEmailViewController : PresenterOutputProtocol{
     }
     
     func loginApi(logindata : LoginReq){
+//        var params = [String:Any]()
+//        params.updateValue(self.emailTxt.getText, forKey: "email")
+//        params.updateValue(self.passwordTxt.getText, forKey: "password")
         self.presenter?.HITAPI(api: Base.loginWithEmail.rawValue, params: convertToDictionary(model: logindata), methodType: .POST, modelClass: MobileVerifyModel.self, token: false)
     }
 }

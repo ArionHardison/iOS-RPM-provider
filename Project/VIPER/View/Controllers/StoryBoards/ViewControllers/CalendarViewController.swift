@@ -20,6 +20,8 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var buttonAddAppointment: UIButton!
     var all_appointments : [All_appointments] = [All_appointments]()
     var notifyView : NotifyView!
+    var selectedDate : String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +62,14 @@ extension CalendarViewController {
     }
     
     @IBAction func AddAppointment() {
-        
-        self.push(id: Storyboard.Ids.AddAppointmentTableViewController, animation: true)
+   
+       let view = TimePickerAlert.getView
+       view.alertdelegate = self
+       AlertBuilder().addView(fromVC: self , view).show()
+   
+      
+     
+//        self.push(id: Storyboard.Ids.AddAppointmentTableViewController, animation: true)
     }
     
     func registerCell() {
@@ -190,7 +198,8 @@ extension CalendarViewController : UITableViewDelegate,UITableViewDataSource {
 extension CalendarViewController : CLWeeklyCalendarViewDelegate{
     func dailyCalendarViewDidSelect(_ date: Date!) {
         print("SelectedDate" , date)
-//        let datestr = dateConvertor(date.description, _input: .date_time, _output: .YMD)
+        let datestr = dateConvertor(date.description, _input: .date_time, _output: .YMD)
+        self.selectedDate = datestr
         getAppointmentDetail(date: date.description)
     }
     
@@ -235,4 +244,23 @@ extension CalendarViewController : PresenterOutputProtocol{
         let url = "\(Base.cancelAppoinemnt.rawValue)"
         self.presenter?.HITAPI(api: url, params: ["id": id], methodType: .POST, modelClass: CommonModel.self, token: true)
     }
+}
+
+extension CalendarViewController : AlertDelegate{
+    func selectedDate(selectionType: String, date: String, alertVC: UIViewController) {
+  
+    }
+    
+    func selectedDateTime(selectionType: DateselectionOption,date : Date, datestr: String, time: String, alertVC: UIViewController) {
+       
+    }
+    
+    func selectedTime(time: String, alertVC: UIViewController) {
+        
+          let vc = self.storyboard?.instantiateViewController(identifier: Storyboard.Ids.AddAppointmentTableViewController) as! AddAppointmentTableViewController
+        vc.selectedDate = self.selectedDate + " " + time
+          self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

@@ -109,7 +109,7 @@ class TimePickerAlert : UIView {
         self.setupView(view: view)
         self.submitBtn.setCorneredElevation()
         if schduleDate.interval(ofComponent: .day, fromDate: Date()) == 0{
-            self.timepicker.maximumDate = Date()
+            self.timepicker.minimumDate = Date()
         }
         
         self.setupAction()
