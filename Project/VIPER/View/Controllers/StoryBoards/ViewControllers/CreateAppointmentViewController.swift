@@ -84,6 +84,19 @@ extension CreateAppointmentViewController {
         
     }
     
+    /// pop back to specific viewcontroller
+    func popBack<T: UIViewController>(toControllerType: T.Type) {
+        if var viewControllers: [UIViewController] = self.navigationController?.viewControllers {
+            viewControllers = viewControllers.reversed()
+            for currentViewController in viewControllers {
+                if currentViewController .isKind(of: toControllerType) {
+                    self.navigationController?.popToViewController(currentViewController, animated: true)
+                    break
+                }
+            }
+        }
+    }
+    
 }
 
 
@@ -113,7 +126,8 @@ extension CreateAppointmentViewController : UITextViewDelegate{
 
 extension CreateAppointmentViewController : PresenterOutputProtocol{
     func showError(error: CustomError) {
-        
+        showToast(msg: error.localizedDescription)
+        self.popBack(toControllerType: CalendarViewController.self)
     }
     
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
@@ -121,7 +135,10 @@ extension CreateAppointmentViewController : PresenterOutputProtocol{
             case model.type.CreateAppointment:
                 guard let data = dataDict as? CreateAppointment else { return }
                 if Bool(data.success ?? "0") ?? true{
-                    self.navigationController?.popToRootViewController(animated: true)
+                    self.popBack(toControllerType: CalendarViewController.self)
+                }else{
+                    self.view.makeToast(data.message ?? "")
+                    self.popBack(toControllerType: CalendarViewController.self)
                 }
             
                 break

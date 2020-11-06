@@ -75,6 +75,14 @@ extension SignInEmailViewController : PresenterOutputProtocol{
 //        var params = [String:Any]()
 //        params.updateValue(self.emailTxt.getText, forKey: "email")
 //        params.updateValue(self.passwordTxt.getText, forKey: "password")
-        self.presenter?.HITAPI(api: Base.loginWithEmail.rawValue, params: convertToDictionary(model: logindata), methodType: .POST, modelClass: MobileVerifyModel.self, token: false)
+        var params:[String:Any] =  [PARAM_EMAIL:self.emailTxt.getText,
+                          PARAM_PASSWRD : self.passwordTxt.getText,
+                          PARAM_CLIENTID:appClientId,
+                          PARAM_CLIENTSECRET: appSecretKey,
+                          PARAM_DEVICETYPE : "ios",
+                          PARAM_DEVICETOKEN : deviceTokenString,
+                          PARAM_DEVICEID: UUID().uuidString,
+                          PARAM_GRANTTYPE : "password"] as [String : Any]
+        self.presenter?.HITAPI(api: Base.loginWithEmail.rawValue, params: params, methodType: .POST, modelClass: MobileVerifyModel.self, token: false)
     }
 }

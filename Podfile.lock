@@ -18,20 +18,20 @@ PODS:
   - KWDrawerController/Core (4.1.6)
   - lottie-ios (3.1.8)
   - ObjectMapper (3.4.2)
-  - PINCache (3.0.1-beta.8):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.8)
-    - PINCache/Core (= 3.0.1-beta.8)
-  - PINCache/Arc-exception-safe (3.0.1-beta.8):
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
     - PINCache/Core
-  - PINCache/Core (3.0.1-beta.8):
-    - PINOperation (~> 1.1.1)
-  - PINOperation (1.1.2)
-  - PINRemoteImage (3.0.0):
-    - PINRemoteImage/PINCache (= 3.0.0)
-  - PINRemoteImage/Core (3.0.0):
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
+  - PINRemoteImage (3.0.3):
+    - PINRemoteImage/PINCache (= 3.0.3)
+  - PINRemoteImage/Core (3.0.3):
     - PINOperation
-  - PINRemoteImage/PINCache (3.0.0):
-    - PINCache (= 3.0.1-beta.8)
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
     - PINRemoteImage/Core
   - PopupDialog (0.7.1):
     - DynamicBlurView (~> 2.0)
@@ -91,15 +91,15 @@ SPEC CHECKSUMS:
   KWDrawerController: bf8fc10ddc596ddbfdabda401357a99dba04a1c8
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
-  PINCache: 534fd41d358d828dfdf227a0d327f3673a65e20b
-  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
-  PINRemoteImage: e2b89e19fb6e77ffc099f9d9f3b3fe1745e3f9f9
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
   PubNub: 0028862c42e5adafd2bf7cc8c062731c055da6e2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TwilioVideo: 057061e4302e4b2862b0ac6cf69a3321e7c29b19
   TwilioVoice: c440f2c964d3b0eba946c30c9f1018d8e5d82af9
 
-PODFILE CHECKSUM: eeb57b458293408c63a91d55084a8e27b030dda1
+PODFILE CHECKSUM: 31c00f3339d33b113bf7d1ca7b3ca84894bab537
 
-COCOAPODS: 1.10.0.rc.1
+COCOAPODS: 1.10.0

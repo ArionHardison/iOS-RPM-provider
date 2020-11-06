@@ -57,6 +57,8 @@ enum Base : String{
     case chatIncoming = "api/hospital/chat/incoming"
     case updateStatus = "/api/hospital/chat/update"
     case chatHistory = "/api/hospital/chat/history"
+    case twilioMakeCall = "/api/hospital/video/call/token"
+    
 
     
     init(fromRawValue: String){
@@ -96,6 +98,7 @@ struct model {
     let ChatAcceptRejectEntity = "ChatAcceptRejectEntity"
     let ChatHistoryEntity = "ChatHistoryEntity"
     let CreateAppointment = "CreateAppointment"
+    let TwilioAccess = "TwilioAccess"
 }
 
 

@@ -405,6 +405,7 @@ struct All_appointments : Mappable {
 struct CreateAppointment : Mappable {
     var success : String?
     var appointment : Appointment?
+    var message : String?
 
     init?(map: Map) {
 
@@ -414,6 +415,7 @@ struct CreateAppointment : Mappable {
 
         success <- map["success"]
         appointment <- map["appointment"]
+        message <- map["message"]
     }
 
 }

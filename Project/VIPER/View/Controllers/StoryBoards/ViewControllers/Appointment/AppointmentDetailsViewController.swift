@@ -24,6 +24,7 @@ class AppointmentDetailsViewController: UIViewController {
     @IBOutlet weak var buttonViewPatientDetails: UIButton!
     @IBOutlet weak var recentListTable: UITableView!
     @IBOutlet weak var recentListTableHeight: NSLayoutConstraint!
+    @IBOutlet weak var videoCallButton: UIButton!
     
     var notifyView : NotifyView!
     var appoinment : All_appointments = All_appointments()
@@ -72,6 +73,7 @@ extension AppointmentDetailsViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.string.edit.localize(), style: .done, target: self, action: #selector(self.editAction))
         self.navigationItem.title = Constants.string.appointmentDetails.localize()
         self.buttonViewPatientDetails.addTarget(self, action: #selector(patientDetails), for: .touchUpInside)
+        self.videoCallButton.addTarget(self, action: #selector(videoCallAction(_sender:)), for: .touchUpInside)
         self.buttonMark.addTarget(self, action: #selector(MarkAction(sender:)), for: .touchUpInside)
         self.recentListTableHeight.constant = 30 + (10 * 60)
         
@@ -115,6 +117,24 @@ extension AppointmentDetailsViewController {
 
         }
 
+    }
+    
+    @IBAction private func videoCallAction(_sender:UIButton){
+        if #available(iOS 13.0, *) {
+         let twilioVideoController = self.storyboard?.instantiateViewController(identifier: "audioVideoCallCaontroller") as! audioVideoCallCaontroller
+            twilioVideoController.modalPresentationStyle = .fullScreen
+            self.present(twilioVideoController, animated: true, completion: {
+                twilioVideoController.video = 1
+                twilioVideoController.receiverId = "\(self.appoinment.patient_id ?? 0 )"
+                twilioVideoController.receiverName = (self.appoinment.patient?.first_name ?? "") + (self.appoinment.patient?.last_name ?? "")
+                twilioVideoController.isCallType = .makeCall
+                twilioVideoController.handleCall(roomId: "12345", receiverId: "\(self.appoinment.patient_id ?? 0 )",isVideo : 1)
+                               })
+                           } else {
+                             // Fallback on earlier versions
+                           }
+
+        
     }
 
     

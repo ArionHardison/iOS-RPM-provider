@@ -9,7 +9,22 @@
 import UIKit
 
 
+enum CallType : String, Codable {
+    
+    case INCOMING
+    case OUTGOING
+    case MISSED
+    
+}
 
+enum CallAction : String, Codable {
+    case MAKECALL = "make_call"
+    case CUTCALL = "cut_call"
+    case ATTENDCALL = "attend_call"
+    case REJECTCALL = "reject_call"
+    case SINGLE = "single_chat"
+    case GROUP = "group_chat"
+}
 
 //MARK:- Constant Strings
 

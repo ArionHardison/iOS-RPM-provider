@@ -20,3 +20,5 @@ let baseUrl = "https://telehealthmanager.net/" //"http://blabla.deliveryventure.
 let imageURL = "https://telehealthmanager.net/storage/"
 let curreny = " $ "
 var profile : ProfileEntity = ProfileEntity()
+var GlobalsenderId = String()
+var GlobalreciveId = String()
