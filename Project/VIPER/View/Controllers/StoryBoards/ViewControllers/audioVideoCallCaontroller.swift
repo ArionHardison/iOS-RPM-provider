@@ -610,10 +610,10 @@ extension audioVideoCallCaontroller : TVIRoomDelegate {
         networkTimer()
         self.avPlayerHelper = AVPlayerHelper()
         if self.isCallType == .makeCall {
-         avPlayerHelper?.playThrough(speaker: .none)
+         avPlayerHelper?.playThrough(speaker: .speaker)
          self.loudspeaker()
          self.avPlayerHelper?.play(file: "RingOutgoing.aiff")
-         avPlayerHelper?.playThrough(speaker: .none)
+         avPlayerHelper?.playThrough(speaker: .speaker)
         }else{
          self.loudspeaker()
         }
