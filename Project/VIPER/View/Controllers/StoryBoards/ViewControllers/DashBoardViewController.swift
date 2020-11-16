@@ -84,7 +84,7 @@ extension DashBoardViewController {
         self.buttonProfile.addTarget(self, action: #selector(ontapProfile), for: .touchUpInside)
         self.setupFont()
         self.setupLanguage()
-        
+        self.chageDateBtn.addTarget(self, action: #selector(changeAction(_sender:)), for: .touchUpInside)
         self.userImg.makeRoundedCorner()
     }
     
@@ -138,6 +138,50 @@ extension DashBoardViewController {
         self.chageDateBtn.setTitle(Constants.string.change.localize(), for: .normal)
     }
     
+    @IBAction private func changeAction(_sender:UIButton){
+        let alert = UIAlertController(title: "Appointments", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "This Week", style: .default , handler:{ (UIAlertAction)in
+            print("This Week")
+            let startDate = Date().startOfWeek
+            let sDate = dateConvertor(startDate?.description ?? "", _input: .date_time_Z, _output: .YMD)
+            let endWeek = Date().endOfWeek
+            let eDate = dateConvertor(endWeek?.description ?? "", _input: .date_time_Z, _output: .YMD)
+            self.getDashboardDetail(fromdate: sDate, todate: eDate)
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "This Month", style: .default , handler:{ (UIAlertAction)in
+            print("User click Edit button")
+            let startDate = Date().startOfMonth
+            let sDate = dateConvertor(startDate.description , _input: .date_time_Z, _output: .YMD)
+            let endWeek = Date().endOfMonth
+            let eDate = dateConvertor(endWeek.description , _input: .date_time_Z, _output: .YMD)
+            self.getDashboardDetail(fromdate: sDate, todate: eDate)
+            
+        }))
+
+        alert.addAction(UIAlertAction(title: "Last Year", style: .default , handler:{ (UIAlertAction)in
+            print("User click Delete button")
+            let startDate = Date().previousYear(Date())
+            let sDate = dateConvertor(startDate.description , _input: .date_time, _output: .YMD)
+            let endWeek = Date().endOfMonth
+            let eDate = dateConvertor(endWeek.description , _input: .date_time, _output: .YMD)
+            self.getDashboardDetail(fromdate: sDate, todate: eDate)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+
+        
+        //uncomment for iPad Support
+        //alert.popoverPresentationController?.sourceView = self.view
+
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
     
     
 }
@@ -178,6 +222,10 @@ extension DashBoardViewController : UICollectionViewDelegate , UICollectionViewD
         
         if indexPath.item == 1 {
             self.push(id: Storyboard.Ids.CalendarViewController, animation: true)
+        }
+        
+        if indexPath.item == 0 {
+            self.push(id: Storyboard.Ids.ChatViewController, animation: true)
         }
 
     }
@@ -227,6 +275,7 @@ extension DashBoardViewController : PresenterOutputProtocol{
     func getDashboardDetail(fromdate : String, todate : String){
         let url = "\(Base.home.rawValue)?from_date=\(fromdate)&to_date=\(todate)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: DashBoardEntity.self, token: true)
+        showDateLbl.text = "\(dateConvertor(fromdate, _input: .YMD, _output: .DM)) - \(dateConvertor(todate, _input: .YMD, _output: .DM))"
     }
     
     func getChatRequest(){
@@ -256,3 +305,38 @@ extension DashBoardViewController : IncomingRequestDelegate{
     
 }
 
+
+
+extension Date {
+    var startOfWeek: Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+    }
+
+    var endOfWeek: Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 7, to: sunday)
+    }
+    
+    var startOfMonth: Date {
+
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents([.year, .month], from: self)
+
+        return  calendar.date(from: components)!
+    }
+    
+    var endOfMonth: Date {
+        var components = DateComponents()
+        components.month = 1
+        components.second = -1
+        return Calendar(identifier: .gregorian).date(byAdding: components, to: startOfMonth)!
+    }
+    
+    func previousYear(_ date: Date) -> Date {
+        let calendar = NSCalendar.current
+        return calendar.date(byAdding: .year, value: -1, to: date)!
+    }
+}

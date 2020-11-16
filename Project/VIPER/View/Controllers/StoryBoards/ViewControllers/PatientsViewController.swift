@@ -66,6 +66,7 @@ extension PatientsViewController {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.CreateAppointmentViewController) as! CreateAppointmentViewController
             vc.patientDetails = self.todayPatients[sender.tag]
             vc.selectedDate = self.selectedDate
+                vc.isFromCalendar = self.isFromCalendar
             self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 let view = DateTimePickerAlert.getView
@@ -122,6 +123,7 @@ extension PatientsViewController : UITableViewDelegate,UITableViewDataSource {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.CreateAppointmentViewController) as! CreateAppointmentViewController
         vc.patientDetails = self.todayPatients[indexPath.row]
         vc.selectedDate = self.selectedDate
+        vc.isFromCalendar = self.isFromCalendar
         self.navigationController?.pushViewController(vc, animated: true)
         }else{
             let view = DateTimePickerAlert.getView
@@ -183,6 +185,7 @@ extension PatientsViewController  : AlertDelegate{
     func selectedDateTime(selectionType: DateselectionOption,date : Date, datestr: String, time: String, alertVC: UIViewController) {
        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.CreateAppointmentViewController) as! CreateAppointmentViewController
             vc.patientDetails = self.todayPatients[self.index]
+            vc.isFromCalendar = self.isFromCalendar
             let dateAsString =  datestr
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm a"

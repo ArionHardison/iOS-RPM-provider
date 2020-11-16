@@ -39,6 +39,8 @@ enum Base : String{
   
     
     case loginWithEmail = "/api/hospital/login"
+    case generateOTP = "/api/hospital/otp"
+    case verify_otp = "/api/hospital/verify_otp"
     case signUp = "/api/hospital/signUp"
     case logout = "/api/hospital/logout"
     case home = "/api/hospital/home"
@@ -58,6 +60,8 @@ enum Base : String{
     case updateStatus = "/api/hospital/chat/update"
     case chatHistory = "/api/hospital/chat/history"
     case twilioMakeCall = "/api/hospital/video/call/token"
+    case getSpeciality = "/api/hospital/specialities"
+    
     
 
     
@@ -99,6 +103,9 @@ struct model {
     let ChatHistoryEntity = "ChatHistoryEntity"
     let CreateAppointment = "CreateAppointment"
     let TwilioAccess = "TwilioAccess"
+    let GetSpeciality = "GetSpeciality"
+    let OTPMobile = "OTPMobile"
+    
 }
 
 

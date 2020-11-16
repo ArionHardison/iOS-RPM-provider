@@ -44,7 +44,7 @@ class AppointmentDetailsViewController: UIViewController {
         if let appoinment : All_appointments = self.appoinment{
             
             if let data : Patient = appoinment.patient{
-                
+            
             self.patientImage.makeRoundedCorner()
             self.patientImage.setURLImage(data.profile?.profile_pic ?? "")
             self.labelPatientName.text = "\(data.first_name ?? "") \(data.last_name ?? "")"
@@ -54,7 +54,20 @@ class AppointmentDetailsViewController: UIViewController {
             
             self.labelDoctorName.text = "\(profile.doctor?.first_name ?? "") \(profile.doctor?.last_name ?? "")"
             self.labelAppointmentDetails.text = dateConvertor(appoinment.scheduled_at ?? "", _input: .date_time, _output: .DMY_Time)
+            let scheduledDAte = dateConvertor(appoinment.scheduled_at ?? "", _input: .date_time, _output: .YMD)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let myString = formatter.string(from: Date())
+            let yourDate = formatter.date(from: myString)
+            formatter.dateFormat = "YYYY-MM-dd"
+            let convertedDate = formatter.string(from: yourDate!)
+
             
+            if scheduledDAte != convertedDate{
+                self.videoCallButton.isHidden = true
+            }else{
+                self.videoCallButton.isHidden = false
+            }
         }
     }
     
@@ -85,7 +98,9 @@ extension AppointmentDetailsViewController {
         self.recentListTable.register(UINib(nibName: "RecentHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "RecentHistoryTableViewCell")
     }
     @objc func patientDetails(){
-        self.push(id: Storyboard.Ids.PatientsInformationViewController, animation: true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier:  Storyboard.Ids.PatientsInformationViewController) as! PatientsInformationViewController
+        vc.Patients = self.appoinment.patient!
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func editAction() {

@@ -40,3 +40,8 @@ struct ChangePassReq :Codable {
     var password_confirmation : String = ""
     
 }
+
+struct verifyLogin : JSONSerializable{
+    var mobile : Int?
+    var otp : Int?
+}

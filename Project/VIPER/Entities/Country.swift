@@ -107,3 +107,22 @@ struct DeleteModel : Mappable {
     }
     
 }
+
+
+struct OTPMobile  : Mappable {
+    var success : Bool?
+    var message : String?
+    var otp : Int?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        success <- map["success"]
+        message <- map["message"]
+        otp <- map["otp"]
+    }
+
+}

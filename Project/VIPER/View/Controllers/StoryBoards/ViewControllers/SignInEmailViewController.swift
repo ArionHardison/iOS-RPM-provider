@@ -72,9 +72,6 @@ extension SignInEmailViewController : PresenterOutputProtocol{
     }
     
     func loginApi(logindata : LoginReq){
-//        var params = [String:Any]()
-//        params.updateValue(self.emailTxt.getText, forKey: "email")
-//        params.updateValue(self.passwordTxt.getText, forKey: "password")
         var params:[String:Any] =  [PARAM_EMAIL:self.emailTxt.getText,
                           PARAM_PASSWRD : self.passwordTxt.getText,
                           PARAM_CLIENTID:appClientId,

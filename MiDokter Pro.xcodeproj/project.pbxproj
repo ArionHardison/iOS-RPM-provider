@@ -156,6 +156,9 @@
 		8526FFCB2551328600E672B9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCA2551328600E672B9 /* Settings.swift */; };
 		8526FFCD255132E500E672B9 /* CallDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCC255132E500E672B9 /* CallDuration.swift */; };
 		8526FFCF2551333900E672B9 /* AVPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */; };
+		856FE70F25591FCC009C5811 /* CountryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE70D25591FC8009C5811 /* CountryListController.swift */; };
+		856FE71025591FCC009C5811 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE70E25591FCB009C5811 /* CountryListCell.swift */; };
+		856FE715255937A5009C5811 /* VerifyNumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE714255937A5009C5811 /* VerifyNumVC.swift */; };
 		8579C6B92551974A00F5B572 /* PushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579C6B82551974A00F5B572 /* PushHelper.swift */; };
 		85C76854254DA10A002827B9 /* PickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C76853254DA10A002827B9 /* PickerManager.swift */; };
 		85C76856254DAFFE002827B9 /* CreateAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C76855254DAFFE002827B9 /* CreateAppointmentViewController.swift */; };
@@ -340,6 +343,9 @@
 		8526FFCA2551328600E672B9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8526FFCC255132E500E672B9 /* CallDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallDuration.swift; sourceTree = "<group>"; };
 		8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerHelper.swift; sourceTree = "<group>"; };
+		856FE70D25591FC8009C5811 /* CountryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListController.swift; sourceTree = "<group>"; };
+		856FE70E25591FCB009C5811 /* CountryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
+		856FE714255937A5009C5811 /* VerifyNumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNumVC.swift; sourceTree = "<group>"; };
 		8579C6B82551974A00F5B572 /* PushHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushHelper.swift; sourceTree = "<group>"; };
 		8579C7D62551B54B00F5B572 /* TeleHelath Provider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TeleHelath Provider.entitlements"; sourceTree = "<group>"; };
 		85C76853254DA10A002827B9 /* PickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerManager.swift; sourceTree = "<group>"; };
@@ -376,6 +382,9 @@
 		08487FA620B5E94100D4DEE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				856FE714255937A5009C5811 /* VerifyNumVC.swift */,
+				856FE70E25591FCB009C5811 /* CountryListCell.swift */,
+				856FE70D25591FC8009C5811 /* CountryListController.swift */,
 				8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */,
 				8526FFCC255132E500E672B9 /* CallDuration.swift */,
 				8526FFCA2551328600E672B9 /* Settings.swift */,
@@ -1554,6 +1563,7 @@
 				0825A9B92276F12C00DBD50F /* Success.swift in Sources */,
 				084B349C20B02FB900B79318 /* Int.swift in Sources */,
 				105344EC249B60E000650C43 /* UXViewController.swift in Sources */,
+				856FE71025591FCC009C5811 /* CountryListCell.swift in Sources */,
 				084B34C120B0311A00B79318 /* View.swift in Sources */,
 				084B34C820B0318700B79318 /* TextFieldEffects.swift in Sources */,
 				10529FD8251DFBD100262EF4 /* ChatRightCell.swift in Sources */,
@@ -1584,6 +1594,7 @@
 				084B345920B02BB900B79318 /* Reachability.swift in Sources */,
 				088E4E9C20ECDE5600EEEF22 /* SideBarTableViewController.swift in Sources */,
 				77BE1C5924784C3F006273EE /* AddAppointmentTableViewController.swift in Sources */,
+				856FE70F25591FCC009C5811 /* CountryListController.swift in Sources */,
 				77308BF72458A49B000D31FA /* RecentHistoryTableViewCell.swift in Sources */,
 				084B343820B029E900B79318 /* UIScrollView+ParallaxHeader.swift in Sources */,
 				77308BEE2458848D000D31FA /* EditPatientInformationTableViewController.swift in Sources */,
@@ -1591,6 +1602,7 @@
 				10529FE9251E00AB00262EF4 /* ChatManager.swift in Sources */,
 				7768ECE22459F9300051AB91 /* NotifyView.swift in Sources */,
 				084B348520B02E9400B79318 /* User.swift in Sources */,
+				856FE715255937A5009C5811 /* VerifyNumVC.swift in Sources */,
 				85C76854254DA10A002827B9 /* PickerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1759,7 +1771,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1781,7 +1793,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

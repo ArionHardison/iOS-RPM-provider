@@ -21,13 +21,17 @@ class EditProfileTableViewController: UITableViewController {
     @IBOutlet weak var labelEmail: HoshiTextField!
     @IBOutlet weak var buttonSave: UIButton!
     @IBOutlet weak var editProfileImgBtn: UIButton!
+    @IBOutlet weak var textfieldSpecialization: HoshiTextField!
     
-    
+    @IBOutlet weak var countryCodeTextField: HoshiTextField!
+    var speciality = [Speciality]()
     var isImageAdded : Bool = false
-    
+    var countryCode :String?
+    var selectedCategory : String = ""
+    var selectedCategoryID : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        intialLoads()
+        self.intialLoads()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +52,10 @@ class EditProfileTableViewController: UITableViewController {
             self.labelLastName.text = "\(data.doctor?.last_name ?? "")"
             self.labelEmail.text = "\(data.doctor?.email ?? "")"
             self.labelMobileNum.text = "\(data.doctor?.mobile ?? "")"
+            self.countryCodeTextField.text = data.doctor?.country_code ?? ""
+            self.textfieldSpecialization.text = "\(data.doctor?.doctor_profile?.speciality?.name ?? "")"
+            self.selectedCategoryID = data.doctor?.doctor_profile?.speciality?.id ?? 0
+            
         }
     }
     
@@ -63,9 +71,10 @@ class EditProfileTableViewController: UITableViewController {
                 var profile = profileUploadReq()
                 profile.first_name = self.labelFirstName.getText
                 profile.last_name = self.labelLastName.getText
-                profile.specialities = self.labelQualification.getText
+                profile.specialities = self.selectedCategoryID
                 profile.email = self.labelEmail.getText
                 profile.mobile = self.labelMobileNum.getText
+                profile.country_code = self.countryCodeTextField.getText
                 self.updateProfile(data: profile)
             }
         }
@@ -106,9 +115,20 @@ class EditProfileTableViewController: UITableViewController {
 }
 extension EditProfileTableViewController {
     func intialLoads() {
+        self.presenter?.HITAPI(api: Base.profile.rawValue, params: nil, methodType: .GET, modelClass: CommonModel.self, token: true)
+        self.presenter?.HITAPI(api: Base.getSpeciality.rawValue, params: nil, methodType: .GET, modelClass: GetSpeciality.self, token: true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
         self.navigationItem.title = Constants.string.editProfile.localize()
         self.buttonChangePassword.addTarget(self, action: #selector(changePassword), for: .touchUpInside)
+        self.countryCodeTextField.delegate = self
+        self.textfieldSpecialization.delegate = self
+        let country = Common.getCountries()
+        for eachCountry in country {
+            if "IN" == eachCountry.code {
+                self.countryCode = eachCountry.dial_code
+                self.countryCodeTextField.text = eachCountry.dial_code
+            }
+        }
     }
     
     @IBAction func changePassword() {
@@ -124,8 +144,14 @@ extension EditProfileTableViewController : PresenterOutputProtocol{
             case model.type.CommonModel:
                 guard let data = dataDict as? CommonModel else { return }
                 showToast(msg: data.message ?? "")
-                self.popOrDismiss(animation: true)
+                self.setupData()
+                self.setupAction()
+//                self.popOrDismiss(animation: true)
                 break
+        case model.type.GetSpeciality:
+            guard  let data = dataDict as? GetSpeciality else {return}
+            self.speciality = data.speciality ?? []
+            break
             
             default: break
             
@@ -148,4 +174,47 @@ extension EditProfileTableViewController : PresenterOutputProtocol{
         self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .POST, imgData: ["profile_pic":uploadimgeData], imgName: "profile_pic", modelClass: CommonModel.self, token: true)
     }
     
+}
+
+
+extension EditProfileTableViewController : UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == countryCodeTextField{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "CountryListController") as! CountryListController
+            self.present(vc, animated: true, completion: nil)
+            vc.searchCountryCode = { code in
+                self.countryCode = code
+                let country = Common.getCountries()
+                for eachCountry in country {
+                    if code == eachCountry.code {
+                        self.countryCode = eachCountry.dial_code
+                        self.countryCodeTextField.text = eachCountry.dial_code
+                       
+                    }
+                }
+            }
+            return false
+        }else if textField == textfieldSpecialization{
+            var category : [String] = []
+            for categorie in self.speciality{
+                category.append(categorie.name ?? "")
+            }
+            PickerManager.shared.showPicker(pickerData: category, selectedData: nil) { [weak self] (selectedType) in
+                guard let self = self else {
+                    return
+                }
+                self.textfieldSpecialization.text = selectedType
+                for (index,category) in self.speciality.enumerated() {
+                    if category.name == selectedType{
+                        self.selectedCategoryID = self.speciality[index].id ?? 0
+                        print(self.selectedCategory)
+                    }
+                }
+                
+                
+            }
+            return false
+        }
+        return true
+    }
 }

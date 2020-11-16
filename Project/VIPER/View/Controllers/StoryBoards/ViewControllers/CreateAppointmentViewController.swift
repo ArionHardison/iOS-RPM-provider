@@ -16,7 +16,7 @@ class CreateAppointmentViewController: UIViewController {
     @IBOutlet weak var commentsTextView: UITextView!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var createAppointment: UIButton!
-    
+    var isFromCalendar : Bool  = false
     var patientDetails = AllPatients()
     var selectedDate : String = ""
     
@@ -41,6 +41,7 @@ extension CreateAppointmentViewController {
         self.cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         self.createAppointment.addTarget(self, action: #selector(appointmentAction(sender:)), for: .touchUpInside)
         self.patientNameTextField.text = (self.patientDetails.first_name ?? "") + " " +  (self.patientDetails.last_name ?? "")
+        self.commentsTextView.autocorrectionType = .no
        
         
     }
@@ -135,10 +136,18 @@ extension CreateAppointmentViewController : PresenterOutputProtocol{
             case model.type.CreateAppointment:
                 guard let data = dataDict as? CreateAppointment else { return }
                 if Bool(data.success ?? "0") ?? true{
+                    if isFromCalendar{
                     self.popBack(toControllerType: CalendarViewController.self)
+                    }else{
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }else{
                     self.view.makeToast(data.message ?? "")
+                    if isFromCalendar{
                     self.popBack(toControllerType: CalendarViewController.self)
+                    }else{
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
             
                 break

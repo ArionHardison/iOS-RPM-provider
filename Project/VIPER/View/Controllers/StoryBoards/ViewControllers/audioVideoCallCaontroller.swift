@@ -371,6 +371,8 @@ extension audioVideoCallCaontroller {
                 self.videoClick.tintColor = .white
                 self.videoClick.isUserInteractionEnabled = false
            }
+        UIApplication.shared.isIdleTimerDisabled = true
+        UIDevice.current.isProximityMonitoringEnabled = true
         
        }
     
@@ -449,7 +451,7 @@ extension audioVideoCallCaontroller {
                
                // Update the button title
                if (self.localAudioTrack?.isEnabled == true) {
-                    self.audioClick.image = #imageLiteral(resourceName: "audioOff")
+                    self.audioClick.image = #imageLiteral(resourceName: "audioOn")
                    
                } else {
                     self.audioClick.image = #imageLiteral(resourceName: "audioOff")
@@ -485,7 +487,7 @@ extension audioVideoCallCaontroller {
         
         let isSpeakerON =  avPlayerHelper?.changeAudioOutput() ?? true
         print(isSpeakerON)
-        self.speakerClick.image = isSpeakerON ? #imageLiteral(resourceName: "muteSpeakernew") : #imageLiteral(resourceName: "newspeaker")
+        self.speakerClick.image = isSpeakerON ? #imageLiteral(resourceName: "newspeaker") : #imageLiteral(resourceName: "muteSpeakernew")
                
     }
     

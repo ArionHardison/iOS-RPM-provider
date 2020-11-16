@@ -22,7 +22,7 @@ class PatientsInformationViewController: UIViewController {
     @IBOutlet weak var profileView: UIView!
     
     
-    var Patients : TodayPatients = TodayPatients()
+    var Patients : Patient = Patient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +93,7 @@ extension PatientsInformationViewController {
     }
     
     func populateData(){
-        if let data : TodayPatients = self.Patients{
+        if let data : Patient = self.Patients{
             self.labelName.text = "\(data.first_name ?? "") \(data.last_name ?? "")"
             self.labelPatientID.text = "\(data.id ?? 0)"
             self.labelPatientDetails.text = "\(data.profile?.age ?? "") Year ,\(data.profile?.gender ?? "")"

@@ -75,6 +75,8 @@ struct Constants {
     let paiddata = "Paid"
     let pending = "Pending"
     let appointmentDetail = "Appointment Details"
+    let Yes = "Yes"
+    let No = "No"
 
 }
 

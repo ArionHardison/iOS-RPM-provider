@@ -161,16 +161,38 @@ func toastSuccess(_ view:UIView,message:NSString,smallFont:Bool,isPhoneX:Bool, c
 }
 
 
+func showAlert(message : String?, btnHandler : ((Int)->Void)?, fromView : UIViewController){
+   
+    let alert = PopupDialog(title: message, message: nil)
+    let firstButton =  PopupDialogButton(title: Constants.string.Yes.localize(), action: {
+        btnHandler?(1)
+        alert.dismiss()
+    })
+    let secondButton =  PopupDialogButton(title: Constants.string.No.localize(), action: {
+        btnHandler?(2)
+        alert.dismiss()
+    })
+    alert.transitionStyle = .zoomIn
+    alert.addButton(firstButton)
+    alert.addButton(secondButton)
+    fromView.present(alert, animated: true, completion: nil)
+    
+}
+
+
+
 internal func forceLogout(with message : String? = nil) {
     
     clearUserDefaults()
+    UserDefaultConfig.Token = ""
+    UserDefaultConfig.UserName = ""
+    UserDefaultConfig.UserID = ""
     UIApplication.shared.windows.last?.rootViewController?.popOrDismiss(animation: true)
     UIApplication.shared.windows.first?.rootViewController = Router.createModule()
     UIApplication.shared.windows.first?.makeKeyAndVisible()
     
-    UserDefaultConfig.Token = ""
-    UserDefaultConfig.UserName = ""
-    UserDefaultConfig.UserID = ""
+   
+    
     
     if message != nil {
         UIApplication.shared.windows.last?.rootViewController?.view.makeToast(message, duration: 2, position: .center, title: nil, image: nil, style: ToastStyle(), completion: nil)

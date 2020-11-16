@@ -29,7 +29,7 @@ class EditPatientInformationTableViewController: UITableViewController {
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var editProfileImgBtn: UIButton!
     
-    var Patients : TodayPatients = TodayPatients()
+    var Patients : Patient = Patient()
     
     var isImageAdded : Bool = false
     
@@ -99,7 +99,7 @@ class EditPatientInformationTableViewController: UITableViewController {
     }
     
     func populateData(){
-        if let data : TodayPatients = self.Patients{
+        if let data : Patient = self.Patients{
             self.nameTxt.text = data.first_name ?? ""
             self.profileImg.setURLImage(data.profile?.profile_pic ?? "")
             self.profileImg.makeRoundedCorner()

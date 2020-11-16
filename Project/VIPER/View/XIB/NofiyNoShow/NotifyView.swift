@@ -10,14 +10,14 @@ import UIKit
 
 
 class NotifyView: UIView {
-
-    @IBOutlet weak var buttonPatientSMS: UIButton!
-    @IBOutlet weak var buttonPatientEmail: UIButton!
-    @IBOutlet weak var buttonDoctorSMS: UIButton!
-    @IBOutlet weak var buttonDoctorEmail: UIButton!
     @IBOutlet weak var buttonDiscard: UIButton!
     @IBOutlet weak var buttonNotify: UIButton!
-    @IBOutlet var buttons : [UIButton]!
+    @IBOutlet weak var buttonSMSNotifyPatient: UIButton!
+    @IBOutlet weak var buttonEmailPatient: UIButton!
+    @IBOutlet weak var buttonSMSHospital: UIButton!
+    @IBOutlet weak var buttonEmailHospital: UIButton!
+    
+    
     var onTapNotify : (()->Void)?
     var onTapDiscard : (()->Void)?
     
@@ -36,11 +36,6 @@ extension NotifyView {
         
         self.buttonNotify.addTarget(self, action: #selector(notify), for: .touchUpInside)
         self.buttonDiscard.addTarget(self, action: #selector(disCard), for: .touchUpInside)
-        
-        self.buttonPatientSMS.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "SMS", titlePosition: .right, additionalSpacing: 8, state: .normal)
-        self.buttonPatientEmail.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "Email", titlePosition: .right, additionalSpacing: 8, state: .normal)
-        self.buttonDoctorSMS.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "SMS", titlePosition: .right, additionalSpacing: 8, state: .normal)
-        self.buttonDoctorEmail.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "Email", titlePosition: .right, additionalSpacing: 8, state: .normal)
 
     }
     
@@ -60,3 +55,4 @@ extension NotifyView {
     }
 
 }
+

@@ -90,6 +90,10 @@ struct Patient : Mappable {
     var profile : Profile?
     var appointments : [Appointments]?
     
+    init() {
+        
+    }
+    
     init?(map: Map) {
         
     }

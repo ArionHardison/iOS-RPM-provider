@@ -83,7 +83,12 @@ extension ChangePasswordViewController : PresenterOutputProtocol{
                     self.popOrDismiss(animation: true)
                 }
                 showToast(msg: data?.message ?? "")
-                
+//                showAlert(message: , handler: {_ in
+//                    c
+//                })
+                showAlert(message: "Logout to continue", okHandler: {
+                    forceLogout()
+                }, fromView: self)
                 break
             
             default: break

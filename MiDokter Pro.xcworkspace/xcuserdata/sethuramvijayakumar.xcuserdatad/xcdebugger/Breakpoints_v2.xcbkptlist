@@ -14,89 +14,9 @@
             filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/audioVideoCallCaontroller.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "657"
-            endingLineNumber = "657"
+            startingLineNumber = "659"
+            endingLineNumber = "659"
             landmarkName = "room(_:didFailToConnectWithError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CD360657-C160-439C-A20D-9183BB278ECD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/TwilioViewController+CallKit.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "performRoomConnect(roomName:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CD360657-C160-439C-A20D-9183BB278ECD - b66d6cd66d1872cf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TeleHelath_Provider.audioVideoCallCaontroller.performRoomConnect(roomName: Swift.Optional&lt;Swift.String&gt;, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "TeleHelath Provider"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sethuramvijayakumar/Downloads/BitBuckeClone/TeleHealth/telehealth_ios_doctor/Project/VIPER/View/Controllers/StoryBoards/ViewControllers/TwilioViewController+CallKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "496">
-               </Location>
-               <Location
-                  uuid = "CD360657-C160-439C-A20D-9183BB278ECD - 9895e6b9cfbaff10"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.TVIConnectOptionsBuilder) -&gt; () in TeleHelath_Provider.audioVideoCallCaontroller.performRoomConnect(roomName: Swift.Optional&lt;Swift.String&gt;, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "TeleHelath Provider"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sethuramvijayakumar/Downloads/BitBuckeClone/TeleHealth/telehealth_ios_doctor/Project/VIPER/View/Controllers/StoryBoards/ViewControllers/TwilioViewController+CallKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "619822FC-6EE0-4126-8740-CF34920EB839"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/audioVideoCallCaontroller.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1046"
-            endingLineNumber = "1046"
-            landmarkName = "showSuccess(api:dataArray:dataDict:modelClass:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "597405EA-455B-4044-B79F-DFFCC2F7431B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/TwilioViewController+CallKit.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "performStartCallAction(uuid:roomName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -113,6 +33,54 @@
             startingLineNumber = "88"
             endingLineNumber = "88"
             landmarkName = "application(_:continue:restorationHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5FDD707F-937A-4B85-8B8C-D023F5D28E99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project/PubNubManager/ChatManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "sentMessage(message:senderId:timestamp:provider_id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70B89E76-BA31-44A2-BF9E-B79DB72A4195"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/CalendarViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "selectedTime(time:alertVC:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24CA0C1D-0657-4ABC-A046-30EFA292DCF6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/audioVideoCallCaontroller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
+            landmarkName = "muteVoiceAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -98,6 +98,7 @@ struct Doctor_profile : Mappable {
     var doctor_id : Int?
     var gender : String?
     var profile_pic : String?
+    var profile_video : String?
     var medical_assoc_name : String?
     var awards : String?
     var profile_description : String?
@@ -114,19 +115,21 @@ struct Doctor_profile : Mappable {
     var updated_at : String?
     var deleted_at : String?
     var affiliations : String?
-    var specialities : String?
+    var specialities : Int?
     var fees : Int?
-    
+    var speciality : Speciality?
+
     init?(map: Map) {
-        
+
     }
-    
+
     mutating func mapping(map: Map) {
-        
+
         id <- map["id"]
         doctor_id <- map["doctor_id"]
         gender <- map["gender"]
         profile_pic <- map["profile_pic"]
+        profile_video <- map["profile_video"]
         medical_assoc_name <- map["medical_assoc_name"]
         awards <- map["awards"]
         profile_description <- map["profile_description"]
@@ -145,8 +148,9 @@ struct Doctor_profile : Mappable {
         affiliations <- map["affiliations"]
         specialities <- map["specialities"]
         fees <- map["fees"]
+        speciality <- map["speciality"]
     }
-    
+
 }
 
 struct Clinics : Mappable {
@@ -192,7 +196,50 @@ struct Clinics : Mappable {
 struct profileUploadReq : Codable {
     var first_name : String = ""
     var last_name : String = ""
-    var specialities : String = ""
+    var specialities : Int = 0
     var mobile : String = ""
     var email : String = ""
+    var country_code : String = ""
+}
+
+
+struct Speciality : Mappable {
+    var id : Int?
+    var name : String?
+    var image : String?
+    var status : Int?
+    var discount : String?
+    var fees : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        name <- map["name"]
+        image <- map["image"]
+        status <- map["status"]
+        discount <- map["discount"]
+        fees <- map["fees"]
+    }
+
+}
+
+
+struct GetSpeciality : Mappable {
+   var speciality : [Speciality]?
+    
+    init() {}
+
+   init?(map: Map) {
+
+   }
+
+   mutating func mapping(map: Map) {
+
+       speciality <- map["speciality"]
+   }
+
 }
