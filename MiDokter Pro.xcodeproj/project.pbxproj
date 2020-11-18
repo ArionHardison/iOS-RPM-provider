@@ -156,6 +156,7 @@
 		8526FFCB2551328600E672B9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCA2551328600E672B9 /* Settings.swift */; };
 		8526FFCD255132E500E672B9 /* CallDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCC255132E500E672B9 /* CallDuration.swift */; };
 		8526FFCF2551333900E672B9 /* AVPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */; };
+		85540296256537BB003972F5 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85540295256537BB003972F5 /* KeyboardManager.swift */; };
 		856FE70F25591FCC009C5811 /* CountryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE70D25591FC8009C5811 /* CountryListController.swift */; };
 		856FE71025591FCC009C5811 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE70E25591FCB009C5811 /* CountryListCell.swift */; };
 		856FE715255937A5009C5811 /* VerifyNumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE714255937A5009C5811 /* VerifyNumVC.swift */; };
@@ -343,6 +344,7 @@
 		8526FFCA2551328600E672B9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8526FFCC255132E500E672B9 /* CallDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallDuration.swift; sourceTree = "<group>"; };
 		8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerHelper.swift; sourceTree = "<group>"; };
+		85540295256537BB003972F5 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		856FE70D25591FC8009C5811 /* CountryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListController.swift; sourceTree = "<group>"; };
 		856FE70E25591FCB009C5811 /* CountryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
 		856FE714255937A5009C5811 /* VerifyNumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyNumVC.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 		084B342420B028E800B79318 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				85540295256537BB003972F5 /* KeyboardManager.swift */,
 				8579C6B82551974A00F5B572 /* PushHelper.swift */,
 				85C76853254DA10A002827B9 /* PickerManager.swift */,
 				105344F2249B66A300650C43 /* Colors */,
@@ -1483,6 +1486,7 @@
 				084B343920B029E900B79318 /* ParallaxHeader.swift in Sources */,
 				7738E2F42435DA7800804159 /* LaunchViewController.swift in Sources */,
 				084B343E20B02A3800B79318 /* Toast.swift in Sources */,
+				85540296256537BB003972F5 /* KeyboardManager.swift in Sources */,
 				1008958B249CC2040053AA02 /* AlertBuilder.swift in Sources */,
 				10089594249CEC8A0053AA02 /* PatientModel.swift in Sources */,
 				08C066F720B039C400A8C5F0 /* GMSMapView.swift in Sources */,

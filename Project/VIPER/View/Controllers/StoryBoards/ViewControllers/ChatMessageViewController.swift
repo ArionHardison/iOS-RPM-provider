@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import IQKeyboardManagerSwift
 
 class ChatMessageViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class ChatMessageViewController: UIViewController {
     @IBOutlet weak var imageuploadView : UIView!
     @IBOutlet weak var infoLbl : UILabel!
     @IBOutlet weak var messageSendBtn : UIButton!
+    @IBOutlet var chatView: UIView!
     
     var messageDataSource:[MessageDetails]?
     var chats : Chats?
@@ -30,6 +32,8 @@ class ChatMessageViewController: UIViewController {
         ChatManager.shared.delegate = self
         self.initailSetup()
         self.messageSend()
+        IQKeyboardManager.shared.enable = false
+        KeyboardManager.shared.keyBoardShowHide(view: self.chatView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +44,7 @@ class ChatMessageViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         ChatManager.shared.leftFromChatRoom()
+        IQKeyboardManager.shared.enable = true
     }
     
     func initailSetup(){
@@ -63,7 +68,7 @@ class ChatMessageViewController: UIViewController {
             if (self.msgTxt.text ?? "").isEmpty{
                 showToast(msg: "Messge should not be empty")
             }else{
-            ChatManager.shared.sentMessage(message: self.msgTxt.text ?? "", senderId: Int(UserDefaultConfig.UserID ?? "0") ?? 0, timestamp: Date().description, provider_id: (self.chats?.patient?.id ?? 0).description)
+                ChatManager.shared.sentMessage(message: self.msgTxt.text ?? "", senderId: Int(UserDefaultConfig.UserID ) ?? 0, timestamp: Date().description, provider_id: (self.chats?.patient?.id ?? 0).description)
             }
         }
     }
@@ -75,8 +80,16 @@ extension ChatMessageViewController:ChatProtocol {
     func getMessageList(message: [MessageDetails]) {
         print("ChatMsgList",message)
         self.messageDataSource = message
-        chatListTable.reloadData()
+        chatListTable.reloadInMainThread()
+        self.scrollToBottom()
          self.msgTxt.text = ""
+    }
+    
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: (self.messageDataSource?.count ?? 0)-1, section: 0)
+            self.chatListTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }
 
