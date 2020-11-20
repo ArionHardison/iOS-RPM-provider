@@ -46,7 +46,7 @@ class EditProfileTableViewController: UITableViewController {
     }
     
     func setupData(){
-        if let data : ProfileEntity = profile{
+        let data : ProfileEntity = profile
             self.profileImage.setURLImage(data.doctor?.doctor_profile?.profile_pic ?? "")
             self.labelFirstName.text = "\(data.doctor?.last_name ?? "")"
             self.labelLastName.text = "\(data.doctor?.last_name ?? "")"
@@ -56,7 +56,7 @@ class EditProfileTableViewController: UITableViewController {
             self.textfieldSpecialization.text = "\(data.doctor?.doctor_profile?.speciality?.name ?? "")"
             self.selectedCategoryID = data.doctor?.doctor_profile?.speciality?.id ?? 0
             
-        }
+        
     }
     
     func setupAction(){

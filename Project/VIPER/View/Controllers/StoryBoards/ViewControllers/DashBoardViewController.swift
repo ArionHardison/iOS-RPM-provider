@@ -100,7 +100,7 @@ extension DashBoardViewController {
     
     
     func populateData(data : DashBoardEntity){
-        if let data : DashBoardEntity = data{
+        let data : DashBoardEntity = data
             self.bookedLbl.text = data.booked_count?.description ?? "0"
             self.cancelledLbl.text = data.cancelled_count?.description ?? "0"
             self.newPatientLbl.text = data.new_patient_count?.description ?? "0"
@@ -109,7 +109,7 @@ extension DashBoardViewController {
             self.paidBtn.setTitle("\(Constants.string.paiddata.localize()): \(curreny) \(data.paid?.description ?? "0")", for: .normal)
             self.pendingBtn.setTitle("\(Constants.string.pending.localize()): \(curreny) \(data.pending?.description ?? "0")", for: .normal)
             self.appointmentCountLbl.text = data.total_appoinments?.description ?? "0"
-        }
+        
     }
     
     func setupFont(){

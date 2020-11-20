@@ -61,6 +61,7 @@ enum Base : String{
     case chatHistory = "/api/hospital/chat/history"
     case twilioMakeCall = "/api/hospital/video/call/token"
     case getSpeciality = "/api/hospital/specialities"
+    case uploadPrescription = "/api/hospital/appointment/updateRecords"
     
     
 
@@ -105,6 +106,7 @@ struct model {
     let TwilioAccess = "TwilioAccess"
     let GetSpeciality = "GetSpeciality"
     let OTPMobile = "OTPMobile"
+    let UploadSuccess = "UploadSuccess"
     
 }
 

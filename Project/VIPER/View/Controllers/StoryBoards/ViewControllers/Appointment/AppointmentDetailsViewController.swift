@@ -25,6 +25,7 @@ class AppointmentDetailsViewController: UIViewController {
     @IBOutlet weak var recentListTable: UITableView!
     @IBOutlet weak var recentListTableHeight: NSLayoutConstraint!
     @IBOutlet weak var videoCallButton: UIButton!
+    @IBOutlet weak var enterPrescriptionButton: UIButton!
     
     var notifyView : NotifyView!
     var appoinment : All_appointments = All_appointments()
@@ -41,7 +42,7 @@ class AppointmentDetailsViewController: UIViewController {
     }
     
     func populateData(){
-        if let appoinment : All_appointments = self.appoinment{
+       let appoinment : All_appointments = self.appoinment
             
             if let data : Patient = appoinment.patient{
             
@@ -68,7 +69,7 @@ class AppointmentDetailsViewController: UIViewController {
             }else{
                 self.videoCallButton.isHidden = false
             }
-        }
+        
     }
     
     func setupAction(){
@@ -76,6 +77,17 @@ class AppointmentDetailsViewController: UIViewController {
             self.cancelAppointmentDetail(id: self.appoinment.id?.description ?? "0")
         }
     }
+    
+    @IBAction private func addPrescriptionAction(sender:UIButton){
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AddPrescriptionViewController) as! AddPrescriptionViewController
+        vc.appoitmentID = self.appoinment.id ?? 0
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(vc, animated: true, completion: nil)
+        
+        
+    }
+    
 }
 extension AppointmentDetailsViewController {
     
@@ -84,6 +96,7 @@ extension AppointmentDetailsViewController {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.string.edit.localize(), style: .done, target: self, action: #selector(self.editAction))
+        self.enterPrescriptionButton.addTarget(self, action: #selector(addPrescriptionAction(sender:)), for: .touchUpInside)
         self.navigationItem.title = Constants.string.appointmentDetails.localize()
         self.buttonViewPatientDetails.addTarget(self, action: #selector(patientDetails), for: .touchUpInside)
         self.videoCallButton.addTarget(self, action: #selector(videoCallAction(_sender:)), for: .touchUpInside)

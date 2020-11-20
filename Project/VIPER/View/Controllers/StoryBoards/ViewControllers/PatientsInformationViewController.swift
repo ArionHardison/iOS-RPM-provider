@@ -93,7 +93,7 @@ extension PatientsInformationViewController {
     }
     
     func populateData(){
-        if let data : Patient = self.Patients{
+        let data : Patient = self.Patients
             self.labelName.text = "\(data.first_name ?? "") \(data.last_name ?? "")"
             self.labelPatientID.text = "\(data.id ?? 0)"
             self.labelPatientDetails.text = "\(data.profile?.age ?? "") Year ,\(data.profile?.gender ?? "")"
@@ -101,7 +101,7 @@ extension PatientsInformationViewController {
             self.profileImg.setURLImage(data.profile?.profile_pic ?? "")
             
         }
-    }
+  
 }
 
 extension PatientsInformationViewController : UITableViewDelegate,UITableViewDataSource {

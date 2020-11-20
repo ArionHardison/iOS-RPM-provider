@@ -99,7 +99,7 @@ class EditPatientInformationTableViewController: UITableViewController {
     }
     
     func populateData(){
-        if let data : Patient = self.Patients{
+         let data : Patient = self.Patients
             self.nameTxt.text = data.first_name ?? ""
             self.profileImg.setURLImage(data.profile?.profile_pic ?? "")
             self.profileImg.makeRoundedCorner()
@@ -114,7 +114,7 @@ class EditPatientInformationTableViewController: UITableViewController {
             self.localityTXT.text = data.profile?.locality ?? ""
             self.pincodeTXT.text = data.profile?.postal_code ?? ""
         }
-    }
+    
 }
 
 extension EditPatientInformationTableViewController {

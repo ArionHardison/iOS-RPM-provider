@@ -27,3 +27,20 @@ struct Success : Mappable {
 	}
 
 }
+
+
+struct UploadSuccess : Mappable {
+    var success : String?
+    var message : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        success <- map["success"]
+        message <- map["message"]
+    }
+
+}

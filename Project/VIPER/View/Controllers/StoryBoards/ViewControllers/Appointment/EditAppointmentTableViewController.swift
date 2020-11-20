@@ -46,7 +46,7 @@ class EditAppointmentTableViewController: UITableViewController {
     }
 
     func populateData(){
-        if let appoinment : All_appointments = self.appoinment{
+         let appoinment : All_appointments = self.appoinment
             
             if let data : Patient = appoinment.patient{
                 
@@ -60,7 +60,7 @@ class EditAppointmentTableViewController: UITableViewController {
             self.labelDoctorName.text = "\(profile.doctor?.first_name ?? "") \(profile.doctor?.last_name ?? "")"
             self.labelAppointmentDetails.text = dateConvertor(appoinment.scheduled_at ?? "", _input: .date_time, _output: .DMY_Time)
             
-        }
+        
     }
     
     func setupAction(){

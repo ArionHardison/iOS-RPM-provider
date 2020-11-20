@@ -110,6 +110,7 @@
 		10FAC04B251CCE9E00DE6EA9 /* Progressview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FAC04A251CCE9E00DE6EA9 /* Progressview.swift */; };
 		10FAC04D251CD01D00DE6EA9 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FAC04C251CD01D00DE6EA9 /* AudioManager.swift */; };
 		10FAC04F251CD02A00DE6EA9 /* DriverrequestTone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10FAC04E251CD02A00DE6EA9 /* DriverrequestTone.wav */; };
+		18AF5A592567E81A00A26E35 /* AddPrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF5A582567E81A00A26E35 /* AddPrescriptionViewController.swift */; };
 		7729628F2487B91D00E5BC42 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */; };
 		77308BEE2458848D000D31FA /* EditPatientInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77308BED2458848D000D31FA /* EditPatientInformationTableViewController.swift */; };
 		77308BF224588726000D31FA /* ChartingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77308BF024588726000D31FA /* ChartingTableViewCell.swift */; };
@@ -296,6 +297,7 @@
 		10FAC04C251CD01D00DE6EA9 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		10FAC04E251CD02A00DE6EA9 /* DriverrequestTone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DriverrequestTone.wav; sourceTree = "<group>"; };
 		16A7B4E6929B4A6FE0B760F1 /* Pods-MiDokter Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiDokter Pro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiDokter Pro/Pods-MiDokter Pro.debug.xcconfig"; sourceTree = "<group>"; };
+		18AF5A582567E81A00A26E35 /* AddPrescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrescriptionViewController.swift; sourceTree = "<group>"; };
 		5AFAC7B4BF9CE2D27DADAEAF /* Pods-MiDokter Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiDokter Pro.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiDokter Pro/Pods-MiDokter Pro.release.xcconfig"; sourceTree = "<group>"; };
 		7729628E2487B91D00E5BC42 /* DashBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		77308BED2458848D000D31FA /* EditPatientInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPatientInformationTableViewController.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				774B7192247BF18000839F14 /* CalendarViewController.swift */,
 				10529FEC251E097200262EF4 /* ChatMessageViewController.swift */,
 				85C76855254DAFFE002827B9 /* CreateAppointmentViewController.swift */,
+				18AF5A582567E81A00A26E35 /* AddPrescriptionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1582,6 +1585,7 @@
 				7738E2FA2435DA9F00804159 /* ProfieViewController.swift in Sources */,
 				084B345020B02B5B00B79318 /* MakeJson.swift in Sources */,
 				8526FFC725512C1F00E672B9 /* audioVideoCallCaontroller.swift in Sources */,
+				18AF5A592567E81A00A26E35 /* AddPrescriptionViewController.swift in Sources */,
 				7733ED572454A99D00C252E1 /* ChatListTableViewCell.swift in Sources */,
 				10529FE7251E00AB00262EF4 /* ChatEntity.swift in Sources */,
 				7733ED4E2454914800C252E1 /* PatientTableViewCell.swift in Sources */,

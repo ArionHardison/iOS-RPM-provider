@@ -39,13 +39,13 @@ class ProfieViewController: UIViewController {
     }
     
     func setupData(){
-        if let data : ProfileEntity = profile{
+         let data : ProfileEntity = profile
             self.profileImage.setURLImage(data.doctor?.doctor_profile?.profile_pic ?? "")
             self.labelName.text = "\(data.doctor?.first_name ?? "") \(data.doctor?.last_name ?? "")"
             self.clincList = data.clinics ?? [Clinics]()
             self.clinictTable.reloadData()
         }
-    }
+    
 
 }
 
