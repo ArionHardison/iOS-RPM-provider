@@ -530,7 +530,7 @@ extension audioVideoCallCaontroller {
     
         func makeTwilioCall(roomId : String,receiverId :String) {
             
-            let baseUrl = isCallType == callType.receiveCall ? Base.twilioMakeCall.rawValue : Base.twilioMakeCall.rawValue
+            let baseUrl = isCallType == callType.receiveCall ? Base.twilioRecieveCall.rawValue : Base.twilioMakeCall.rawValue
             var url = String()
             
             if self.isCallType == .makeCall {
@@ -538,7 +538,10 @@ extension audioVideoCallCaontroller {
                 self.newRoomID = "\(UserDefaultConfig.UserID)_video_\(receiverId)"
             
             }else {
-                url =  "\(baseUrl)?room_id=\(receiverId)_video_\(UserDefaultConfig.UserID)&hospital_id=\(UserDefaultConfig.UserID)&patient_id=\(receiverId)"
+//                url =  "\(baseUrl)?room_id=\(receiverId)_video_\(UserDefaultConfig.UserID)&hospital_id=\(UserDefaultConfig.UserID)&patient_id=\(receiverId)"
+                url =  "\(baseUrl)?room_id=\(UserDefaultConfig.UserID)_video_\(receiverId)&hospital_id=\(UserDefaultConfig.UserID)&patient_id=\(receiverId)"
+                
+                
                 self.newRoomID = "\(UserDefaultConfig.UserID)_video_\(receiverId)"
 
             }

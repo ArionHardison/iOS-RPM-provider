@@ -309,9 +309,9 @@ extension AppDelegate : PKPushRegistryDelegate {
              uuid = UUID()
              pushData = GetData
         
-            let hasVideo = pushData?.video == 1 ? true : false
+            let hasVideo = true
             let handleName = pushData?.name ?? ""
-//        initiateCallKit(value: handleName, hasVideo: hasVideo, uuid: uuid ?? UUID()) { }
+        initiateCallKit(value: handleName, hasVideo: hasVideo, uuid: uuid ?? UUID()) { }
         
         
 //                  let isIncomingcall = pushData?.incomingcall == 1

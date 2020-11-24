@@ -60,6 +60,7 @@ enum Base : String{
     case updateStatus = "/api/hospital/chat/update"
     case chatHistory = "/api/hospital/chat/history"
     case twilioMakeCall = "/api/hospital/video/call/token"
+    case twilioRecieveCall = "/api/hospital/video/call"
     case getSpeciality = "/api/hospital/specialities"
     case uploadPrescription = "/api/hospital/appointment/updateRecords"
     

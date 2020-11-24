@@ -6214,7 +6214,7 @@
         <!--Audio Video Call Caontroller-->
         <scene sceneID="ecg-di-hyc">
             <objects>
-                <viewController storyboardIdentifier="audioVideoCallCaontroller" id="BJx-ed-eCe" customClass="audioVideoCallCaontroller" customModule="TeleHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="audioVideoCallCaontroller" id="BJx-ed-eCe" customClass="audioVideoCallCaontroller" customModule="TeleHelath_Provider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kVm-u8-1I1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6543,6 +6543,7 @@
         <designable name="kTa-E5-AgA">
             <size key="intrinsicContentSize" width="107" height="25"/>
         </designable>
+        <designable name="kgt-R0-O8u"/>
         <designable name="qU4-Nh-8cm">
             <size key="intrinsicContentSize" width="141.5" height="25"/>
         </designable>
