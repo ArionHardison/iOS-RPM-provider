@@ -130,20 +130,20 @@ extension DashBoardViewController {
         
     }
     
-    func setupFont(){
-    [self.bookedTitleLbl,self.cancelledTitleLbl,self.newPatientTitleLbl,self.repeatTitleLbl,self.appointmentDateTitleLbl,self.appointmentDateLbl].forEach { (label) in
-            Common.setFont(to: label)
-        }
-        
-        [self.bookedLbl,self.cancelledLbl,self.newPatientLbl,self.repeatLbl].forEach { (label) in
-            Common.setFont(to: label, isTitle: true, size: 17)
-        }
-        
-        [self.pendingBtn , self.paidBtn].forEach { (button) in
-            button?.setCorneredElevation(shadow: 1, corner: 5, color: .clear)
-        }
-        Common.setFont(to: self.appointmentCountLbl, isTitle: true, size: 20)
-    }
+//    func setupFont(){
+//    [self.bookedTitleLbl,self.cancelledTitleLbl,self.newPatientTitleLbl,self.repeatTitleLbl,self.appointmentDateTitleLbl,self.appointmentDateLbl].forEach { (label) in
+//            Common.setFont(to: label)
+//        }
+//
+//        [self.bookedLbl,self.cancelledLbl,self.newPatientLbl,self.repeatLbl].forEach { (label) in
+//            Common.setFont(to: label, isTitle: true, size: 17)
+//        }
+//
+//        [self.pendingBtn , self.paidBtn].forEach { (button) in
+//            button?.setCorneredElevation(shadow: 1, corner: 5, color: .clear)
+//        }
+//        Common.setFont(to: self.appointmentCountLbl, isTitle: true, size: 20)
+//    }
     
     func setupLanguage() {
         self.bookedTitleLbl.text = Constants.string.booked.localize()

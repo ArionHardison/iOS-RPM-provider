@@ -18,7 +18,8 @@ class CreateHealthFeedViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var buttonPublish: UIButton!
     @IBOutlet weak var buttonAddImage: UIButton!
-    
+    @IBOutlet weak var addImg: UIImageView!
+
     var isImageAdded : Bool = false
     
     override func viewDidLoad() {
@@ -35,10 +36,13 @@ class CreateHealthFeedViewController: UIViewController {
 extension CreateHealthFeedViewController {
     func initialLoads(){
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward")?.withTintColor(UIColor.white), style: .plain, target: self, action: #selector(self.backButtonClick))
 
         self.navigationItem.title = Constants.string.healthFeed.localize()
 
+        self.coverImage.addTap {
+            self.chooseCoverPhoto()
+        }
         self.buttonAddImage.addTarget(self, action: #selector(chooseCoverPhoto), for: .touchUpInside)
         self.setupAction()
     }

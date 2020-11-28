@@ -13,6 +13,7 @@ class PatientTableViewCell: UITableViewCell {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelPatientID: UILabel!
     @IBOutlet weak var labelPatientDetails: UILabel!
+    @IBOutlet weak var patientImg: UIImageView!
     @IBOutlet weak var buttonOptions: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +24,12 @@ class PatientTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.patientImg.makeRoundedCorner()
     }
     
 }

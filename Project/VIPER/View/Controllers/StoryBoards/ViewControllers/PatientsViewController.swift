@@ -113,9 +113,9 @@ extension PatientsViewController : UITableViewDelegate,UITableViewDataSource {
     func populateData(cell : PatientTableViewCell, data : AllPatients){
         cell.labelName.text = "\(data.first_name ?? "") \(data.last_name ?? "")"
         cell.labelPatientDetails.text = "\(data.profile?.age ?? "") years , \(data.profile?.gender ?? "")"
-        cell.labelPatientID.text = "\(data.id ?? 0)"
-        cell.imageView?.makeRoundedCorner()
-        cell.imageView?.setURLImage(data.profile?.profile_pic ?? "")
+        cell.labelPatientID.text = "TELE\(data.id ?? 0)"
+//        cell.imageView?.makeRoundedCorner()
+        cell.patientImg?.setURLImage(data.profile?.profile_pic ?? "")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -134,7 +134,7 @@ extension PatientsViewController : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 81
+        return 90
     }
     
 }

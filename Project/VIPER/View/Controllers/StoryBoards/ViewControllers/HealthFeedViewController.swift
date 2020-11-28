@@ -84,10 +84,10 @@ extension HealthFeedViewController : UITableViewDelegate, UITableViewDataSource 
     }
     
     func setupData(cell : HealthFeedTableViewCell , data : Article){
-        cell.articleImage.setURLImage(data.cover_photo ?? "")
-        cell.articleTitle.text = data.name ?? ""
-        cell.articleContent.text = data.description
-        cell.articledate.text = dateConvertor(data.created_at ?? "", _input: .date_time, _output: .DM)
+        cell.ArticleImage.setURLImage(data.cover_photo ?? "")
+        cell.ArticleTitle.text = data.name ?? ""
+        cell.Articlecontent.text = data.description
+//        cell..text = dateConvertor(data.created_at ?? "", _input: .date_time, _output: .DM)
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

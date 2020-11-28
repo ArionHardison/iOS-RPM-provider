@@ -18,6 +18,7 @@ class NotifyView: UIView {
     @IBOutlet weak var buttonEmailHospital: UIButton!
     
     
+    
     var onTapNotify : (()->Void)?
     var onTapDiscard : (()->Void)?
     

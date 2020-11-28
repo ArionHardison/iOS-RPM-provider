@@ -16,6 +16,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var buttonCancel: UIButton!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var listTable: UITableView!
+    @IBOutlet weak var overallView: UIView!
     @IBOutlet weak var buttonBlockCalendar: UIButton!
     @IBOutlet weak var buttonAddAppointment: UIButton!
     var all_appointments : [All_appointments] = [All_appointments]()
@@ -52,6 +53,17 @@ extension CalendarViewController {
     }
     
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.roundCorners(cornerRadius: 10, cornerView: self.overallView)
+    }
+    
+    func roundCorners(cornerRadius: Double,cornerView:UIView) {
+        cornerView.layer.cornerRadius = CGFloat(cornerRadius)
+        cornerView.clipsToBounds = true
+        cornerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
     @IBAction func buttonCancelAction() {
         self.backButtonClick()
     }
@@ -81,21 +93,21 @@ extension CalendarViewController {
         self.calendarView.calendarAttributes = [CLCalendarBackgroundImageColor : UIColor.clear,
 
         //Unselected days in the past and future, colour of the text and background.
-            CLCalendarPastDayNumberTextColor : UIColor.darkGray,
-            CLCalendarFutureDayNumberTextColor : UIColor.darkGray,
+            CLCalendarPastDayNumberTextColor : UIColor(named: "TextBlackColor")!,
+            CLCalendarFutureDayNumberTextColor : UIColor(named: "TextBlackColor")!,
 
-            CLCalendarCurrentDayNumberTextColor : UIColor.darkGray,
+            CLCalendarCurrentDayNumberTextColor : UIColor(named: "TextBlackColor")!,
             CLCalendarCurrentDayNumberBackgroundColor : UIColor.clear,
 
         //Selected day (either today or non-today)
-            CLCalendarSelectedDayNumberTextColor : UIColor.white,
-            CLCalendarSelectedDayNumberBackgroundColor : UIColor.primary,
-            CLCalendarSelectedCurrentDayNumberTextColor : UIColor.white,
-            CLCalendarSelectedCurrentDayNumberBackgroundColor : UIColor.primary,
+            CLCalendarSelectedDayNumberTextColor : UIColor(named: "TextBlackColor")!,
+            CLCalendarSelectedDayNumberBackgroundColor : UIColor(named: "CalenderColorSet")!,
+            CLCalendarSelectedCurrentDayNumberTextColor : UIColor(named: "TextBlackColor")!,
+            CLCalendarSelectedCurrentDayNumberBackgroundColor : UIColor(named: "CalenderColorSet")!,
 
         //Day: e.g. Saturday, 1 Dec 2016
-            CLCalendarDayTitleTextColor : UIColor.darkGray,
-            CLCalendarSelectedDatePrintColor : UIColor.darkGray]
+            CLCalendarDayTitleTextColor : UIColor(named: "TextBlackColor")!,
+            CLCalendarSelectedDatePrintColor : UIColor(named: "TextBlackColor")!]
         self.calendarView.delegate = self
 
     }
@@ -166,7 +178,7 @@ extension CalendarViewController {
 
 extension CalendarViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  self.all_appointments.count ?? 0
+        return  self.all_appointments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -192,6 +204,11 @@ extension CalendarViewController : UITableViewDelegate,UITableViewDataSource {
         let vc = AppointmentDetailsViewController.initVC(storyBoardName: .main, vc: AppointmentDetailsViewController.self, viewConrollerID: Storyboard.Ids.AppointmentDetailsViewController)
         vc.appoinment = self.all_appointments[indexPath.row]
         self.push(from: self, ToViewContorller: vc)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.3
+        
     }
 }
 

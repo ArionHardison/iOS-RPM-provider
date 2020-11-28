@@ -64,24 +64,34 @@ extension FeedBackViewController : UITableViewDelegate,UITableViewDataSource{
         self.setupCellData(cell: cell, data: self.feedbackList.feedback?[indexPath.row] ?? Feedback())
         return cell
     }
+    //#4C65ED
     
+//    2891FB - reverse
+    // #A4C9FF
     func setupCellData(cell : FeedBackTableViewCell , data : Feedback){
         cell.labelName.text = "\(data.patient?.first_name ?? "") \(data.patient?.last_name ?? "")"
-        self.setLbl(label: cell.labelVisitedFor, visited: "Visited for ", visitedFor: "\(data.visited_for ?? "")") 
+        self.setLbl(label: cell.labelVisitedFor, visited: "Visited for ", visitedFor: "\(data.visited_for ?? "")")
         cell.labelComments.text = data.comments ?? ""
         cell.labelTime.text = dateConvertor(data.created_at ?? "", _input: .date_time, _output: .MDY)
         if (data.experiences ?? "") == "LIKE"{
-            cell.satusImage.setImage("Like", .yes, .green)
+            
+            cell.satusImage.setImage("thumb-like")
+//            cell.satusImage.setImage("Like", .yes, .green)
         }else{
-            cell.satusImage.setImage("dislike", .yes, .red)
+            cell.satusImage.setImage("thumb-unlike")
+
+//            cell.satusImage.setImage("dislike", .yes, .red)
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.5
+    }
     
     func setLbl(label : UILabel , visited : String , visitedFor : String){
-        let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.darkGray]
+        let attrs1 = [NSAttributedString.Key.font : UIFont(name: FontCustom.regular.rawValue, size: 12), NSAttributedString.Key.foregroundColor : UIColor(named: "TextForegroundColor")] //TextBlackColor
         
-        let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.black]
+        let attrs2 = [NSAttributedString.Key.font : UIFont(name: FontCustom.regular.rawValue, size: 12), NSAttributedString.Key.foregroundColor : UIColor(named: "TextBlackColor")]
         
         let attributedString1 = NSMutableAttributedString(string: "\(visited)", attributes:attrs1)
         

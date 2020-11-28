@@ -45,7 +45,6 @@ class ProfieViewController: UIViewController {
             self.clincList = data.clinics ?? [Clinics]()
             self.clinictTable.reloadData()
         }
-    
 
 }
 
@@ -53,12 +52,16 @@ extension ProfieViewController {
     
     func initialLoads(){
         
-        self.profileImage.makeRoundedCorner()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit Profile", style: .plain, target: self, action: #selector(editProfile))
         //self.navigationItem.title = Constants.string.healthFeed.localize()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.profileImage.makeRoundedCorner()
+
+    }
     @objc func editProfile(){
         let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.EditProfileTableViewController) as! EditProfileTableViewController
         self.navigationController?.pushViewController(vc, animated: true)
@@ -67,7 +70,7 @@ extension ProfieViewController {
 
 extension ProfieViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.clincList.count ?? 0
+        return self.clincList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = clinictTable.dequeueReusableCell(withIdentifier: "ClinicTableCell", for: indexPath) as! ClinicTableCell

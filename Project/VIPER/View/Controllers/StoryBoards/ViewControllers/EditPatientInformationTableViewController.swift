@@ -98,11 +98,16 @@ class EditPatientInformationTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.profileImg.makeRoundedCorner()
+
+    }
+    
     func populateData(){
          let data : Patient = self.Patients
             self.nameTxt.text = data.first_name ?? ""
             self.profileImg.setURLImage(data.profile?.profile_pic ?? "")
-            self.profileImg.makeRoundedCorner()
             self.IDTXT.text = data.id?.description ?? ""
             self.bloodGrpTXT.text = data.profile?.blood_group ?? ""
             self.primaryNum.text = data.phone ?? ""

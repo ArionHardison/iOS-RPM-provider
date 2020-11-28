@@ -96,14 +96,14 @@ class AddAppointmentTableViewController: UITableViewController {
     }
     
     func setupFont(){
-        Common.setFont(to: self.patientNameTxt)
-        Common.setFont(to: self.patientIDTxt)
-        Common.setFont(to: self.emailTxt)
-        Common.setFont(to: self.phoneNumTxt)
-        Common.setFont(to: self.sexTxt)
-        Common.setFont(to: self.ageTxt)
-        Common.setFont(to: self.commentTxt)
-        self.orLabel.text = "OR"
+//        Common.setFont(to: self.patientNameTxt)
+//        Common.setFont(to: self.patientIDTxt)
+//        Common.setFont(to: self.emailTxt)
+//        Common.setFont(to: self.phoneNumTxt)
+//        Common.setFont(to: self.sexTxt)
+//        Common.setFont(to: self.ageTxt)
+//        Common.setFont(to: self.commentTxt)
+        self.orLabel.text = "or"
         self.schudleTxt.text = self.selectedDate
     }
     
