@@ -94,15 +94,15 @@ extension IncomingRequestController {
         serviceDetailsLabel.textColor = .lightGray
         labelWeightValue.textColor = .lightGray
         rejectButton.setTitleColor(.white, for: .normal)
-        rejectButton.backgroundColor = .red
+        rejectButton.backgroundColor = UIColor(named: "CustomRedColor")
         acceptButton.setTitleColor(.white, for: .normal)
-        acceptButton.backgroundColor = .primary
+        acceptButton.backgroundColor = .AppBlueColor
     }
     
     private func setCustomFont() {
-   [self.serviceDetailsLabel,self.requestTitleLabel,self.serviceTypeLabel,self.labelWeightValue,self.labelWeight].forEach { (label) in
-            Common.setFont(to: label)
-        }
+//   [self.serviceDetailsLabel,self.requestTitleLabel,self.serviceTypeLabel,self.labelWeightValue,self.labelWeight].forEach { (label) in
+//            //Common.setFont(to: label)
+//        }
     }
     
     private func setCustomLocalization() {

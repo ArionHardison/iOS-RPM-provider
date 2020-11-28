@@ -48,7 +48,7 @@ open class FloatRatingView: UIView {
             // Update empty image views
             for imageView in emptyImageViews {
                 imageView.image = emptyImage?.withRenderingMode(.alwaysTemplate)
-                imageView.tintColor = .primary
+                imageView.tintColor = .AppBlueColor
             }
             refresh()
         }
@@ -63,7 +63,7 @@ open class FloatRatingView: UIView {
             // Update full image views
             for imageView in fullImageViews {
                 imageView.image = fullImage?.withRenderingMode(.alwaysTemplate)
-                imageView.tintColor = .primary
+                imageView.tintColor = .AppBlueColor
             }
             refresh()
         }

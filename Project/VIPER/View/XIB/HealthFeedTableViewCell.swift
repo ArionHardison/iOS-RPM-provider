@@ -16,6 +16,16 @@ class HealthFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var publishedDate : UILabel!
     @IBOutlet weak var shadowView : UIView!
     @IBOutlet weak var bgView : UIView!
+    @IBOutlet weak var publishedOrnotImg : UIImageView!
+    
+    var publishedValue : Int = 0{
+        
+        didSet{
+            
+            publishedOrnotImg.image = publishedValue == 0 ? UIImage(named: "waiting") : UIImage(named: "published")
+        }
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

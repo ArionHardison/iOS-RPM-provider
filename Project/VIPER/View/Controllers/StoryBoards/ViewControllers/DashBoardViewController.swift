@@ -103,7 +103,12 @@ extension DashBoardViewController {
 //        self.setupFont()
         self.setupLanguage()
         self.chageDateBtn.addTarget(self, action: #selector(changeAction(_sender:)), for: .touchUpInside)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         self.userImg.makeRoundedCorner()
+
     }
     
     func registerCell(){

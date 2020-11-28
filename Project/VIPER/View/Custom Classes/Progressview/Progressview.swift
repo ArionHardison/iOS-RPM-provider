@@ -115,7 +115,7 @@ extension Progressview {
     private func addTimeLabel() {
         timeLabel.removeFromSuperview()
         timeLabel = UILabel(frame: CGRect(x: 0 ,y: (frame.height/2) - 25, width: 100, height: 50))
-//        timeLabel.font = .setCustomFont(name: .medium, size: .x18)
+        Common.setFontWithType(to: timeLabel, size: 20, type: .meduim) //.setCustomFont(name: .medium, size: .x18)
         timeLabel.textColor = .primary
         timeLabel.textAlignment = .center
         timeLabel.text = timeLeft?.time

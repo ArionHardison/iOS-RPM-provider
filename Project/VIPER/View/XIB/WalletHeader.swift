@@ -29,8 +29,8 @@ extension WalletHeader {
     }
     
     private func setDesign() {
-        Common.setFont(to: labelTransactionId, isTitle: true)
-        Common.setFont(to: labelAmount, isTitle: true)
-        Common.setFont(to: labelDate, isTitle: true)
+//        Common.setFont(to: labelTransactionId, isTitle: true)
+//        Common.setFont(to: labelAmount, isTitle: true)
+//        Common.setFont(to: labelDate, isTitle: true)
     }
 }

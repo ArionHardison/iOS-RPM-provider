@@ -35,7 +35,7 @@ extension HealthFeedViewController {
         setDesign()
         setValues()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Add").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.addHealthFeed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(self.addHealthFeed))
 
         self.navigationItem.title = Constants.string.healthFeed.localize()
 
@@ -55,12 +55,12 @@ extension HealthFeedViewController {
     }
     
     func setDesign() {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
-        let label = UILabel(frame: CGRect(x: 16, y: 0, width: self.view.frame.height, height: 40))
-        label.text = "Published Articles"
-        label.textColor = .black
-        headerView.addSubview(label)
-        self.tableViewHealthFeed.tableHeaderView = headerView
+//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
+//        let label = UILabel(frame: CGRect(x: 16, y: 0, width: self.view.frame.height, height: 40))
+//        label.text = "Published Articles"
+//        label.textColor = .black
+//        headerView.addSubview(label)
+//        self.tableViewHealthFeed.tableHeaderView = headerView
         self.tableViewHealthFeed.separatorStyle = .none
     }
 }
@@ -79,22 +79,49 @@ extension HealthFeedViewController : UITableViewDelegate, UITableViewDataSource 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HealthFeedTableViewCell") as! HealthFeedTableViewCell
         cell.selectionStyle = .none
-        self.setupData(cell: cell, data: self.article[indexPath.row] ?? Article())
+        if indexPath.row % 2 == 0{
+            
+            cell.publishedValue = 0
+            
+        }
+        self.setupData(cell: cell, data: self.article[indexPath.row])
         return cell
     }
     
     func setupData(cell : HealthFeedTableViewCell , data : Article){
         cell.ArticleImage.setURLImage(data.cover_photo ?? "")
         cell.ArticleTitle.text = data.name ?? ""
-        cell.Articlecontent.text = data.description
+        cell.ArticleTitle.text = cell.ArticleTitle.text?.capitalized
+        cell.Articlecontent.text = data.description?.capitalized
+        
 //        cell..text = dateConvertor(data.created_at ?? "", _input: .date_time, _output: .DM)
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = HealthFeedDetailsViewController.initVC(storyBoardName: .main, vc: HealthFeedDetailsViewController.self, viewConrollerID: Storyboard.Ids.HealthFeedDetailsViewController)
-        vc.article =  self.article[indexPath.row] ?? Article()
+        vc.article =  self.article[indexPath.row]
         self.push(from: self, ToViewContorller: vc)
     }
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        let label = UILabel(frame: CGRect(x: 16, y: 0, width: self.view.frame.width, height: 50))
+        label.text = "Published Articles"
+        headerView.backgroundColor = .white
+        label.textColor = .black
+        headerView.addSubview(label)
+        Common.setFontWithType(to: label, size: 18.0, type: .meduim)
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 50
+    }
+    
+    
     
     
 }
