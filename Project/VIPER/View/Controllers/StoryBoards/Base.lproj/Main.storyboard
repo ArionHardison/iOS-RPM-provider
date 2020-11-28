@@ -1832,159 +1832,6 @@
             </objects>
             <point key="canvasLocation" x="4537.5" y="1391.1971830985915"/>
         </scene>
-        <!--Change Password View Controller-->
-        <scene sceneID="n9g-Ra-n28">
-            <objects>
-                <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hp4-Mr-tRX" customClass="ChangePasswordViewController" customModule="TeleHelath_Provider" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uov-Bc-Mrv">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRH-KH-BKW">
-                                <rect key="frame" x="0.0" y="44" width="428" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrW-rY-v4t">
-                                        <rect key="frame" x="144.33333333333337" y="8.3333333333333339" width="139.66666666666663" height="23.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.072203613819999998" green="0.17198795080000001" blue="0.39610078929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="wrW-rY-v4t" firstAttribute="centerX" secondItem="BRH-KH-BKW" secondAttribute="centerX" id="16v-Ye-pJb"/>
-                                    <constraint firstItem="wrW-rY-v4t" firstAttribute="centerY" secondItem="BRH-KH-BKW" secondAttribute="centerY" constant="-5" id="AXn-u2-5vo"/>
-                                    <constraint firstAttribute="height" constant="50" id="lIN-zd-AUl"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorId">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNJ-Hz-8Mz">
-                                <rect key="frame" x="0.0" y="84" width="428" height="808"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SlL-3z-0D1">
-                                        <rect key="frame" x="16" y="16" width="396" height="196"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-ZW-nNt" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="396" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="y3q-QI-d0z"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-LU-CN4" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="68" width="396" height="60"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-0b-9T6" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="136" width="396" height="60"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="E2S-LU-CN4" firstAttribute="height" secondItem="1oE-ZW-nNt" secondAttribute="height" id="OBD-4p-ErQ"/>
-                                            <constraint firstItem="YO4-0b-9T6" firstAttribute="width" secondItem="1oE-ZW-nNt" secondAttribute="width" id="Vo6-iS-2fL"/>
-                                            <constraint firstItem="E2S-LU-CN4" firstAttribute="width" secondItem="1oE-ZW-nNt" secondAttribute="width" id="k8Z-Up-bEx"/>
-                                            <constraint firstItem="YO4-0b-9T6" firstAttribute="height" secondItem="1oE-ZW-nNt" secondAttribute="height" id="zAg-2c-HDD"/>
-                                        </constraints>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L8-G2-YSS">
-                                        <rect key="frame" x="53.666666666666657" y="739" width="321" height="45"/>
-                                        <color key="backgroundColor" red="0.29411764709999999" green="0.55294117649999996" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="rG4-hk-hSd"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="3L8-G2-YSS" secondAttribute="bottom" constant="24" id="5UP-Ag-LiS"/>
-                                    <constraint firstItem="SlL-3z-0D1" firstAttribute="leading" secondItem="QNJ-Hz-8Mz" secondAttribute="leading" constant="16" id="6Gq-RT-2jB"/>
-                                    <constraint firstItem="3L8-G2-YSS" firstAttribute="centerX" secondItem="QNJ-Hz-8Mz" secondAttribute="centerX" id="MEH-n9-r1b"/>
-                                    <constraint firstAttribute="trailing" secondItem="SlL-3z-0D1" secondAttribute="trailing" constant="16" id="PLB-as-FUg"/>
-                                    <constraint firstItem="3L8-G2-YSS" firstAttribute="width" secondItem="QNJ-Hz-8Mz" secondAttribute="width" multiplier="0.75" id="el5-gD-2fA"/>
-                                    <constraint firstItem="SlL-3z-0D1" firstAttribute="top" secondItem="QNJ-Hz-8Mz" secondAttribute="top" constant="16" id="tyl-D2-2ai"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="k9e-AX-wcc"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="k9e-AX-wcc" firstAttribute="trailing" secondItem="QNJ-Hz-8Mz" secondAttribute="trailing" id="C9w-pF-T7s"/>
-                            <constraint firstItem="QNJ-Hz-8Mz" firstAttribute="top" secondItem="BRH-KH-BKW" secondAttribute="bottom" constant="-10" id="Tfy-mO-KXA"/>
-                            <constraint firstItem="QNJ-Hz-8Mz" firstAttribute="leading" secondItem="k9e-AX-wcc" secondAttribute="leading" id="co7-09-iNg"/>
-                            <constraint firstItem="BRH-KH-BKW" firstAttribute="top" secondItem="k9e-AX-wcc" secondAttribute="top" id="iv2-2f-Zbe"/>
-                            <constraint firstItem="BRH-KH-BKW" firstAttribute="leading" secondItem="k9e-AX-wcc" secondAttribute="leading" id="pZr-LV-HqR"/>
-                            <constraint firstItem="k9e-AX-wcc" firstAttribute="trailing" secondItem="BRH-KH-BKW" secondAttribute="trailing" id="q7Q-LK-MJh"/>
-                            <constraint firstItem="k9e-AX-wcc" firstAttribute="bottom" secondItem="QNJ-Hz-8Mz" secondAttribute="bottom" id="uZc-wr-fXb"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="changepassBtn" destination="3L8-G2-YSS" id="cEf-Ae-V3N"/>
-                        <outlet property="confirPassTxt" destination="YO4-0b-9T6" id="Y4q-9L-bTA"/>
-                        <outlet property="newPassTxt" destination="E2S-LU-CN4" id="0mm-nF-qD3"/>
-                        <outlet property="oldPassTxt" destination="1oE-ZW-nNt" id="6jQ-Mz-0sb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tCY-Yf-QP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6908" y="1389"/>
-        </scene>
         <!--AlertVC-->
         <scene sceneID="IOC-ky-Q6Z">
             <objects>
@@ -3055,22 +2902,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BvH-AH-CfU">
-                                        <rect key="frame" x="107.33333333333331" y="21" width="105" height="87"/>
+                                        <rect key="frame" x="107.33333333333331" y="21" width="112" height="87"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5du-nc-1dm">
-                                                <rect key="frame" x="0.0" y="0.0" width="105" height="26.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112" height="26.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                 <color key="textColor" name="TextBlackColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-F0-3GT">
-                                                <rect key="frame" x="0.0" y="30.333333333333329" width="105" height="26.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="30.333333333333329" width="112" height="26.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" name="TextForegroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 Years, Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-dg-4YG">
-                                                <rect key="frame" x="0.0" y="60.666666666666679" width="105" height="26.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="60.666666666666679" width="112" height="26.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" name="TextForegroundColor"/>
                                                 <nil key="highlightedColor"/>
@@ -4114,7 +3961,7 @@
                                         <rect key="frame" x="14.999999999999996" y="54.666666666666671" width="55.666666666666657" height="55.666666666666671"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Raven" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pSd-8Y-1p1">
-                                        <rect key="frame" x="154" y="72" width="120" height="21"/>
+                                        <rect key="frame" x="154" y="71.666666666666671" width="120" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="lFr-tS-tCA"/>
                                         </constraints>
@@ -4522,16 +4369,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-Rw-dlc">
-                                                        <rect key="frame" x="116.00000000000001" y="12.333333333333371" width="175.33333333333337" height="25"/>
+                                                        <rect key="frame" x="113.00000000000001" y="12.333333333333371" width="178.33333333333337" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showing date: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsM-hf-Avs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="84" height="25"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="90.666666666666671" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                                                 <color key="textColor" name="GreyTextcolor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Sep - 21 Oct" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCF-b8-fDl">
-                                                                <rect key="frame" x="86" y="0.0" width="89.333333333333314" height="25"/>
+                                                                <rect key="frame" x="92.666666666666657" y="0.0" width="85.666666666666657" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zIm-bE-zL0"/>
                                                                 </constraints>
@@ -4874,7 +4721,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-cE-X27">
-                                        <rect key="frame" x="177.66666666666666" y="222" width="72.666666666666657" height="21"/>
+                                        <rect key="frame" x="172.66666666666666" y="221.66666666666666" width="82.666666666666657" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -7310,77 +7157,234 @@
             </objects>
             <point key="canvasLocation" x="6097.5" y="1458.8028169014085"/>
         </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="gCk-wf-kVi">
+            <objects>
+                <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pvo-Ye-IuQ" customClass="ChangePasswordViewController" customModule="TeleHelath_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9xq-eu-CrT"/>
+                        <viewControllerLayoutGuide type="bottom" id="mD9-Pb-dmR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RYv-Pl-udG">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neG-gp-mp5">
+                                <rect key="frame" x="0.0" y="44" width="428" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwJ-Fx-Qp3">
+                                        <rect key="frame" x="122.33333333333333" y="22.666666666666671" width="183.33333333333337" height="24.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.072203613819999998" green="0.17198795080000001" blue="0.39610078929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="uwJ-Fx-Qp3" firstAttribute="centerY" secondItem="neG-gp-mp5" secondAttribute="centerY" constant="-5" id="Z0k-Nf-jZv"/>
+                                    <constraint firstItem="uwJ-Fx-Qp3" firstAttribute="centerX" secondItem="neG-gp-mp5" secondAttribute="centerX" id="fzh-Vs-S3g"/>
+                                    <constraint firstAttribute="height" constant="80" id="yM9-KL-1W0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorId">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3I-sH-vQz">
+                                <rect key="frame" x="0.0" y="114" width="428" height="778"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z35-VR-Vux">
+                                        <rect key="frame" x="16" y="16" width="396" height="196"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-mp-IIi" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="396" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="O0f-XD-P82"/>
+                                                </constraints>
+                                                <color key="textColor" name="TextForegroundColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" name="TextForegroundColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" name="AppBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" name="TextForegroundColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-AA-JfE" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="68" width="396" height="60"/>
+                                                <color key="textColor" name="TextForegroundColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" name="TextForegroundColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" name="AppBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" name="TextForegroundColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-N1-S61" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="136" width="396" height="60"/>
+                                                <color key="textColor" name="TextForegroundColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" name="TextForegroundColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                        <color key="value" name="AppBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                        <color key="value" name="TextForegroundColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="sKc-N1-S61" firstAttribute="width" secondItem="QaH-mp-IIi" secondAttribute="width" id="0pW-rc-wnt"/>
+                                            <constraint firstItem="9g5-AA-JfE" firstAttribute="height" secondItem="QaH-mp-IIi" secondAttribute="height" id="Ibk-8K-jF0"/>
+                                            <constraint firstItem="sKc-N1-S61" firstAttribute="height" secondItem="QaH-mp-IIi" secondAttribute="height" id="RUE-ds-RO2"/>
+                                            <constraint firstItem="9g5-AA-JfE" firstAttribute="width" secondItem="QaH-mp-IIi" secondAttribute="width" id="bd7-e8-YSS"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-80-x9r">
+                                        <rect key="frame" x="53.666666666666657" y="699" width="321" height="55"/>
+                                        <color key="backgroundColor" red="0.29411764709999999" green="0.55294117649999996" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="a7h-Yu-q95"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Z35-VR-Vux" firstAttribute="top" secondItem="E3I-sH-vQz" secondAttribute="top" constant="16" id="6Un-zG-fSc"/>
+                                    <constraint firstItem="Lvd-80-x9r" firstAttribute="centerX" secondItem="E3I-sH-vQz" secondAttribute="centerX" id="8De-4m-hyc"/>
+                                    <constraint firstItem="Lvd-80-x9r" firstAttribute="width" secondItem="E3I-sH-vQz" secondAttribute="width" multiplier="0.75" id="G32-af-Q5H"/>
+                                    <constraint firstItem="Z35-VR-Vux" firstAttribute="leading" secondItem="E3I-sH-vQz" secondAttribute="leading" constant="16" id="JVC-eB-BdF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z35-VR-Vux" secondAttribute="trailing" constant="16" id="O0d-kt-uGZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lvd-80-x9r" secondAttribute="bottom" constant="24" id="RAz-JC-NnY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ttK-CW-I1O"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mD9-Pb-dmR" firstAttribute="top" secondItem="E3I-sH-vQz" secondAttribute="bottom" id="0lZ-1u-QaE"/>
+                            <constraint firstItem="E3I-sH-vQz" firstAttribute="leading" secondItem="RYv-Pl-udG" secondAttribute="leading" id="1oc-Zn-YQ8"/>
+                            <constraint firstItem="neG-gp-mp5" firstAttribute="leading" secondItem="RYv-Pl-udG" secondAttribute="leading" id="FvB-ZH-gTQ"/>
+                            <constraint firstItem="E3I-sH-vQz" firstAttribute="top" secondItem="neG-gp-mp5" secondAttribute="bottom" constant="-10" id="OCw-rM-9e5"/>
+                            <constraint firstAttribute="trailing" secondItem="neG-gp-mp5" secondAttribute="trailing" id="ktW-cg-2Uw"/>
+                            <constraint firstAttribute="trailing" secondItem="E3I-sH-vQz" secondAttribute="trailing" id="ode-QP-1b7"/>
+                            <constraint firstItem="neG-gp-mp5" firstAttribute="top" secondItem="9xq-eu-CrT" secondAttribute="bottom" id="s9F-yg-RrC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changepassBtn" destination="Lvd-80-x9r" id="mx7-0G-zfb"/>
+                        <outlet property="confirPassTxt" destination="sKc-N1-S61" id="ZtP-aA-gbS"/>
+                        <outlet property="newPassTxt" destination="9g5-AA-JfE" id="AEe-Ih-2gA"/>
+                        <outlet property="oldPassTxt" destination="QaH-mp-IIi" id="1ZL-K4-ML3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BB9-Ez-VqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6908" y="1389"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="0VK-Wy-CYt">
-            <size key="intrinsicContentSize" width="24.666666666666668" height="18"/>
-        </designable>
-        <designable name="1oE-ZW-nNt">
-            <size key="intrinsicContentSize" width="136.33333333333334" height="24"/>
+            <size key="intrinsicContentSize" width="27.666666666666668" height="19"/>
         </designable>
         <designable name="2YS-Ae-nwv">
-            <size key="intrinsicContentSize" width="5" height="26"/>
+            <size key="intrinsicContentSize" width="5" height="25.666666666666668"/>
         </designable>
         <designable name="2yi-6D-LaK">
-            <size key="intrinsicContentSize" width="84.333333333333329" height="18"/>
+            <size key="intrinsicContentSize" width="95.666666666666671" height="19"/>
         </designable>
         <designable name="6ok-JW-g3z">
-            <size key="intrinsicContentSize" width="51.666666666666664" height="18"/>
+            <size key="intrinsicContentSize" width="58.333333333333336" height="19"/>
+        </designable>
+        <designable name="9g5-AA-JfE">
+            <size key="intrinsicContentSize" width="119.66666666666667" height="20"/>
         </designable>
         <designable name="A1I-Ox-oGm">
-            <size key="intrinsicContentSize" width="23.333333333333332" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="23" height="21.333333333333332"/>
         </designable>
         <designable name="AQl-r4-vXj">
-            <size key="intrinsicContentSize" width="37.666666666666664" height="18"/>
+            <size key="intrinsicContentSize" width="43" height="19"/>
         </designable>
         <designable name="CPL-k8-RQc">
-            <size key="intrinsicContentSize" width="34.333333333333336" height="18"/>
-        </designable>
-        <designable name="E2S-LU-CN4">
-            <size key="intrinsicContentSize" width="112.66666666666667" height="24"/>
+            <size key="intrinsicContentSize" width="40.666666666666664" height="19"/>
         </designable>
         <designable name="F2g-1r-5wt">
             <size key="intrinsicContentSize" width="62.333333333333336" height="17"/>
         </designable>
         <designable name="GAm-CZ-9V9">
-            <size key="intrinsicContentSize" width="85" height="18"/>
+            <size key="intrinsicContentSize" width="99" height="19"/>
         </designable>
         <designable name="H8X-MR-DDQ">
-            <size key="intrinsicContentSize" width="51" height="18"/>
+            <size key="intrinsicContentSize" width="59.333333333333336" height="19"/>
         </designable>
         <designable name="HXe-bk-FV8">
-            <size key="intrinsicContentSize" width="58" height="18"/>
+            <size key="intrinsicContentSize" width="67.333333333333329" height="19"/>
         </designable>
         <designable name="IZN-3O-902">
-            <size key="intrinsicContentSize" width="77" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="88.333333333333329" height="21.333333333333332"/>
         </designable>
         <designable name="Kdd-SD-ibj">
-            <size key="intrinsicContentSize" width="34.333333333333336" height="18"/>
+            <size key="intrinsicContentSize" width="40.666666666666664" height="19"/>
         </designable>
         <designable name="Lsh-2o-Nlb">
-            <size key="intrinsicContentSize" width="94.666666666666671" height="18"/>
+            <size key="intrinsicContentSize" width="110" height="19"/>
         </designable>
         <designable name="PHN-VN-ybG">
-            <size key="intrinsicContentSize" width="48.666666666666664" height="18"/>
+            <size key="intrinsicContentSize" width="55" height="19"/>
         </designable>
         <designable name="QHN-JQ-VuG">
-            <size key="intrinsicContentSize" width="113.66666666666667" height="18"/>
+            <size key="intrinsicContentSize" width="127.33333333333333" height="19"/>
+        </designable>
+        <designable name="QaH-mp-IIi">
+            <size key="intrinsicContentSize" width="145" height="20"/>
         </designable>
         <designable name="RHd-jk-F7q">
-            <size key="intrinsicContentSize" width="80.333333333333329" height="18"/>
+            <size key="intrinsicContentSize" width="90" height="19"/>
         </designable>
         <designable name="S7Q-fb-uFg"/>
         <designable name="Xx6-qY-c4W">
-            <size key="intrinsicContentSize" width="77.666666666666671" height="20.333333333333332"/>
-        </designable>
-        <designable name="YO4-0b-9T6">
-            <size key="intrinsicContentSize" width="143.33333333333334" height="24"/>
+            <size key="intrinsicContentSize" width="87.666666666666671" height="21.333333333333332"/>
         </designable>
         <designable name="dDg-Na-Tq0">
-            <size key="intrinsicContentSize" width="94.333333333333329" height="18"/>
+            <size key="intrinsicContentSize" width="108.33333333333333" height="19"/>
         </designable>
         <designable name="daD-6x-lrd">
-            <size key="intrinsicContentSize" width="24.666666666666668" height="18"/>
+            <size key="intrinsicContentSize" width="28.666666666666668" height="19"/>
         </designable>
         <designable name="dnP-bq-aTB">
             <size key="intrinsicContentSize" width="26" height="19.666666666666668"/>
@@ -7389,38 +7393,41 @@
             <size key="intrinsicContentSize" width="52" height="18.666666666666668"/>
         </designable>
         <designable name="eGt-GD-I2z">
-            <size key="intrinsicContentSize" width="85" height="18"/>
+            <size key="intrinsicContentSize" width="99" height="19"/>
         </designable>
         <designable name="eth-om-Taf">
             <size key="intrinsicContentSize" width="34.666666666666664" height="18.666666666666668"/>
         </designable>
         <designable name="fzl-1c-knQ">
-            <size key="intrinsicContentSize" width="24" height="18"/>
+            <size key="intrinsicContentSize" width="25" height="19"/>
         </designable>
         <designable name="g14-Bw-9Mc">
-            <size key="intrinsicContentSize" width="78" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="89.333333333333329" height="21.333333333333332"/>
         </designable>
         <designable name="kgt-R0-O8u"/>
         <designable name="n76-pQ-oUs">
             <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="q4W-HQ-1fn">
-            <size key="intrinsicContentSize" width="39.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="46.333333333333336" height="21.333333333333332"/>
         </designable>
         <designable name="qY6-7F-uxP">
-            <size key="intrinsicContentSize" width="171.66666666666666" height="18"/>
+            <size key="intrinsicContentSize" width="198" height="19"/>
         </designable>
         <designable name="qae-NK-u95">
-            <size key="intrinsicContentSize" width="24" height="18"/>
+            <size key="intrinsicContentSize" width="25" height="19"/>
+        </designable>
+        <designable name="sKc-N1-S61">
+            <size key="intrinsicContentSize" width="154.66666666666666" height="20"/>
         </designable>
         <designable name="skC-V8-oMT">
-            <size key="intrinsicContentSize" width="85" height="18"/>
+            <size key="intrinsicContentSize" width="99" height="19"/>
         </designable>
         <designable name="wdo-y3-4rM">
-            <size key="intrinsicContentSize" width="99.333333333333329" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="113" height="21.333333333333332"/>
         </designable>
         <designable name="wuj-ao-JMU">
-            <size key="intrinsicContentSize" width="110.33333333333333" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="127.66666666666667" height="21.333333333333332"/>
         </designable>
     </designables>
     <resources>
