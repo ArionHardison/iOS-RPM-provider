@@ -77,6 +77,14 @@ struct Constants {
     let appointmentDetail = "Appointment Details"
     let Yes = "Yes"
     let No = "No"
+    let wallet = "wallet"
+    let walletAmount = "Your Wallet Amount is"
+    let noTransactionsYet = "No Transactions yet"
+    let transactionId = "Transaction Id"
+    let date = "Date"
+    let amount = "Amount"
+    let status = "Status"
+    let transaction = "Transaction"
 
 }
 
@@ -112,6 +120,15 @@ struct DateFormat {
     static let list = DateFormat()
     let yyyy_mm_dd_HH_MM_ss = "yyyy-MM-dd HH:mm:ss"
     let MMM_dd_yyyy_hh_mm_ss_a = "MMM dd, yyyy hh:mm:ss a"
+    let yyyymmddHHMMss = "yyyy-MM-dd HH:mm:ss"
+    let hhMMTTA = "h:mm a"//"hh:MM TT a"
+    let yyyymmdd = "yyyy-MM-dd"
+    let ddmmmmyyyy = "dd MMMM yyyy"
+    let yyyyMM = "yyyy-MM"
+    let MMyyyy = "MMM.yyyy"
+    let ddMMMyyyy = "dd MMM yyyy"
+    let hh_mm_a = "hh : mm a"
+    let dd_MM_yyyy = "dd/MM/yyyy"
 }
 
 

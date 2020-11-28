@@ -23,10 +23,11 @@ class AppointmentDetailsViewController: UIViewController {
     @IBOutlet weak var buttonMark: UIButton!
     @IBOutlet weak var buttonViewPatientDetails: UIButton!
     @IBOutlet weak var recentListTable: UITableView!
-    @IBOutlet weak var recentListTableHeight: NSLayoutConstraint!
+//    @IBOutlet weak var recentListTableHeight: NSLayoutConstraint!
     @IBOutlet weak var videoCallButton: UIButton!
     @IBOutlet weak var enterPrescriptionButton: UIButton!
-    
+    @IBOutlet weak var completionButton: UIButton!
+
     var notifyView : NotifyView!
     var appoinment : All_appointments = All_appointments()
 
@@ -41,12 +42,18 @@ class AppointmentDetailsViewController: UIViewController {
         self.setupAction()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.patientImage.makeRoundedCorner()
+
+    }
+    
     func populateData(){
        let appoinment : All_appointments = self.appoinment
             
             if let data : Patient = appoinment.patient{
             
-            self.patientImage.makeRoundedCorner()
             self.patientImage.setURLImage(data.profile?.profile_pic ?? "")
             self.labelPatientName.text = "\(data.first_name ?? "") \(data.last_name ?? "")"
             self.labelPatientID.text = "\(data.id ?? 0)"
@@ -101,7 +108,8 @@ extension AppointmentDetailsViewController {
         self.buttonViewPatientDetails.addTarget(self, action: #selector(patientDetails), for: .touchUpInside)
         self.videoCallButton.addTarget(self, action: #selector(videoCallAction(_sender:)), for: .touchUpInside)
         self.buttonMark.addTarget(self, action: #selector(MarkAction(sender:)), for: .touchUpInside)
-        self.recentListTableHeight.constant = 30 + (10 * 60)
+        self.completionButton.addTarget(self, action: #selector(completedAction(sender:)), for: .touchUpInside)
+//        self.recentListTableHeight.constant = 30 + (10 * 60)
         
         
         
@@ -122,6 +130,14 @@ extension AppointmentDetailsViewController {
         self.push(from: self, ToViewContorller: vc)
 //        self.push(id: Storyboard.Ids.EditAppointmentTableViewController, animation: true)
     }
+    
+    @IBAction private func completedAction(sender:UIButton)
+    {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AppointmentFeedBackViewController) as! AppointmentFeedBackViewController
+        vc.appoitments = self.appoinment
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     @IBAction func MarkAction(sender:UIButton){
         self.showNotify(sender: sender)
@@ -187,13 +203,18 @@ extension AppointmentDetailsViewController : UITableViewDelegate,UITableViewData
         headerView.backgroundColor = #colorLiteral(red: 0.9607035518, green: 0.9608380198, blue: 0.9606611133, alpha: 1)
         let titleLabel = UILabel()
         titleLabel.text = "Recent History"
-        titleLabel.textColor = .darkGray
-        titleLabel.frame = CGRect(x: 16, y: 0, width: self.view.frame.width-16, height: 30)
+        Common.setFontWithType(to: titleLabel, size: 14, type: .meduim)
+        titleLabel.textColor = UIColor(named: "TextBlackColor")
+        titleLabel.frame = CGRect(x: 16, y: headerView.frame.height/2, width: self.view.frame.width-16, height: 40)
         headerView.addSubview(titleLabel)
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.5
     }
 
 }

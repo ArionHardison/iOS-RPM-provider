@@ -459,3 +459,76 @@ struct Appointment : Mappable {
     }
 
 }
+
+
+
+struct UpdateFeedBackModel : Mappable {
+    var message : String?
+    var feedback : Feedback?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        message <- map["message"]
+        feedback <- map["feedback"]
+    }
+
+}
+
+
+struct WalletTransactionModel : Mappable {
+    var message : String?
+    var payment_log : [Payment_log]?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        message <- map["message"]
+        payment_log <- map["payment_log"]
+    }
+
+}
+
+struct Payment_log : Mappable {
+    var id : Int?
+    var is_wallet : Int?
+    var user_type : String?
+    var payment_mode : String?
+    var status : String?
+    var user_id : Int?
+    var doctor_id : Int?
+    var amount : Float?
+    var transaction_code : String?
+    var transaction_id : String?
+    var response : String?
+    var created_at : String?
+    var updated_at : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        is_wallet <- map["is_wallet"]
+        user_type <- map["user_type"]
+        payment_mode <- map["payment_mode"]
+        status <- map["status"]
+        user_id <- map["user_id"]
+        doctor_id <- map["doctor_id"]
+        amount <- map["amount"]
+        transaction_code <- map["transaction_code"]
+        transaction_id <- map["transaction_id"]
+        response <- map["response"]
+        created_at <- map["created_at"]
+        updated_at <- map["updated_at"]
+    }
+
+}

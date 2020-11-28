@@ -39,6 +39,8 @@ struct Storyboard {
     let AlertVC = "AlertVC"
     let CreateAppointmentViewController = "CreateAppointmentViewController"
     let AddPrescriptionViewController = "AddPrescriptionViewController"
+    let AppointmentFeedBackViewController = "AppointmentFeedBackViewController"
+    let WalletViewController = "WalletViewController"
 }
 
 
@@ -52,6 +54,8 @@ struct XIB {
     let NotifyView = "NotifyView"
     let ChatRightCell = "ChatRightCell"
     let ChatLeftCell = "ChatLeftCell"
+    let WalletListTableViewCell = "WalletListTableViewCell"
+    let WalletHeader = "WalletHeader"
 }
 
 

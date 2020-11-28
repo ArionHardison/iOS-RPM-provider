@@ -10,8 +10,10 @@ import Foundation
 
 enum FontCustom : String {
     
-    case meduim = "Avenir-Medium"
-    case bold = "Avenir-Heavy"
+    case regular = "Montserrat-Regular"
+    case bold = "Montserrat-Bold"
+    case meduim = "Montserrat-Medium"
+    case light = "Montserrat-Light"
+    case semiBold = "Montserrat-SemiBold"
     
 }
-

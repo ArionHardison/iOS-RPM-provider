@@ -156,7 +156,7 @@ class audioVideoCallCaontroller: UIViewController {
                 
                 
             }else if isCallType == callType.receiveCall {
-                self.startTimer()
+//                self.startTimer()
                 handleCall()
                 self.centerCalView.isHidden = false
                 self.EndCallBtn.isHidden = true
@@ -221,8 +221,8 @@ class audioVideoCallCaontroller: UIViewController {
 
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         setCornerRadius()
     }
     
@@ -350,8 +350,9 @@ extension audioVideoCallCaontroller {
     
     private func setCornerRadius(){
         [self.EndCallBtn,self.speakerBackView,self.micBackView,self.cameraBackView,self.centerCalView,self.acceptCallBtn,self.speakerClick,self.videoClick,self.audioClick].forEach { (view) in
-               view?.layer.cornerRadius = (view?.frame.height)! / 2
-//               view?.layer.masksToBounds = true
+               view?.layer.cornerRadius = (view?.frame.width)! / 2
+//            view?.makeRoundedCorner()
+//               view?.layer.masksToBounds = false
            }
        }
     
@@ -539,7 +540,8 @@ extension audioVideoCallCaontroller {
             
             }else {
 //                url =  "\(baseUrl)?room_id=\(receiverId)_video_\(UserDefaultConfig.UserID)&hospital_id=\(UserDefaultConfig.UserID)&patient_id=\(receiverId)"
-                url =  "\(baseUrl)?room_id=\(UserDefaultConfig.UserID)_video_\(receiverId)&hospital_id=\(UserDefaultConfig.UserID)&patient_id=\(receiverId)"
+//                url =  "\(baseUrl)?room_id=\(UserDefaultConfig.UserID)_video_\(receiverId)&hospital_id=\(UserDefaultConfig.UserID)&patient_id=\(receiverId)"
+                url = "/api/hospital/video/connect?room_id=\(UserDefaultConfig.UserID)_video_\(receiverId)&hospital_id=\(UserDefaultConfig.UserID)"
                 
                 
                 self.newRoomID = "\(UserDefaultConfig.UserID)_video_\(receiverId)"

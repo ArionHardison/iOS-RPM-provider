@@ -132,7 +132,7 @@ class PushHelper {
             self.twilioController = videoCallViewController
             videoCallViewController.modalPresentationStyle = .fullScreen
 //            videoCallViewController.receiverName = pushData.name ?? ""
-            videoCallViewController.video = pushData.video ?? 0
+            videoCallViewController.video = 1
             videoCallViewController.uuid = uuid
             videoCallViewController.receiverId = pushData.receiver_id ?? ""
             videoCallViewController.senderId = "\(pushData.sender_id ?? 0)"

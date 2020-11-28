@@ -15,7 +15,8 @@ class DashBoardViewController: UIViewController {
     
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var userImg: UIImageView!
-    
+    @IBOutlet weak var dashView: UIView!
+
     @IBOutlet weak var bookedLbl: UILabel!
     @IBOutlet weak var cancelledLbl: UILabel!
     @IBOutlet weak var newPatientLbl: UILabel!
@@ -25,7 +26,8 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var appointmentCountLbl: UILabel!
     @IBOutlet weak var showDateLbl: UILabel!
     @IBOutlet weak var chageDateBtn: UIButton!
-    
+    @IBOutlet weak var shadowLbl: UILabel!
+
     
     @IBOutlet weak var bookedTitleLbl: UILabel!
     @IBOutlet weak var cancelledTitleLbl: UILabel!
@@ -37,8 +39,9 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var showDateTitleLbl: UILabel!
     
     @IBOutlet weak var buttonProfile: UIButton!
-    let titles = ["Reach","Calender","Patients","Feedback","Chat","Health Feed"]
-    
+    let titles = ["Wallet","Calender","Patients","Feedback","Chat","Health Feed"]
+    let titlesImages = ["trendingx","calender","patient","feedback","chat","health"]
+
     
     var timerGetRequest: Timer?
     
@@ -69,6 +72,16 @@ class DashBoardViewController: UIViewController {
         timerGetRequest = nil
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+//        self.dashView.addingCornerandShadow(color: .lightGray, opacity: 1, offset: CGSize(width: 0.0, height: 1.0), radius: 2, corner: 8.0)
+
+        self.dashView.cornerRadius = 8.0
+    }
+
+    
     @objc private func checkChatRequest(){
         self.getChatRequest()
     }
@@ -81,8 +94,13 @@ extension DashBoardViewController {
     func initialLoads(){
         
         registerCell()
-        self.buttonProfile.addTarget(self, action: #selector(ontapProfile), for: .touchUpInside)
-        self.setupFont()
+        
+        self.userImg.addTap {
+            
+            self.ontapProfile()
+        }
+//        self.buttonProfile.addTarget(self, action: #selector(ontapProfile), for: .touchUpInside)
+//        self.setupFont()
         self.setupLanguage()
         self.chageDateBtn.addTarget(self, action: #selector(changeAction(_sender:)), for: .touchUpInside)
         self.userImg.makeRoundedCorner()
@@ -195,6 +213,7 @@ extension DashBoardViewController : UICollectionViewDelegate , UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = categoriesCollection.dequeueReusableCell(withReuseIdentifier: "HomeOptionCollectionViewCell", for: indexPath) as! HomeOptionCollectionViewCell
         cell.labelTitle.text = titles[indexPath.item]
+        cell.typeImage.image = UIImage(named: titlesImages[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -225,7 +244,7 @@ extension DashBoardViewController : UICollectionViewDelegate , UICollectionViewD
         }
         
         if indexPath.item == 0 {
-            self.push(id: Storyboard.Ids.ChatViewController, animation: true)
+            self.push(id: Storyboard.Ids.WalletViewController, animation: true)
         }
 
     }
@@ -339,4 +358,29 @@ extension Date {
         let calendar = NSCalendar.current
         return calendar.date(byAdding: .year, value: -1, to: date)!
     }
+}
+
+
+
+extension UIView{
+    
+    func addingCornerandShadow(color : UIColor = .gray, opacity : Float = 0.5, offset : CGSize = CGSize(width: 0.5, height: 0.5), radius : CGFloat = 0.5,corner:CGFloat = 0) {
+            var shadowLayer: CAShapeLayer!
+
+            if shadowLayer == nil {
+                shadowLayer = CAShapeLayer()
+                shadowLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: corner).cgPath
+                shadowLayer.fillColor = UIColor.white.cgColor
+
+                shadowLayer.shadowColor = color.cgColor
+                shadowLayer.shadowPath = shadowLayer.path
+                shadowLayer.shadowOffset = offset
+                shadowLayer.shadowOpacity = opacity
+                shadowLayer.shadowRadius = radius
+
+                self.layer.insertSublayer(shadowLayer, at: 0)
+                //layer.insertSublayer(shadowLayer, below: nil) // also works
+            }
+        }
+
 }

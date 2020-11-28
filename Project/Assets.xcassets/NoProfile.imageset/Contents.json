@@ -5,8 +5,8 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
       "filename" : "Screenshot 2020-04-28 at 9.03.43 PM.png",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
@@ -15,7 +15,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

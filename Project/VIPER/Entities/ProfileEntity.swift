@@ -54,6 +54,7 @@ struct Doctor : Mappable {
     var updated_at : String?
     var deleted_at : String?
     var doctor_profile : Doctor_profile?
+    var wallet_balance : Float?
     
     init?(map: Map) {
         
@@ -88,6 +89,7 @@ struct Doctor : Mappable {
         updated_at <- map["updated_at"]
         deleted_at <- map["deleted_at"]
         doctor_profile <- map["doctor_profile"]
+        wallet_balance <- map["wallet_balance"]
     }
     
 }
