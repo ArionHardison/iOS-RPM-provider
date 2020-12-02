@@ -86,6 +86,7 @@ let PARAM_LOGINBY = "login_by"
 let PARAM_PICTURE = "picture"
 let PARAM_USERNAME = "username"
 let PARAM_GRANTTYPE = "grant_type"
+let PARAM_PUSH = "push_device_token"
 
 
 struct DeleteModel : Mappable {

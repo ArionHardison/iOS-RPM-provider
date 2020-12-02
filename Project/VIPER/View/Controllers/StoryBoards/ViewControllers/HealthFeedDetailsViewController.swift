@@ -13,7 +13,7 @@ class HealthFeedDetailsViewController: UIViewController {
     
     @IBOutlet weak var articleImage : UIImageView!
     @IBOutlet weak var articleTitle : UILabel!
-    @IBOutlet weak var articleContent : UILabel!
+    @IBOutlet weak var articleContent : UITextView!
     @IBOutlet weak var articledate : UILabel!
     
     var article : Article =  Article()
@@ -40,6 +40,7 @@ extension HealthFeedDetailsViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editClicked))
         self.navigationItem.title = Constants.string.healthFeed.localize()
         self.setFont()
+        self.articleContent.delegate = self
     }
     
     func setFont(){
@@ -59,4 +60,11 @@ extension HealthFeedDetailsViewController {
         self.articledate.text = dateConvertor(data.created_at ?? "", _input: .date_time, _output: .DM)
     }
     
+}
+
+
+extension HealthFeedDetailsViewController : UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+    }
 }

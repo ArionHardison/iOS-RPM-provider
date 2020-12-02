@@ -38,6 +38,7 @@ extension HealthFeedViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(self.addHealthFeed))
 
         self.navigationItem.title = Constants.string.healthFeed.localize()
+        
 
     }
     
@@ -121,6 +122,9 @@ extension HealthFeedViewController : UITableViewDelegate, UITableViewDataSource 
         return 50
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
     
     
     

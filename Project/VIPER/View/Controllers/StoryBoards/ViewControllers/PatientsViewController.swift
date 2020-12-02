@@ -11,12 +11,16 @@ import ObjectMapper
 
 class PatientsViewController: UIViewController {
 
-    
+    @IBOutlet weak var searchBar: UISearchBar!  
     @IBOutlet weak var patientsTable: UITableView!
     var selectedDate : String = ""
     var isFromCalendar : Bool = false
     var todayPatients : [AllPatients] = [AllPatients]()
     var index : Int = 0
+    
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +30,7 @@ class PatientsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
-        self.getPatientsList()
+
     }
 
 
@@ -39,6 +43,8 @@ extension PatientsViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
 
         self.navigationItem.title = Constants.string.patients.localize()
+        self.searchBar.delegate = self
+        self.getPatientsList()
 
     }
     func registerCell(){
@@ -145,15 +151,23 @@ extension PatientsViewController : PresenterOutputProtocol{
         switch String(describing: modelClass) {
             case model.type.PatientModel:
                 guard let data = dataDict as? PatientModel else { return }
+                self.loader.isHideInMainThread(true)
                 self.todayPatients = data.allPatients ?? [AllPatients]()
-                self.patientsTable.reloadData()
+                self.patientsTable.reloadInMainThread()
                 break
             
             case model.type.CommonModel:
                 guard let data = dataDict as? CommonModel else { return }
+                self.loader.isHideInMainThread(true)
                 showToast(msg: data.message ?? "")
                 self.getPatientsList()
                 break
+          case model.type.SearchPatient:
+                guard let data = dataDict as? SearchPatient else { return }
+                self.todayPatients = data.patients ?? [AllPatients]()
+                self.patientsTable.reloadInMainThread()
+                break
+                
             
             default: break
             
@@ -168,12 +182,14 @@ extension PatientsViewController : PresenterOutputProtocol{
         
         let url = "\(Base.patient.rawValue)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: PatientModel.self, token: true)
+        self.loader.isHidden = false
     }
     
     func deletePatientDetail(id : String){
         
         let url = "\(Base.patient.rawValue)/\(id)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .DELETE, modelClass: CommonModel.self, token: true)
+        self.loader.isHidden = false
     }
 }
 
@@ -202,5 +218,27 @@ extension PatientsViewController  : AlertDelegate{
         
     }
     
+    
+}
+
+
+extension PatientsViewController : UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty{
+            let url = "\(Base.searchPatient.rawValue)?search=\(searchText)"
+            self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: SearchPatient.self, token: true)
+            
+        }
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.getPatientsList()
+    }
+//    
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+//           print("end searching --> Close Keyboard")
+//           self.searchBar.endEditing(true)
+//       }
+//    
     
 }

@@ -42,6 +42,9 @@ class DashBoardViewController: UIViewController {
     let titles = ["Wallet","Calender","Patients","Feedback","Chat","Health Feed"]
     let titlesImages = ["trendingx","calender","patient","feedback","chat","health"]
 
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
     
     var timerGetRequest: Timer?
     
@@ -60,6 +63,7 @@ class DashBoardViewController: UIViewController {
         self.profileApi()
          timerGetRequest = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.checkChatRequest), userInfo: nil, repeats: true)
          NotificationCenter.default.addObserver(self, selector: #selector(self.inValidateTimer(_:)), name: NSNotification.Name(rawValue: "InValidateTimer"), object: nil)
+        self.profileApi()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,7 +81,7 @@ class DashBoardViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
 //        self.dashView.addingCornerandShadow(color: .lightGray, opacity: 1, offset: CGSize(width: 0.0, height: 1.0), radius: 2, corner: 8.0)
-
+//        self.userImg.makeRoundedCorner()
         self.dashView.cornerRadius = 8.0
     }
 
@@ -99,18 +103,19 @@ extension DashBoardViewController {
             
             self.ontapProfile()
         }
+        self.userImg.makeRoundedCorner()
+//        self.userImg.layer.cornerRadius = self.userImg.bounds.width/2
 //        self.buttonProfile.addTarget(self, action: #selector(ontapProfile), for: .touchUpInside)
 //        self.setupFont()
         self.setupLanguage()
         self.chageDateBtn.addTarget(self, action: #selector(changeAction(_sender:)), for: .touchUpInside)
     }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.userImg.makeRoundedCorner()
-
-    }
-    
+//
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//
+//    }
+//
     func registerCell(){
         
         self.categoriesCollection.register(UINib(nibName: "HomeOptionCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "HomeOptionCollectionViewCell")
@@ -263,6 +268,7 @@ extension DashBoardViewController : UICollectionViewDelegate , UICollectionViewD
 //Api calls
 extension DashBoardViewController : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        self.loader.isHideInMainThread(true)
         switch String(describing: modelClass) {
             case model.type.DashBoardEntity:
                 guard let data = dataDict as? DashBoardEntity else { return }
@@ -293,6 +299,8 @@ extension DashBoardViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        showToast(msg: error.localizedDescription)
+        self.loader.isHideInMainThread(true)
         
     }
     
@@ -300,6 +308,7 @@ extension DashBoardViewController : PresenterOutputProtocol{
         let url = "\(Base.home.rawValue)?from_date=\(fromdate)&to_date=\(todate)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: DashBoardEntity.self, token: true)
         showDateLbl.text = "\(dateConvertor(fromdate, _input: .YMD, _output: .DM)) - \(dateConvertor(todate, _input: .YMD, _output: .DM))"
+        self.loader.isHidden = false
     }
     
     func getChatRequest(){
@@ -309,6 +318,7 @@ extension DashBoardViewController : PresenterOutputProtocol{
     func profileApi(){
         let url = "\(Base.profile.rawValue)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: ProfileEntity.self, token: true)
+        self.loader.isHidden = false
     }
     
 }

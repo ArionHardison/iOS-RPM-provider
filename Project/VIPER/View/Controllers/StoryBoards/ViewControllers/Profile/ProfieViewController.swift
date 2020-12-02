@@ -42,6 +42,8 @@ class ProfieViewController: UIViewController {
          let data : ProfileEntity = profile
             self.profileImage.setURLImage(data.doctor?.doctor_profile?.profile_pic ?? "")
             self.labelName.text = "\(data.doctor?.first_name ?? "") \(data.doctor?.last_name ?? "")"
+        self.labelQualification.text = "\(data.doctor?.doctor_profile?.certification ?? "") - \(data.doctor?.doctor_profile?.speciality?.name ?? "")"
+        self.labelExperience.text = data.doctor?.doctor_profile?.experience ?? ""
             self.clincList = data.clinics ?? [Clinics]()
             self.clinictTable.reloadData()
         }

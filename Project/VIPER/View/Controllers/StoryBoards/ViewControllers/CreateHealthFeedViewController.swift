@@ -39,7 +39,7 @@ extension CreateHealthFeedViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward")?.withTintColor(UIColor.white), style: .plain, target: self, action: #selector(self.backButtonClick))
 
         self.navigationItem.title = Constants.string.healthFeed.localize()
-
+        self.descriptionTextView.delegate = self
         self.coverImage.addTap {
             self.chooseCoverPhoto()
         }
@@ -110,11 +110,17 @@ extension CreateHealthFeedViewController : PresenterOutputProtocol{
        
         var uploadimgeData:Data = Data()
         
-        if  let dataImg = self.coverImage.image?.jpegData(compressionQuality: 0.5) {
+        if  let dataImg = self.coverImage.image?.pngData() {
             uploadimgeData = dataImg
         }
         
-        self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .POST, imgData: ["coverImage":uploadimgeData], imgName: "coverImage", modelClass: CommonModel.self, token: true)
+        self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .POST, imgData: ["cover_photo":uploadimgeData], imgName: "cover_photo", modelClass: CommonModel.self, token: true)
     }
     
+}
+
+extension CreateHealthFeedViewController : UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+    }
 }

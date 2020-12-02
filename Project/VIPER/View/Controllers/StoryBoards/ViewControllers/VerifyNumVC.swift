@@ -24,9 +24,11 @@ class VerifyNumVC: UIViewController {
     
     var enteredOTP : String = ""
 //    var mobileVerifyData: OTPMobile?
-    var mobileNumber : Int = 0
+    var mobileNumber : String = ""
     var otp : Int = 0
-    
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +51,7 @@ class VerifyNumVC: UIViewController {
             if (self.otp ?? 0000) == Int(self.enteredOTP){
 //                if self.mobileVerifyData?.success ?? false{
                     var login : verifyLogin = verifyLogin()
-                    login.mobile = self.mobileNumber
+//                    login.mobile = self.mobileNumber
                     login.otp = self.otp
                     self.LoginApi(mobileNum: login)
                      
@@ -123,6 +125,7 @@ extension VerifyNumVC : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
         switch String(describing: modelClass) {
         case model.type.MobileVerifyModel:
+            self.loader.isHideInMainThread(true)
             let data = dataDict as? MobileVerifyModel
             UserDefaultConfig.Token = data?.token ?? ""
             print("DataToken",UserDefaultConfig.Token)
@@ -142,17 +145,19 @@ extension VerifyNumVC : PresenterOutputProtocol{
     func LoginApi(mobileNum : verifyLogin){
      
         var params = [String:Any]()
-        params.updateValue(self.mobileNumber.description, forKey: "mobile")
+        params.updateValue(self.mobileNumber, forKey: "mobile")
         params.updateValue(otp.description , forKey: "otp")
         params.updateValue("ios", forKey: "device_type")
         params.updateValue(deviceTokenString, forKey: "device_token")
         params.updateValue(UUID().uuidString, forKey: "device_id")
         params.updateValue(appClientId, forKey: "client_id")
         params.updateValue(appSecretKey, forKey: "client_secret")
+        params.updateValue(push_device_token, forKey: "push_device_token")
         params.updateValue("otp", forKey: "grant_type")
         
         
         
         self.presenter?.HITAPI(api: Base.verify_otp.rawValue, params: params, methodType: .POST, modelClass: MobileVerifyModel.self, token: false)
+        self.loader.isHidden = false
     }
 }

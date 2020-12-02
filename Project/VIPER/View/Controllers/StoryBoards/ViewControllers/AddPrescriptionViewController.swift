@@ -42,8 +42,9 @@ extension AddPrescriptionViewController {
     
     private func initatlLoads(){
         self.backButton.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
-        self.titleLabel.text = "Add Prescritpions"
-        self.labelDescription.text = "Add Instruction for Prescritpion"
+        self.descriptionTextView.autocorrectionType = .no
+        self.titleLabel.text = "Add Prescription"
+        self.labelDescription.text = "Add Instruction for Prescription"
         self.labelUploadImage.text = "Upload Prescription Image"
         self.uploadImageView.isUserInteractionEnabled = true
         self.saveButton.setTitle("Save", for: .normal)

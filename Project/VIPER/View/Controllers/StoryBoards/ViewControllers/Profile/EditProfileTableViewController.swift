@@ -24,11 +24,17 @@ class EditProfileTableViewController: UITableViewController {
     @IBOutlet weak var textfieldSpecialization: HoshiTextField!
     
     @IBOutlet weak var countryCodeTextField: HoshiTextField!
+    
+    private lazy var loader : UIView = {
+        return createActivityIndicator(UIScreen.main.focusedView ?? self.view)
+    }()
+    
     var speciality = [Speciality]()
     var isImageAdded : Bool = false
     var countryCode :String?
     var selectedCategory : String = ""
     var selectedCategoryID : Int = 0
+//    var countryCode :String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.intialLoads()
@@ -48,7 +54,7 @@ class EditProfileTableViewController: UITableViewController {
     func setupData(){
         let data : ProfileEntity = profile
             self.profileImage.setURLImage(data.doctor?.doctor_profile?.profile_pic ?? "")
-            self.labelFirstName.text = "\(data.doctor?.last_name ?? "")"
+            self.labelFirstName.text = "\(data.doctor?.first_name ?? "")"
             self.labelLastName.text = "\(data.doctor?.last_name ?? "")"
             self.labelEmail.text = "\(data.doctor?.email ?? "")"
             self.labelMobileNum.text = "\(data.doctor?.mobile ?? "")"
@@ -65,7 +71,7 @@ class EditProfileTableViewController: UITableViewController {
         
         self.editProfileImgBtn.addTarget(self, action: #selector(chooseCoverPhoto), for: .touchUpInside)
         
-        
+//        self.textfieldSpecialization.isUserInteractionEnabled = false
         self.buttonSave.addTap {
             if self.validation(){
                 var profile = profileUploadReq()
@@ -73,9 +79,31 @@ class EditProfileTableViewController: UITableViewController {
                 profile.last_name = self.labelLastName.getText
                 profile.specialities = self.selectedCategoryID
                 profile.email = self.labelEmail.getText
+                
+                
+                if self.labelMobileNum.getText.contains("+"){
                 profile.mobile = self.labelMobileNum.getText
+                }else{
+                    showToast(msg: "Select Country Code")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "CountryListController") as! CountryListController
+                    self.present(vc, animated: true, completion: nil)
+                    vc.searchCountryCode = { code in
+                        self.countryCode = code
+                        let country = Common.getCountries()
+                        for eachCountry in country {
+                            if code == eachCountry.code {
+                                self.countryCode = eachCountry.dial_code
+                                self.labelMobileNum.text = (self.countryCode ?? "") + self.labelMobileNum.getText
+                                profile.mobile =  self.labelMobileNum.getText
+                            }
+                        }
+                    }
+                }
+                
+                
                 profile.country_code = self.countryCodeTextField.getText
                 self.updateProfile(data: profile)
+                
             }
         }
     }
@@ -104,7 +132,7 @@ class EditProfileTableViewController: UITableViewController {
         }else if self.labelQualification.getText.isEmpty{
             showToast(msg: "select you speciality")
             return false
-        }else if self.labelMobileNum.getText.isEmpty || !(self.labelMobileNum.getText.isPhoneNumber){
+        }else if self.labelMobileNum.getText.isEmpty {
             showToast(msg: "Enter Valid mobile number ")
             return false
         }else {
@@ -140,6 +168,7 @@ extension EditProfileTableViewController {
 //Api calls
 extension EditProfileTableViewController : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        self.loader.isHideInMainThread(true)
         switch String(describing: modelClass) {
             case model.type.CommonModel:
                 guard let data = dataDict as? CommonModel else { return }
@@ -172,6 +201,7 @@ extension EditProfileTableViewController : PresenterOutputProtocol{
         }
         
         self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .POST, imgData: ["profile_pic":uploadimgeData], imgName: "profile_pic", modelClass: CommonModel.self, token: true)
+        self.loader.isHidden = false
     }
     
 }

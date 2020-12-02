@@ -19,6 +19,9 @@ class WalletViewController: UIViewController {
     private var barbuttonTransfer : UIBarButtonItem!
     private var datasource = [Payment_log]()
     private var profile = ProfileEntity()
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
     
     private var balance : Float = 0 {
         didSet {
@@ -73,6 +76,7 @@ extension WalletViewController {
         self.balance = self.profile.doctor?.wallet_balance ?? 0.0
         self.navigationController?.isNavigationBarHidden = false
         self.presenter?.HITAPI(api: Base.profile.rawValue, params: nil, methodType: .GET, modelClass: ProfileEntity.self, token: true)
+        self.loader.isHidden = false
     }
     
     private func localize() {
@@ -87,6 +91,7 @@ extension WalletViewController {
     private func viewWillAppearCustom() {
         self.initialLoads()
         self.presenter?.HITAPI(api: Base.paymentLog.rawValue, params: nil, methodType: .GET, modelClass: WalletTransactionModel.self, token: true)
+        self.loader.isHidden = false
         
         
     }
@@ -158,6 +163,7 @@ extension WalletViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension WalletViewController : PresenterOutputProtocol {
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        self.loader.isHideInMainThread(true)
         switch String(describing: modelClass) {
          
             case model.type.ProfileEntity:
@@ -178,6 +184,8 @@ extension WalletViewController : PresenterOutputProtocol {
     
     func showError(error: CustomError) {
         showToast(msg: error.localizedDescription)
+        self.loader.isHidden = true
+        
     }
     
     

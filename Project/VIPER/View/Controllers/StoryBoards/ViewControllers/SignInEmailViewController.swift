@@ -15,6 +15,10 @@ class SignInEmailViewController: UIViewController {
     @IBOutlet weak var emailTxt: HoshiTextField!
     @IBOutlet weak var passwordTxt: HoshiTextField!
     
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,7 +72,7 @@ extension SignInEmailViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
-        
+        showToast(msg: error.localizedDescription)
     }
     
     func loginApi(logindata : LoginReq){
@@ -76,6 +80,7 @@ extension SignInEmailViewController : PresenterOutputProtocol{
                           PARAM_PASSWRD : self.passwordTxt.getText,
                           PARAM_CLIENTID:appClientId,
                           PARAM_CLIENTSECRET: appSecretKey,
+                          PARAM_PUSH : push_device_token,
                           PARAM_DEVICETYPE : "ios",
                           PARAM_DEVICETOKEN : deviceTokenString,
                           PARAM_DEVICEID: UUID().uuidString,

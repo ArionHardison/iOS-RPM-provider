@@ -190,6 +190,7 @@ extension AppDelegate {
        
         print("Apn Token ", deviceToken.map { String(format: "%02.2hhx", $0) }.joined())
 //        deviceTokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        push_device_token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
     }
     
     func application(_ application: UIApplication,

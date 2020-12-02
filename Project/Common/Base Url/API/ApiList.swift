@@ -56,6 +56,7 @@ enum Base : String{
     case blockCalender = "/api/hospital/block_calender"
     case editAppointment = "/api/hospital/edit_appointment"
     case patient = "/api/hospital/patient"
+    case updatePatient = "/api/hospital/update_patient"
     case chatIncoming = "api/hospital/chat/incoming"
     case updateStatus = "/api/hospital/chat/update"
     case chatHistory = "/api/hospital/chat/history"
@@ -65,6 +66,8 @@ enum Base : String{
     case uploadPrescription = "/api/hospital/appointment/updateRecords"
     case updateFeedback = "/api/hospital/checkout"
     case paymentLog = "/api/hospital/payment_log"
+    case searchPatient = "/api/hospital/search_patient"
+    
     
     
 
@@ -112,6 +115,7 @@ struct model {
     let UploadSuccess = "UploadSuccess"
     let UpdateFeedBackModel = "UpdateFeedBackModel"
     let WalletTransactionModel = "WalletTransactionModel"
+    let SearchPatient = "SearchPatient"
 }
 
 

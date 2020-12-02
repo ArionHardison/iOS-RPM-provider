@@ -57,9 +57,19 @@ class EditPatientInformationTableViewController: UITableViewController {
     }
     
     func validation() -> Bool{
-        if self.nameTxt.getText.isEmpty{
-            showToast(msg: "Enter the Name")
-            return false
+        if !self.nameTxt.getText.isEmpty{
+//            let pattern = "/^[A-Z][a-z]{0,19}[\\s,][A-Z][a-z]{0,19}$/"
+//            let predicate = NSPredicate(format: "self MATCHES [c] %@", pattern)
+            if self.nameTxt.getText.contains(" ") {
+                print("Valid")
+                return true
+            }
+            else {
+                print("Invalid")
+                showToast(msg: "Enter the First Name & Last Name")
+                return false
+            }
+//
         }else if self.IDTXT.getText.isEmpty{
             showToast(msg: "Enter the PatientID")
             return false
@@ -106,7 +116,7 @@ class EditPatientInformationTableViewController: UITableViewController {
     
     func populateData(){
          let data : Patient = self.Patients
-            self.nameTxt.text = data.first_name ?? ""
+            self.nameTxt.text = (data.first_name ?? "") + " " + (data.last_name ?? "")
             self.profileImg.setURLImage(data.profile?.profile_pic ?? "")
             self.IDTXT.text = data.id?.description ?? ""
             self.bloodGrpTXT.text = data.profile?.blood_group ?? ""
@@ -134,18 +144,31 @@ extension EditPatientInformationTableViewController {
     
     @objc func doneAction(){
         if self.validation(){
-            var patient = PatientModelReq()
-            patient.address = self.stateTXT.getText
-            patient.blood_group = self.bloodGrpTXT.getText
-            patient.city = self.cityTXT.getText
-            patient.dob = self.bdyTXT.getText
-            patient.email = self.emailTxt.getText
-            patient.other_id = self.otherTXT.getText
-            patient.phone = self.primaryNum.getText
-            patient.postal_code = self.pincodeTXT.getText
-            patient.secondary_mobile = self.secondryNum.getText
+            var imageData = [String:Data]()
+            let imageValue = (self.profileImg.image?.pngData())!
+            imageData.updateValue(imageValue, forKey: "profile_pic")
+            var params = [String:Any]()
+            params.updateValue(self.stateTXT.getText, forKey: "address")
+            params.updateValue(self.bloodGrpTXT.getText, forKey: "blood_group")
+            params.updateValue(self.cityTXT.getText, forKey: "city")
+            params.updateValue(self.bdyTXT.getText, forKey: "dob")
+            params.updateValue(self.emailTxt.getText, forKey: "email")
+            params.updateValue(self.otherTXT.getText, forKey: "other_id")
+            params.updateValue(self.primaryNum.getText, forKey: "phone")
+            params.updateValue(self.pincodeTXT.getText, forKey: "postal_code")
+            params.updateValue(self.secondryNum.getText, forKey: "secondary_mobile")
+            let fullNameArr = self.nameTxt.getText.components(separatedBy: " ")
+            let firstName = fullNameArr[0]
+            let lastName = fullNameArr[1]
+            params.updateValue(firstName, forKey: "first_name")
+            params.updateValue(lastName, forKey: "last_name")
+            
+            
+            let url = "\(Base.updatePatient.rawValue)/\(self.Patients.id ?? 0)"
+            self.presenter?.IMAGEPOST(api: url, params: params, methodType: .POST, imgData: imageData, imgName: "profile_pic", modelClass: CommonModel.self, token: true)
+            print(url,params)
            
-            self.editPatient(data: patient)
+//            self.editPatient(data: patient)
         }
     }
     
@@ -185,22 +208,20 @@ extension EditPatientInformationTableViewController : PresenterOutputProtocol{
         showToast(msg: "Something went wrong, Please try after some time")
     }
     
-    func editPatient(data : PatientModelReq){
-        
-        let url = "\(Base.patient.rawValue)/\(self.Patients.id?.description ?? "")"
-        
-        var uploadimgeData:Data = Data()
-        
-        if  let dataImg = self.profileImg.image?.jpegData(compressionQuality: 0.5) {
-            uploadimgeData = dataImg
-        }
-        
-        self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .PUT, imgData: ["profile_pic":uploadimgeData], imgName: "profile_pic", modelClass: CommonModel.self, token: true)
-    }
     
     func deletePatient(id : String){
         
         let url = "\(Base.patient.rawValue)/\(id)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .DELETE, modelClass: CommonModel.self, token: true)
+    }
+}
+
+
+extension EditPatientInformationTableViewController : UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.bdyTXT{
+            return false
+        }
+        return true
     }
 }

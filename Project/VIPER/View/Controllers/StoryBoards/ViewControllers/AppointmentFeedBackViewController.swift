@@ -41,6 +41,9 @@ class AppointmentFeedBackViewController: UITableViewController {
         super.viewDidLoad()
         initialLoads()
     }
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -142,6 +145,7 @@ extension AppointmentFeedBackViewController {
                 params.updateValue(self.appoitments.patient_id ?? 0, forKey: "patient_id")
                 params.updateValue(self.appoitments.id ?? 0, forKey: "appointment_id")
                 self.presenter?.HITAPI(api: Base.updateFeedback.rawValue, params: params, methodType: .POST, modelClass: UpdateFeedBackModel.self, token: true)
+                self.loader.isHidden = false
             }
         }
         
@@ -170,6 +174,7 @@ extension AppointmentFeedBackViewController : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
         switch String(describing: modelClass) {
             case model.type.UpdateFeedBackModel:
+                self.loader.isHideInMainThread(true)
                 let data = dataDict as? UpdateFeedBackModel
                 showToast(msg: data?.message ?? "")
                 self.navigationController?.popViewController(animated: true)
@@ -182,6 +187,8 @@ extension AppointmentFeedBackViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        self.loader.isHideInMainThread(true)
+        showAlert(message: error.localizedDescription)
         
     }
     

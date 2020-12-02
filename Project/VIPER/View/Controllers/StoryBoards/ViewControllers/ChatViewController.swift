@@ -60,6 +60,7 @@ extension ChatViewController : UITableViewDelegate,UITableViewDataSource {
             tableCell.labelName.text = (data.patient?.first_name ?? "") + " " + (data.patient?.last_name ?? "")
             tableCell.labelText.text = (data.chat_request?.messages ?? "")
             tableCell.labelTime.text = dateConvertor((data.chat_request?.started_at ?? ""), _input: .date_time, _output: .N_hour)
+            tableCell.profileImage.setURLImage(data.patient?.profile?.profile_pic ?? "")
         }
         return tableCell
     }

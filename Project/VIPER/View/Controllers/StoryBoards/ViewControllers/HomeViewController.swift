@@ -49,6 +49,7 @@
             self.loader.isHidden = false
             
             self.presenter?.HITAPI(api: "api/v1/create", params: ["name":"test","salary":"123","age":"23"], methodType: .POST, modelClass: Json4Swift_Base.self, token: false)
+            self.loader.isHidden = false
             
         }
         
@@ -68,11 +69,13 @@
         
         func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
             print("Called")
+            self.loader.isHideInMainThread(true)
            
         }
         
         func showError(error: CustomError) {
             print(error)
+            self.loader.isHideInMainThread(true)
         }
         
     }
