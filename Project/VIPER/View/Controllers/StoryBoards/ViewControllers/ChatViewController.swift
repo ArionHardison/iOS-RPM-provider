@@ -15,6 +15,10 @@ class ChatViewController: UIViewController {
     
     var chatData : ChatHistoryEntity?
     
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -90,6 +94,7 @@ extension ChatViewController : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
         switch String(describing: modelClass) {
             case model.type.ChatHistoryEntity:
+                self.loader.isHideInMainThread(true)
                 guard let data = dataDict as? ChatHistoryEntity else { return }
                 self.chatData = data
                 self.chatListTable.reloadData()
@@ -107,6 +112,7 @@ extension ChatViewController : PresenterOutputProtocol{
    
     func getChatHistory(){
         self.presenter?.HITAPI(api: Base.chatHistory.rawValue, params: nil, methodType: .GET, modelClass: ChatHistoryEntity.self, token: true)
+        self.loader.isHidden = false
     }
    
     

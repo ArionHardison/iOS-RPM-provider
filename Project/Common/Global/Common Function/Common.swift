@@ -308,7 +308,7 @@ func showToast(msg : String , bgcolor : UIColor = UIColor.gray) {
         toastLabel.centerXAnchor.constraint(equalTo: window.centerXAnchor)
         
     ])
-    UIView.animate(withDuration: 8.0, delay: 0.0, options: .curveEaseOut, animations: {
+    UIView.animate(withDuration: 5.0, delay: 0.0, options: .curveEaseOut, animations: {
         toastLabel.alpha = 0.0
     }, completion: {(isCompleted) in
         toastLabel.removeFromSuperview()

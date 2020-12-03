@@ -18,6 +18,10 @@ class FeedBackViewController: UIViewController {
     
     var feedbackList : FeedBackEntity = FeedBackEntity()
     
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -108,6 +112,7 @@ extension FeedBackViewController : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
         switch String(describing: modelClass) {
             case model.type.FeedBackEntity:
+                self.loader.isHideInMainThread(true)
                 guard let data = dataDict as? FeedBackEntity else { return }
                 
                 self.populateData(data: data)
@@ -125,6 +130,7 @@ extension FeedBackViewController : PresenterOutputProtocol{
     func getFeedBackDetail(){
         let url = "\(Base.feedback.rawValue)"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: FeedBackEntity.self, token: true)
+        self.loader.isHidden = false
     }
     
     

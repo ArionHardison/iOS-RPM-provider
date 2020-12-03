@@ -163,16 +163,18 @@ extension WalletViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension WalletViewController : PresenterOutputProtocol {
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
-        self.loader.isHideInMainThread(true)
+        
         switch String(describing: modelClass) {
          
             case model.type.ProfileEntity:
+                self.loader.isHideInMainThread(true)
                 guard let data = dataDict as? ProfileEntity else { return }
                 self.balance = data.doctor?.wallet_balance ?? 0.0
                 self.profile = data
                 self.labelWalletAmount.text = "\(data.doctor?.wallet_balance ?? 0.0)"
                 break
         case model.type.WalletTransactionModel:
+            self.loader.isHideInMainThread(true)
             guard let data = dataDict as? WalletTransactionModel else { return }
             self.datasource = data.payment_log ?? []
             self.tableViewWallet.reloadInMainThread()

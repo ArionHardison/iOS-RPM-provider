@@ -23,6 +23,9 @@ class CalendarViewController: UIViewController {
     var notifyView : NotifyView!
     var selectedDate : String = ""
     
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view.window!)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -228,6 +231,7 @@ extension CalendarViewController : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
         switch String(describing: modelClass) {
             case model.type.AppointmentModel:
+                self.loader.isHideInMainThread(true)
                 guard let data = dataDict as? AppointmentModel else { return }
                
                 self.all_appointments = data.all_appointments ?? [All_appointments]()
@@ -235,6 +239,7 @@ extension CalendarViewController : PresenterOutputProtocol{
                 break
             
             case model.type.CommonModel:
+                self.loader.isHideInMainThread(true)
                 guard let data = dataDict as? CommonModel else { return }
                 showToast(msg: data.message ?? "")
                 self.getAppointmentDetail(date: self.calendarView.selectedDate.description)
@@ -254,12 +259,14 @@ extension CalendarViewController : PresenterOutputProtocol{
         
         let url = "\(Base.appoinemnt.rawValue)?date=\(dateConvertor(date.description, _input: .date_time_Z, _output: .YMD))"
         self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: AppointmentModel.self, token: true)
+        self.loader.isHidden = false
     }
     
     func cancelAppointmentDetail(id : String){
         
         let url = "\(Base.cancelAppoinemnt.rawValue)"
         self.presenter?.HITAPI(api: url, params: ["id": id], methodType: .POST, modelClass: CommonModel.self, token: true)
+        self.loader.isHidden = false
     }
 }
 
