@@ -221,8 +221,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dei-Gy-J0H">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="18l-WE-FCQ" customClass="Logo">
-                                        <rect key="frame" x="28.666666666666657" y="185.33333333333334" width="370.66666666666674" height="370.33333333333326"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="provider-splash" translatesAutoresizingMaskIntoConstraints="NO" id="18l-WE-FCQ" customClass="Logo">
+                                        <rect key="frame" x="52" y="208.33333333333337" width="324" height="324"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="skK-2y-G9p">
                                         <rect key="frame" x="42.666666666666657" y="745" width="342.66666666666674" height="60.333333333333371"/>
@@ -268,11 +268,11 @@
                                 </subviews>
                                 <color key="backgroundColor" name="AppColor"/>
                                 <constraints>
-                                    <constraint firstItem="18l-WE-FCQ" firstAttribute="height" secondItem="Dei-Gy-J0H" secondAttribute="height" multiplier="0.4" id="3Qs-ff-vbD"/>
+                                    <constraint firstItem="18l-WE-FCQ" firstAttribute="height" secondItem="Dei-Gy-J0H" secondAttribute="height" multiplier="0.35" id="3Qs-ff-vbD"/>
                                     <constraint firstItem="18l-WE-FCQ" firstAttribute="centerX" secondItem="Dei-Gy-J0H" secondAttribute="centerX" id="Cbx-aE-ogq"/>
                                     <constraint firstItem="skK-2y-G9p" firstAttribute="height" secondItem="Dei-Gy-J0H" secondAttribute="height" multiplier="0.065" id="Log-yG-ciF"/>
                                     <constraint firstItem="skK-2y-G9p" firstAttribute="width" secondItem="Dei-Gy-J0H" secondAttribute="width" multiplier="0.8" id="YFj-i1-6eu"/>
-                                    <constraint firstItem="18l-WE-FCQ" firstAttribute="width" secondItem="Dei-Gy-J0H" secondAttribute="height" multiplier="0.4" id="aLb-FT-mxn"/>
+                                    <constraint firstItem="18l-WE-FCQ" firstAttribute="width" secondItem="Dei-Gy-J0H" secondAttribute="height" multiplier="0.35" id="aLb-FT-mxn"/>
                                     <constraint firstItem="skK-2y-G9p" firstAttribute="centerX" secondItem="Dei-Gy-J0H" secondAttribute="centerX" id="g6P-jT-8Jn"/>
                                     <constraint firstAttribute="bottom" secondItem="skK-2y-G9p" secondAttribute="bottom" multiplier="1.15" id="tOQ-xZ-Piq"/>
                                     <constraint firstItem="18l-WE-FCQ" firstAttribute="centerY" secondItem="Dei-Gy-J0H" secondAttribute="centerY" multiplier="0.8" id="ulq-HY-wA6"/>
@@ -464,7 +464,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-White" translatesAutoresizingMaskIntoConstraints="NO" id="0FM-U2-tfx">
-                                        <rect key="frame" x="133.66666666666669" y="66.333333333333329" width="160.66666666666669" height="188.66666666666669"/>
+                                        <rect key="frame" x="107" y="41" width="214" height="214"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login using email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vz8-dm-re3">
                                         <rect key="frame" x="30" y="317.66666666666669" width="368" height="25.333333333333314"/>
@@ -547,9 +547,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="0FM-U2-tfx" firstAttribute="height" secondItem="koe-i3-DXh" secondAttribute="height" multiplier="0.211268" id="0wm-dP-IPO"/>
+                                    <constraint firstItem="0FM-U2-tfx" firstAttribute="height" secondItem="koe-i3-DXh" secondAttribute="width" multiplier="0.5" id="0wm-dP-IPO"/>
                                     <constraint firstItem="vz8-dm-re3" firstAttribute="leading" secondItem="koe-i3-DXh" secondAttribute="leading" constant="30" id="5Bd-5B-Lup"/>
-                                    <constraint firstItem="0FM-U2-tfx" firstAttribute="width" secondItem="koe-i3-DXh" secondAttribute="width" multiplier="0.375" id="5SY-zL-bqH"/>
+                                    <constraint firstItem="0FM-U2-tfx" firstAttribute="width" secondItem="koe-i3-DXh" secondAttribute="width" multiplier="0.5" id="5SY-zL-bqH"/>
                                     <constraint firstAttribute="bottom" secondItem="sHz-LX-zN3" secondAttribute="bottom" multiplier="1.7" id="Ag4-EU-57a"/>
                                     <constraint firstItem="Ssa-lg-vpF" firstAttribute="width" secondItem="koe-i3-DXh" secondAttribute="width" multiplier="0.8" id="DPX-wl-dcb"/>
                                     <constraint firstItem="sHz-LX-zN3" firstAttribute="height" secondItem="koe-i3-DXh" secondAttribute="height" multiplier="0.18" id="Ejn-fo-BuF"/>
@@ -1069,13 +1069,13 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="396" height="56"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Appointment Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFq-PU-MUT">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="396" height="14.333333333333334"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="396" height="38"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="27 Oct 2019, Sat 7:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh2-D0-1RL">
-                                                                                    <rect key="frame" x="0.0" y="14.333333333333325" width="396" height="41.666666666666657"/>
+                                                                                    <rect key="frame" x="0.0" y="38" width="396" height="18"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -7546,7 +7546,6 @@
         <image name="Chevron" width="15" height="15"/>
         <image name="Ellipse 58" width="85" height="85"/>
         <image name="EndCall" width="256" height="256"/>
-        <image name="Logo-1" width="256" height="256"/>
         <image name="Logo-White" width="512" height="512"/>
         <image name="NoImageFound" width="190.5" height="143"/>
         <image name="NoPath" width="355" height="156"/>
@@ -7566,6 +7565,7 @@
         <image name="mic.slash.fill" catalog="system" width="108" height="128"/>
         <image name="noprofile-1" width="322.5" height="322.5"/>
         <image name="phone.down.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="provider-splash" width="512" height="512"/>
         <image name="sendIcon" width="32" height="32"/>
         <image name="speaker.slash.fill" catalog="system" width="124" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>

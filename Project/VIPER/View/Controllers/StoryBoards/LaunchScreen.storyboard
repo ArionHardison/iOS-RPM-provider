@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="mCh-Q1-aeG">
-                                <rect key="frame" x="65.5" y="211.5" width="244" height="244"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="provider-splash" translatesAutoresizingMaskIntoConstraints="NO" id="mCh-Q1-aeG">
+                                <rect key="frame" x="56.5" y="202.5" width="262.5" height="262.5"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7nC-HY-vTV"/>
-                        <color key="backgroundColor" red="0.084587596360000003" green="0.32472330329999999" blue="0.63532650469999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="AppColor"/>
                         <constraints>
                             <constraint firstItem="mCh-Q1-aeG" firstAttribute="centerX" secondItem="7nC-HY-vTV" secondAttribute="centerX" id="Dtp-pU-IjY"/>
                             <constraint firstItem="mCh-Q1-aeG" firstAttribute="centerY" secondItem="7nC-HY-vTV" secondAttribute="centerY" id="Ico-NG-bHz"/>
-                            <constraint firstItem="mCh-Q1-aeG" firstAttribute="width" secondItem="mdC-IL-fGJ" secondAttribute="width" multiplier="0.65" id="SJw-it-ees"/>
-                            <constraint firstItem="mCh-Q1-aeG" firstAttribute="height" secondItem="mdC-IL-fGJ" secondAttribute="width" multiplier="0.65" id="nXx-OC-af0"/>
+                            <constraint firstItem="mCh-Q1-aeG" firstAttribute="width" secondItem="mdC-IL-fGJ" secondAttribute="width" multiplier="0.7" id="SJw-it-ees"/>
+                            <constraint firstItem="mCh-Q1-aeG" firstAttribute="height" secondItem="mdC-IL-fGJ" secondAttribute="width" multiplier="0.7" id="nXx-OC-af0"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +37,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo-1" width="256" height="256"/>
+        <image name="provider-splash" width="512" height="512"/>
+        <namedColor name="AppColor">
+            <color red="0.10588235294117647" green="0.18431372549019609" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
