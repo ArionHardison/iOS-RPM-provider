@@ -80,8 +80,6 @@ extension CreateAppointmentViewController {
         self.commentsTextView.delegate = self
         self.commentsTextView.textColor = .lightGray
         Common.setFont(to: self.patientNameTextField,size: 20)
-        self.createAppointment.setTitleColor(.white, for: .normal)
-        self.createAppointment.backgroundColor = .primary
         
     }
     

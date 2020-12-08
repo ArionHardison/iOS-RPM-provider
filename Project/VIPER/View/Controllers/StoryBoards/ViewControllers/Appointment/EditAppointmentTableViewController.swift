@@ -27,6 +27,11 @@ class EditAppointmentTableViewController: UITableViewController {
     @IBOutlet weak var buttonDoctorSms: UIButton!
     @IBOutlet weak var buttonDoctorEmail: UIButton!
 
+    var isSMS : Bool = false
+    var isEmail : Bool = false
+    var isNSMS : Bool = false
+    var isNEmail : Bool = false
+    
     var appoinment : All_appointments = All_appointments()
     
     override func viewDidLoad() {
@@ -66,6 +71,7 @@ class EditAppointmentTableViewController: UITableViewController {
     func setupAction(){
         self.editSchudleDate.addTap {
             let view = DatePickerAlert.getView
+            view.TitleLbl.text = "Select Date"
             view.alertdelegate = self
             AlertBuilder().addView(fromVC: self , view).show()
         }
@@ -80,6 +86,10 @@ extension EditAppointmentTableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.string.Done.localize(), style: .done, target: self, action: #selector(self.doneAction))
         self.navigationItem.title = Constants.string.editAppointment.localize()
+        self.buttonPatientSms.addTarget(self, action: #selector(patientSMSAction(sender:)), for: .touchUpInside)
+        self.buttonDoctorSms.addTarget(self, action: #selector(doctorSMSAction(sender:)), for: .touchUpInside)
+        self.buttonPatientEmail.addTarget(self, action: #selector(patientEmailAction(sender:)), for: .touchUpInside)
+        self.buttonDoctorEmail.addTarget(self, action: #selector(doctorEmailAction(sender:)), for: .touchUpInside)
 
     }
     
@@ -89,21 +99,45 @@ extension EditAppointmentTableViewController {
         appoinment.id = self.appoinment.id?.description ?? ""
         appoinment.description = self.appoinment.description ?? ""
         appoinment.doctor_id = profile.doctor?.id?.description ?? "0"
-        appoinment.service_id = "2"
+        appoinment.service_id = "\(self.appoinment.service_id ?? 0)"
         appoinment.scheduled_at = self.labelAppointmentDetails.getText
-        appoinment.consult_time = "5"
+        appoinment.consult_time = self.appoinment.consult_time ?? ""
         appoinment.appointment_type = "ONLINE"
           self.editAppoinemnt(data: appoinment)
     }
     
     func setDesign() {
         
-        self.buttonPatientSms.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "SMS", titlePosition: .right, additionalSpacing: 8, state: .normal)
-        self.buttonPatientEmail.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "Email", titlePosition: .right, additionalSpacing: 8, state: .normal)
-        self.buttonDoctorSms.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "SMS", titlePosition: .right, additionalSpacing: 16, state: .normal)
-        self.buttonDoctorEmail.set(image: #imageLiteral(resourceName: "Rectangle 298"), title: "Email", titlePosition: .right, additionalSpacing: 16, state: .normal)
+        self.buttonPatientSms.set(image:isSMS ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "SMS", titlePosition: .right, additionalSpacing: 8, state: .normal)
+        self.buttonPatientEmail.set(image:isEmail ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "Email", titlePosition: .right, additionalSpacing: 8, state: .normal)
+        self.buttonDoctorSms.set(image:isNSMS ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "SMS", titlePosition: .right, additionalSpacing: 16, state: .normal)
+        self.buttonDoctorEmail.set(image:isNEmail ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "Email", titlePosition: .right, additionalSpacing: 16, state: .normal)
 
     }
+    
+    @IBAction private func patientEmailAction(sender:UIButton){
+        isEmail = !isEmail
+        self.setDesign()
+    }
+    
+    @IBAction private func patientSMSAction(sender:UIButton){
+        isSMS = !isSMS
+        self.setDesign()
+    }
+    
+    @IBAction private func doctorSMSAction(sender:UIButton){
+        isNSMS = !isNSMS
+        self.setDesign()
+        
+    }
+    
+    @IBAction private func doctorEmailAction(sender:UIButton){
+        isNEmail = !isNEmail
+        self.setDesign()
+    }
+    
+    
+    
 }
 
 extension EditAppointmentTableViewController : AlertDelegate{

@@ -371,6 +371,7 @@ struct All_appointments : Mappable {
     var patient : Patient?
     var hospital : Hospital?
     var service : Service?
+    var invoice : Invoice?
     init(){}
     init?(map: Map) {
         
@@ -400,6 +401,7 @@ struct All_appointments : Mappable {
         patient <- map["patient"]
         hospital <- map["hospital"]
         service <- map["service"]
+        invoice <- map["invoice"]
     }
     
 }
@@ -529,6 +531,53 @@ struct Payment_log : Mappable {
         response <- map["response"]
         created_at <- map["created_at"]
         updated_at <- map["updated_at"]
+    }
+
+}
+
+
+struct Invoice : Mappable {
+    var id : Int?
+    var appointment_id : Int?
+    var paid : Int?
+    var promocode_id : Int?
+    var promocode_amount : Int?
+    var discount : Int?
+    var gross : Int?
+    var total_pay : Int?
+    var consulting_fees : Int?
+    var speciality_fees : Int?
+    var payment_mode : String?
+    var status : String?
+    var created_at : String?
+    var updated_at : String?
+    var deleted_at : String?
+
+    init() {
+        
+    }
+    
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        appointment_id <- map["appointment_id"]
+        paid <- map["paid"]
+        promocode_id <- map["promocode_id"]
+        promocode_amount <- map["promocode_amount"]
+        discount <- map["discount"]
+        gross <- map["gross"]
+        total_pay <- map["total_pay"]
+        consulting_fees <- map["consulting_fees"]
+        speciality_fees <- map["speciality_fees"]
+        payment_mode <- map["payment_mode"]
+        status <- map["status"]
+        created_at <- map["created_at"]
+        updated_at <- map["updated_at"]
+        deleted_at <- map["deleted_at"]
     }
 
 }

@@ -103,7 +103,11 @@ extension AppointmentFeedBackViewController {
         self.labelHospitalName.text = "\(self.appoitments.patient?.profile?.age ?? "") Years,\(self.appoitments.patient?.profile?.gender ?? "")".capitalized
         self.labelPatientName.text = "\(self.appoitments.patient?.appointments?.first?.booking_for ?? "")"
         self.labelDate.text = dateConvertor(self.appoitments.scheduled_at ?? "", _input: .date_time, _output: .DMY_Time)
+        if self.appoitments.status == "CHECKEDOUT"{
+            self.labelStatusResponse.text = "CONSULTED"
+        }else{
         self.labelStatusResponse.text = self.appoitments.status ?? ""
+        }
         
         
     }

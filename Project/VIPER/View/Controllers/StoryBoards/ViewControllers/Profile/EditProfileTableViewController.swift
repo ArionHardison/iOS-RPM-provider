@@ -34,6 +34,7 @@ class EditProfileTableViewController: UITableViewController {
     var countryCode :String?
     var selectedCategory : String = ""
     var selectedCategoryID : Int = 0
+    var isFromUpdate : Bool = false
 //    var countryCode :String?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,6 +104,7 @@ class EditProfileTableViewController: UITableViewController {
                 
                 profile.country_code = self.countryCodeTextField.getText
                 self.updateProfile(data: profile)
+                self.isFromUpdate = true
                 
             }
         }
@@ -172,7 +174,9 @@ extension EditProfileTableViewController : PresenterOutputProtocol{
         switch String(describing: modelClass) {
             case model.type.CommonModel:
                 guard let data = dataDict as? CommonModel else { return }
+                if isFromUpdate{
                 showToast(msg: data.message ?? "")
+                }
                 self.setupData()
                 self.setupAction()
 //                self.popOrDismiss(animation: true)

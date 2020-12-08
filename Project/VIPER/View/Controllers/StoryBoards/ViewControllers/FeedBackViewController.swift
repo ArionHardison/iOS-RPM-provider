@@ -124,6 +124,7 @@ extension FeedBackViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        showToast(msg: error.localizedDescription, bgcolor: .red)
         
     }
     

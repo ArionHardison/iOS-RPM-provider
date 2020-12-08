@@ -62,8 +62,8 @@
             filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/Profile/EditProfileTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "setupAction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/Profile/EditProfileTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "setupAction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Project/VIPER/View/Controllers/StoryBoards/ViewControllers/Profile/EditProfileTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "setupAction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -114,6 +114,54 @@
             endingLineNumber = "115"
             landmarkName = "DashBoardViewController"
             landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38C2BB57-88B9-4C57-8929-B16BD85AA6A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project/Common/Appdelegate/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "38C2BB57-88B9-4C57-8929-B16BD85AA6A3 - 3c05fc2dd51fe069"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TeleHelath_Provider.AppDelegate.application(_: __C.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken: Foundation.Data) -&gt; ()"
+                  moduleName = "TeleHelath Provider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sethuramvijayakumar/Downloads/BitBuckeClone/TeleHealth/telehealth_ios_doctor/Project/Common/Appdelegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  uuid = "38C2BB57-88B9-4C57-8929-B16BD85AA6A3 - a44d490b30ef345f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.UInt8) -&gt; Swift.String in TeleHelath_Provider.AppDelegate.application(_: __C.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken: Foundation.Data) -&gt; ()"
+                  moduleName = "TeleHelath Provider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sethuramvijayakumar/Downloads/BitBuckeClone/TeleHealth/telehealth_ios_doctor/Project/Common/Appdelegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

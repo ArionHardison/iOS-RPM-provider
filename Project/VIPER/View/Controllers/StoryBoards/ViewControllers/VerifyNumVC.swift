@@ -139,6 +139,7 @@ extension VerifyNumVC : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        showToast(msg: error.localizedDescription)
         
     }
     

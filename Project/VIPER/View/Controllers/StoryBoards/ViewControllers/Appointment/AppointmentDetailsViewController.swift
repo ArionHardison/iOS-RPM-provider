@@ -30,6 +30,7 @@ class AppointmentDetailsViewController: UIViewController {
 
     var notifyView : NotifyView!
     var appoinment : All_appointments = All_appointments()
+    var invoiceView : InvoiceView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,9 +134,22 @@ extension AppointmentDetailsViewController {
     
     @IBAction private func completedAction(sender:UIButton)
     {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AppointmentFeedBackViewController) as! AppointmentFeedBackViewController
-        vc.appoitments = self.appoinment
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AppointmentFeedBackViewController) as! AppointmentFeedBackViewController
+//        vc.appoitments = self.appoinment
+//        self.navigationController?.pushViewController(vc, animated: true)
+        if self.invoiceView == nil, let invoice = Bundle.main.loadNibNamed(XIB.Names.InvoiceView, owner: self, options: [:])?.first as? InvoiceView {
+            invoice.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
+            invoiceView = invoice
+            invoiceView.populateData(invoice: self.appoinment.invoice)
+            invoiceView.onClickDone = {
+                self.invoiceView.removeFromSuperview()
+                self.invoiceView = nil
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AppointmentFeedBackViewController) as! AppointmentFeedBackViewController
+                    vc.appoitments = self.appoinment
+                    self.navigationController?.pushViewController(vc, animated: true)
+            }
+            self.view.addSubview(invoiceView!)
+        }
     }
     
     
@@ -237,6 +251,7 @@ extension AppointmentDetailsViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        showToast(msg: error.localizedDescription, bgcolor: .red)
         
     }
   

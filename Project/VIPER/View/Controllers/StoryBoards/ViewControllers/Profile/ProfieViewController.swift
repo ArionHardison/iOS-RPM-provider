@@ -20,6 +20,10 @@ class ProfieViewController: UIViewController {
     @IBOutlet weak var logoutBtn: UIButton!
     
     var clincList : [Clinics] = [Clinics]()
+    private lazy var loader  : UIView = {
+        return createActivityIndicator(self.view)
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,7 @@ class ProfieViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        self.profileApi()
         self.setupData()
     }
     
@@ -48,6 +53,11 @@ class ProfieViewController: UIViewController {
             self.clinictTable.reloadData()
         }
 
+    func profileApi(){
+        let url = "\(Base.profile.rawValue)"
+        self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: ProfileEntity.self, token: true)
+        self.loader.isHidden = false
+    }
 }
 
 extension ProfieViewController {
@@ -105,8 +115,23 @@ class ClinicTableCell : UITableViewCell {
 extension ProfieViewController : PresenterOutputProtocol {
     
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
-        DispatchQueue.main.async {
-            forceLogout()
+        
+        switch String(describing: modelClass) {
+         
+            case model.type.UploadSuccess:
+                self.loader.isHideInMainThread(true)
+                DispatchQueue.main.async {
+                    forceLogout()
+                }
+                
+        case model.type.ProfileEntity:
+            self.loader.isHideInMainThread(true)
+            guard let data = dataDict as? ProfileEntity else { return }
+            profile = data
+            self.setupData()
+            break
+                
+        default: break
         }
     }
     
@@ -123,7 +148,7 @@ extension ProfieViewController : PresenterOutputProtocol {
         
         let alert = UIAlertController(title: nil, message: Constants.string.areYouSureWantToLogout.localize(), preferredStyle: .actionSheet)
         let logoutAction = UIAlertAction(title: Constants.string.logout.localize(), style: .destructive) { (_) in
-            self.presenter?.HITAPI(api: Base.logout.rawValue, params: nil, methodType: .POST, modelClass: LoginModel.self, token: false)
+            self.presenter?.HITAPI(api: Base.logout.rawValue, params: nil, methodType: .POST, modelClass: UploadSuccess.self, token: false)
         }
         
         let cancelAction = UIAlertAction(title: Constants.string.Cancel.localize(), style: .cancel, handler: nil)
@@ -137,3 +162,5 @@ extension ProfieViewController : PresenterOutputProtocol {
 
     
 }
+
+

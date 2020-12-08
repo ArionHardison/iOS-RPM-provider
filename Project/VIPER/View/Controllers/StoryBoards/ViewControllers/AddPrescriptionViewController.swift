@@ -72,7 +72,7 @@ extension AddPrescriptionViewController {
         params.updateValue(prescriptionId, forKey: "prescription")
         params.updateValue(self.descriptionTextView.text ?? "", forKey: "instruction")
         params.updateValue(appoitmentID, forKey: "id")
-        let prescriptionData = self.prescriptionImage.pngData()!
+        let prescriptionData = (self.uploadImageView.image?.pngData()!)!
    
         var imageData = [String:Data]()
         imageData.updateValue(prescriptionData, forKey: "prescription_image")
@@ -100,6 +100,7 @@ extension AddPrescriptionViewController : PresenterOutputProtocol {
     }
     
     func showError(error: CustomError) {
+        showToast(msg: error.localizedDescription)
         
     }
     

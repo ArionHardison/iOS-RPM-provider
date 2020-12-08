@@ -161,7 +161,7 @@ extension DashBoardViewController {
         self.newPatientTitleLbl.text = Constants.string.newPatient.localize()
         self.repeatTitleLbl.text = Constants.string.repeatPatient.localize()
         self.appointmentDateTitleLbl.text = Constants.string.appointment.localize()
-        self.repeatTitleLbl.text = Constants.string.revenu.localize()
+//        self.repeatTitleLbl.text = Constants.string.revenu.localize()
         self.showDateTitleLbl.text = Constants.string.showDate.localize()
         self.chageDateBtn.setTitle(Constants.string.change.localize(), for: .normal)
     }

@@ -56,6 +56,7 @@ struct XIB {
     let ChatLeftCell = "ChatLeftCell"
     let WalletListTableViewCell = "WalletListTableViewCell"
     let WalletHeader = "WalletHeader"
+    let InvoiceView = "InvoiceView"
 }
 
 
