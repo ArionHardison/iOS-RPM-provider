@@ -19,7 +19,8 @@ target 'MiDokter Pro' do
     pod 'SwiftyJSON'
     pod 'TwilioVoice', '~> 5.5.0'            #//, '~> 2.0.0'
     pod 'TwilioVideo', '~> 2.10'
-#    pod 'RealmSwift'
+    pod 'Stripe', '~> 20.1.1'
+    pod 'CreditCardForm'
 
 
 end

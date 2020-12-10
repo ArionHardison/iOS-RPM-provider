@@ -85,6 +85,9 @@ struct Constants {
     let amount = "Amount"
     let status = "Status"
     let transaction = "Transaction"
+    let addCardPayments = "Add card for payments"
+    let paymentMethods = "Payment Methods"
+    let yourCards = "Your Cards"
 
 }
 

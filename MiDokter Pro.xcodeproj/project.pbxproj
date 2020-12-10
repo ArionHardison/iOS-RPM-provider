@@ -151,6 +151,10 @@
 		77DF285524520B9700CE5F22 /* FeedBackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF285324520B9700CE5F22 /* FeedBackTableViewCell.swift */; };
 		77DF285624520B9700CE5F22 /* FeedBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DF285424520B9700CE5F22 /* FeedBackTableViewCell.xib */; };
 		77DF285824520DA300CE5F22 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF285724520DA300CE5F22 /* FeedBackViewController.swift */; };
+		851E4D1925822E94009F6C17 /* CardsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E4D1825822E94009F6C17 /* CardsListViewController.swift */; };
+		851E4D1F25822EAF009F6C17 /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E4D1D25822EAE009F6C17 /* CardsTableViewCell.swift */; };
+		851E4D2025822EAF009F6C17 /* CardsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 851E4D1E25822EAF009F6C17 /* CardsTableViewCell.xib */; };
+		851E4D2525822F1F009F6C17 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E4D2425822F1F009F6C17 /* AddCardViewController.swift */; };
 		8526FFC725512C1F00E672B9 /* audioVideoCallCaontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFC625512C1F00E672B9 /* audioVideoCallCaontroller.swift */; };
 		8526FFC925512EEF00E672B9 /* TwilioViewController+CallKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFC825512EEF00E672B9 /* TwilioViewController+CallKit.swift */; };
 		8526FFCB2551328600E672B9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCA2551328600E672B9 /* Settings.swift */; };
@@ -158,6 +162,7 @@
 		8526FFCF2551333900E672B9 /* AVPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */; };
 		8527DB88257E401800B38F9B /* InvoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8527DB87257E401800B38F9B /* InvoiceView.xib */; };
 		8527DB8D257E43F800B38F9B /* InvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527DB8C257E43F800B38F9B /* InvoiceView.swift */; };
+		85367D572582157700E7ED0D /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85367D562582157700E7ED0D /* AddMoneyViewController.swift */; };
 		85540296256537BB003972F5 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85540295256537BB003972F5 /* KeyboardManager.swift */; };
 		856FE70F25591FCC009C5811 /* CountryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE70D25591FC8009C5811 /* CountryListController.swift */; };
 		856FE71025591FCC009C5811 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE70E25591FCB009C5811 /* CountryListCell.swift */; };
@@ -367,6 +372,10 @@
 		77DF285424520B9700CE5F22 /* FeedBackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBackTableViewCell.xib; sourceTree = "<group>"; };
 		77DF285724520DA300CE5F22 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		79004400D2E7DDC3FEEA1E58 /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
+		851E4D1825822E94009F6C17 /* CardsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListViewController.swift; sourceTree = "<group>"; };
+		851E4D1D25822EAE009F6C17 /* CardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewCell.swift; sourceTree = "<group>"; };
+		851E4D1E25822EAF009F6C17 /* CardsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsTableViewCell.xib; sourceTree = "<group>"; };
+		851E4D2425822F1F009F6C17 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		8526FFC625512C1F00E672B9 /* audioVideoCallCaontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = audioVideoCallCaontroller.swift; sourceTree = "<group>"; };
 		8526FFC825512EEF00E672B9 /* TwilioViewController+CallKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TwilioViewController+CallKit.swift"; sourceTree = "<group>"; };
 		8526FFCA2551328600E672B9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -374,6 +383,7 @@
 		8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerHelper.swift; sourceTree = "<group>"; };
 		8527DB87257E401800B38F9B /* InvoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoiceView.xib; sourceTree = "<group>"; };
 		8527DB8C257E43F800B38F9B /* InvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceView.swift; sourceTree = "<group>"; };
+		85367D562582157700E7ED0D /* AddMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		85540295256537BB003972F5 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		856FE70D25591FC8009C5811 /* CountryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListController.swift; sourceTree = "<group>"; };
 		856FE70E25591FCB009C5811 /* CountryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
@@ -440,6 +450,10 @@
 		08487FA620B5E94100D4DEE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				851E4D2425822F1F009F6C17 /* AddCardViewController.swift */,
+				851E4D1D25822EAE009F6C17 /* CardsTableViewCell.swift */,
+				851E4D1E25822EAF009F6C17 /* CardsTableViewCell.xib */,
+				851E4D1825822E94009F6C17 /* CardsListViewController.swift */,
 				85F36634257288F30015363A /* WalletViewController.swift */,
 				85F365FA25727F3F0015363A /* AppointmentFeedBackViewController.swift */,
 				856FE714255937A5009C5811 /* VerifyNumVC.swift */,
@@ -473,6 +487,7 @@
 				10529FEC251E097200262EF4 /* ChatMessageViewController.swift */,
 				85C76855254DAFFE002827B9 /* CreateAppointmentViewController.swift */,
 				18AF5A582567E81A00A26E35 /* AddPrescriptionViewController.swift */,
+				85367D562582157700E7ED0D /* AddMoneyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1472,6 +1487,7 @@
 				7733ED582454A99D00C252E1 /* ChatListTableViewCell.xib in Resources */,
 				77308BF324588726000D31FA /* ChartingTableViewCell.xib in Resources */,
 				85F365E7257276660015363A /* Montserrat-Bold.ttf in Resources */,
+				851E4D2025822EAF009F6C17 /* CardsTableViewCell.xib in Resources */,
 				85F365F1257276670015363A /* Montserrat-SemiBold.ttf in Resources */,
 				10FAC04F251CD02A00DE6EA9 /* DriverrequestTone.wav in Resources */,
 				08C066F220B039A900A8C5F0 /* countryCodes.json in Resources */,
@@ -1651,6 +1667,7 @@
 				084B30DC20B01DAA00B79318 /* AppDelegate.swift in Sources */,
 				773F9638247961FC0077A149 /* EditAppointmentTableViewController.swift in Sources */,
 				105344EF249B60E000650C43 /* UXLabel.swift in Sources */,
+				851E4D1925822E94009F6C17 /* CardsListViewController.swift in Sources */,
 				084B34BB20B030F100B79318 /* Label.swift in Sources */,
 				10529FD0251DE72100262EF4 /* ChatHistoryEntity.swift in Sources */,
 				77DF285824520DA300CE5F22 /* FeedBackViewController.swift in Sources */,
@@ -1661,6 +1678,7 @@
 				105344E9249B60E000650C43 /* UXTableView.swift in Sources */,
 				77BE1C5B247852F4006273EE /* BlockCalendarViewController.swift in Sources */,
 				7738E3042435DAFB00804159 /* HealthFeedTableViewCell.swift in Sources */,
+				851E4D1F25822EAF009F6C17 /* CardsTableViewCell.swift in Sources */,
 				084B34B420B030A800B79318 /* Sequence.swift in Sources */,
 				774B7193247BF18000839F14 /* CalendarViewController.swift in Sources */,
 				7738E2F72435DA9100804159 /* SignInMobileViewController.swift in Sources */,
@@ -1686,6 +1704,7 @@
 				084B345320B02B7200B79318 /* ApiList.swift in Sources */,
 				10FAC048251CCE5C00DE6EA9 /* IncomingRequestController.swift in Sources */,
 				084B34B120B0308F00B79318 /* Application.swift in Sources */,
+				851E4D2525822F1F009F6C17 /* AddCardViewController.swift in Sources */,
 				8526FFC925512EEF00E672B9 /* TwilioViewController+CallKit.swift in Sources */,
 				084B342320B028BC00B79318 /* Protocol.swift in Sources */,
 				10529FED251E097200262EF4 /* ChatMessageViewController.swift in Sources */,
@@ -1714,6 +1733,7 @@
 				77308BF72458A49B000D31FA /* RecentHistoryTableViewCell.swift in Sources */,
 				084B343820B029E900B79318 /* UIScrollView+ParallaxHeader.swift in Sources */,
 				77308BEE2458848D000D31FA /* EditPatientInformationTableViewController.swift in Sources */,
+				85367D572582157700E7ED0D /* AddMoneyViewController.swift in Sources */,
 				105344FB249B7BFB00650C43 /* FeedBackEntity.swift in Sources */,
 				10529FE9251E00AB00262EF4 /* ChatManager.swift in Sources */,
 				7768ECE22459F9300051AB91 /* NotifyView.swift in Sources */,
@@ -1887,7 +1907,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1910,7 +1930,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

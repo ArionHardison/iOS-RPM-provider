@@ -311,3 +311,36 @@ struct Patients : Mappable {
     }
 
 }
+
+
+struct CardsModel : Mappable {
+    var id : Int?
+    var user_id : Int?
+    var last_four : String?
+    var type : String?
+    var card_id : String?
+    var brand : String?
+    var is_default : Int?
+    var deleted_at : String?
+    var created_at : String?
+    var updated_at : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        user_id <- map["user_id"]
+        last_four <- map["last_four"]
+        type <- map["type"]
+        card_id <- map["card_id"]
+        brand <- map["brand"]
+        is_default <- map["is_default"]
+        deleted_at <- map["deleted_at"]
+        created_at <- map["created_at"]
+        updated_at <- map["updated_at"]
+    }
+
+}

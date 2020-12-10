@@ -67,6 +67,10 @@ enum Base : String{
     case updateFeedback = "/api/hospital/checkout"
     case paymentLog = "/api/hospital/payment_log"
     case searchPatient = "/api/hospital/search_patient"
+    case deleteCard = "/api/hospital/delete/card"
+    case addCard = "/api/hospital/card"
+    case getCard = "api/hospital/card"
+    case addMoney = "/api/hospital/add_money"
     
     
     
@@ -116,6 +120,9 @@ struct model {
     let UpdateFeedBackModel = "UpdateFeedBackModel"
     let WalletTransactionModel = "WalletTransactionModel"
     let SearchPatient = "SearchPatient"
+    let CardSuccess = "CardSuccess"
+    let CardsModel = "CardsModel"
+    let AddMoneyModel = "AddMoneyModel"
 }
 
 

@@ -75,6 +75,12 @@ extension WalletViewController {
         self.navigationItem.title = Constants.string.wallet.localize()
         self.balance = self.profile.doctor?.wallet_balance ?? 0.0
         self.navigationController?.isNavigationBarHidden = false
+        let button = UIButton(type: UIButton.ButtonType.custom)
+        button.setImage(#imageLiteral(resourceName: "AddWallet"), for: .normal)
+        button.addTarget(self, action:#selector(addMoneyAction(sender:)), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
         self.presenter?.HITAPI(api: Base.profile.rawValue, params: nil, methodType: .GET, modelClass: ProfileEntity.self, token: true)
         self.loader.isHidden = false
     }
@@ -94,6 +100,11 @@ extension WalletViewController {
         self.loader.isHidden = false
         
         
+    }
+    
+    @IBAction private func addMoneyAction(sender:UIButton){
+        let addVc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AddMoneyViewController) as! AddMoneyViewController
+        self.navigationController?.pushViewController(addVc, animated: true)
     }
     
 

@@ -23,3 +23,4 @@ let curreny = " $ "
 var profile : ProfileEntity = ProfileEntity()
 var GlobalsenderId = String()
 var GlobalreciveId = String()
+let stripeKey = "pk_test_EacUddWKtq5XqAt3dGdpr0YW"

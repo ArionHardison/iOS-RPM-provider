@@ -245,3 +245,20 @@ struct GetSpeciality : Mappable {
    }
 
 }
+
+struct AddMoneyModel  : Mappable {
+    var message : String?
+    var user : Doctor?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        message <- map["message"]
+        user <- map["user"]
+    }
+
+}
+

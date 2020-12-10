@@ -581,3 +581,17 @@ struct Invoice : Mappable {
     }
 
 }
+
+struct CardSuccess  : Mappable {
+    var message : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        message <- map["message"]
+    }
+
+}

@@ -41,6 +41,9 @@ struct Storyboard {
     let AddPrescriptionViewController = "AddPrescriptionViewController"
     let AppointmentFeedBackViewController = "AppointmentFeedBackViewController"
     let WalletViewController = "WalletViewController"
+    let AddCardViewController = "AddCardViewController"
+    let AddMoneyViewController = "AddMoneyViewController"
+    let CardsListViewController = "CardsListViewController"
 }
 
 
@@ -57,6 +60,7 @@ struct XIB {
     let WalletListTableViewCell = "WalletListTableViewCell"
     let WalletHeader = "WalletHeader"
     let InvoiceView = "InvoiceView"
+    let CardsTableViewCell = "CardsTableViewCell"
 }
 
 
