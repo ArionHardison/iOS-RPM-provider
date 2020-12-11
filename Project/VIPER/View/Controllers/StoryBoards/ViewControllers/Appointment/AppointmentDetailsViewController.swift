@@ -148,7 +148,8 @@ extension AppointmentDetailsViewController {
                     vc.appoitments = self.appoinment
                     self.navigationController?.pushViewController(vc, animated: true)
             }
-            self.view.addSubview(invoiceView!)
+        
+            self.view.window?.addSubview(self.invoiceView)
         }
     }
     

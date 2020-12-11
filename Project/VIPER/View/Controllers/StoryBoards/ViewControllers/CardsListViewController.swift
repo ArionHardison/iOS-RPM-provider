@@ -21,7 +21,7 @@ class CardsListViewController: UIViewController {
     var message = ""
     var promoCode = ""
     var cardsList : [CardsModel]?
-    var isFromWallet : Bool = false
+    var isFromWallet : Bool = true
     private lazy var loader : UIView = {
         return createActivityIndicator(UIScreen.main.focusedView ?? self.view)
     }()
@@ -158,12 +158,21 @@ extension CardsListViewController : PresenterOutputProtocol {
 
                 let data = dataDict as? AddMoneyModel
                 let alert  = showAlert(message: data?.message) { (_) in
+                    if self.isFromWallet{
                     for controller in self.navigationController!.viewControllers as Array {
                             if controller.isKind(of: WalletViewController.self) {
                                 _ =  self.navigationController!.popToViewController(controller, animated: true)
                                 break
                             }
                         }
+                    }else{
+                        for controller in self.navigationController!.viewControllers as Array {
+                                if controller.isKind(of: SubscriptionPlansViewController.self) {
+                                    _ =  self.navigationController!.popToViewController(controller, animated: true)
+                                    break
+                                }
+                            }
+                    }
                     }
                 self.present(alert, animated: true, completion: nil)
                 break

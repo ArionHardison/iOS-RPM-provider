@@ -230,6 +230,10 @@ extension DashBoardViewController : UICollectionViewDelegate , UICollectionViewD
         
         if indexPath.item == 5 {
             
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.SubscriptionPlansViewController) as! SubscriptionPlansViewController
+//            vc.modalPresentationStyle = .overFullScreen
+//            vc.navigationController?.setToolbarHidden(false, animated: false)
+//            self.navigationController?.present(vc, animated: true, completion: nil)
             self.push(id: Storyboard.Ids.HealthFeedViewController, animation: true)
         }
         
@@ -281,6 +285,16 @@ extension DashBoardViewController : PresenterOutputProtocol{
                 UserDefaultConfig.UserID = (data.doctor?.id ?? 0).description
                 self.userNameLbl.text = "\(data.doctor?.first_name ?? "") \(data.doctor?.last_name ?? "")"
                 self.userImg.setURLImage("\(data.doctor?.doctor_profile?.profile_pic ?? "")")
+                if data.doctor?.subscribe_status == 0 {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.SubscriptionPlansViewController) as! SubscriptionPlansViewController
+                        vc.modalPresentationStyle = .fullScreen
+                        let navController = UINavigationController(rootViewController: vc)
+                        self.navigationController?.present(navController, animated: true, completion: nil)
+                    
+                }else{
+                    
+                }
+                
               
                 break
             case model.type.ChatRequest :

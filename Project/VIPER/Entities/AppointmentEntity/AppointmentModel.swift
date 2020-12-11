@@ -595,3 +595,109 @@ struct CardSuccess  : Mappable {
     }
 
 }
+
+struct SubscriptionList  : Mappable {
+    var subscription : [Subscription]?
+    
+    init() {
+        
+    }
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        subscription <- map["subscription"]
+    }
+
+}
+
+struct Subscription : Mappable {
+    var id : Int?
+    var name : String?
+    var type : String?
+    var period : Int?
+    var duration : String?
+    var price : Int?
+    var is_enabled : Int?
+
+    init() {
+        
+    }
+    
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        name <- map["name"]
+        type <- map["type"]
+        period <- map["period"]
+        duration <- map["duration"]
+        price <- map["price"]
+        is_enabled <- map["is_enabled"]
+    }
+
+}
+
+
+struct ProfileSubscription : Mappable {
+   var id : Int?
+   var subscription_id : Int?
+   var doctor_id : Int?
+   var subscriptrion_start_date : String?
+   var subscriptrion_end_date : String?
+   var status : Int?
+   var created_at : String?
+   var updated_at : String?
+   var details : Details?
+
+   init?(map: Map) {
+
+   }
+
+   mutating func mapping(map: Map) {
+
+       id <- map["id"]
+       subscription_id <- map["subscription_id"]
+       doctor_id <- map["doctor_id"]
+       subscriptrion_start_date <- map["subscriptrion_start_date"]
+       subscriptrion_end_date <- map["subscriptrion_end_date"]
+       status <- map["status"]
+       created_at <- map["created_at"]
+       updated_at <- map["updated_at"]
+       details <- map["details"]
+   }
+
+}
+
+
+struct Details : Mappable {
+    var id : Int?
+    var name : String?
+    var type : String?
+    var period : Int?
+    var duration : String?
+    var price : Int?
+    var is_enabled : Int?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        name <- map["name"]
+        type <- map["type"]
+        period <- map["period"]
+        duration <- map["duration"]
+        price <- map["price"]
+        is_enabled <- map["is_enabled"]
+    }
+
+}

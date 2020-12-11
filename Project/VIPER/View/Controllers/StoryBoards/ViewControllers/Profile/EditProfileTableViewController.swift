@@ -24,6 +24,7 @@ class EditProfileTableViewController: UITableViewController {
     @IBOutlet weak var textfieldSpecialization: HoshiTextField!
     
     @IBOutlet weak var countryCodeTextField: HoshiTextField!
+    @IBOutlet weak var viewSubscribedPlans: UIButton!
     
     private lazy var loader : UIView = {
         return createActivityIndicator(UIScreen.main.focusedView ?? self.view)
@@ -110,6 +111,10 @@ class EditProfileTableViewController: UITableViewController {
         }
     }
     
+    @IBAction private func subscribedPlansAction(_sender:UIButton){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.SubscribedPlansViewController) as! SubscribedPlansViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     @objc func chooseCoverPhoto(){
         self.showImage { (image) in
@@ -159,6 +164,7 @@ extension EditProfileTableViewController {
                 self.countryCodeTextField.text = eachCountry.dial_code
             }
         }
+        self.viewSubscribedPlans.addTarget(self, action: #selector(subscribedPlansAction(_sender:)), for: .touchUpInside)
     }
     
     @IBAction func changePassword() {

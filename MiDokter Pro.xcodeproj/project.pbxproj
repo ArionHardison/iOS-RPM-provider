@@ -155,6 +155,10 @@
 		851E4D1F25822EAF009F6C17 /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E4D1D25822EAE009F6C17 /* CardsTableViewCell.swift */; };
 		851E4D2025822EAF009F6C17 /* CardsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 851E4D1E25822EAF009F6C17 /* CardsTableViewCell.xib */; };
 		851E4D2525822F1F009F6C17 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E4D2425822F1F009F6C17 /* AddCardViewController.swift */; };
+		851E4D4425825B82009F6C17 /* SubscriptionPlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E4D4325825B82009F6C17 /* SubscriptionPlansViewController.swift */; };
+		851E4D4A25826884009F6C17 /* SuggestedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 851E4D4825826884009F6C17 /* SuggestedCell.xib */; };
+		851E4D4B25826884009F6C17 /* SuggestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E4D4925826884009F6C17 /* SuggestedCell.swift */; };
+		85228F6525838FF700CE6331 /* SubscribedPlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85228F6425838FF700CE6331 /* SubscribedPlansViewController.swift */; };
 		8526FFC725512C1F00E672B9 /* audioVideoCallCaontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFC625512C1F00E672B9 /* audioVideoCallCaontroller.swift */; };
 		8526FFC925512EEF00E672B9 /* TwilioViewController+CallKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFC825512EEF00E672B9 /* TwilioViewController+CallKit.swift */; };
 		8526FFCB2551328600E672B9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCA2551328600E672B9 /* Settings.swift */; };
@@ -196,6 +200,8 @@
 		85F3663E25728B400015363A /* WalletListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3663A25728B400015363A /* WalletListTableViewCell.swift */; };
 		85F3663F25728B400015363A /* WalletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3663B25728B400015363A /* WalletHeader.swift */; };
 		85F3664025728B400015363A /* WalletListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85F3663C25728B400015363A /* WalletListTableViewCell.xib */; };
+		85FDA1902583788B00664D51 /* FaqHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FDA18E2583788A00664D51 /* FaqHeaderView.xib */; };
+		85FDA1912583788B00664D51 /* FaqHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FDA18F2583788A00664D51 /* FaqHeaderView.swift */; };
 		BC95F75527FC286A2AACD712 /* Pods_MiDokter_Pro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B172AE906F03C876319FD98B /* Pods_MiDokter_Pro.framework */; };
 /* End PBXBuildFile section */
 
@@ -376,6 +382,10 @@
 		851E4D1D25822EAE009F6C17 /* CardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewCell.swift; sourceTree = "<group>"; };
 		851E4D1E25822EAF009F6C17 /* CardsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsTableViewCell.xib; sourceTree = "<group>"; };
 		851E4D2425822F1F009F6C17 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		851E4D4325825B82009F6C17 /* SubscriptionPlansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlansViewController.swift; sourceTree = "<group>"; };
+		851E4D4825826884009F6C17 /* SuggestedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestedCell.xib; sourceTree = "<group>"; };
+		851E4D4925826884009F6C17 /* SuggestedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedCell.swift; sourceTree = "<group>"; };
+		85228F6425838FF700CE6331 /* SubscribedPlansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedPlansViewController.swift; sourceTree = "<group>"; };
 		8526FFC625512C1F00E672B9 /* audioVideoCallCaontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = audioVideoCallCaontroller.swift; sourceTree = "<group>"; };
 		8526FFC825512EEF00E672B9 /* TwilioViewController+CallKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TwilioViewController+CallKit.swift"; sourceTree = "<group>"; };
 		8526FFCA2551328600E672B9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -418,6 +428,8 @@
 		85F3663A25728B400015363A /* WalletListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletListTableViewCell.swift; sourceTree = "<group>"; };
 		85F3663B25728B400015363A /* WalletHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHeader.swift; sourceTree = "<group>"; };
 		85F3663C25728B400015363A /* WalletListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletListTableViewCell.xib; sourceTree = "<group>"; };
+		85FDA18E2583788A00664D51 /* FaqHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqHeaderView.xib; sourceTree = "<group>"; };
+		85FDA18F2583788A00664D51 /* FaqHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqHeaderView.swift; sourceTree = "<group>"; };
 		B172AE906F03C876319FD98B /* Pods_MiDokter_Pro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiDokter_Pro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -488,6 +500,8 @@
 				85C76855254DAFFE002827B9 /* CreateAppointmentViewController.swift */,
 				18AF5A582567E81A00A26E35 /* AddPrescriptionViewController.swift */,
 				85367D562582157700E7ED0D /* AddMoneyViewController.swift */,
+				851E4D4325825B82009F6C17 /* SubscriptionPlansViewController.swift */,
+				85228F6425838FF700CE6331 /* SubscribedPlansViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -923,6 +937,10 @@
 		084B348F20B02EE400B79318 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				85FDA18F2583788A00664D51 /* FaqHeaderView.swift */,
+				85FDA18E2583788A00664D51 /* FaqHeaderView.xib */,
+				851E4D4925826884009F6C17 /* SuggestedCell.swift */,
+				851E4D4825826884009F6C17 /* SuggestedCell.xib */,
 				8527DB87257E401800B38F9B /* InvoiceView.xib */,
 				8527DB8C257E43F800B38F9B /* InvoiceView.swift */,
 				85F3663B25728B400015363A /* WalletHeader.swift */,
@@ -1483,6 +1501,7 @@
 				7733ED4F2454914800C252E1 /* PatientTableViewCell.xib in Resources */,
 				7738E3032435DAFB00804159 /* HealthFeedTableViewCell.xib in Resources */,
 				084B30E620B01DAC00B79318 /* Assets.xcassets in Resources */,
+				851E4D4A25826884009F6C17 /* SuggestedCell.xib in Resources */,
 				10529FD7251DFBD100262EF4 /* ChatRightCell.xib in Resources */,
 				7733ED582454A99D00C252E1 /* ChatListTableViewCell.xib in Resources */,
 				77308BF324588726000D31FA /* ChartingTableViewCell.xib in Resources */,
@@ -1511,6 +1530,7 @@
 				85F365F5257276670015363A /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				85F365F6257276670015363A /* Montserrat-BoldItalic.ttf in Resources */,
 				7738E2F22435BECD00804159 /* HomeOptionCollectionViewCell.xib in Resources */,
+				85FDA1902583788B00664D51 /* FaqHeaderView.xib in Resources */,
 				77DF285624520B9700CE5F22 /* FeedBackTableViewCell.xib in Resources */,
 				85F365F2257276670015363A /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				85F3663D25728B400015363A /* WalletHeader.xib in Resources */,
@@ -1622,8 +1642,10 @@
 				084B348220B02E7300B79318 /* Router.swift in Sources */,
 				105344ED249B60E000650C43 /* UXView.swift in Sources */,
 				084B34AE20B0306600B79318 /* ViewExtension.swift in Sources */,
+				851E4D4B25826884009F6C17 /* SuggestedCell.swift in Sources */,
 				084B34C720B0318700B79318 /* HoshiTextField.swift in Sources */,
 				08C066F620B039C400A8C5F0 /* GooglePlacesHelper.swift in Sources */,
+				85228F6525838FF700CE6331 /* SubscribedPlansViewController.swift in Sources */,
 				084B34AB20B0305400B79318 /* TableView.swift in Sources */,
 				084B348A20B02EAC00B79318 /* PresenterProcessor.swift in Sources */,
 				084B347B20B02DF700B79318 /* Global.swift in Sources */,
@@ -1636,6 +1658,7 @@
 				108185EE249BBD1D000DC688 /* ProfileEntity.swift in Sources */,
 				105344F5249B66AD00650C43 /* Colors.swift in Sources */,
 				084B34A220B02FEA00B79318 /* Image.swift in Sources */,
+				85FDA1912583788B00664D51 /* FaqHeaderView.swift in Sources */,
 				778AE9F924338F0000A314C7 /* HomeHeaderTableViewCell.swift in Sources */,
 				0825A9B82276F12C00DBD50F /* Json4Swift_Base.swift in Sources */,
 				084B343020B029C000B79318 /* FontHelper.swift in Sources */,
@@ -1693,6 +1716,7 @@
 				084B343A20B029E900B79318 /* ParallaxHeaderMode.swift in Sources */,
 				0825A9B92276F12C00DBD50F /* Success.swift in Sources */,
 				084B349C20B02FB900B79318 /* Int.swift in Sources */,
+				851E4D4425825B82009F6C17 /* SubscriptionPlansViewController.swift in Sources */,
 				105344EC249B60E000650C43 /* UXViewController.swift in Sources */,
 				856FE71025591FCC009C5811 /* CountryListCell.swift in Sources */,
 				084B34C120B0311A00B79318 /* View.swift in Sources */,
@@ -1907,7 +1931,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1930,7 +1954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

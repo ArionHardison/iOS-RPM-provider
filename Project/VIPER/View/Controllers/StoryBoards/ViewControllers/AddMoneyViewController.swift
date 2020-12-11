@@ -15,6 +15,8 @@ class AddMoneyViewController: UIViewController {
     @IBOutlet weak var addMoneyButton: UIButton!
     @IBOutlet weak var topView: UIView!
     
+    var isFromPlans : Bool = false
+    
     private lazy var loader  : UIView = {
         return createActivityIndicator(self.view)
     }()
@@ -59,6 +61,7 @@ extension AddMoneyViewController {
         }
         let vc = self.storyboard?.instantiateViewController(withIdentifier:Storyboard.Ids.CardsListViewController) as! CardsListViewController
         vc.amount = amount
+        vc.isFromWallet = !isFromPlans
         self.navigationController?.pushViewController(vc, animated: true)
         
         
@@ -79,16 +82,22 @@ extension AddMoneyViewController {
 
 extension AddMoneyViewController : PresenterOutputProtocol{
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
-        switch String(describing: modelClass) {
-        case model.type.ProfileEntity:
-            self.loader.isHideInMainThread(true)
-            guard let data = dataDict as? ProfileEntity else { return }
-            profile = data
-            self.labelMoney.text = "\(data.doctor?.wallet_balance ?? 0.0)"
-            break
-            
-        default: break
+        
+        DispatchQueue.main.async {
+             switch String(describing: modelClass) {
+            case model.type.ProfileEntity:
+                self.loader.isHideInMainThread(true)
+                guard let data = dataDict as? ProfileEntity else { return }
+                profile = data
+                self.labelMoney.text = "\(data.doctor?.wallet_balance ?? 0.0)"
+                break
+             default: break
+             }
+                
         }
+       
+   
+      
     }
     
     func showError(error: CustomError) {

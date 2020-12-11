@@ -71,8 +71,8 @@ extension CreateAppointmentViewController {
     
     
     private func setLocalization(){
-        self.cancelButton.setTitle("Cancel", for: .normal)
-        self.createAppointmentLabel.text = "Create Appointment"
+//        self.cancelButton.setTitle("Cancel", for: .normal)
+        self.createAppointmentLabel.text = "Create Appointment View"
         self.patientNameTextField.placeholder = "Patient Name"
         self.commentsLabel.text = "Comments"
         self.createAppointment.setTitle("Create Appointment", for: .normal)

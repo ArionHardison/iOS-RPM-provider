@@ -33,7 +33,15 @@ struct Doctor : Mappable {
     var mobile : String?
     var country_code : String?
     var email : String?
+    var device_token : String?
+    var push_device_token : String?
+    var device_id : String?
+    var device_type : String?
+    var login_by : String?
+    var social_unique_id : String?
+    var wallet_balance : Float?
     var otp : Int?
+    var rating : String?
     var gender : String?
     var tax_id : String?
     var medical_id : String?
@@ -43,32 +51,47 @@ struct Doctor : Mappable {
     var specialities_name : String?
     var is_administrative : Int?
     var is_doctor : Int?
-    var added_by : String?
+    var added_by : Int?
     var is_staff : Int?
     var is_receptionist : Int?
     var role : Int?
     var email_verified : Int?
     var email_token : String?
     var email_verified_at : String?
+    var subscribe_from : String?
+    var subscribe_to : String?
+    var subscribe_limit : String?
     var created_at : String?
     var updated_at : String?
     var deleted_at : String?
+    var status : String?
+    var stripe_cust_id : String?
+    var subscribe_status : Int?
     var doctor_profile : Doctor_profile?
-    var wallet_balance : Float?
-    
+    var subscription : [ProfileSubscription]?
+    var feedback : [Feedback]?
+
     init?(map: Map) {
-        
+
     }
-    
+
     mutating func mapping(map: Map) {
-        
+
         id <- map["id"]
         first_name <- map["first_name"]
         last_name <- map["last_name"]
         mobile <- map["mobile"]
         country_code <- map["country_code"]
         email <- map["email"]
+        device_token <- map["device_token"]
+        push_device_token <- map["push_device_token"]
+        device_id <- map["device_id"]
+        device_type <- map["device_type"]
+        login_by <- map["login_by"]
+        social_unique_id <- map["social_unique_id"]
+        wallet_balance <- map["wallet_balance"]
         otp <- map["otp"]
+        rating <- map["rating"]
         gender <- map["gender"]
         tax_id <- map["tax_id"]
         medical_id <- map["medical_id"]
@@ -85,13 +108,20 @@ struct Doctor : Mappable {
         email_verified <- map["email_verified"]
         email_token <- map["email_token"]
         email_verified_at <- map["email_verified_at"]
+        subscribe_from <- map["subscribe_from"]
+        subscribe_to <- map["subscribe_to"]
+        subscribe_limit <- map["subscribe_limit"]
         created_at <- map["created_at"]
         updated_at <- map["updated_at"]
         deleted_at <- map["deleted_at"]
+        status <- map["status"]
+        stripe_cust_id <- map["stripe_cust_id"]
+        subscribe_status <- map["subscribe_status"]
         doctor_profile <- map["doctor_profile"]
-        wallet_balance <- map["wallet_balance"]
+        subscription <- map["subscription"]
+        feedback <- map["feedback"]
     }
-    
+
 }
 
 
