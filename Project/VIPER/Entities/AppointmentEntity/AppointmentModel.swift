@@ -620,7 +620,7 @@ struct Subscription : Mappable {
     var type : String?
     var period : Int?
     var duration : String?
-    var price : Int?
+    var price : Float?
     var is_enabled : Int?
 
     init() {

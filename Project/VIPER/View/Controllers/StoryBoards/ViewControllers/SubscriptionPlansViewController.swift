@@ -68,7 +68,7 @@ extension SubscriptionPlansViewController {
     }
 
     @IBAction private func proceedAction(_sender:UIButton){
-        if self.walletBalance < Float(self.subscriptionList[selectedindex].price ?? 0){
+        if self.walletBalance < self.subscriptionList[selectedindex].price ?? 0{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AddMoneyViewController) as! AddMoneyViewController
             vc.isFromPlans = true
             self.navigationController?.pushViewController(vc, animated: true)

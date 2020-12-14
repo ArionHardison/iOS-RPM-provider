@@ -381,13 +381,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using the app you agree to Terms and Condition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v11-kc-SO9">
-                                        <rect key="frame" x="20" y="760.33333333333337" width="388" height="17.666666666666629"/>
+                                        <rect key="frame" x="20" y="759.66666666666663" width="388" height="18.333333333333371"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" name="TextForegroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJH-qv-RFc">
-                                        <rect key="frame" x="143.66666666666666" y="619.33333333333337" width="140.99999999999997" height="33"/>
+                                        <rect key="frame" x="133" y="618.33333333333337" width="162" height="34"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                         <state key="normal" title="Login using email"/>
                                         <connections>
@@ -495,13 +495,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using the app you agree to Terms and Condition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrN-7D-k3B">
-                                        <rect key="frame" x="20" y="800.66666666666663" width="388" height="17.666666666666629"/>
+                                        <rect key="frame" x="20" y="800" width="388" height="18.333333333333371"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" name="TextForegroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBl-wl-ogD">
-                                        <rect key="frame" x="146" y="682.66666666666663" width="136" height="31"/>
+                                        <rect key="frame" x="136.66666666666666" y="681.66666666666663" width="154.99999999999997" height="32"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <state key="normal" title="Login using mobile"/>
                                         <connections>
@@ -1358,13 +1358,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsN-Kf-wHx">
-                                <rect key="frame" x="5" y="242" width="418" height="20"/>
+                                <rect key="frame" x="5" y="242" width="418" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mq8-dJ-LLt">
-                                <rect key="frame" x="117.66666666666667" y="389" width="192.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="117.66666666666667" y="390" width="192.66666666666663" height="34.333333333333314"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" name="AppBlueColor"/>
                                 </state>
@@ -1378,7 +1378,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-bV-Hfo">
-                                <rect key="frame" x="10" y="272" width="408" height="107"/>
+                                <rect key="frame" x="10" y="273" width="408" height="107"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
@@ -2660,22 +2660,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BvH-AH-CfU">
-                                        <rect key="frame" x="107.33333333333331" y="17" width="105" height="95"/>
+                                        <rect key="frame" x="107.33333333333331" y="17" width="112" height="95"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5du-nc-1dm">
-                                                <rect key="frame" x="0.0" y="0.0" width="105" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112" height="29"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                 <color key="textColor" name="TextBlackColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-F0-3GT">
-                                                <rect key="frame" x="0.0" y="33" width="105" height="29"/>
+                                                <rect key="frame" x="0.0" y="33" width="112" height="29"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" name="TextForegroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 Years, Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-dg-4YG">
-                                                <rect key="frame" x="0.0" y="66" width="105" height="29"/>
+                                                <rect key="frame" x="0.0" y="66" width="112" height="29"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" name="TextForegroundColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3039,22 +3039,22 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ack-nc-mpJ">
-                                                            <rect key="frame" x="96" y="14" width="105" height="82"/>
+                                                            <rect key="frame" x="96" y="14" width="112" height="82"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrb-bX-qWs">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="24.666666666666668"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="24.666666666666668"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                                     <color key="textColor" name="TextBlackColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnI-yE-Af4">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666664" width="105" height="24.666666666666664"/>
+                                                                    <rect key="frame" x="0.0" y="28.666666666666664" width="112" height="24.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                                     <color key="textColor" name="TextForegroundColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 Years, Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgH-wd-q1N">
-                                                                    <rect key="frame" x="0.0" y="57.333333333333321" width="105" height="24.666666666666664"/>
+                                                                    <rect key="frame" x="0.0" y="57.333333333333321" width="112" height="24.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                                     <color key="textColor" name="TextForegroundColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -3724,6 +3724,325 @@
             </objects>
             <point key="canvasLocation" x="-1734" y="2290"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="AFJ-wG-5P2">
+            <objects>
+                <tableViewController id="f21-kd-5qd" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eul-SD-4W5">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="yiL-5S-PtC">
+                            <rect key="frame" x="0.0" y="660" width="428" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="Doctor Details" id="xtg-xN-ddI">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="lbw-2N-b31">
+                                        <rect key="frame" x="0.0" y="28" width="428" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbw-2N-b31" id="Y5k-ec-yDn">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Gs-SX-DsB">
+                                                    <rect key="frame" x="10" y="0.0" width="408" height="80"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-pW-1E2" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="194" height="80"/>
+                                                            <color key="textColor" name="TextBlackColor"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                                    <color key="value" name="AppBlueColor"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                    <color key="value" name="GreyTextcolor"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJZ-hs-2wp" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                            <rect key="frame" x="214" y="0.0" width="194" height="80"/>
+                                                            <color key="textColor" name="TextBlackColor"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                                    <color key="value" name="AppBlueColor"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                    <color key="value" name="GreyTextcolor"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="9Gs-SX-DsB" secondAttribute="trailing" constant="10" id="NLa-TA-4Jn"/>
+                                                <constraint firstItem="9Gs-SX-DsB" firstAttribute="leading" secondItem="Y5k-ec-yDn" secondAttribute="leading" constant="10" id="Ze2-So-qTx"/>
+                                                <constraint firstItem="9Gs-SX-DsB" firstAttribute="top" secondItem="Y5k-ec-yDn" secondAttribute="top" id="dSr-kL-ChE"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Gs-SX-DsB" secondAttribute="bottom" id="yWN-vY-AhY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="EMa-WC-xaK">
+                                        <rect key="frame" x="0.0" y="108" width="428" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EMa-WC-xaK" id="Ucr-JW-T7H">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail  Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-zq-CEQ" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="408" height="80"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uZp-zq-CEQ" firstAttribute="leading" secondItem="Ucr-JW-T7H" secondAttribute="leading" constant="10" id="HcX-mB-bck"/>
+                                                <constraint firstAttribute="trailing" secondItem="uZp-zq-CEQ" secondAttribute="trailing" constant="10" id="fbJ-DH-qYE"/>
+                                                <constraint firstItem="uZp-zq-CEQ" firstAttribute="top" secondItem="Ucr-JW-T7H" secondAttribute="top" id="qPW-xa-D8P"/>
+                                                <constraint firstAttribute="bottom" secondItem="uZp-zq-CEQ" secondAttribute="bottom" id="rVn-6t-6DO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="Hz7-59-Slx">
+                                        <rect key="frame" x="0.0" y="188" width="428" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hz7-59-Slx" id="wgZ-u3-PDp">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1B-vM-KA8" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="408" height="80"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="V1B-vM-KA8" secondAttribute="bottom" id="Awi-Hp-Oq7"/>
+                                                <constraint firstItem="V1B-vM-KA8" firstAttribute="leading" secondItem="wgZ-u3-PDp" secondAttribute="leading" constant="10" id="U8m-OE-p3p"/>
+                                                <constraint firstItem="V1B-vM-KA8" firstAttribute="top" secondItem="wgZ-u3-PDp" secondAttribute="top" id="pHS-Hl-LvV"/>
+                                                <constraint firstAttribute="trailing" secondItem="V1B-vM-KA8" secondAttribute="trailing" constant="10" id="rzL-z2-AKm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="ZUc-5E-zgC">
+                                        <rect key="frame" x="0.0" y="268" width="428" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZUc-5E-zgC" id="Szh-Qo-vmM">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vum-2C-GMY" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="408" height="80"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Vum-2C-GMY" secondAttribute="trailing" constant="10" id="1xk-FY-yFs"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vum-2C-GMY" secondAttribute="bottom" id="Ibh-qb-VVO"/>
+                                                <constraint firstItem="Vum-2C-GMY" firstAttribute="leading" secondItem="Szh-Qo-vmM" secondAttribute="leading" constant="10" id="hkE-Xt-L8F"/>
+                                                <constraint firstItem="Vum-2C-GMY" firstAttribute="top" secondItem="Szh-Qo-vmM" secondAttribute="top" id="rDf-FN-KtF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Clinic Details" id="snm-69-y3c">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="57" id="igI-Rm-bOE">
+                                        <rect key="frame" x="0.0" y="404" width="428" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="igI-Rm-bOE" id="lag-c6-mEj">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rsL-1b-tHc" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="408" height="57"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rsL-1b-tHc" firstAttribute="top" secondItem="lag-c6-mEj" secondAttribute="top" id="ScH-4g-SAu"/>
+                                                <constraint firstAttribute="trailing" secondItem="rsL-1b-tHc" secondAttribute="trailing" constant="10" id="Teh-FE-xVo"/>
+                                                <constraint firstAttribute="bottom" secondItem="rsL-1b-tHc" secondAttribute="bottom" id="klJ-Bd-3Wd"/>
+                                                <constraint firstItem="rsL-1b-tHc" firstAttribute="leading" secondItem="lag-c6-mEj" secondAttribute="leading" constant="10" id="p4x-5E-S30"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="57" id="SLz-Z2-rPy">
+                                        <rect key="frame" x="0.0" y="461" width="428" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SLz-Z2-rPy" id="9d3-7R-dfk">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail  Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBr-2Y-ssE" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="408" height="57"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WBr-2Y-ssE" firstAttribute="leading" secondItem="9d3-7R-dfk" secondAttribute="leading" constant="10" id="15d-Sj-nPK"/>
+                                                <constraint firstAttribute="bottom" secondItem="WBr-2Y-ssE" secondAttribute="bottom" id="ezN-7f-G5q"/>
+                                                <constraint firstItem="WBr-2Y-ssE" firstAttribute="top" secondItem="9d3-7R-dfk" secondAttribute="top" id="rmg-eL-FvY"/>
+                                                <constraint firstAttribute="trailing" secondItem="WBr-2Y-ssE" secondAttribute="trailing" constant="10" id="zUr-h2-bFf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="57" id="jBZ-gy-bm8">
+                                        <rect key="frame" x="0.0" y="518" width="428" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jBZ-gy-bm8" id="XDU-A0-quS">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-iM-67t" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="70.333333333333343" y="0.0" width="347.66666666666663" height="57"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-ZE-fss" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="0.0" width="64.333333333333329" height="57"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-9W-0Es">
+                                                    <rect key="frame" x="2" y="20" width="17" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ucg-9W-0Es" secondAttribute="height" multiplier="1:1" id="cgi-Ta-hB7"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hDr-iM-67t" firstAttribute="top" secondItem="XDU-A0-quS" secondAttribute="top" id="HET-PQ-hYN"/>
+                                                <constraint firstAttribute="trailing" secondItem="hDr-iM-67t" secondAttribute="trailing" constant="10" id="Kfg-1p-bA0"/>
+                                                <constraint firstItem="ucg-9W-0Es" firstAttribute="leading" secondItem="XDU-A0-quS" secondAttribute="leading" constant="2" id="Qei-rj-SSn"/>
+                                                <constraint firstAttribute="bottom" secondItem="RGC-ZE-fss" secondAttribute="bottom" id="TU5-oi-wqq"/>
+                                                <constraint firstItem="ucg-9W-0Es" firstAttribute="width" secondItem="XDU-A0-quS" secondAttribute="width" multiplier="0.04" id="WXo-DM-kII"/>
+                                                <constraint firstItem="hDr-iM-67t" firstAttribute="leading" secondItem="RGC-ZE-fss" secondAttribute="trailing" constant="1" id="XFo-vo-oFZ"/>
+                                                <constraint firstItem="RGC-ZE-fss" firstAttribute="leading" secondItem="XDU-A0-quS" secondAttribute="leading" constant="5" id="bIJ-q4-UD1"/>
+                                                <constraint firstItem="RGC-ZE-fss" firstAttribute="centerY" secondItem="ucg-9W-0Es" secondAttribute="centerY" id="cFb-uM-k1Y"/>
+                                                <constraint firstAttribute="bottom" secondItem="hDr-iM-67t" secondAttribute="bottom" id="ciF-Je-r9A"/>
+                                                <constraint firstItem="RGC-ZE-fss" firstAttribute="width" secondItem="XDU-A0-quS" secondAttribute="width" multiplier="0.15" id="cj9-mu-e2F"/>
+                                                <constraint firstItem="ucg-9W-0Es" firstAttribute="centerY" secondItem="XDU-A0-quS" secondAttribute="centerY" id="i9v-u8-vIe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="57" id="i8r-YQ-PvG">
+                                        <rect key="frame" x="0.0" y="575" width="428" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i8r-YQ-PvG" id="BCc-DX-O9h">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TEe-Nl-fla" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="408" height="57"/>
+                                                    <color key="textColor" name="TextBlackColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" name="AppBlueColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" name="GreyTextcolor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TEe-Nl-fla" firstAttribute="leading" secondItem="BCc-DX-O9h" secondAttribute="leading" constant="10" id="4hi-zc-0q2"/>
+                                                <constraint firstAttribute="trailing" secondItem="TEe-Nl-fla" secondAttribute="trailing" constant="10" id="7uq-Qd-wiI"/>
+                                                <constraint firstItem="TEe-Nl-fla" firstAttribute="top" secondItem="BCc-DX-O9h" secondAttribute="top" id="ltC-a2-PEj"/>
+                                                <constraint firstAttribute="bottom" secondItem="TEe-Nl-fla" secondAttribute="bottom" id="sXY-3P-r72"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="f21-kd-5qd" id="d95-qs-VMv"/>
+                            <outlet property="delegate" destination="f21-kd-5qd" id="obQ-5q-soT"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRq-KI-XmD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1766.3551401869158" y="2981.8574514038878"/>
+        </scene>
         <!--Dash Board View Controller-->
         <scene sceneID="pnO-Ds-NqN">
             <objects>
@@ -3747,7 +4066,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Raven" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pSd-8Y-1p1">
-                                        <rect key="frame" x="154" y="72" width="120" height="21"/>
+                                        <rect key="frame" x="154" y="71.666666666666671" width="120" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="lFr-tS-tCA"/>
                                         </constraints>
@@ -4153,16 +4472,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-Rw-dlc">
-                                                        <rect key="frame" x="116.00000000000001" y="12.333333333333371" width="175.33333333333337" height="25"/>
+                                                        <rect key="frame" x="113.00000000000001" y="12.333333333333371" width="178.33333333333337" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showing date: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsM-hf-Avs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="84" height="25"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="90.666666666666671" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                                                 <color key="textColor" name="GreyTextcolor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Sep - 21 Oct" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCF-b8-fDl">
-                                                                <rect key="frame" x="86" y="0.0" width="89.333333333333314" height="25"/>
+                                                                <rect key="frame" x="92.666666666666657" y="0.0" width="85.666666666666657" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zIm-bE-zL0"/>
                                                                 </constraints>
@@ -7030,7 +7349,7 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq2-OC-iH7">
-                                        <rect key="frame" x="132" y="23.333333333333329" width="164" height="23.333333333333329"/>
+                                        <rect key="frame" x="122.33333333333333" y="22.666666666666671" width="183.33333333333337" height="24.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -7246,22 +7565,22 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r89-qP-w8R">
-                                                <rect key="frame" x="103.33333333333331" y="16" width="105" height="90.333333333333329"/>
+                                                <rect key="frame" x="103.33333333333331" y="16" width="112" height="90.333333333333329"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qu-lr-afV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="27.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="112" height="27.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                         <color key="textColor" name="TextBlackColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-ZE-d6M">
-                                                        <rect key="frame" x="0.0" y="31.333333333333329" width="105" height="27.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="31.333333333333329" width="112" height="27.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                         <color key="textColor" name="TextForegroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 Years, Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JR7-yC-1SJ">
-                                                        <rect key="frame" x="0.0" y="63.000000000000007" width="105" height="27.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="63.000000000000007" width="112" height="27.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                         <color key="textColor" name="TextForegroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -7379,7 +7698,7 @@
                                 <rect key="frame" x="0.0" y="228.33333333333331" width="428" height="663.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on edit to start adding Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCC-Ei-aDA">
-                                        <rect key="frame" x="101" y="610.66666666666663" width="226" height="21"/>
+                                        <rect key="frame" x="82.333333333333343" y="610.66666666666663" width="263.33333333333326" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="pCw-jE-fqz"/>
                                         </constraints>
@@ -7388,7 +7707,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Profile Data Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQY-N1-Rsy">
-                                        <rect key="frame" x="114.66666666666667" y="306.66666666666663" width="198.66666666666663" height="21"/>
+                                        <rect key="frame" x="98.333333333333329" y="306.66666666666663" width="231.33333333333337" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="FAk-vl-f9y"/>
                                         </constraints>
@@ -7564,19 +7883,19 @@
                                         <rect key="frame" x="181.66666666666666" y="50.000000000000007" width="64.666666666666657" height="64.666666666666686"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfG-JO-iKU">
-                                        <rect key="frame" x="128.33333333333331" y="129.66666666666666" width="171.33333333333331" height="23.333333333333343"/>
+                                        <rect key="frame" x="128.33333333333331" y="129.66666666666666" width="171.33333333333331" height="24.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fta-bY-tXe">
-                                        <rect key="frame" x="128.33333333333331" y="177" width="171.33333333333331" height="16.333333333333343"/>
+                                        <rect key="frame" x="128.33333333333331" y="178.33333333333334" width="171.33333333333331" height="16.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBK-mS-yqH">
-                                        <rect key="frame" x="149.66666666666669" y="201.33333333333334" width="128.66666666666669" height="35"/>
+                                        <rect key="frame" x="149.66666666666669" y="202.66666666666666" width="128.66666666666669" height="36.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -7830,114 +8149,144 @@
     </scenes>
     <designables>
         <designable name="0VK-Wy-CYt">
-            <size key="intrinsicContentSize" width="24.666666666666668" height="18"/>
+            <size key="intrinsicContentSize" width="27.666666666666668" height="19"/>
         </designable>
         <designable name="2YS-Ae-nwv">
-            <size key="intrinsicContentSize" width="5" height="19.333333333333332"/>
+            <size key="intrinsicContentSize" width="4" height="20"/>
         </designable>
         <designable name="2yi-6D-LaK">
-            <size key="intrinsicContentSize" width="84.333333333333329" height="18"/>
+            <size key="intrinsicContentSize" width="95.666666666666671" height="19"/>
         </designable>
         <designable name="6ok-JW-g3z">
-            <size key="intrinsicContentSize" width="51.666666666666664" height="18"/>
+            <size key="intrinsicContentSize" width="58.333333333333336" height="19"/>
         </designable>
         <designable name="AQl-r4-vXj">
-            <size key="intrinsicContentSize" width="37.666666666666664" height="18"/>
+            <size key="intrinsicContentSize" width="43" height="19"/>
         </designable>
         <designable name="CPL-k8-RQc">
-            <size key="intrinsicContentSize" width="34.333333333333336" height="18"/>
+            <size key="intrinsicContentSize" width="40.666666666666664" height="19"/>
+        </designable>
+        <designable name="DdT-pW-1E2">
+            <size key="intrinsicContentSize" width="95" height="23"/>
         </designable>
         <designable name="EsC-aX-P25">
-            <size key="intrinsicContentSize" width="138.66666666666666" height="19"/>
+            <size key="intrinsicContentSize" width="154.66666666666666" height="20"/>
         </designable>
         <designable name="F2g-1r-5wt">
-            <size key="intrinsicContentSize" width="106.33333333333333" height="28"/>
+            <size key="intrinsicContentSize" width="117.66666666666667" height="30"/>
         </designable>
         <designable name="GAm-CZ-9V9">
-            <size key="intrinsicContentSize" width="85" height="18"/>
+            <size key="intrinsicContentSize" width="99" height="19"/>
         </designable>
         <designable name="H8X-MR-DDQ">
-            <size key="intrinsicContentSize" width="51" height="18"/>
+            <size key="intrinsicContentSize" width="59.333333333333336" height="19"/>
         </designable>
         <designable name="HXe-bk-FV8">
-            <size key="intrinsicContentSize" width="58" height="18"/>
+            <size key="intrinsicContentSize" width="67.333333333333329" height="19"/>
         </designable>
         <designable name="Ht1-M5-4q1">
-            <size key="intrinsicContentSize" width="128.66666666666666" height="19"/>
+            <size key="intrinsicContentSize" width="145" height="20"/>
         </designable>
         <designable name="IZN-3O-902">
-            <size key="intrinsicContentSize" width="77" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="88.333333333333329" height="21.333333333333332"/>
         </designable>
         <designable name="Kdd-SD-ibj">
-            <size key="intrinsicContentSize" width="34.333333333333336" height="18"/>
+            <size key="intrinsicContentSize" width="40.666666666666664" height="19"/>
         </designable>
         <designable name="Lsh-2o-Nlb">
-            <size key="intrinsicContentSize" width="94.666666666666671" height="18"/>
+            <size key="intrinsicContentSize" width="110" height="19"/>
         </designable>
         <designable name="PHN-VN-ybG">
-            <size key="intrinsicContentSize" width="48.666666666666664" height="18"/>
+            <size key="intrinsicContentSize" width="55" height="19"/>
         </designable>
         <designable name="QHN-JQ-VuG">
-            <size key="intrinsicContentSize" width="113.66666666666667" height="18"/>
+            <size key="intrinsicContentSize" width="127.33333333333333" height="19"/>
         </designable>
         <designable name="Qfo-9Z-UZn">
-            <size key="intrinsicContentSize" width="98.333333333333329" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="114.66666666666667" height="21.333333333333332"/>
+        </designable>
+        <designable name="RGC-ZE-fss">
+            <size key="intrinsicContentSize" width="69.666666666666671" height="23"/>
         </designable>
         <designable name="RHd-jk-F7q">
-            <size key="intrinsicContentSize" width="80.333333333333329" height="18"/>
+            <size key="intrinsicContentSize" width="90" height="19"/>
         </designable>
         <designable name="S7Q-fb-uFg"/>
+        <designable name="TEe-Nl-fla">
+            <size key="intrinsicContentSize" width="70" height="23"/>
+        </designable>
+        <designable name="V1B-vM-KA8">
+            <size key="intrinsicContentSize" width="83.333333333333329" height="21"/>
+        </designable>
+        <designable name="VJZ-hs-2wp">
+            <size key="intrinsicContentSize" width="93" height="23"/>
+        </designable>
+        <designable name="Vum-2C-GMY">
+            <size key="intrinsicContentSize" width="159.33333333333334" height="21"/>
+        </designable>
+        <designable name="WBr-2Y-ssE">
+            <size key="intrinsicContentSize" width="132.66666666666666" height="23"/>
+        </designable>
         <designable name="Xx6-qY-c4W">
-            <size key="intrinsicContentSize" width="77.666666666666671" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="87.666666666666671" height="21.333333333333332"/>
         </designable>
         <designable name="dDg-Na-Tq0">
-            <size key="intrinsicContentSize" width="94.333333333333329" height="18"/>
+            <size key="intrinsicContentSize" width="108.33333333333333" height="19"/>
         </designable>
         <designable name="daD-6x-lrd">
-            <size key="intrinsicContentSize" width="24.666666666666668" height="18"/>
+            <size key="intrinsicContentSize" width="28.666666666666668" height="19"/>
         </designable>
         <designable name="dnP-bq-aTB">
-            <size key="intrinsicContentSize" width="31" height="23"/>
+            <size key="intrinsicContentSize" width="28" height="24"/>
         </designable>
         <designable name="duV-2F-qyx">
-            <size key="intrinsicContentSize" width="65" height="23"/>
+            <size key="intrinsicContentSize" width="76.333333333333329" height="24"/>
         </designable>
         <designable name="eGt-GD-I2z">
-            <size key="intrinsicContentSize" width="85" height="18"/>
+            <size key="intrinsicContentSize" width="99" height="19"/>
         </designable>
         <designable name="eth-om-Taf">
-            <size key="intrinsicContentSize" width="59" height="30"/>
+            <size key="intrinsicContentSize" width="69.333333333333329" height="31"/>
         </designable>
         <designable name="fzl-1c-knQ">
-            <size key="intrinsicContentSize" width="24" height="18"/>
+            <size key="intrinsicContentSize" width="25" height="19"/>
         </designable>
         <designable name="g14-Bw-9Mc">
-            <size key="intrinsicContentSize" width="78" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="89.333333333333329" height="21.333333333333332"/>
+        </designable>
+        <designable name="hDr-iM-67t">
+            <size key="intrinsicContentSize" width="83.333333333333329" height="23"/>
         </designable>
         <designable name="kgt-R0-O8u"/>
         <designable name="n76-pQ-oUs">
             <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="q4W-HQ-1fn">
-            <size key="intrinsicContentSize" width="39.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="46.333333333333336" height="21.333333333333332"/>
         </designable>
         <designable name="qY6-7F-uxP">
-            <size key="intrinsicContentSize" width="171.66666666666666" height="18"/>
+            <size key="intrinsicContentSize" width="198" height="19"/>
         </designable>
         <designable name="qae-NK-u95">
-            <size key="intrinsicContentSize" width="24" height="18"/>
+            <size key="intrinsicContentSize" width="25" height="19"/>
+        </designable>
+        <designable name="rsL-1b-tHc">
+            <size key="intrinsicContentSize" width="95" height="23"/>
         </designable>
         <designable name="skC-V8-oMT">
-            <size key="intrinsicContentSize" width="85" height="18"/>
+            <size key="intrinsicContentSize" width="99" height="19"/>
         </designable>
         <designable name="u9o-BK-bOn">
-            <size key="intrinsicContentSize" width="107.66666666666667" height="19"/>
+            <size key="intrinsicContentSize" width="119.66666666666667" height="20"/>
+        </designable>
+        <designable name="uZp-zq-CEQ">
+            <size key="intrinsicContentSize" width="132.66666666666666" height="23"/>
         </designable>
         <designable name="wdo-y3-4rM">
-            <size key="intrinsicContentSize" width="99.333333333333329" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="113" height="21.333333333333332"/>
         </designable>
         <designable name="wuj-ao-JMU">
-            <size key="intrinsicContentSize" width="110.33333333333333" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="127.66666666666667" height="21.333333333333332"/>
         </designable>
     </designables>
     <resources>
@@ -7953,7 +8302,7 @@
         <image name="Revenue" width="42.666667938232422" height="42.666667938232422"/>
         <image name="addfile" width="337.5" height="337.5"/>
         <image name="addhealthfeed" width="214.5" height="214.5"/>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.backward" catalog="system" width="32" height="32"/>
         <image name="camera" width="32" height="32"/>
         <image name="camera.rotate.fill" catalog="system" width="128" height="94"/>
         <image name="dashCirlce" width="255" height="255"/>

@@ -198,6 +198,8 @@ extension EditProfileTableViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        self.loader.isHideInMainThread(true)
+        showToast(msg: error.localizedDescription)
         
     }
     
@@ -205,8 +207,9 @@ extension EditProfileTableViewController : PresenterOutputProtocol{
         let url = "\(Base.updateProfile.rawValue)"
         
         var uploadimgeData:Data = Data()
+        var imageData = [String:Data]()
         
-        if  let dataImg = self.profileImage.image?.jpegData(compressionQuality: 0.5) {
+        if  let dataImg = self.profileImage.image?.pngData() {
             uploadimgeData = dataImg
         }
         

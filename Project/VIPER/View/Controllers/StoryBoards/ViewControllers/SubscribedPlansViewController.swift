@@ -74,7 +74,7 @@ extension SubscribedPlansViewController : UITableViewDelegate,UITableViewDataSou
             cell.suggetionView.setCorneredElevation(shadow: 1, corner: 10, color: UIColor.AppBlueColor)
 
         cell.titleLbl.text = self.subscribedList[indexPath.row].details?.name ?? ""
-        cell.planDescription.text = "From \(self.subscribedList[indexPath.row].details?.period ?? 0) \(self.subscribedList[indexPath.row].details?.duration ?? "")"
+        cell.planDescription.text = "For \(self.subscribedList[indexPath.row].details?.period ?? 0) \(self.subscribedList[indexPath.row].details?.duration ?? "")"
         cell.priceLbl.text = "From \(self.subscribedList[indexPath.row].subscriptrion_start_date ?? "0") to \(self.subscribedList[indexPath.row].subscriptrion_end_date ?? "")"
         return cell
         
