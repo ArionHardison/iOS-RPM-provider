@@ -14,6 +14,7 @@ class SignInEmailViewController: UIViewController {
     @IBOutlet weak var buttonUsingMobile: UIButton!
     @IBOutlet weak var emailTxt: HoshiTextField!
     @IBOutlet weak var passwordTxt: HoshiTextField!
+    @IBOutlet weak var registerButton: UIButton!
     
     private lazy var loader  : UIView = {
         return createActivityIndicator(self.view)
@@ -21,10 +22,14 @@ class SignInEmailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerButton.addTarget(self, action: #selector(registerAction(_sender:)), for: .touchUpInside)
 
     }
     
-
+    @IBAction private func registerAction(_sender:UIButton){
+        self.push(id: Storyboard.Ids.RegisterPersonalTableViewController, animation: true)
+    }
+    
    
     @IBAction func usingMobileAction(_ sender: Any) {
         self.push(id: Storyboard.Ids.SignInMobileViewController, animation: true)

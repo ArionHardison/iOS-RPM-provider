@@ -166,6 +166,7 @@
 		8526FFCF2551333900E672B9 /* AVPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */; };
 		8527DB88257E401800B38F9B /* InvoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8527DB87257E401800B38F9B /* InvoiceView.xib */; };
 		8527DB8D257E43F800B38F9B /* InvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527DB8C257E43F800B38F9B /* InvoiceView.swift */; };
+		852C77C225877344008917CA /* RegisterPersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C77C125877344008917CA /* RegisterPersonalTableViewController.swift */; };
 		85367D572582157700E7ED0D /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85367D562582157700E7ED0D /* AddMoneyViewController.swift */; };
 		85540296256537BB003972F5 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85540295256537BB003972F5 /* KeyboardManager.swift */; };
 		856FE70F25591FCC009C5811 /* CountryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856FE70D25591FC8009C5811 /* CountryListController.swift */; };
@@ -393,6 +394,8 @@
 		8526FFCE2551333900E672B9 /* AVPlayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerHelper.swift; sourceTree = "<group>"; };
 		8527DB87257E401800B38F9B /* InvoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoiceView.xib; sourceTree = "<group>"; };
 		8527DB8C257E43F800B38F9B /* InvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceView.swift; sourceTree = "<group>"; };
+		852C77C125877344008917CA /* RegisterPersonalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalTableViewController.swift; sourceTree = "<group>"; };
+		852C77F825879592008917CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85367D562582157700E7ED0D /* AddMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		85540295256537BB003972F5 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		856FE70D25591FC8009C5811 /* CountryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListController.swift; sourceTree = "<group>"; };
@@ -502,6 +505,7 @@
 				85367D562582157700E7ED0D /* AddMoneyViewController.swift */,
 				851E4D4325825B82009F6C17 /* SubscriptionPlansViewController.swift */,
 				85228F6425838FF700CE6331 /* SubscribedPlansViewController.swift */,
+				852C77C125877344008917CA /* RegisterPersonalTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -816,6 +820,7 @@
 		084B346E20B02CB500B79318 /* Plist Files */ = {
 			isa = PBXGroup;
 			children = (
+				852C77F825879592008917CA /* GoogleService-Info.plist */,
 				084B30EA20B01DAC00B79318 /* Info.plist */,
 			);
 			path = "Plist Files";
@@ -1397,7 +1402,7 @@
 				084B30D520B01DAA00B79318 /* Frameworks */,
 				084B30D620B01DAA00B79318 /* Resources */,
 				5147B6020EDFB92620087184 /* [CP] Embed Pods Frameworks */,
-				9A7535F85815E5201890A048 /* [CP] Copy Pods Resources */,
+				E236244D4CD55C63D2EFF149 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1591,7 +1596,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MiDokter Pro/Pods-MiDokter Pro-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9A7535F85815E5201890A048 /* [CP] Copy Pods Resources */ = {
+		E236244D4CD55C63D2EFF149 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1705,6 +1710,7 @@
 				084B34B420B030A800B79318 /* Sequence.swift in Sources */,
 				774B7193247BF18000839F14 /* CalendarViewController.swift in Sources */,
 				7738E2F72435DA9100804159 /* SignInMobileViewController.swift in Sources */,
+				852C77C225877344008917CA /* RegisterPersonalTableViewController.swift in Sources */,
 				084B30E420B01DAB00B79318 /* Model.xcdatamodeld in Sources */,
 				105344EA249B60E000650C43 /* UXString.swift in Sources */,
 				7733ED532454A94B00C252E1 /* ChatViewController.swift in Sources */,
@@ -1931,7 +1937,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1954,7 +1960,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TeleHelath Provider.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = Q4N6XWX7K3;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Common/Plist Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

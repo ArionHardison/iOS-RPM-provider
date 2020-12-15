@@ -16,6 +16,7 @@ import CallKit
 import AVFoundation
 import Intents
 import AVKit
+import GooglePlaces
 
 
 @UIApplicationMain
@@ -95,6 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setGoogleMapKey(){
         
         GMSServices.provideAPIKey(googleMapKey)
+        GMSPlacesClient.provideAPIKey(googleMapKey)
         
     }
     

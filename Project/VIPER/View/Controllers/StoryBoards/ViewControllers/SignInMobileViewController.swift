@@ -16,6 +16,7 @@ class SignInMobileViewController: UIViewController {
     @IBOutlet weak var buttonUsingEmail: UIButton!
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var countryImage: UIImageView!
+    @IBOutlet weak var signUp: UIButton!
     
     var countryCode :String?
     
