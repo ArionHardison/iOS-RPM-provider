@@ -77,7 +77,7 @@ fileprivate class CustomPicker: NSObject {
     static var selectedValue = ""
     
     static func showPicker(sourceVC: UIViewController, pickerDataSource: [String], selectedData: String?, closure:@escaping (PickerCompletion) -> Void) {
-        
+        currentVC?.view = nil
         currentVC?.view.addSubview(dummyBackgroundView)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         currentVC?.view.addGestureRecognizer(tap)
@@ -132,7 +132,7 @@ fileprivate class CustomPicker: NSObject {
     }
     
     static func showDatePicker(type:UIDatePicker.Mode,sourceVC: UIViewController, minDate: Date?, maxDate: Date?, selectedDate: String?, closure:@escaping (PickerCompletion) -> Void) {
-        
+        currentVC?.view = nil
         currentVC?.view.addSubview(dummyBackgroundView)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         currentVC?.view.addGestureRecognizer(tap)
@@ -180,7 +180,7 @@ fileprivate class CustomPicker: NSObject {
                 handler(dateString)
             } else if sender.datePickerMode == .time {
                 let formatter = DateFormatter()
-                formatter.timeStyle = .short
+                formatter.timeStyle = .medium
                 let timeString = formatter.string(from: sender.date)
                 handler(timeString)
             }
@@ -200,7 +200,7 @@ fileprivate class CustomPicker: NSObject {
         pickerView.leadingAnchor.constraint(equalTo: vc.view.leadingAnchor).isActive = true
         pickerView.trailingAnchor.constraint(equalTo: vc.view.trailingAnchor).isActive = true
         
-        pickerConstraints = NSLayoutConstraint(item: pickerView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: vc.view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0)
+        pickerConstraints = NSLayoutConstraint(item: pickerView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: vc.view, attribute: NSLayoutConstraint.Attribute.bottomMargin, multiplier: 1.0, constant: 0)
         vc.view.addConstraints([pickerConstraints])
         
         
@@ -237,6 +237,7 @@ fileprivate class CustomPicker: NSObject {
         }, completion: { (_) in
             CustomPicker.currentVC?.dismiss(animated: true, completion: nil)
             CustomPicker.selectedValue = ""
+            CustomPicker.currentVC?.removeFromParent()
         })
     }
     @objc static func cancelClick() {

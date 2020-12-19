@@ -169,7 +169,13 @@ extension AppointmentFeedBackViewController {
         }
         
     }
-   
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if appoitments.driver_rating == 0 {
+            return 4
+        }else{
+            return 2
+        }
+    }
     
 }
 

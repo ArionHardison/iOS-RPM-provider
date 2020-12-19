@@ -344,3 +344,5 @@ struct CardsModel : Mappable {
     }
 
 }
+
+

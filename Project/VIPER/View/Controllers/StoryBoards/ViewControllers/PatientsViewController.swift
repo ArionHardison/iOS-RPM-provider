@@ -73,6 +73,7 @@ extension PatientsViewController {
             vc.patientDetails = self.todayPatients[sender.tag]
             vc.selectedDate = self.selectedDate
                 vc.isFromCalendar = self.isFromCalendar
+                vc.serviceId = Int(profile.doctor?.services_id ?? "0") ?? 0
             self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 let view = DateTimePickerAlert.getView

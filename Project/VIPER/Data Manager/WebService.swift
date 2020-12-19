@@ -19,7 +19,7 @@ class Webservice {
 
 extension Webservice : WebServiceProtocol {
     
-    func retrieve<T: Mappable>(api: String, params: Parameters?, imageData: [String : Data]?, type: HttpType, modelClass: T.Type, token: Bool, completion: ((CustomError?, Data?) -> ())?) {
+    func retrieve<T: Mappable>(api: String, params: [String:Any]?, imageData: [String : Data]?, type: HttpType, modelClass: T.Type, token: Bool, completion: ((CustomError?, Data?) -> ())?) {
          if params != nil{
         }
         
@@ -38,15 +38,22 @@ extension Webservice : WebServiceProtocol {
         }
         let encoding:ParameterEncoding = (type == .GET ? URLEncoding.default : JSONEncoding.default)
         
+        
+        
         self.completion = completion
-        var headers = HTTPHeaders()
-        headers.updateValue(WebConstants.string.application_json, forKey: WebConstants.string.Content_Type)
-        headers.updateValue(WebConstants.string.XMLHttpRequest, forKey: WebConstants.string.X_Requested_With)
+        var headers : HTTPHeaders = [WebConstants.string.Content_Type : WebConstants.string.application_json,WebConstants.string.X_Requested_With:WebConstants.string.XMLHttpRequest]
+        
+        
+//        headers.updateValue(WebConstants.string.application_json, forKey: WebConstants.string.Content_Type)
+//        headers.updateValue(WebConstants.string.XMLHttpRequest, forKey: WebConstants.string.X_Requested_With)
       
         if(token) {
             
+            
             let accessToken = UserDefaultConfig.Token ?? ""
-            headers.updateValue("\(WebConstants.string.bearer) \(accessToken)", forKey: WebConstants.string.Authorization)
+            
+            headers[WebConstants.string.Authorization] = "\(WebConstants.string.bearer) \(accessToken)"
+//            headers.updateValue("\(WebConstants.string.bearer) \(accessToken)", forKey: WebConstants.string.Authorization)
         }
         
         let httpMethod = HTTPMethod(rawValue: type.rawValue) //GET or POST
@@ -56,11 +63,11 @@ extension Webservice : WebServiceProtocol {
         case nil:
             
             print("**url", url)
-            print("**httpMethod", httpMethod!)
+            print("**httpMethod", httpMethod)
             print("**url", params)
-            print("**token", UserDefaultConfig.Token ?? "")
+            print("**token", UserDefaultConfig.Token )
             
-            Alamofire.request(url, method: httpMethod!, parameters: params,encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            AF.request(url, method: httpMethod, parameters: params,encoding: encoding, headers: headers).responseJSON{ response in
                 print("response.result",response    )
                 switch response.result {
                 case .failure:
@@ -70,8 +77,8 @@ extension Webservice : WebServiceProtocol {
                     print("RESPONSE---\(response.result)")
                     
                     if response.response?.statusCode == StatusCode.success.rawValue {
-                        if(response.result.value as AnyObject).isKind(of: NSDictionary.self){ //Dictionary:
-                            guard let responseJSON = response.result.value as? [String: AnyObject] else {
+                        if(response.value as AnyObject).isKind(of: NSDictionary.self){ //Dictionary:
+                            guard let responseJSON = response.value as? [String: AnyObject] else {
                                 print("Error reading response")
                                
                                 return
@@ -79,7 +86,7 @@ extension Webservice : WebServiceProtocol {
                              print("responseJSON: ",responseJSON)
                             self.interactor?.responseSuccess(api: api, className: modelClass, responseDict: responseJSON, responseArray: [])
                         }else{ //Array:
-                            if let json = response.result.value as? [[String:Any]] {
+                            if let json = response.value as? [[String:Any]] {
                                    print("responseJSON: ",json)
                                 self.interactor?.responseSuccess(api: api, className: modelClass, responseDict: [:], responseArray: json)
                             }
@@ -94,22 +101,27 @@ extension Webservice : WebServiceProtocol {
             
         
         default: //Image Post:
-            Alamofire.upload(multipartFormData: { multipartFormData in
+            print("**url", url)
+            print("**httpMethod", httpMethod)
+            print("**url", params)
+            print("**token", UserDefaultConfig.Token ?? "")
+            
+            AF.upload(multipartFormData: { multipartFormData in
                 if let imageArray = imageData{ //Image:
                     for array in imageArray {
+                        if api == "/api/hospital/update_profile" && array.key == "video"{
+                            multipartFormData.append(array.value, withName: array.key,fileName: "video.mp4", mimeType: "video/mp4")
+                            
+                        }else{
                         multipartFormData.append(array.value, withName: array.key, fileName: "image.png", mimeType: "image/png")
+                        }
                     }
                 }
                 for (key, value) in params ?? [:] { //Other Params:
                     multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
                 }
-            },to:url,method: .post,headers:headers) { (result) in
-                switch result {
-                case .success(let upload, _, _):
-                    upload.uploadProgress(closure: { (progress) in
-                        print("Upload Progress: \(progress.fractionCompleted)")
-                    })
-                    upload.responseJSON { response in
+            }, to: url, usingThreshold: UInt64.init(), method: httpMethod, headers: headers, interceptor: nil).responseJSON { (response) in
+                                
                         switch response.result {
                         case .failure(let err):
                             print("IMAGE POST ERROR---\(err)")
@@ -117,14 +129,14 @@ extension Webservice : WebServiceProtocol {
                         case .success(let val):
                             print("IMAGE POST RESPONSE---\(val)")
                             if response.response?.statusCode == StatusCode.success.rawValue {
-                                if(response.result.value as AnyObject).isKind(of: NSDictionary.self){  //Dictionary
-                                    guard let responseJSON = response.result.value as? [String: AnyObject] else {
+                                if(response.value as AnyObject).isKind(of: NSDictionary.self){  //Dictionary
+                                    guard let responseJSON = response.value as? [String: AnyObject] else {
                                         print("Error reading response")
                                         return
                                     }
                                     self.interactor?.responseSuccess(api: api, className: modelClass, responseDict: responseJSON, responseArray: [])
                                 }else{  //Array
-                                    if let json = response.result.value as? [[String:Any]] {
+                                    if let json = response.value as? [[String:Any]] {
                                         self.interactor?.responseSuccess(api: api, className: modelClass, responseDict: [:], responseArray: json)
                                     }
                                 }
@@ -132,11 +144,56 @@ extension Webservice : WebServiceProtocol {
                                 self.handleError(responseError: response, modelClass: modelClass)
                             }
                         }
-                    }
-                case .failure(let encodingError):
-                    print(encodingError)
-                }
             }
+            
+//            AF.upload(multipartFormData: { multipartFormData in
+//                if let imageArray = imageData{ //Image:
+//                    for array in imageArray {
+//                        if api == "/api/hospital/update_profile" && array.key == "video"{
+//                            multipartFormData.append(array.value, withName: array.key,fileName: "video.mp4", mimeType: "video/mp4")
+//
+//                        }else{
+//                        multipartFormData.append(array.value, withName: array.key, fileName: "image.png", mimeType: "image/png")
+//                        }
+//                    }
+//                }
+//                for (key, value) in params ?? [:] { //Other Params:
+//                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
+//                }
+//            },to:url,usingThreshold: UInt64.init(),method: .post,headers:headers) { (result) in
+//                switch result {
+//                case .success(let upload, _, _):
+//                    upload.uploadProgress(closure: { (progress) in
+//                        print("Upload Progress: \(progress.fractionCompleted)")
+//                    })
+//                    upload.responseJSON { response in
+//                        switch response.result {
+//                        case .failure(let err):
+//                            print("IMAGE POST ERROR---\(err)")
+//                            self.handleError(responseError: response, modelClass: modelClass)
+//                        case .success(let val):
+//                            print("IMAGE POST RESPONSE---\(val)")
+//                            if response.response?.statusCode == StatusCode.success.rawValue {
+//                                if(response.result.value as AnyObject).isKind(of: NSDictionary.self){  //Dictionary
+//                                    guard let responseJSON = response.result.value as? [String: AnyObject] else {
+//                                        print("Error reading response")
+//                                        return
+//                                    }
+//                                    self.interactor?.responseSuccess(api: api, className: modelClass, responseDict: responseJSON, responseArray: [])
+//                                }else{  //Array
+//                                    if let json = response.result.value as? [[String:Any]] {
+//                                        self.interactor?.responseSuccess(api: api, className: modelClass, responseDict: [:], responseArray: json)
+//                                    }
+//                                }
+//                            }else {
+//                                self.handleError(responseError: response, modelClass: modelClass)
+//                            }
+//                        }
+//                    }
+//                case .failure(let encodingError):
+//                    print(encodingError)
+//                }
+//            }
             break
         }
     }
@@ -145,7 +202,7 @@ extension Webservice : WebServiceProtocol {
   
     
     //MARK: Handle Error:
-    func handleError(responseError: (DataResponse<Any>)?, modelClass: Any) {
+    func handleError(responseError: (AFDataResponse<Any>)?, modelClass: Any) {
         
         if responseError?.response?.statusCode == StatusCode.unAuthorized.rawValue  { // Validation For UnAuthorized Login:
             
@@ -203,14 +260,14 @@ extension Webservice : WebServiceProtocol {
         }else if let data = responseError?.data {  // Validation For Server Data
             self.completion?(nil, data)
             
-            if(responseError?.result.value as AnyObject).isKind(of: NSDictionary.self){ //Dictionary:
-                guard let responseJSON = responseError?.result.value as? [String: AnyObject] else {
+            if(responseError?.value as AnyObject).isKind(of: NSDictionary.self){ //Dictionary:
+                guard let responseJSON = responseError?.value as? [String: AnyObject] else {
                     print("Error reading response")
                     return
                 }
                 /* self.interactor?.dictModelClass(className: modelClass, response: responseJSON)*/
             }else{ //Array:
-                if let json = responseError?.result.value as? [[String:Any]] {
+                if let json = responseError?.value as? [[String:Any]] {
                     /*self.interactor?.arrayModelClass(className: modelClass, arrayResponse: json)*/
                 }
             }
@@ -220,6 +277,7 @@ extension Webservice : WebServiceProtocol {
             self.interactor?.responseError(error: CustomError(description: responseError?.error?.localizedDescription ?? "", code: (responseError?.response?.statusCode) ?? StatusCode.ServerError.rawValue))
         }
     }
+    
 }
 
 

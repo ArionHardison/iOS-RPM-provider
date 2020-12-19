@@ -47,6 +47,8 @@ struct Storyboard {
     let SubscriptionPlansViewController = "SubscriptionPlansViewController"
     let SubscribedPlansViewController = "SubscribedPlansViewController"
     let RegisterPersonalTableViewController = "RegisterPersonalTableViewController"
+    let CompleteRegistrationTableViewController = "CompleteRegistrationTableViewController"
+    let SpecialititesListViewController = "SpecialititesListViewController"
 }
 
 

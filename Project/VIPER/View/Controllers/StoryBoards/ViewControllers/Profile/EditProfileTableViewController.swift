@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import AVKit
 
 class EditProfileTableViewController: UITableViewController {
 
@@ -22,9 +23,17 @@ class EditProfileTableViewController: UITableViewController {
     @IBOutlet weak var buttonSave: UIButton!
     @IBOutlet weak var editProfileImgBtn: UIButton!
     @IBOutlet weak var textfieldSpecialization: HoshiTextField!
+    @IBOutlet weak var addVideoButton: UIButton!
     
     @IBOutlet weak var countryCodeTextField: HoshiTextField!
     @IBOutlet weak var viewSubscribedPlans: UIButton!
+    @IBOutlet weak var consultationFeesTextField: HoshiTextField!
+    @IBOutlet weak var profileImgView: UIImageView!
+    @IBOutlet weak var playVideoButton: UIButton!
+    
+    var imagePickerController = UIImagePickerController()
+    var videoURL : NSURL?
+    var videoData : NSData?
     
     private lazy var loader : UIView = {
         return createActivityIndicator(UIScreen.main.focusedView ?? self.view)
@@ -63,13 +72,40 @@ class EditProfileTableViewController: UITableViewController {
             self.countryCodeTextField.text = data.doctor?.country_code ?? ""
             self.textfieldSpecialization.text = "\(data.doctor?.doctor_profile?.speciality?.name ?? "")"
             self.selectedCategoryID = data.doctor?.doctor_profile?.speciality?.id ?? 0
-            
+            self.consultationFeesTextField.text = "\(data.doctor?.doctor_profile?.fees ?? 0)"
+        if data.doctor?.doctor_profile?.profile_video ?? "" != ""{
+        let url = URL(string: "\(imageURL)\(data.doctor?.doctor_profile?.profile_video ?? "")")
+        if url != nil{
+            self.videoURL = url as NSURL?
+            self.addVideoButton.setTitle("", for: .normal)
+            print(self.videoURL!)
+            if let fileURL = self.videoURL {
+                if let videoData = NSData(contentsOf: fileURL as URL) {
+                       print(videoData.length)
+                    self.videoData = videoData
+                   }
+               }
+            do {
+                let asset = AVURLAsset(url: self.videoURL! as URL , options: nil)
+                let imgGenerator = AVAssetImageGenerator(asset: asset)
+                imgGenerator.appliesPreferredTrackTransform = true
+                let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 1), actualTime: nil)
+                let thumbnail = UIImage(cgImage: cgImage)
+                self.profileImgView.image = thumbnail
+                self.addVideoButton.setTitle("", for: .normal)
+                self.playVideoButton.isHidden = false
+            } catch let error {
+                print("*** Error generating thumbnail: \(error.localizedDescription)")
+            }
+        }
+        }
         
     }
     
     func setupAction(){
         
         self.profileImage.makeRoundedCorner()
+        
         
         self.editProfileImgBtn.addTarget(self, action: #selector(chooseCoverPhoto), for: .touchUpInside)
         
@@ -104,6 +140,8 @@ class EditProfileTableViewController: UITableViewController {
                 
                 
                 profile.country_code = self.countryCodeTextField.getText
+                
+                profile.fees = self.consultationFeesTextField.getText
                 self.updateProfile(data: profile)
                 self.isFromUpdate = true
                 
@@ -165,12 +203,58 @@ extension EditProfileTableViewController {
             }
         }
         self.viewSubscribedPlans.addTarget(self, action: #selector(subscribedPlansAction(_sender:)), for: .touchUpInside)
+        self.addVideoButton.addTarget(self, action: #selector(addVideo), for: .touchUpInside)
+        if self.videoURL != nil {
+            self.playVideoButton.isHidden = false
+        }else{
+            self.playVideoButton.isHidden = true
+        }
+        self.playVideoButton.addTarget(self, action: #selector(playVideoAction(_sender:)), for: .touchUpInside)
+    }
+    
+    @IBAction private func playVideoAction(_sender:UIButton){
+        let playerVC = AVPlayerViewController()
+        let player = AVPlayer(url: self.videoURL! as URL)
+        playerVC.player = player
+        self.present(playerVC, animated: true, completion: nil)
     }
     
     @IBAction func changePassword() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.ChangePasswordViewController) as! ChangePasswordViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction private func addVideo(){
+        
+        showVideo { (url) in
+            self.videoURL = url
+            print(self.videoURL!)
+            if let fileURL = self.videoURL {
+                if let videoData = NSData(contentsOf: fileURL as URL) {
+                       print(videoData.length)
+                    self.videoData = videoData
+                   }
+               }
+            do {
+                let asset = AVURLAsset(url: self.videoURL! as URL , options: nil)
+                let imgGenerator = AVAssetImageGenerator(asset: asset)
+                imgGenerator.appliesPreferredTrackTransform = true
+                let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 1), actualTime: nil)
+                let thumbnail = UIImage(cgImage: cgImage)
+                self.profileImgView.image = thumbnail
+                self.addVideoButton.setTitle("", for: .normal)
+                self.playVideoButton.isHidden = false
+            } catch let error {
+                print("*** Error generating thumbnail: \(error.localizedDescription)")
+            }
+        }
+//        imagePickerController.sourceType = .savedPhotosAlbum
+//            imagePickerController.delegate = self
+//            imagePickerController.mediaTypes = ["public.movie"]
+//            present(imagePickerController, animated: true, completion: nil)
+    }
+
+
 }
 
 //Api calls
@@ -212,8 +296,13 @@ extension EditProfileTableViewController : PresenterOutputProtocol{
         if  let dataImg = self.profileImage.image?.pngData() {
             uploadimgeData = dataImg
         }
+        var imageDataValue = [String:Data]()
+        imageDataValue.updateValue(uploadimgeData, forKey: "profile_pic")
+        if self.videoData != nil{
+        imageDataValue.updateValue(self.videoData! as Data, forKey: "video")
+        }
         
-        self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .POST, imgData: ["profile_pic":uploadimgeData], imgName: "profile_pic", modelClass: CommonModel.self, token: true)
+        self.presenter?.IMAGEPOST(api: url, params: convertToDictionary(model: data) ?? ["":""], methodType: .POST, imgData:imageDataValue , imgName: "profile_pic", modelClass: CommonModel.self, token: true)
         self.loader.isHidden = false
     }
     
@@ -259,5 +348,30 @@ extension EditProfileTableViewController : UITextFieldDelegate {
             return false
         }
         return true
+    }
+}
+
+
+extension EditProfileTableViewController  {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        videoURL = info[UIImagePickerController.InfoKey.mediaURL.rawValue]as? NSURL
+        print(videoURL!)
+        if let fileURL = videoURL {
+            if let videoData = NSData(contentsOf: fileURL as URL) {
+                   print(videoData.length)
+                self.videoData = videoData
+               }
+           }
+        do {
+            let asset = AVURLAsset(url: videoURL! as URL , options: nil)
+            let imgGenerator = AVAssetImageGenerator(asset: asset)
+            imgGenerator.appliesPreferredTrackTransform = true
+            let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 1), actualTime: nil)
+            let thumbnail = UIImage(cgImage: cgImage)
+            profileImgView.image = thumbnail
+        } catch let error {
+            print("*** Error generating thumbnail: \(error.localizedDescription)")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
 }

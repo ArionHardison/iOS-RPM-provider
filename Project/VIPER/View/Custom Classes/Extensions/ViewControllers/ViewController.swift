@@ -11,6 +11,8 @@ public enum storyboardName : String{
 
 fileprivate var bottomConstraint : NSLayoutConstraint?
 fileprivate var imageCompletion : ((UIImage?)->())?
+fileprivate var videoCompletion : ((NSURL?)->())?
+
 fileprivate var constraintValue : CGFloat = 0
 
 extension UIViewController {
@@ -161,10 +163,10 @@ extension UIViewController {
         
         let alert = UIAlertController(title: Constants.string.selectSource, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: Constants.string.camera, style: .default, handler: { (Void) in
-            self.chooseImage(with: .camera)
+            self.chooseImage(with: .camera, type: 0)
         }))
         alert.addAction(UIAlertAction(title: Constants.string.photoLibrary, style: .default, handler: { (Void) in
-            self.chooseImage(with: .photoLibrary)
+            self.chooseImage(with: .photoLibrary, type: 0)
         }))
         alert.addAction(UIAlertAction(title: Constants.string.Cancel, style: .cancel, handler:nil))
         alert.view.tintColor = .primary
@@ -173,17 +175,32 @@ extension UIViewController {
         
     }
     
+    func showVideo(with completion : @escaping ((NSURL?)->())){
+        
+        let alert = UIAlertController(title: Constants.string.selectSource, message: nil, preferredStyle: .actionSheet)
+
+        alert.addAction(UIAlertAction(title: Constants.string.photoLibrary, style: .default, handler: { (Void) in
+            self.chooseImage(with: .photoLibrary, type: 1)
+        }))
+        alert.addAction(UIAlertAction(title: Constants.string.Cancel, style: .cancel, handler:nil))
+        alert.view.tintColor = .primary
+        videoCompletion = completion
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     
     
     //MARK:- Show Image Picker
     
-    private func chooseImage(with source : UIImagePickerController.SourceType){
+    private func chooseImage(with source : UIImagePickerController.SourceType, type value :Int){
         
         if UIImagePickerController.isSourceTypeAvailable(source) {
             
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = source
             imagePicker.allowsEditing = true
+            imagePicker.mediaTypes = [value == 0 ? "public.image" : "public.movie"]
             imagePicker.delegate = self
             self.present(imagePicker, animated: true, completion: nil)
         }
@@ -252,6 +269,8 @@ extension UIViewController : UIImagePickerControllerDelegate, UINavigationContro
         picker.dismiss(animated: true) {
             if let image = info[.originalImage] as? UIImage {
                 imageCompletion?(image)
+            }else if let video = info[.mediaURL] as? NSURL{
+                videoCompletion?(video)
             }
         }
     }

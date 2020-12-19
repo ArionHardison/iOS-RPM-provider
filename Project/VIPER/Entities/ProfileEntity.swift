@@ -232,6 +232,7 @@ struct profileUploadReq : Codable {
     var mobile : String = ""
     var email : String = ""
     var country_code : String = ""
+    var fees : String = "0"
 }
 
 

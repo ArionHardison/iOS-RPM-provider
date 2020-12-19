@@ -47,9 +47,9 @@ class AddAppointmentTableViewController: UITableViewController {
                 appoinment.first_name = self.patientNameTxt.getText
                 appoinment.last_name = "A"
                 appoinment.doctor_id = profile.doctor?.id?.description ?? "0"
-                appoinment.service_id = "2"
+                appoinment.service_id = profile.doctor?.services_id ?? ""
                 appoinment.scheduled_at = self.schudleTxt.getText
-                appoinment.consult_time = "5"
+                appoinment.consult_time = "15"
                 appoinment.appointment_type = "ONLINE"
                 appoinment.description = self.commentTxt.text ?? ""
                 appoinment.email = self.emailTxt.getText

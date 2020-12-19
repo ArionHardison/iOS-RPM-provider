@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Montserrat-Regular.ttf">
-            <string>Montserrat-Regular</string>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
         </array>
         <array key="Montserrat-Thin.ttf">
             <string>Montserrat-Thin</string>
@@ -24,30 +24,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="reb-2Y-vov">
-                    <rect key="frame" x="10" y="0.0" width="394" height="60"/>
+                    <rect key="frame" x="10" y="10" width="394" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JM-hQ-98O">
-                            <rect key="frame" x="0.0" y="0.0" width="354.5" height="60"/>
-                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                             <color key="textColor" name="TextBlackColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4o-gQ-V3t">
-                            <rect key="frame" x="364.5" y="0.0" width="29.5" height="60"/>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4o-gQ-V3t">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
                             <fontDescription key="fontDescription" name="Montserrat-Thin" family="Montserrat" pointSize="50"/>
                             <color key="textColor" name="TextBlackColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="4JM-hQ-98O" firstAttribute="width" secondItem="reb-2Y-vov" secondAttribute="width" multiplier="0.9" id="Fg3-j3-0FO"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="reb-2Y-vov" secondAttribute="trailing" constant="10" id="Izo-le-fyl"/>
-                <constraint firstItem="reb-2Y-vov" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Jgr-Y2-O81"/>
+                <constraint firstItem="reb-2Y-vov" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Jgr-Y2-O81"/>
                 <constraint firstAttribute="bottom" secondItem="reb-2Y-vov" secondAttribute="bottom" id="VhS-eA-hmu"/>
                 <constraint firstItem="reb-2Y-vov" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="nt6-31-VpS"/>
             </constraints>

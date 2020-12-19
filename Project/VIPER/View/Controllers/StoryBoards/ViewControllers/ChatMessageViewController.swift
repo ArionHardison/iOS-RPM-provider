@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import IQKeyboardManagerSwift
+import ObjectMapper
 
 class ChatMessageViewController: UIViewController {
     
@@ -69,6 +70,9 @@ class ChatMessageViewController: UIViewController {
                 showToast(msg: "Messge should not be empty")
             }else{
                 ChatManager.shared.sentMessage(message: self.msgTxt.text ?? "", senderId: Int(UserDefaultConfig.UserID ) ?? 0, timestamp: Date().description, provider_id: (self.chats?.patient?.id ?? 0).description)
+                let url = "\(Base.chatPush.rawValue)?patient_id=\(self.chats?.patient?.id ?? 0)&message=\(self.msgTxt.text ?? "")"
+                self.presenter?.HITAPI(api: url, params: nil, methodType: .GET, modelClass: CardSuccess.self, token: true)
+                
             }
         }
     }
@@ -129,4 +133,17 @@ extension ChatMessageViewController : UITableViewDelegate,UITableViewDataSource{
         self.chatListTable.registerCell(withId: XIB.Names.ChatRightCell)
         self.chatListTable.registerCell(withId: XIB.Names.ChatLeftCell)
     }
+}
+
+
+extension ChatMessageViewController : PresenterOutputProtocol {
+    func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+    
+    }
+    
+    func showError(error: CustomError) {
+        
+    }
+    
+    
 }

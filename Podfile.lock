@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (4.8.2)
-  - AlamofireObjectMapper (5.2.0):
-    - Alamofire (~> 4.7)
-    - ObjectMapper (~> 3.4)
+  - Alamofire (5.0.0-rc.2)
+  - AlamofireObjectMapper (6.2.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - ObjectMapper (~> 3.5.1)
   - CLWeeklyCalendarView (0.0.3)
   - CreditCardForm (0.2.0)
   - DynamicBlurView (2.0.2)
@@ -18,7 +18,7 @@ PODS:
     - KWDrawerController/Core (= 4.1.6)
   - KWDrawerController/Core (4.1.6)
   - lottie-ios (3.1.8)
-  - ObjectMapper (3.4.2)
+  - ObjectMapper (3.5.3)
   - PINCache (3.0.3):
     - PINCache/Arc-exception-safe (= 3.0.3)
     - PINCache/Core (= 3.0.3)
@@ -45,7 +45,7 @@ PODS:
   - TwilioVoice (5.5.1)
 
 DEPENDENCIES:
-  - Alamofire (= 4.8.2)
+  - Alamofire
   - AlamofireObjectMapper
   - CLWeeklyCalendarView
   - CreditCardForm
@@ -64,19 +64,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - AlamofireObjectMapper
     - DynamicBlurView
     - IQKeyboardManagerSwift
     - KWDrawerController
-    - ObjectMapper
     - PopupDialog
   trunk:
     - Alamofire
+    - AlamofireObjectMapper
     - CLWeeklyCalendarView
     - CreditCardForm
     - GoogleMaps
     - GooglePlaces
     - lottie-ios
+    - ObjectMapper
     - PINCache
     - PINOperation
     - PINRemoteImage
@@ -87,8 +87,8 @@ SPEC REPOS:
     - TwilioVoice
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   CLWeeklyCalendarView: 74d8511e58b40cb9571afc51b90217e32b51f891
   CreditCardForm: bba4aad545236f97f2dc45ea3bed0cb57d5e0e99
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
@@ -97,7 +97,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   KWDrawerController: bf8fc10ddc596ddbfdabda401357a99dba04a1c8
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
@@ -108,6 +108,6 @@ SPEC CHECKSUMS:
   TwilioVideo: 057061e4302e4b2862b0ac6cf69a3321e7c29b19
   TwilioVoice: c440f2c964d3b0eba946c30c9f1018d8e5d82af9
 
-PODFILE CHECKSUM: 8e15cd15a6d721974e7195cf2078fb84fbb49b06
+PODFILE CHECKSUM: 3fa51cf2d9d8d291284ac74931d0fed3897f4fee
 
 COCOAPODS: 1.10.0

@@ -19,6 +19,7 @@ class CreateAppointmentViewController: UIViewController {
     var isFromCalendar : Bool  = false
     var patientDetails = AllPatients()
     var selectedDate : String = ""
+    var serviceId : Int = 0
     
     
     override func viewDidLoad() {
@@ -60,8 +61,8 @@ extension CreateAppointmentViewController {
         params.updateValue(UserDefaultConfig.UserID ?? 0, forKey: "doctor_id")
         params.updateValue(self.patientDetails.id ?? 0, forKey: "selectedPatient")
         params.updateValue("ONLINE", forKey: "appointment_type")
-        params.updateValue(5, forKey: "consult_time")
-        params.updateValue(2, forKey: "service_id")
+        params.updateValue(15, forKey: "consult_time")
+        params.updateValue(profile.doctor?.services_id ?? "0", forKey: "service_id")
         params.updateValue(self.selectedDate, forKey: "scheduled_at")
         params.updateValue(self.commentsTextView.text ?? "", forKey: "description")
         self.presenter?.HITAPI(api:Base.addAppoinemnt.rawValue, params: params, methodType: .POST, modelClass: CreateAppointment.self, token: true)

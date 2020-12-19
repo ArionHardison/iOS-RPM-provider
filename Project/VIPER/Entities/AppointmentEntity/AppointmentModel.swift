@@ -314,6 +314,8 @@ struct Appointments : Mappable {
     var updated_at : String?
     var deleted_at : String?
     var status : String?
+    var driver_rating : Int?
+    var patient_rating : Int?
     var hospital : Hospital?
     var service : String?
     init(){}
@@ -343,6 +345,8 @@ struct Appointments : Mappable {
         deleted_at <- map["deleted_at"]
         status <- map["status"]
         hospital <- map["hospital"]
+        driver_rating <- map["driver_rating"]
+        patient_rating <- map["patient_rating"]
         service <- map["service"]
     }
     
@@ -368,6 +372,8 @@ struct All_appointments : Mappable {
     var updated_at : String?
     var deleted_at : String?
     var status : String?
+    var driver_rating : Int?
+    var patient_rating : Int?
     var patient : Patient?
     var hospital : Hospital?
     var service : Service?
@@ -402,6 +408,8 @@ struct All_appointments : Mappable {
         hospital <- map["hospital"]
         service <- map["service"]
         invoice <- map["invoice"]
+        driver_rating <- map["driver_rating"]
+        patient_rating <- map["patient_rating"]
     }
     
 }
@@ -698,6 +706,93 @@ struct Details : Mappable {
         duration <- map["duration"]
         price <- map["price"]
         is_enabled <- map["is_enabled"]
+    }
+
+}
+
+struct GetServices : Mappable {
+    var services : [Services]?
+    
+    init() {
+
+    }
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        services <- map["services"]
+    }
+
+}
+
+struct Services : Mappable {
+    var id : Int?
+    var speciality_id : String?
+    var name : String?
+    var status : Int?
+    
+    init() {
+        
+    }
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        id <- map["id"]
+        speciality_id <- map["speciality_id"]
+        name <- map["name"]
+        status <- map["status"]
+    }
+
+}
+
+
+struct SignUpResponse : Mappable {
+    var first_name : String?
+    var last_name : String?
+    var email : String?
+    var mobile : String?
+    var clinic_id : Int?
+    var is_administrative : Int?
+    var is_doctor : Int?
+    var added_by : Int?
+    var role : Int?
+    var email_token : String?
+    var push_device_token : String?
+    var subscribe_from : String?
+    var updated_at : String?
+    var created_at : String?
+    var id : Int?
+    var regn_id : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        first_name <- map["first_name"]
+        last_name <- map["last_name"]
+        email <- map["email"]
+        mobile <- map["mobile"]
+        clinic_id <- map["clinic_id"]
+        is_administrative <- map["is_administrative"]
+        is_doctor <- map["is_doctor"]
+        added_by <- map["added_by"]
+        role <- map["role"]
+        email_token <- map["email_token"]
+        push_device_token <- map["push_device_token"]
+        subscribe_from <- map["subscribe_from"]
+        updated_at <- map["updated_at"]
+        created_at <- map["created_at"]
+        id <- map["id"]
+        regn_id <- map["regn_id"]
     }
 
 }

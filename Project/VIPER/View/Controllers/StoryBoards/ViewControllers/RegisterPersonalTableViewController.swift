@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import ObjectMapper
 
 class RegisterPersonalTableViewController: UITableViewController {
     @IBOutlet weak var firstNameTextField: HoshiTextField!
@@ -23,6 +24,7 @@ class RegisterPersonalTableViewController: UITableViewController {
     @IBOutlet weak var countryImage: UIImageView!
     @IBOutlet weak var addressTextField: HoshiTextField!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var postalCode: HoshiTextField!
     
     var countryCode :String?
     var googlePlacesHelper : GooglePlacesHelper?
@@ -59,6 +61,7 @@ extension RegisterPersonalTableViewController {
         self.mobileNumberTextField.delegate = self
         self.countryCodeTextField.delegate = self
         self.addressTextField.delegate = self
+        self.tableView.allowsSelection = false
         self.googlePlacesHelper = GooglePlacesHelper()
         let country = Common.getCountries()
         for eachCountry in country {
@@ -84,6 +87,19 @@ extension RegisterPersonalTableViewController {
         self.mobileNumberTextField.placeholder = "Mobile Number"
         self.countryCodeTextField.placeholder = "Country"
         self.addressTextField.placeholder = "Address"
+        
+        
+//        self.firstNameTextField.text = "ada"
+//        self.lastNameTextField.text = "asdasd"
+//        self.personalEmailTextField.text = "bas@c.com"
+//        self.passwordTextField.text = "123123"
+//        self.confirmPasswordTextField.text = "123123"
+//        self.clinicNameTextField.text = "qweqwe"
+//        self.clinicEmailTextField.text = "ba@c.com"
+//        self.mobileNumberTextField.text = "1231231231"
+//        self.countryCodeTextField.text = "+91"
+//        self.addressTextField.text = "nungabakkam"
+        
         self.continueButton.setTitle("Continue", for: .normal)
         
     }
@@ -115,17 +131,17 @@ extension RegisterPersonalTableViewController {
             showToast(msg:"Enter Password to Continue")
             return
         }
-        
+
         guard let confirmPasswd = self.confirmPasswordTextField.text,!confirmPasswd.isEmpty , password == confirmPasswd else {
             showToast(msg:"Enter Confirm Password to Continue")
             return
         }
-        
+
         guard  let clinicName = self.clinicNameTextField.text, !clinicName.isEmpty else {
             showToast(msg:"Enter Clinic Name to Continue")
             return
         }
-        
+
         guard  let clinicEmail = self.clinicEmailTextField.text , !clinicEmail.isEmpty else {
             showToast(msg:"Enter Clinic Email to Continue")
             return
@@ -134,14 +150,82 @@ extension RegisterPersonalTableViewController {
             showToast(msg: "Enter Mobile Number to Continue")
             return
         }
-        
+
         guard let address = self.addressTextField.text, !address.isEmpty else {
             showToast(msg: "Enter Address to Continue")
             return
         }
+
+        let mobileNumber = (countryCode ?? "+91") + mobile
+        var params = [String:Any]()
+        params.updateValue(personalEmail, forKey: "email")
+        params.updateValue(mobileNumber, forKey: "phone")
+        params.updateValue(clinicEmail, forKey: "clinic_email")
+        self.presenter?.HITAPI(api: Base.verifyApi.rawValue, params: params, methodType: .POST, modelClass: CardSuccess.self, token: false)
         
     }
-    
+    private func callNextPage(){
+        guard let firstName = self.firstNameTextField.text, !firstName.isEmpty else {
+            showToast(msg:"Enter First Name to Continue")
+            return
+        }
+        guard  let lastName = self.lastNameTextField.text, !lastName.isEmpty else {
+            showToast(msg:"Enter Last Name to Continue")
+            return
+        }
+        guard  let personalEmail = self.personalEmailTextField.text, !personalEmail.isEmpty else {
+            showToast(msg: "Enter Personal Email to Continue")
+            return
+        }
+        guard let password = self.passwordTextField.text ,!password.isEmpty else {
+            showToast(msg:"Enter Password to Continue")
+            return
+        }
+
+        guard let confirmPasswd = self.confirmPasswordTextField.text,!confirmPasswd.isEmpty , password == confirmPasswd else {
+            showToast(msg:"Enter Confirm Password to Continue")
+            return
+        }
+
+        guard  let clinicName = self.clinicNameTextField.text, !clinicName.isEmpty else {
+            showToast(msg:"Enter Clinic Name to Continue")
+            return
+        }
+
+        guard  let clinicEmail = self.clinicEmailTextField.text , !clinicEmail.isEmpty else {
+            showToast(msg:"Enter Clinic Email to Continue")
+            return
+        }
+        guard  let mobile = self.mobileNumberTextField.text , !mobile.isEmpty else {
+            showToast(msg: "Enter Mobile Number to Continue")
+            return
+        }
+
+        guard let address = self.addressTextField.text, !address.isEmpty else {
+            showToast(msg: "Enter Address to Continue")
+            return
+        }
+        guard let postal = self.postalCode.text , !postal.isEmpty else {
+            showToast(msg: "Enter Postal Code to Continue")
+            return
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.CompleteRegistrationTableViewController) as! CompleteRegistrationTableViewController
+        vc.firstName = firstName
+        vc.lastName = lastName
+        vc.personalEmail = personalEmail
+        vc.password = password
+        vc.confirmPasswd = confirmPasswd
+        vc.clinicName = clinicName
+        vc.clinicEmail = clinicEmail
+        vc.countryCode = self.countryCode ?? ""
+        vc.phoneNumber = mobile
+        vc.address = address
+        vc.lat = self.dlat ?? 0.0
+        vc.long = self.dlon ?? 0.0
+        vc.pincode = postal
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     
 }
@@ -210,6 +294,29 @@ extension RegisterPersonalTableViewController : UITextFieldDelegate {
             return false
         }
         return true
+    }
+    
+    
+}
+
+extension RegisterPersonalTableViewController : PresenterOutputProtocol {
+    func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
+        
+        switch String(describing: modelClass) {
+        case model.type.CardSuccess:
+            let data = dataDict as? CardSuccess
+            showToast(msg: data?.message ?? "")
+            self.callNextPage()
+            break
+        default:
+            break
+        }
+        
+    }
+    
+    func showError(error: CustomError) {
+        
+        showToast(msg: error.localizedDescription)
     }
     
     
