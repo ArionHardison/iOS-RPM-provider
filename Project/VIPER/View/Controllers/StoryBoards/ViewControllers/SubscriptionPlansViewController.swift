@@ -29,6 +29,7 @@ class SubscriptionPlansViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBar()
+        self.profileApi()
     }
 }
 
@@ -38,6 +39,7 @@ extension SubscriptionPlansViewController {
         
         self.subscriptionTableView.register(UINib(nibName: XIB.Names.SuggestedCell, bundle: nil), forCellReuseIdentifier:XIB.Names.SuggestedCell)
         self.getSubscriptionList()
+        
         self.subscriptionTableView.delegate = self
         self.subscriptionTableView.dataSource = self
         self.subscriptionTableView.separatorStyle = .none
@@ -161,20 +163,20 @@ extension SubscriptionPlansViewController : PresenterOutputProtocol {
     func showSuccess(api: String, dataArray: [Mappable]?, dataDict: Mappable?, modelClass: Any) {
         switch String(describing: modelClass) {
             case model.type.SubscriptionList:
-                
+                self.loader.isHideInMainThread(true)
                 let data = dataDict as? SubscriptionList
                 self.subscriptionList = data?.subscription ?? []
                 self.subscriptionTableView.reloadInMainThread()
                 
                 break
         case model.type.ProfileEntity:
-            
+            self.loader.isHideInMainThread(true)
             let data = dataDict as? ProfileEntity
             self.walletBalance = data?.doctor?.wallet_balance ?? 0.0
             
             break
         case model.type.CardSuccess:
-            
+            self.loader.isHideInMainThread(true)
             let data = dataDict as? CardSuccess
             let alert  = showAlert(message: data?.message) { (_) in
                 self.dismiss(animated: true, completion: nil)

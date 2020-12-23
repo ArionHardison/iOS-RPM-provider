@@ -25,7 +25,7 @@ class LaunchViewController: UIViewController {
 extension LaunchViewController {
     func initialLoads() {
         self.buttonLogin.addTarget(self, action: #selector(onTapLogin), for: .touchUpInside)
-        self.buttonRegister.addTarget(self, action: #selector(onTapLogin), for: .touchUpInside)
+        self.buttonRegister.addTarget(self, action: #selector(onTapRegistration), for: .touchUpInside)
 
     }
     
@@ -35,10 +35,12 @@ extension LaunchViewController {
     
     @objc func onTapLogin(){
         
-        self.push(id: Storyboard.Ids.SignInEmailViewController, animation: true)
+        self.push(id: Storyboard.Ids.SignInMobileViewController, animation: true)
     }
     @objc func onTapRegistration(){
-        self.push(id: Storyboard.Ids.SignInEmailViewController, animation: true)
+        self.push(id: Storyboard.Ids.RegisterPersonalTableViewController, animation: true)
+
+//        self.push(id: Storyboard.Ids.SignInEmailViewController, animation: true)
 
     }
 }

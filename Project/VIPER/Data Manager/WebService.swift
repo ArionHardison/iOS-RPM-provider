@@ -50,7 +50,7 @@ extension Webservice : WebServiceProtocol {
         if(token) {
             
             
-            let accessToken = UserDefaultConfig.Token ?? ""
+            let accessToken = UserDefaultConfig.Token
             
             headers[WebConstants.string.Authorization] = "\(WebConstants.string.bearer) \(accessToken)"
 //            headers.updateValue("\(WebConstants.string.bearer) \(accessToken)", forKey: WebConstants.string.Authorization)

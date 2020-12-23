@@ -47,7 +47,7 @@ extension AddPrescriptionViewController {
         self.labelDescription.text = "Add Instruction for Prescription"
         self.labelUploadImage.text = "Upload Prescription Image"
         self.uploadImageView.isUserInteractionEnabled = true
-        self.saveButton.setTitle("Save", for: .normal)
+        self.saveButton.setTitle("Save Prescription", for: .normal)
         self.saveButton.addTarget(self, action: #selector(uploadAction(sender:)), for: .touchUpInside)
         self.uploadImageView.addTap {
             self.uploadPrescriptionImage()

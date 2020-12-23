@@ -117,17 +117,24 @@ extension CompleteRegistrationTableViewController {
             return
         }
         
+        guard  let consulationfees = self.consulationFees.text, !consulationfees.isEmpty else {
+            showToast(msg: "Enter Consulation Fees")
+            return
+        }
+        
+        
         
         var params = [String:Any]()
         params.updateValue(firstName, forKey: "first_name")
         params.updateValue(lastName, forKey: "last_name")
         params.updateValue(personalEmail, forKey: "email")
-        params.updateValue(password, forKey: "password")
+        params.updateValue("123456", forKey: "password")
         let mobileNumber = countryCode + phoneNumber
         params.updateValue(mobileNumber, forKey: "phone")
         params.updateValue(gender, forKey: "gender")
         params.updateValue(selectedCategoryID, forKey: "specialities")
         params.updateValue("ios", forKey: "device_type")
+        params.updateValue(consulationfees, forKey: "fees")
         params.updateValue(deviceTokenString, forKey: "device_token")
         params.updateValue(push_device_token, forKey: "push_device_token")
         params.updateValue(deviceId, forKey: "device_id")
@@ -147,6 +154,7 @@ extension CompleteRegistrationTableViewController {
         }
         var servicesArray = [String:String]()
         for (index,values) in self.services.enumerated(){
+//            params.updateValue(values.id ?? 0, forKey: "service[\(index)]")
             servicesArray.updateValue("\(values.id ?? 0)", forKey: "\(index)")
         }
         params.updateValue(workingDay, forKey: "working_day")
@@ -159,7 +167,7 @@ extension CompleteRegistrationTableViewController {
     
     private func signinProcess(){
         var params:[String:Any] =  [PARAM_EMAIL:self.personalEmail,
-                                    PARAM_PASSWRD : self.password,
+                                    PARAM_PASSWRD : "123456",
                                     PARAM_CLIENTID:appClientId,
                                     PARAM_CLIENTSECRET: appSecretKey,
                                     PARAM_PUSH : push_device_token,

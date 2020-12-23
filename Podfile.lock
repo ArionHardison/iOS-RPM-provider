@@ -39,6 +39,7 @@ PODS:
   - PubNub (4.15.4):
     - PubNub/Core (= 4.15.4)
   - PubNub/Core (4.15.4)
+  - SKCountryPicker (1.2.9)
   - Stripe (20.1.1)
   - SwiftyJSON (5.0.0)
   - TwilioVideo (2.12.0)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - PINRemoteImage
   - PopupDialog (~> 0.7)
   - PubNub (~> 4)
+  - SKCountryPicker
   - Stripe (~> 20.1.1)
   - SwiftyJSON
   - TwilioVideo (~> 2.10)
@@ -81,6 +83,7 @@ SPEC REPOS:
     - PINOperation
     - PINRemoteImage
     - PubNub
+    - SKCountryPicker
     - Stripe
     - SwiftyJSON
     - TwilioVideo
@@ -103,11 +106,12 @@ SPEC CHECKSUMS:
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
   PubNub: 0028862c42e5adafd2bf7cc8c062731c055da6e2
+  SKCountryPicker: 7ad1e7dfb482cfb26855e33c2d70dbf1eaf218fe
   Stripe: 2cb10595133247a96ece092eb0614786c604382f
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TwilioVideo: 057061e4302e4b2862b0ac6cf69a3321e7c29b19
   TwilioVoice: c440f2c964d3b0eba946c30c9f1018d8e5d82af9
 
-PODFILE CHECKSUM: 3fa51cf2d9d8d291284ac74931d0fed3897f4fee
+PODFILE CHECKSUM: 0832dec696f9459a54aa2c1d041c208d7d70b52c
 
 COCOAPODS: 1.10.0

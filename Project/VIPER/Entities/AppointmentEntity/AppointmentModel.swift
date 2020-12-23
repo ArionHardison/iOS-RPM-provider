@@ -166,6 +166,7 @@ struct Profile : Mappable {
     var alcohol : String?
     var activity : String?
     var food : String?
+   
     
     init?(map: Map) {
         
@@ -207,6 +208,7 @@ struct Profile : Mappable {
         alcohol <- map["alcohol"]
         activity <- map["activity"]
         food <- map["food"]
+        
     }
     
 }
@@ -793,6 +795,152 @@ struct SignUpResponse : Mappable {
         created_at <- map["created_at"]
         id <- map["id"]
         regn_id <- map["regn_id"]
+    }
+
+}
+
+struct Currency : Mappable {
+    var site_title : String?
+    var site_logo : String?
+    var site_favicon : String?
+    var site_copyright : String?
+    var delivery_charge : String?
+    var resturant_response_time : String?
+    var currency : String?
+    var currency_code : String?
+    var search_distance : String?
+    var tax : String?
+    var payment_mode : String?
+    var manual_assign : String?
+    var transporter_response_time : String?
+    var gOOGLE_API_KEY : String?
+    var android_api_key : String?
+    var ios_api_key : String?
+    var tWILIO_SID : String?
+    var tWILIO_TOKEN : String?
+    var tWILIO_FROM : String?
+    var pUBNUB_PUB_KEY : String?
+    var pUBNUB_SUB_KEY : String?
+    var stripe_charge : String?
+    var stripe_publishable_key : String?
+    var stripe_secret_key : String?
+    var fB_CLIENT_ID : String?
+    var fB_CLIENT_SECRET : String?
+    var fB_REDIRECT : String?
+    var gOOGLE_CLIENT_ID : String?
+    var gOOGLE_CLIENT_SECRET : String?
+    var gOOGLE_REDIRECT : String?
+    var aNDROID_ENV : String?
+    var aNDROID_PUSH_KEY : String?
+    var iOS_USER_ENV : String?
+    var iOS_PROVIDER_ENV : String?
+    var sUB_CATEGORY : String?
+    var sCHEDULE_ORDER : String?
+    var client_id : String?
+    var client_secret : String?
+    var pRODUCT_ADDONS : String?
+    var bRAINTREE_ENV : String?
+    var bRAINTREE_MERCHANT_ID : String?
+    var bRAINTREE_PUBLIC_KEY : String?
+    var bRAINTREE_PRIVATE_KEY : String?
+    var rIPPLE_KEY : String?
+    var rIPPLE_BARCODE : String?
+    var eTHER_ADMIN_KEY : String?
+    var eTHER_KEY : String?
+    var eTHER_BARCODE : String?
+    var cLIENT_AUTHORIZATION : String?
+    var sOCIAL_FACEBOOK_LINK : String?
+    var sOCIAL_TWITTER_LINK : String?
+//    var sOCIAL_G-PLUS_LINK : String?
+    var sOCIAL_INSTAGRAM_LINK : String?
+    var sOCIAL_PINTEREST_LINK : String?
+    var sOCIAL_VIMEO_LINK : String?
+    var sOCIAL_YOUTUBE_LINK : String?
+    var cOMMISION_OVER_FOOD : String?
+    var cOMMISION_OVER_DELIVERY_FEE : String?
+    var iOS_APP_LINK : String?
+    var aNDROID_APP_LINK : String?
+    var default_lang : String?
+    var dEMO_MODE : String?
+    var about : String?
+    var help : String?
+    var privacy : String?
+    var chat_discount : String?
+    var stripe_public_key : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        site_title <- map["site_title"]
+        site_logo <- map["site_logo"]
+        site_favicon <- map["site_favicon"]
+        site_copyright <- map["site_copyright"]
+        delivery_charge <- map["delivery_charge"]
+        resturant_response_time <- map["resturant_response_time"]
+        currency <- map["currency"]
+        currency_code <- map["currency_code"]
+        search_distance <- map["search_distance"]
+        tax <- map["tax"]
+        payment_mode <- map["payment_mode"]
+        manual_assign <- map["manual_assign"]
+        transporter_response_time <- map["transporter_response_time"]
+        gOOGLE_API_KEY <- map["GOOGLE_API_KEY"]
+        android_api_key <- map["android_api_key"]
+        ios_api_key <- map["ios_api_key"]
+        tWILIO_SID <- map["TWILIO_SID"]
+        tWILIO_TOKEN <- map["TWILIO_TOKEN"]
+        tWILIO_FROM <- map["TWILIO_FROM"]
+        pUBNUB_PUB_KEY <- map["PUBNUB_PUB_KEY"]
+        pUBNUB_SUB_KEY <- map["PUBNUB_SUB_KEY"]
+        stripe_charge <- map["stripe_charge"]
+        stripe_publishable_key <- map["stripe_publishable_key"]
+        stripe_secret_key <- map["stripe_secret_key"]
+        fB_CLIENT_ID <- map["FB_CLIENT_ID"]
+        fB_CLIENT_SECRET <- map["FB_CLIENT_SECRET"]
+        fB_REDIRECT <- map["FB_REDIRECT"]
+        gOOGLE_CLIENT_ID <- map["GOOGLE_CLIENT_ID"]
+        gOOGLE_CLIENT_SECRET <- map["GOOGLE_CLIENT_SECRET"]
+        gOOGLE_REDIRECT <- map["GOOGLE_REDIRECT"]
+        aNDROID_ENV <- map["ANDROID_ENV"]
+        aNDROID_PUSH_KEY <- map["ANDROID_PUSH_KEY"]
+        iOS_USER_ENV <- map["IOS_USER_ENV"]
+        iOS_PROVIDER_ENV <- map["IOS_PROVIDER_ENV"]
+        sUB_CATEGORY <- map["SUB_CATEGORY"]
+        sCHEDULE_ORDER <- map["SCHEDULE_ORDER"]
+        client_id <- map["client_id"]
+        client_secret <- map["client_secret"]
+        pRODUCT_ADDONS <- map["PRODUCT_ADDONS"]
+        bRAINTREE_ENV <- map["BRAINTREE_ENV"]
+        bRAINTREE_MERCHANT_ID <- map["BRAINTREE_MERCHANT_ID"]
+        bRAINTREE_PUBLIC_KEY <- map["BRAINTREE_PUBLIC_KEY"]
+        bRAINTREE_PRIVATE_KEY <- map["BRAINTREE_PRIVATE_KEY"]
+        rIPPLE_KEY <- map["RIPPLE_KEY"]
+        rIPPLE_BARCODE <- map["RIPPLE_BARCODE"]
+        eTHER_ADMIN_KEY <- map["ETHER_ADMIN_KEY"]
+        eTHER_KEY <- map["ETHER_KEY"]
+        eTHER_BARCODE <- map["ETHER_BARCODE"]
+        cLIENT_AUTHORIZATION <- map["CLIENT_AUTHORIZATION"]
+        sOCIAL_FACEBOOK_LINK <- map["SOCIAL_FACEBOOK_LINK"]
+        sOCIAL_TWITTER_LINK <- map["SOCIAL_TWITTER_LINK"]
+//        sOCIAL_G-PLUS_LINK <- map["SOCIAL_G-PLUS_LINK"]
+        sOCIAL_INSTAGRAM_LINK <- map["SOCIAL_INSTAGRAM_LINK"]
+        sOCIAL_PINTEREST_LINK <- map["SOCIAL_PINTEREST_LINK"]
+        sOCIAL_VIMEO_LINK <- map["SOCIAL_VIMEO_LINK"]
+        sOCIAL_YOUTUBE_LINK <- map["SOCIAL_YOUTUBE_LINK"]
+        cOMMISION_OVER_FOOD <- map["COMMISION_OVER_FOOD"]
+        cOMMISION_OVER_DELIVERY_FEE <- map["COMMISION_OVER_DELIVERY_FEE"]
+        iOS_APP_LINK <- map["IOS_APP_LINK"]
+        aNDROID_APP_LINK <- map["ANDROID_APP_LINK"]
+        default_lang <- map["default_lang"]
+        dEMO_MODE <- map["DEMO_MODE"]
+        about <- map["about"]
+        help <- map["help"]
+        privacy <- map["privacy"]
+        chat_discount <- map["chat_discount"]
+        stripe_public_key <- map["stripe_public_key"]
     }
 
 }

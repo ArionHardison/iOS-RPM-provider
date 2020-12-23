@@ -40,15 +40,15 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Need camera access for uploading images</string>
+	<string>It helps you to upload your images for profile picture and to add your medical records</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Need location access for updating nearby friends</string>
+	<string>Tele-Health would like to get to know your current location to get the nearby doctors for easy and fast consulation</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app will use your location to show cool stuffs near you.</string>
+	<string>Tele-Health would like to get to know your current location to get the nearby doctors for easy and fast consulation</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Need microphone access for uploading videos</string>
+	<string>Tele-Health would like to access your microphone inorder to connect through video call to hear your voice</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Need photo library access for uploading images</string>
+	<string>It helps you to upload your images for profile picture and to add your medical records</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Bold.ttf</string>

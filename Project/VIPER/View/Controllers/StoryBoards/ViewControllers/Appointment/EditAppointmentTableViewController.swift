@@ -85,11 +85,11 @@ extension EditAppointmentTableViewController {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back").resizeImage(newWidth: 20), style: .plain, target: self, action: #selector(self.backButtonClick))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.string.Done.localize(), style: .done, target: self, action: #selector(self.doneAction))
-        self.navigationItem.title = Constants.string.editAppointment.localize()
-        self.buttonPatientSms.addTarget(self, action: #selector(patientSMSAction(sender:)), for: .touchUpInside)
-        self.buttonDoctorSms.addTarget(self, action: #selector(doctorSMSAction(sender:)), for: .touchUpInside)
-        self.buttonPatientEmail.addTarget(self, action: #selector(patientEmailAction(sender:)), for: .touchUpInside)
-        self.buttonDoctorEmail.addTarget(self, action: #selector(doctorEmailAction(sender:)), for: .touchUpInside)
+//        self.navigationItem.title = Constants.string.editAppointment.localize()
+//        self.buttonPatientSms.addTarget(self, action: #selector(patientSMSAction(sender:)), for: .touchUpInside)
+//        self.buttonDoctorSms.addTarget(self, action: #selector(doctorSMSAction(sender:)), for: .touchUpInside)
+//        self.buttonPatientEmail.addTarget(self, action: #selector(patientEmailAction(sender:)), for: .touchUpInside)
+//        self.buttonDoctorEmail.addTarget(self, action: #selector(doctorEmailAction(sender:)), for: .touchUpInside)
 
     }
     
@@ -108,10 +108,10 @@ extension EditAppointmentTableViewController {
     
     func setDesign() {
         
-        self.buttonPatientSms.set(image:isSMS ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "SMS", titlePosition: .right, additionalSpacing: 8, state: .normal)
-        self.buttonPatientEmail.set(image:isEmail ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "Email", titlePosition: .right, additionalSpacing: 8, state: .normal)
-        self.buttonDoctorSms.set(image:isNSMS ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "SMS", titlePosition: .right, additionalSpacing: 16, state: .normal)
-        self.buttonDoctorEmail.set(image:isNEmail ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "Email", titlePosition: .right, additionalSpacing: 16, state: .normal)
+////        self.buttonPatientSms.set(image:isSMS ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "SMS", titlePosition: .right, additionalSpacing: 8, state: .normal)
+//        self.buttonPatientEmail.set(image:isEmail ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "Email", titlePosition: .right, additionalSpacing: 8, state: .normal)
+//        self.buttonDoctorSms.set(image:isNSMS ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "SMS", titlePosition: .right, additionalSpacing: 16, state: .normal)
+//        self.buttonDoctorEmail.set(image:isNEmail ? #imageLiteral(resourceName: "selectedBox").resizeImage(newWidth: 20) : #imageLiteral(resourceName: "Rectangle 298").resizeImage(newWidth: 20), title: "Email", titlePosition: .right, additionalSpacing: 16, state: .normal)
 
     }
     

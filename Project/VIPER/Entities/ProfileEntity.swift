@@ -13,6 +13,7 @@ struct ProfileEntity : Mappable {
     
     var doctor : Doctor?
     var clinics : [Clinics]?
+    var currency : Currency?
     init(){}
     init?(map: Map) {
         
@@ -22,6 +23,7 @@ struct ProfileEntity : Mappable {
         
         doctor <- map["doctor"]
         clinics <- map["clinics"]
+        currency <- map["currency"]
     }
     
 }
@@ -70,6 +72,7 @@ struct Doctor : Mappable {
     var doctor_profile : Doctor_profile?
     var subscription : [ProfileSubscription]?
     var feedback : [Feedback]?
+    var currency : Currency?
 
     init?(map: Map) {
 
@@ -120,6 +123,7 @@ struct Doctor : Mappable {
         doctor_profile <- map["doctor_profile"]
         subscription <- map["subscription"]
         feedback <- map["feedback"]
+        currency  <- map["currency"]
     }
 
 }

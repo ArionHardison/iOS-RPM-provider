@@ -127,15 +127,15 @@ extension RegisterPersonalTableViewController {
             showToast(msg: "Enter Personal Email to Continue")
             return
         }
-        guard let password = self.passwordTextField.text ,!password.isEmpty else {
-            showToast(msg:"Enter Password to Continue")
-            return
-        }
-
-        guard let confirmPasswd = self.confirmPasswordTextField.text,!confirmPasswd.isEmpty , password == confirmPasswd else {
-            showToast(msg:"Enter Confirm Password to Continue")
-            return
-        }
+//        guard let password = self.passwordTextField.text ,!password.isEmpty else {
+//            showToast(msg:"Enter Password to Continue")
+//            return
+//        }
+//
+//        guard let confirmPasswd = self.confirmPasswordTextField.text,!confirmPasswd.isEmpty , password == confirmPasswd else {
+//            showToast(msg:"Enter Confirm Password to Continue")
+//            return
+//        }
 
         guard  let clinicName = self.clinicNameTextField.text, !clinicName.isEmpty else {
             showToast(msg:"Enter Clinic Name to Continue")
@@ -177,15 +177,15 @@ extension RegisterPersonalTableViewController {
             showToast(msg: "Enter Personal Email to Continue")
             return
         }
-        guard let password = self.passwordTextField.text ,!password.isEmpty else {
-            showToast(msg:"Enter Password to Continue")
-            return
-        }
-
-        guard let confirmPasswd = self.confirmPasswordTextField.text,!confirmPasswd.isEmpty , password == confirmPasswd else {
-            showToast(msg:"Enter Confirm Password to Continue")
-            return
-        }
+//        guard let password = self.passwordTextField.text ,!password.isEmpty else {
+//            showToast(msg:"Enter Password to Continue")
+//            return
+//        }
+//
+//        guard let confirmPasswd = self.confirmPasswordTextField.text,!confirmPasswd.isEmpty , password == confirmPasswd else {
+//            showToast(msg:"Enter Confirm Password to Continue")
+//            return
+//        }
 
         guard  let clinicName = self.clinicNameTextField.text, !clinicName.isEmpty else {
             showToast(msg:"Enter Clinic Name to Continue")
@@ -213,8 +213,8 @@ extension RegisterPersonalTableViewController {
         vc.firstName = firstName
         vc.lastName = lastName
         vc.personalEmail = personalEmail
-        vc.password = password
-        vc.confirmPasswd = confirmPasswd
+        vc.password = "password"
+        vc.confirmPasswd = "confirmPasswd"
         vc.clinicName = clinicName
         vc.clinicEmail = clinicEmail
         vc.countryCode = self.countryCode ?? ""
@@ -234,6 +234,15 @@ extension RegisterPersonalTableViewController {
 
 
 extension RegisterPersonalTableViewController{
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0{
+            return 2
+        }else{
+            return 5
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
         

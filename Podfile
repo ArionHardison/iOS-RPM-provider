@@ -21,6 +21,7 @@ target 'MiDokter Pro' do
     pod 'TwilioVideo', '~> 2.10'
     pod 'Stripe', '~> 20.1.1'
     pod 'CreditCardForm'
+    pod 'SKCountryPicker'
 
 
 end

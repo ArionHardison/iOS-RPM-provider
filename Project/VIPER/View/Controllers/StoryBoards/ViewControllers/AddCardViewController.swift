@@ -36,7 +36,7 @@ extension AddCardViewController {
     
     func initialLoads() {
         
-        STPPaymentConfiguration.shared().publishableKey = stripeKey//need to add on drive code
+        STPPaymentConfiguration.shared().publishableKey = profile.currency?.stripe_publishable_key ?? stripeKey//need to add on drive code
         self.creditCardView.cardHolderString =  String.removeNil(UserDefaultConfig.UserName)
         self.creditCardView.defaultCardColor = .primary
 //        self.creditCardView.
@@ -137,7 +137,7 @@ extension AddCardViewController : PresenterOutputProtocol {
         DispatchQueue.main.async {
             switch String(describing: modelClass) {
                 case model.type.CardSuccess:
-                    
+                    self.loader.isHideInMainThread(true)
                     let data = dataDict as? CardSuccess
                     let alert  = showAlert(message: data?.message) { (_) in
                         self.navigationController?.popViewController(animated: true)

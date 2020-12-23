@@ -56,26 +56,21 @@ class EditProfileTableViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.setupData()
         self.setupAction()
+        self.loader.isHidden = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor.primary
     }
-    
-    func setupData(){
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+//        self.setupData() .
+        self.loader.isHidden = false
         let data : ProfileEntity = profile
-            self.profileImage.setURLImage(data.doctor?.doctor_profile?.profile_pic ?? "")
-            self.labelFirstName.text = "\(data.doctor?.first_name ?? "")"
-            self.labelLastName.text = "\(data.doctor?.last_name ?? "")"
-            self.labelEmail.text = "\(data.doctor?.email ?? "")"
-            self.labelMobileNum.text = "\(data.doctor?.mobile ?? "")"
-            self.countryCodeTextField.text = data.doctor?.country_code ?? ""
-            self.textfieldSpecialization.text = "\(data.doctor?.doctor_profile?.speciality?.name ?? "")"
-            self.selectedCategoryID = data.doctor?.doctor_profile?.speciality?.id ?? 0
-            self.consultationFeesTextField.text = "\(data.doctor?.doctor_profile?.fees ?? 0)"
         if data.doctor?.doctor_profile?.profile_video ?? "" != ""{
         let url = URL(string: "\(imageURL)\(data.doctor?.doctor_profile?.profile_video ?? "")")
         if url != nil{
+            self.loader.isHidden = false
             self.videoURL = url as NSURL?
             self.addVideoButton.setTitle("", for: .normal)
             print(self.videoURL!)
@@ -89,16 +84,34 @@ class EditProfileTableViewController: UITableViewController {
                 let asset = AVURLAsset(url: self.videoURL! as URL , options: nil)
                 let imgGenerator = AVAssetImageGenerator(asset: asset)
                 imgGenerator.appliesPreferredTrackTransform = true
-                let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 1), actualTime: nil)
+                let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 2), actualTime: nil)
                 let thumbnail = UIImage(cgImage: cgImage)
                 self.profileImgView.image = thumbnail
                 self.addVideoButton.setTitle("", for: .normal)
                 self.playVideoButton.isHidden = false
+                self.loader.isHideInMainThread(true)
             } catch let error {
                 print("*** Error generating thumbnail: \(error.localizedDescription)")
+                self.loader.isHideInMainThread(true)
             }
+        }else{
+            self.loader.isHidden = true
         }
         }
+    }
+    
+    func setupData(){
+        let data : ProfileEntity = profile
+            self.profileImage.setURLImage(data.doctor?.doctor_profile?.profile_pic ?? "")
+            self.labelFirstName.text = "\(data.doctor?.first_name ?? "")"
+            self.labelLastName.text = "\(data.doctor?.last_name ?? "")"
+            self.labelEmail.text = "\(data.doctor?.email ?? "")"
+            self.labelMobileNum.text = "\(data.doctor?.mobile ?? "")"
+            self.countryCodeTextField.text = data.doctor?.country_code ?? ""
+            self.textfieldSpecialization.text = "\(data.doctor?.doctor_profile?.speciality?.name ?? "")"
+            self.selectedCategoryID = data.doctor?.doctor_profile?.speciality?.id ?? 0
+            self.consultationFeesTextField.text = "\(data.doctor?.doctor_profile?.fees ?? 0)"
+
         
     }
     

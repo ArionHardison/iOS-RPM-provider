@@ -43,6 +43,7 @@ class SignInMobileViewController: UIViewController {
     
     @IBAction func usingEmailAction(_ sender: Any) {
         self.push(id: Storyboard.Ids.SignInEmailViewController, animation: true)
+//        self.push(id: Storyboard.Ids.RegisterPersonalTableViewController, animation: true)
 
     }
     

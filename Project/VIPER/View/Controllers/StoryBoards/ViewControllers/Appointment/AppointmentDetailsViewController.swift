@@ -137,6 +137,7 @@ extension AppointmentDetailsViewController {
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AppointmentFeedBackViewController) as! AppointmentFeedBackViewController
 //        vc.appoitments = self.appoinment
 //        self.navigationController?.pushViewController(vc, animated: true)
+        if self.appoinment.patient_rating == 0 {
         if self.invoiceView == nil, let invoice = Bundle.main.loadNibNamed(XIB.Names.InvoiceView, owner: self, options: [:])?.first as? InvoiceView {
             invoice.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
             invoiceView = invoice
@@ -150,6 +151,11 @@ extension AppointmentDetailsViewController {
             }
         
             self.view.window?.addSubview(self.invoiceView)
+        }
+        }else{
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.Ids.AppointmentFeedBackViewController) as! AppointmentFeedBackViewController
+                    vc.appoitments = self.appoinment
+                    self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

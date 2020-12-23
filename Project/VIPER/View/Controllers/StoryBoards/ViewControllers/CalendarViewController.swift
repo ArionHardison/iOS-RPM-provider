@@ -125,26 +125,26 @@ extension CalendarViewController {
             self.push(from: self, ToViewContorller: vc)
         }))
 
-        alert.addAction(UIAlertAction(title: "No Show", style: .default, handler: { (_) in
-            print("User click Delete button")
-//            self.showNotify(sender: sender)
-        }))
+//        alert.addAction(UIAlertAction(title: "No Show", style: .default, handler: { (_) in
+//            print("User click Delete button")
+////            self.showNotify(sender: sender)
+//        }))
 
         alert.addAction(UIAlertAction(title: "Cancel Appointment", style: .default, handler: { (_) in
             self.cancelAppointmentDetail(id: appointment.id?.description ?? "0")
             
         }))
 
-        alert.addAction(UIAlertAction(title: "Call Patient", style: .default, handler: { (_) in
-            if let url = URL(string: "tel://\(appointment.patient?.phone ?? "")"), UIApplication.shared.canOpenURL(url) {
-                if #available(iOS 10, *) {
-                    UIApplication.shared.open(url)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
-            }
-            
-        }))
+//        alert.addAction(UIAlertAction(title: "Call Patient", style: .default, handler: { (_) in
+//            if let url = URL(string: "tel://\(appointment.patient?.phone ?? "")"), UIApplication.shared.canOpenURL(url) {
+//                if #available(iOS 10, *) {
+//                    UIApplication.shared.open(url)
+//                } else {
+//                    UIApplication.shared.openURL(url)
+//                }
+//            }
+//            
+//        }))
 
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
             print("User click Dismiss button")
@@ -252,6 +252,8 @@ extension CalendarViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        print(error.localizedDescription)
+        self.loader.isHidden = true
         
     }
     

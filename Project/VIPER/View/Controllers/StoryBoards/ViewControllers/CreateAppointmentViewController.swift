@@ -58,13 +58,14 @@ extension CreateAppointmentViewController {
             
         }
         var params = [String:Any]()
-        params.updateValue(UserDefaultConfig.UserID ?? 0, forKey: "doctor_id")
+        params.updateValue(UserDefaultConfig.UserID , forKey: "doctor_id")
         params.updateValue(self.patientDetails.id ?? 0, forKey: "selectedPatient")
         params.updateValue("ONLINE", forKey: "appointment_type")
         params.updateValue(15, forKey: "consult_time")
         params.updateValue(profile.doctor?.services_id ?? "0", forKey: "service_id")
         params.updateValue(self.selectedDate, forKey: "scheduled_at")
         params.updateValue(self.commentsTextView.text ?? "", forKey: "description")
+        params.updateValue("wallet", forKey: "payment_mode")
         self.presenter?.HITAPI(api:Base.addAppoinemnt.rawValue, params: params, methodType: .POST, modelClass: CreateAppointment.self, token: true)
         
         

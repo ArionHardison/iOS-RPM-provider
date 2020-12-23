@@ -197,7 +197,7 @@ extension WalletViewController : PresenterOutputProtocol {
     
     func showError(error: CustomError) {
         showToast(msg: error.localizedDescription)
-        self.loader.isHidden = true
+        self.loader.isHideInMainThread(true)
         
     }
     
