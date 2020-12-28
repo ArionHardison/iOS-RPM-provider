@@ -3944,10 +3944,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TEe-Nl-fla" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="TEe-Nl-fla" customClass="HoshiTextField" customModule="TeleHelath_Provider" customModuleProvider="target">
                                                     <rect key="frame" x="12" y="0.0" width="404" height="80"/>
                                                     <color key="textColor" name="TextBlackColor"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
@@ -8798,7 +8798,7 @@
             <size key="intrinsicContentSize" width="93.666666666666671" height="22"/>
         </designable>
         <designable name="TEe-Nl-fla">
-            <size key="intrinsicContentSize" width="62.666666666666664" height="22"/>
+            <size key="intrinsicContentSize" width="48" height="17"/>
         </designable>
         <designable name="V1B-vM-KA8">
             <size key="intrinsicContentSize" width="75.333333333333329" height="20"/>
