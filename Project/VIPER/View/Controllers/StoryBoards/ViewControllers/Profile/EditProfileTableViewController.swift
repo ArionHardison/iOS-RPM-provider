@@ -70,18 +70,19 @@ class EditProfileTableViewController: UITableViewController {
         if data.doctor?.doctor_profile?.profile_video ?? "" != ""{
         let url = URL(string: "\(imageURL)\(data.doctor?.doctor_profile?.profile_video ?? "")")
         if url != nil{
-            self.loader.isHidden = false
+//            self.loader.isHidden = false
             self.videoURL = url as NSURL?
             self.addVideoButton.setTitle("", for: .normal)
             print(self.videoURL!)
-            if let fileURL = self.videoURL {
-                if let videoData = NSData(contentsOf: fileURL as URL) {
-                       print(videoData.length)
-//                    self.videoData = videoData
-                  self.encodeVideo(videoURL: self.videoURL! as URL)
-                   
-                   }
-               }
+            self.encodeVideo(videoURL: self.videoURL! as URL)
+//            if let fileURL = self.videoURL {
+//                if let videoData = NSData(contentsOf: fileURL as URL) {
+//                       print(videoData.length)
+////                    self.videoData = videoData
+//
+//
+//                   }
+//               }
             do {
                 let asset = AVURLAsset(url: self.videoURL! as URL , options: nil)
                 let imgGenerator = AVAssetImageGenerator(asset: asset)
@@ -244,17 +245,15 @@ extension EditProfileTableViewController {
         showVideo { (url) in
             self.videoURL = url
             print(self.videoURL!)
+            self.encodeVideo(videoURL: self.videoURL! as URL)
             if let fileURL = self.videoURL {
-                if let videoData = NSData(contentsOf: fileURL as URL) {
-                       print(videoData.length)
-                    self.videoData = videoData
-                   }
+
                }
             do {
                 let asset = AVURLAsset(url: self.videoURL! as URL , options: nil)
                 let imgGenerator = AVAssetImageGenerator(asset: asset)
                 imgGenerator.appliesPreferredTrackTransform = true
-                let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 1), actualTime: nil)
+                let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 2), actualTime: nil)
                 let thumbnail = UIImage(cgImage: cgImage)
                 self.profileImgView.image = thumbnail
                 self.addVideoButton.setTitle("", for: .normal)
@@ -375,6 +374,7 @@ extension EditProfileTableViewController  {
             if let videoData = NSData(contentsOf: fileURL as URL) {
                    print(videoData.length)
                 self.videoData = videoData
+               
                }
            }
         do {
@@ -431,6 +431,11 @@ extension EditProfileTableViewController  {
                 print(time)
                 print("Successful")
                 print(exportSession?.outputURL ?? "")
+                if let videoData = NSData(contentsOf: (exportSession?.outputURL!)!) {
+                       print(videoData.length)
+                    self.videoData = videoData
+                   
+                   }
                
             default:
                 break
