@@ -61,6 +61,7 @@ extension CreateAppointmentViewController {
         params.updateValue(UserDefaultConfig.UserID , forKey: "doctor_id")
         params.updateValue(self.patientDetails.id ?? 0, forKey: "selectedPatient")
         params.updateValue("ONLINE", forKey: "appointment_type")
+        params.updateValue("consultation", forKey: "booking_for")
         params.updateValue(15, forKey: "consult_time")
         params.updateValue(profile.doctor?.services_id ?? "0", forKey: "service_id")
         params.updateValue(self.selectedDate, forKey: "scheduled_at")

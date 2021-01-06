@@ -300,15 +300,16 @@ extension CompleteRegistrationTableViewController : UITextFieldDelegate {
             PickerManager.shared.showTimePicker(selectedDate: textField.text, completionHandler: { selectedTime in
                 let timeFormatte = DateFormatter()
                 let locale = NSLocale.current
-                let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: locale)!
-                if dateFormat.range(of: "HH") != nil {
-                    timeFormatte.dateFormat = "HH:MM:SS"
-                }
-                else {
+                  let formatter : String = DateFormatter.dateFormat(fromTemplate: "j", options:0, locale:locale)!
+                  if formatter.contains("a") {
                     timeFormatte.dateFormat = "hh:mm:ss a"
-                }
+                      //phone is set to 12 hours
+                  } else {
+                    timeFormatte.dateFormat = "HH:mm:ss"
+                      //phone is set to 24 hours
+                  }
                 let updatedDate = timeFormatte.date(from: selectedTime)
-                timeFormatte.dateFormat = "HH:MM:SS"
+                timeFormatte.dateFormat = "HH:mm:ss"
                 let newTime = timeFormatte.string(from: updatedDate!)
                 print(newTime)
                 textField.text = newTime
@@ -319,13 +320,15 @@ extension CompleteRegistrationTableViewController : UITextFieldDelegate {
             PickerManager.shared.showTimePicker(selectedDate: textField.text, completionHandler: { selectedTime in
                 let timeFormatte = DateFormatter()
                 let locale = NSLocale.current
-                let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: locale)!
-                if dateFormat.range(of: "HH") != nil {
-                    timeFormatte.dateFormat = "HH:MM:SS"
-                }
-                else {
+                  let formatter : String = DateFormatter.dateFormat(fromTemplate: "j", options:0, locale:locale)!
+                  if formatter.contains("a") {
                     timeFormatte.dateFormat = "hh:mm:ss a"
-                }
+                      //phone is set to 12 hours
+                  } else {
+                    timeFormatte.dateFormat = "HH:MM:SS"
+                      //phone is set to 24 hours
+                  }
+                
                 let updatedDate = timeFormatte.date(from: selectedTime)
                 timeFormatte.dateFormat = "HH:MM:SS"
                 let newTime = timeFormatte.string(from: updatedDate ?? Date())

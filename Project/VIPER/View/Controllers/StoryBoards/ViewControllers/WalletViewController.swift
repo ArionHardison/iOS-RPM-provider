@@ -22,6 +22,10 @@ class WalletViewController: UIViewController {
     private lazy var loader  : UIView = {
         return createActivityIndicator(self.view)
     }()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     
     private var balance : Float = 0 {
         didSet {

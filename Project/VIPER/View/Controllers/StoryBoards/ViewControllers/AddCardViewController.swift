@@ -19,6 +19,10 @@ class AddCardViewController: UIViewController {
     private lazy var loader  : UIView = {
         return createActivityIndicator(self.view)
     }()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +46,7 @@ extension AddCardViewController {
 //        self.creditCardView.
         self.createTextField()
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.barStyle = .black
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Chevron").resizeImage(newWidth: 30), style: .plain, target: self, action: #selector(self.backButtonClick))
         self.navigationItem.title = Constants.string.addCardPayments.localize()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.string.Done.localize(), style: .done, target: self, action: #selector(self.doneButtonClick))

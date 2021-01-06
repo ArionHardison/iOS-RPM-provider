@@ -84,9 +84,9 @@ extension PatientsViewController {
             
         }))
 
-        alert.addAction(UIAlertAction(title: "Add File", style: .default, handler: { (_) in
-            print("User click Edit button")
-        }))
+//        alert.addAction(UIAlertAction(title: "Add File", style: .default, handler: { (_) in
+//            print("User click Edit button")
+//        }))
 
         alert.addAction(UIAlertAction(title: "Delete Patient", style: .destructive, handler: { (_) in
             self.deletePatientDetail(id: self.todayPatients[sender.tag].id?.description ?? "")

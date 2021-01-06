@@ -172,6 +172,7 @@ extension AppDelegate {
 //           }
         UINavigationBar.appearance().barTintColor = .primary
         UINavigationBar.appearance().tintColor = .white
+//        UINavigationBar.appearance().
         UINavigationBar.appearance().isTranslucent = false
         var attributes = [NSAttributedString.Key : Any]()
         attributes.updateValue(UIColor.white, forKey: .foregroundColor)

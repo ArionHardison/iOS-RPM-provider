@@ -295,8 +295,8 @@ extension RegisterPersonalTableViewController : UITextFieldDelegate {
             return false
         }else if textField == self.addressTextField{
             self.googlePlacesHelper?.getGoogleAutoComplete(completion: { (place) in
-                  self.dAddress = place.name ?? ""
-                    textField.text   = place.name ?? ""
+                  self.dAddress = place.formattedAddress ?? ""
+                    textField.text   = place.formattedAddress ?? ""
                   self.dlat = place.coordinate.latitude
                   self.dlon = place.coordinate.longitude
               })

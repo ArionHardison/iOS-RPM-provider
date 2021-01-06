@@ -46,6 +46,11 @@ class DashBoardViewController: UIViewController {
         return createActivityIndicator(self.view)
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    
     var timerGetRequest: Timer?
     
     override func viewDidLoad() {
@@ -53,8 +58,10 @@ class DashBoardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initialLoads()
+//        self.navigationController?.navigationBar.barStyle = .black
+        
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         let date = dateConvertor(Date().description, _input: .date_time, _output: .YMD)
@@ -103,6 +110,7 @@ extension DashBoardViewController {
             
             self.ontapProfile()
         }
+//        navigationController?.navigationBar.barStyle = .black
         self.userImg.makeRoundedCorner()
 //        self.userImg.layer.cornerRadius = self.userImg.bounds.width/2
 //        self.buttonProfile.addTarget(self, action: #selector(ontapProfile), for: .touchUpInside)
@@ -359,13 +367,13 @@ extension Date {
     var startOfWeek: Date? {
         let gregorian = Calendar(identifier: .gregorian)
         guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+        return gregorian.date(byAdding: .day, value: 0, to: sunday)
     }
 
     var endOfWeek: Date? {
         let gregorian = Calendar(identifier: .gregorian)
         guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 7, to: sunday)
+        return gregorian.date(byAdding: .day, value: 6, to: sunday)
     }
     
     var startOfMonth: Date {

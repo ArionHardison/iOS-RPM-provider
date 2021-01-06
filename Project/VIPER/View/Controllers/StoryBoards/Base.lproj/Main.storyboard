@@ -4385,7 +4385,7 @@
         <!--Dash Board View Controller-->
         <scene sceneID="pnO-Ds-NqN">
             <objects>
-                <viewController storyboardIdentifier="DashBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s7M-Hz-dxa" customClass="DashBoardViewController" customModule="TeleHelath_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="s7M-Hz-dxa" customClass="DashBoardViewController" customModule="TeleHelath_Provider" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u84-pV-LkC"/>
                         <viewControllerLayoutGuide type="bottom" id="yNE-SR-Ygq"/>

@@ -187,7 +187,7 @@ extension AppointmentFeedBackViewController : PresenterOutputProtocol{
                 self.loader.isHideInMainThread(true)
                 let data = dataDict as? UpdateFeedBackModel
                 showToast(msg: data?.message ?? "")
-                self.navigationController?.popViewController(animated: true)
+                self.popBack(toControllerType: HomeViewController.self)
                 break
             
             default:
@@ -201,7 +201,17 @@ extension AppointmentFeedBackViewController : PresenterOutputProtocol{
         showAlert(message: error.localizedDescription)
         
     }
-    
+    func popBack<T: UIViewController>(toControllerType: T.Type) {
+        if var viewControllers: [UIViewController] = self.navigationController?.viewControllers {
+            viewControllers = viewControllers.reversed()
+            for currentViewController in viewControllers {
+                if currentViewController .isKind(of: toControllerType) {
+                    self.navigationController?.popToViewController(currentViewController, animated: true)
+                    break
+                }
+            }
+        }
+    }
 
     }
     
