@@ -1394,10 +1394,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxa-vV-kPm">
-                                <rect key="frame" x="167" y="386" width="94" height="82"/>
+                                <rect key="frame" x="160.66666666666666" y="386" width="106.99999999999997" height="139"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addfile" translatesAutoresizingMaskIntoConstraints="NO" id="Diu-9Z-Ytb">
-                                        <rect key="frame" x="5" y="5" width="84" height="72"/>
+                                        <rect key="frame" x="5" y="5" width="97" height="129"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1429,7 +1429,7 @@
                             <constraint firstItem="jal-Kz-KI8" firstAttribute="width" secondItem="lgS-Aa-d0B" secondAttribute="width" multiplier="0.929907" id="626-Ne-w4t"/>
                             <constraint firstItem="hll-Eo-gVx" firstAttribute="height" secondItem="lgS-Aa-d0B" secondAttribute="width" multiplier="0.3" id="7tk-wp-h18"/>
                             <constraint firstItem="Fxa-vV-kPm" firstAttribute="centerX" secondItem="5e6-ye-9Y8" secondAttribute="centerX" id="Ask-Wd-z1l"/>
-                            <constraint firstItem="Fxa-vV-kPm" firstAttribute="height" secondItem="lgS-Aa-d0B" secondAttribute="height" multiplier="0.0885529" id="DDP-68-15B"/>
+                            <constraint firstItem="Fxa-vV-kPm" firstAttribute="height" secondItem="lgS-Aa-d0B" secondAttribute="height" multiplier="0.15" id="DDP-68-15B"/>
                             <constraint firstItem="jal-Kz-KI8" firstAttribute="centerX" secondItem="lgS-Aa-d0B" secondAttribute="centerX" id="EBR-Mf-ehj"/>
                             <constraint firstAttribute="trailing" secondItem="hll-Eo-gVx" secondAttribute="trailing" id="HqB-e7-xai"/>
                             <constraint firstItem="W3c-ma-0dE" firstAttribute="top" secondItem="OmW-Ji-4i1" secondAttribute="bottom" constant="10" id="JFE-gx-0SS"/>
@@ -1446,7 +1446,7 @@
                             <constraint firstItem="jal-Kz-KI8" firstAttribute="height" secondItem="lgS-Aa-d0B" secondAttribute="height" multiplier="0.05" id="nHm-za-Uqi"/>
                             <constraint firstItem="5e6-ye-9Y8" firstAttribute="height" secondItem="lgS-Aa-d0B" secondAttribute="height" multiplier="0.05" id="qKM-kI-uif"/>
                             <constraint firstItem="hll-Eo-gVx" firstAttribute="top" secondItem="lgS-Aa-d0B" secondAttribute="top" id="rba-c7-igt"/>
-                            <constraint firstItem="Fxa-vV-kPm" firstAttribute="width" secondItem="lgS-Aa-d0B" secondAttribute="width" multiplier="0.219626" id="y2C-2S-pMN"/>
+                            <constraint firstItem="Fxa-vV-kPm" firstAttribute="width" secondItem="lgS-Aa-d0B" secondAttribute="width" multiplier="0.25" id="y2C-2S-pMN"/>
                             <constraint firstItem="OmW-Ji-4i1" firstAttribute="height" secondItem="lgS-Aa-d0B" secondAttribute="width" multiplier="0.1" id="y6Y-qC-OXK"/>
                         </constraints>
                     </view>

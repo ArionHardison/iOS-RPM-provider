@@ -70,8 +70,8 @@ class EditAppointmentTableViewController: UITableViewController {
     
     func setupAction(){
         self.editSchudleDate.addTap {
-            let view = DatePickerAlert.getView
-            view.TitleLbl.text = "Select Date"
+            let view = DateTimePickerAlert.getView
+            view.TitleLbl.text = "Select Date and Time"
             view.alertdelegate = self
             AlertBuilder().addView(fromVC: self , view).show()
         }

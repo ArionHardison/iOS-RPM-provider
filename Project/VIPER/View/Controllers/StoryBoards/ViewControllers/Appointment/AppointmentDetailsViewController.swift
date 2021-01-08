@@ -77,6 +77,11 @@ class AppointmentDetailsViewController: UIViewController {
             }else{
                 self.videoCallButton.isHidden = false
             }
+        if appoinment.patient_rating == 1{
+            self.videoCallButton.isHidden = true
+        }else{
+            self.videoCallButton.isHidden = false
+        }
         
     }
     

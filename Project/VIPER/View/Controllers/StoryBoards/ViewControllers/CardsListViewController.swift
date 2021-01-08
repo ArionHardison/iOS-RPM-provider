@@ -136,10 +136,12 @@ extension CardsListViewController : PresenterOutputProtocol {
                 case model.type.CardSuccess:
                     let data = dataDict as? CardSuccess
                     let alert  = showAlert(message: data?.message) { (_) in
-//                        self.navigationController?.popViewController(animated: true)
-//                        self.navigationController?.popToViewController(HomeViewController.self, animated: true)
-                 
-                            self.navigationController?.popViewController(animated: true)
+                  for controller in self.navigationController!.viewControllers as Array {
+                        if controller.isKind(of: WalletViewController.self) {
+                            _ =  self.navigationController!.popToViewController(controller, animated: true)
+                            break
+                        }
+                    }
                         
                         }
                     self.present(alert, animated: true, completion: nil)
