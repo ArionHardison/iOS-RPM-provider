@@ -77,7 +77,7 @@ struct Constants {
     let appointmentDetail = "Appointment Details"
     let Yes = "Yes"
     let No = "No"
-    let wallet = "wallet"
+    let wallet = "Wallet"
     let walletAmount = "Your Wallet Amount is"
     let noTransactionsYet = "No Transactions yet"
     let transactionId = "Transaction Id"

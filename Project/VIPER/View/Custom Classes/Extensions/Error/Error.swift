@@ -22,7 +22,11 @@ struct CustomError : CustomErrorProtocol {
     var statusCode : Int
     
     init(description : String, code : Int){
-        self.localizedDescription = String(description.filter({ !"\n\t\r0".contains($0) }))
+        var value = String(description.filter({ !"\n\t\r0".contains($0) }))
+        if value.contains("false"){
+            value = value.replacingOccurrences(of: "false", with: "", options: .literal, range: nil)
+        }
+        self.localizedDescription = value
         self.statusCode = code
     }
 }

@@ -282,10 +282,14 @@ extension CalendarViewController : AlertDelegate{
     }
     
     func selectedTime(time: String, alertVC: UIViewController) {
-        
-          let vc = self.storyboard?.instantiateViewController(identifier: Storyboard.Ids.AddAppointmentTableViewController) as! AddAppointmentTableViewController
+        let vc = self.storyboard?.instantiateViewController(identifier: Storyboard.Ids.PatientsViewController) as! PatientsViewController
         vc.selectedDate = self.selectedDate + " " + time
-          self.navigationController?.pushViewController(vc, animated: true)
+        vc.isFromCalendar = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+//          let vc = self.storyboard?.instantiateViewController(identifier: Storyboard.Ids.AddAppointmentTableViewController) as! AddAppointmentTableViewController
+//        vc.selectedDate = self.selectedDate + " " + time
+//          self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

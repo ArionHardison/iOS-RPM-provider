@@ -31,6 +31,8 @@ class EditAppointmentTableViewController: UITableViewController {
     var isEmail : Bool = false
     var isNSMS : Bool = false
     var isNEmail : Bool = false
+    var selectedTime : String = ""
+    var selectedDate : String = ""
     
     var appoinment : All_appointments = All_appointments()
     
@@ -100,7 +102,9 @@ extension EditAppointmentTableViewController {
         appoinment.description = self.appoinment.description ?? ""
         appoinment.doctor_id = profile.doctor?.id?.description ?? "0"
         appoinment.service_id = "\(self.appoinment.service_id ?? 0)"
-        appoinment.scheduled_at = self.labelAppointmentDetails.getText
+        print(self.selectedTime,self.selectedDate)
+        
+        appoinment.scheduled_at = selectedDate + selectedTime
         appoinment.consult_time = self.appoinment.consult_time ?? ""
         appoinment.appointment_type = "ONLINE"
           self.editAppoinemnt(data: appoinment)
@@ -146,6 +150,9 @@ extension EditAppointmentTableViewController : AlertDelegate{
     }
     
     func selectedDateTime(selectionType: DateselectionOption,date : Date, datestr: String, time: String, alertVC: UIViewController) {
+        self.selectedDate = datestr
+        self.selectedTime = time
+        
         
     }
     
@@ -172,6 +179,7 @@ extension EditAppointmentTableViewController : PresenterOutputProtocol{
     }
     
     func showError(error: CustomError) {
+        showToast(msg: error.localizedDescription)
         
     }
     
